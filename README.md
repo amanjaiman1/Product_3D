@@ -36,18 +36,6 @@ This application includes the following features:
 
 If you'd like to contribute to this project, please fork the repository and submit a pull request. We'd love to hear your ideas for improving this application!
 
-## License
 
-This project is licensed under the MIT License. See the `LICENSE` file for more information.
-
-## Acknowledgements
-
-We would like to thank the following individuals and resources for their contributions to this project:
-
-- The React team for creating an incredible library for building user interfaces.
-- The Three.js team for their work on the powerful 3D graphics library.
-- The TailwindCSS team for developing an excellent CSS framework for building custom UIs.
-- The NodeJS community for their work on building a powerful JavaScript runtime.
-- DalleAI for their cutting-edge technology integration.
 
 Thank you for using our 3D Product Customization Website!
