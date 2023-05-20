@@ -49,8 +49,9 @@ Stay tuned for more updates as we continue to explore and leverage the latest ad
 To get started with this project, follow these steps:
 
 1. Clone the project repository: `git clone https://github.com/your-username/your-repo-name.git`
-2. Install dependencies: `npm install`
-3. Start the application: `npm start`
+2. Install dependencies on both client and server: `npm install --legacy-peer-deps`
+3. Start the application: `npm run dev`
+4. Start the server: `npm run server`
 4. Visit `http://localhost:3000` in your web browser to access the application.
 
 Note: To use the dalleAI feature, ensure that you have the necessary backend set up and connected to the frontend.
