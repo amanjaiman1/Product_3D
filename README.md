@@ -1,8 +1,29 @@
+
 # 3D Product Customization Website 🎨
 Welcome to the 3D Product Customization Website! 🌟 This innovative web application empowers users to personalize their very own t-shirts with ease. With a wide range of customization options at their fingertips, users can unleash their creativity and design unique garments that reflect their individuality. Get ready to embark on a journey of self-expression and style! 🎉
 
 # Seamless Customization Experience 🖌️
 Our platform offers a seamless and intuitive customization experience. Users can effortlessly navigate through an array of options, including selecting colors that speak to their preferences, and even uploading their own images or logos. The intuitive interface ensures that the customization process is smooth and enjoyable for everyone, regardless of their technical expertise. ✨
+=======
+# 3D Product Customization Website
+<div align="center">
+<img src="https://forthebadge.com/images/badges/built-with-love.svg" />
+<img src="https://forthebadge.com/images/badges/uses-brains.svg" />
+<img src="https://forthebadge.com/images/badges/powered-by-responsibility.svg" />
+  <br>
+  <img src="https://img.shields.io/github/repo-size/amanjaiman1/Product_3D?style=for-the-badge" />
+  <img src="https://img.shields.io/github/issues/amanjaiman1/Product_3D?style=for-the-badge" />
+  <img src="https://img.shields.io/github/issues-closed-raw/amanjaiman1/Product_3D?style=for-the-badge" />
+  
+<img src="https://img.shields.io/github/forks/amanjaiman1/Product_3D?style=for-the-badge" />
+  <img src="https://img.shields.io/github/issues-pr/amanjaiman1/Product_3D?style=for-the-badge" /><br>
+  <img src="https://img.shields.io/github/issues-pr-closed-raw/amanjaiman1/Product_3D?style=for-the-badge" />
+  <img src="https://img.shields.io/github/stars/amanjaiman1/Product_3d?style=for-the-badge" />
+  <img src="https://img.shields.io/github/contributors/amanjaiman1/Product_3D?style=for-the-badge" />
+  <img src="https://img.shields.io/github/last-commit/amanjaiman1/Product_3D?style=for-the-badge" />
+  </div>
+Welcome to the 3D Product Customization Website! This is a web application that allows users to customize their own t-shirts using a range of options, including color selection and image/logo upload. The website also integrates DalleAI technology to generate custom images for users to apply to their t-shirts.
+
 
 # DalleAI Integration 🤖
 We take customization to the next level with our integration of DalleAI technology. Powered by cutting-edge AI algorithms, DalleAI generates stunning custom images for users to apply to their t-shirts. This feature opens up a world of endless possibilities, allowing users to bring their wildest imaginations to life. From intricate patterns to personalized artwork, DalleAI adds an extra touch of magic to the customization experience. 🎨🤩
@@ -63,9 +84,17 @@ This application boasts an array of impressive features to enhance your t-shirt 
 If you'd like to contribute to this project, please fork the repository and submit a pull request. We'd love to hear your ideas for improving this application!
 ## :cowboy_hat_face: Contributors
 
+
 <a href="https://github.com/amanjaiman1/Product_3D/graphs/contributors"> 
     <img src="https://contrib.rocks/image?repo=amanjaiman1/Product_3D" /> 
 </a>
+
+=======
+## Contributors
+<p align="center">
+<a href="https://github.com/amanjaiman1/Product_3D/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=amanjaiman1/Product_3D" />
+</a></p>
 
 
 Thank you for using our 3D Product Customization Website!
