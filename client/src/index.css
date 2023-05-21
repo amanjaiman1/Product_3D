@@ -90,3 +90,42 @@ input[type="file"] {
 .sketch-picker > div:nth-child(3) {
   display: none !important;
 }
+
+
+.editortabs-container{
+  margin-left: 1em;
+  border-radius: 15px;
+  background: #0000;
+  box-shadow:  5px -5px 15px #989898,
+             -5px 5px 15px #ffffff;
+}
+.filtertabs-container{
+ width: max-content;
+ position: absolute;
+ padding: 4px;
+  left: 43.5%;
+  border-radius: 15px;
+  background: #0000;
+  box-shadow:  5px -5px 15px #989898,
+             -5px 5px 15px #ffffff;
+}
+
+
+.editorContent{
+padding-left: 3em;
+margin-top: -15em;
+position: relative;
+  width: fit-content;
+  height: 222px;
+}
+
+.close{
+  position: absolute;
+  top: 0;
+  padding: 5px;
+  border-radius: 15px;
+  margin-left: 11em;
+  margin-top: -1em;
+  background-color: aliceblue;
+}
+
