@@ -159,11 +159,14 @@ Congratulations! You've successfully contributed to the project. Your changes wi
 ## Contributing 🤝
 
 If you'd like to contribute to this project, please fork the repository and submit a pull request. We'd love to hear your ideas for improving this application!
-## :cowboy_hat_face: Contributors
+## :cowboy_hat_face: Project Admin & Mentors
 
 
 <a href="https://github.com/amanjaiman1/Product_3D/graphs/contributors"> 
     <img src="https://contrib.rocks/image?repo=amanjaiman1/Product_3D" /> 
+</a>
+<a href="https://github.com/amanjaiman1/Product_3D/graphs/contributors"> 
+    <img src="https://contrib.rocks/image?repo=SurajPratap10/Product_3D" /> 
 </a>
 
 Thank you for using our 3D Product Customization Website!
