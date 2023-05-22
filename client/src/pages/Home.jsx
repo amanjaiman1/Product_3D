@@ -9,6 +9,8 @@ import {
     headTextAnimation,
     slideAnimation
 } from '../config/motion'
+import Navbar from './Navbar'
+
 
 const Home = () => {
     const snap = useSnapshot(state);
@@ -17,10 +19,12 @@ const Home = () => {
             {snap.intro && (
                 <motion.section className="home" {...slideAnimation('left')}>
                     <motion.header {...slideAnimation("down")}>
-                        <img
+                        <Navbar/>
+                        {/* <img
                          src="./threejs.png"
                          alt="logo"
-                         className="w-8 h-8 object-contain" />
+                         className="w-8 h-8 object-contain" /> */}
+
                     </motion.header>
 
                     <motion.div className="home-content" {...headContainerAnimation}>
