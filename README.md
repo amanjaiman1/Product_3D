@@ -58,7 +58,7 @@ This command will create a local copy of the project on your machine.
 
 2. Install dependencies on both the client and server:
 ```
-cd your-repo-name
+cd client / server
 npm install --legacy-peer-deps
 ```
 Navigate into the cloned repository using the `cd` command, and then run the `npm install` command to install the project's dependencies. The `--legacy-peer-deps` flag is used to handle any potential peer dependency issues.
