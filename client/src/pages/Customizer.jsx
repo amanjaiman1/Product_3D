@@ -128,16 +128,23 @@ const Customizer = () => {
             <div className="flex items-center min-h-screen">
               <div className="editortabs-container tabs">
                 {EditorTabs.map((tab) => (
-                  <Tab 
-                    key={tab.name}
-                    tab={tab}
-                    handleClick={() => setActiveEditorTab(tab.name)}
-                  />
-                ))}
+  <div key={tab.name} className="relative">
+    <Tab 
+      tab={tab}
+      handleClick={() => setActiveEditorTab(tab.name)}
+    />
+    {activeEditorTab === tab.name && (
+      <div className="absolute top-0 left-0 transform -translate-y-full bg-gray-800 text-white px-2 py-1 text-xs rounded">
+        {tab.name === "colorpicker" ? "Color Picker" : tab.name === "filepicker" ? "Filepicker" : "AI picker"}
+      </div>
+    )}
+  </div>
+))}
 
                 {generateTabContent()}
               </div>
             </div>
+            
           </motion.div>
 
           <motion.div
