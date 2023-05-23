@@ -4,6 +4,9 @@ const {
   getUsers,
   addUser,
   removeUser,
+  updateProfile,
+  addAddress,
+  updateAddress,
 } = require("../controller/user.controller");
 
 const userRouter = express.Router();
@@ -16,6 +19,18 @@ userRouter.post("/getusers", getUsers);
 
 // POST v1/user/adduser
 userRouter.post("/adduser", addUser);
+
+// POST v1/user/updateuser
+userRouter.post("/updateprofile", updateProfile);
+
+// POST v1/user/updateuser
+userRouter.post("/updateprofile", updateProfile);
+
+// POST v1/user/addaddress
+userRouter.post("/addaddress", addAddress);
+
+// POST v1/user/updateaddress
+userRouter.post("/updateaddress", updateAddress);
 
 // POST v1/user/remove
 userRouter.post("/remove", removeUser);
