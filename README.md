@@ -67,7 +67,7 @@ Navigate into the cloned repository using the `cd` command, and then run the `np
 ```
 npm run dev
 ```
-This command will start the client application. It typically runs on port 3000, but you can check the console output for the exact URL.
+This command will start the client application. It typically runs on port 5173, but you can check the console output for the exact URL.
 
 4. Start the server:
 ```
