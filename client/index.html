@@ -5,8 +5,40 @@
     <link rel="icon" type="image/svg+xml" href="/vite.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title> Product Customization </title>
+  
+    <!-- FONTS -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
   </head>
   <body>
+    <header class="bg-white">
+      <nav class="flex justify-between items-center w-[92%] py-5 mx-auto">
+        <div>
+          <img
+          src="./threejs.png"
+          alt="logo"
+          class="w-16" />
+        </div>
+        <div>
+          <ul class="fontsize-25px font-bold flex items-center gap-[4vw]">
+            <li>
+              <a class="hover:text-gray-500" href="#">Home</a>
+            </li>
+            <li>
+              <a class="hover:text-gray-500" href="#">Guide Book</a>
+            </li>
+            <li>
+              <a class="hover:text-gray-500" href="#">Customize</a>
+            </li>
+            <li>
+              <a class="hover:text-gray-500" href="#">Contact Us</a>
+            </li>
+          </ul>
+        </div>
+        <div>
+            <button class="bg-[#EFBD48] text-black font-bold px-5 py-2 rounded-md hover:bg-[#8F712D]">Sign In</button>
+        </div>
+      </nav>
+    </header>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
   </body>
