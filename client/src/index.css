@@ -129,3 +129,26 @@ position: relative;
   background-color: aliceblue;
 }
 
+.new{
+  font-weight: 700;
+  margin-top: 23px;
+  margin-left: 1080px;
+}
+
+.head-text-dark{
+  font-weight: 850;
+  font-size: 155px;
+  margin-bottom: -30px;
+  margin-top: -50px;
+  word-spacing: -10px;
+}
+
+h1{
+  line-height: 140px;
+}
+
+.up{
+  margin-top:-40px;
+}
+
+
