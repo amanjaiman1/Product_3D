@@ -58,8 +58,11 @@ This command will create a local copy of the project on your machine.
 
 2. Install dependencies on both the client and server:
 ```
-cd client / server
+cd client
 npm install --legacy-peer-deps
+
+cd server
+npm install
 ```
 Navigate into the cloned repository using the `cd` command, and then run the `npm install` command to install the project's dependencies. The `--legacy-peer-deps` flag is used to handle any potential peer dependency issues.
 
@@ -71,7 +74,7 @@ This command will start the client application. It typically runs on port 5173, 
 
 4. Start the server:
 ```
-npm run server
+npm start
 ```
 
 ## Features 🌟
