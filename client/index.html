@@ -8,6 +8,7 @@
   
     <!-- FONTS -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
   </head>
   <body class="font-[Poppins] font-medium scrollbar">
     <header class="bg-white">
@@ -18,8 +19,8 @@
           alt="logo"
           class="w-16" />
         </div>
-        <div>
-          <ul class="fontsize-25px font-bold flex items-center gap-[4vw]">
+        <div class="nav-links duration-500 md:static absolute bg-white md:min-h-fit min-h-[60vh] left-0 top-[-100%] md:w-auto w-full flex items-center px-5">
+          <ul class="fontsize-25px font-bold flex md:flex-row flex-col items-center md:gap-[4vw] gap-8">
             <li>
               <a class="hover:text-gray-500" href="#">Home</a>
             </li>
@@ -34,12 +35,22 @@
             </li>
           </ul>
         </div>
-        <div>
+        <div class="flex items-center gap-6">
             <button class="bg-[#EFBD48] text-black font-bold px-5 py-2 rounded-md hover:bg-[#8F712D]">Sign In</button>
+            <ion-icon onclick="onToggleMenu(this)" name="menu-outline" class="text-3xl cursor-pointer md:hidden"></ion-icon>
         </div>
       </nav>
     </header>
     <div id="root"></div>
     <script type="module" src="/src/main.jsx"></script>
+    <script>
+      const navLinks = document.querySelector('.nav-links')
+
+      function onToggleMenu(e){
+        e.name = e.name === 'menu' ? 'close' : 'menu'
+        navLinks.classList.toggle('top-[9%]')
+      }
+    </script>
   </body>
 </html>
+
