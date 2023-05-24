@@ -126,7 +126,8 @@ position: relative;
   border-radius: 15px;
   margin-left: 11em;
   margin-top: -1em;
-  background-color: aliceblue;
+  background-color: white;
+  color: black;
 }
 
 .new{
