@@ -33,7 +33,7 @@ const AIPicker = ({ prompt, setPrompt, generatingImg, handleSubmit }) => {
       <textarea 
         placeholder="Ask AI..."
         rows={5}
-        value={prompt && transcript} // set the transcript to the value
+        value={prompt&&transcript} // set the transcript to the value
         onChange={(e) => setPrompt(e.target.value)}
         className="aipicker-textarea"
       />

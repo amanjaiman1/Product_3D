@@ -97,7 +97,7 @@ const Customizer = () => {
     try {
       setGeneratingImg(true);
 
-      const response = await fetch("http://localhost:8080/api/v1/dalle", {
+      const response = await fetch("http://localhost:5000/api/v1/unsplash", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -106,10 +106,12 @@ const Customizer = () => {
           prompt,
         }),
       });
-
       const data = await response.json();
-
-      handleDecals(type, `data:image/png;base64,${data.photo}`);
+      if (data.data.length != 0) {
+        handleDecals(type, data.data[0]);
+      } else {
+        alert("No result found");
+      }
     } catch (error) {
       alert(error);
     } finally {
@@ -120,9 +122,7 @@ const Customizer = () => {
 
   const handleDecals = (type, result) => {
     const decalType = DecalTypes[type];
-
     state[decalType.stateProperty] = result;
-
     if (!activeFilterTab[decalType.filterTab]) {
       handleActiveFilterTab(decalType.filterTab);
     }
@@ -213,11 +213,11 @@ const Customizer = () => {
                 handleClick={() => handleActiveFilterTab(tab.name)}
               />
             ))}
-               <button className='download-btn' onClick={downloadCanvasToImage}>
+            <button className="download-btn" onClick={downloadCanvasToImage}>
               <img
                 src={download}
-                alt='download_image'
-                className='w-3/5 h-3/5 object-contain'
+                alt="download_image"
+                className="w-3/5 h-3/5 object-contain"
               />
             </button>
           </motion.div>
