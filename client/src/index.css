@@ -151,5 +151,26 @@ h1{
 .up{
   margin-top:-40px;
 }
+@layer utilities{
+  .scrollbar::-webkit-scrollbar {
+    width: 15px;
+    height: 20px;
+  }
 
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 20vh;
+    background: #f7f4ed;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #EFBD48;
+    height: 10px;
+    border-radius: 20vh;
+    border: 3px solid #f6f7ed;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: black;
+  }
+}
 
