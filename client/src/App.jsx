@@ -3,6 +3,8 @@ import Customizer from "./pages/Customizer"
 import Home from "./pages/Home"
 import React, { useState } from "react";
 import { CustomButton } from './components'
+import ErrorPage from "./components/404Error"
+import { BrowserRouter, Routes, Route} from "react-router-dom"
 
 function App() {
   const [active, setActive] = useState(false);
@@ -18,9 +20,27 @@ function App() {
               handleClick={handleClick}
               />
       </div>
-      <Home isActive={active} />
-      <Canvas />
-      <Customizer />
+      <div className={'new'} >
+              <Customizer 
+              type="filled"
+              handleClick={handleClick}
+              />      
+      </div>
+
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Home isActive={active} />
+                <Canvas />
+              </>
+            }
+          />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
+      </BrowserRouter>
     </main>
   )
 }
