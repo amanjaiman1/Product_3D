@@ -21,15 +21,24 @@ function App() {
               handleClick={handleClick}
               />
       </div>
-      <BrowserRouter>
-      <Routes>
-      <Route path = "/" element = {<Home isActive={active}></Home> }/>
-      <Route path ="/" element = {<Canvas />}/>
-      <Route path ="*" element = {<ErrorPage />}/>
+      <div className={"new"}>
+        <Customizer type="filled" handleClick={handleClick} />
+      </div>
 
-      </Routes>
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Home isActive={active} />
+                <Canvas />
+              </>
+            }
+          />
+          <Route path="*" element={<ErrorPage />} />
+        </Routes>
       </BrowserRouter>
-      <Customizer />
     
     </main>
   )
