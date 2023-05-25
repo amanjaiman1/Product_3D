@@ -32,7 +32,7 @@ function ContactUs() {
 
   return (
     <div className="contact-container">
-        <h1 className="text-3xl font-semibold mb-4 text-center">Our Valuable Contributors</h1>
+      <h1 className="text-3xl font-semibold mb-4 text-center">Our Valuable Contributors</h1>
       <div className="flex flex-wrap justify-center p-6 gap-4 shadow-md rounded-xl sm:p-12 dark:bg-gray-900 dark:text-gray-100 ml-2">
         {loading ? (
           <p>Loading...</p>
@@ -40,24 +40,24 @@ function ContactUs() {
           <>
             {currentUsers.map((contributor) => (
               <div key={contributor.id} className="flex flex-col items-center space-y-4 text-center divide-y divide-gray-700">
-                <img
-                  src={contributor.avatar_url}
-                  alt=""
-                  className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square"
-                />
+                <a
+                  rel="noopener noreferrer"
+                  href={`https://github.com/${contributor.login}`}
+                  aria-label="GitHub"
+                  className="p-2 rounded-md dark:text-gray-100 hover:dark:text-violet-400"
+                >
+                  <img
+                    src={contributor.avatar_url}
+                    alt=""
+                    className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square"
+                  />
+                </a>
                 <div className="my-2 space-y-1">
                   <h2 className="text-xl font-semibold sm:text-2xl">{contributor.login}</h2>
                   <p className="px-5 text-xs sm:text-base dark:text-gray-400">{`Contributions: ${contributor.contributions}`}</p>
                 </div>
                 <div className="flex justify-center pt-2 space-x-4 align-center">
-                  <a
-                    rel="noopener noreferrer"
-                    href={`https://github.com/${contributor.login}`}
-                    aria-label="GitHub"
-                    className="p-2 rounded-md dark:text-gray-100 hover:dark:text-violet-400"
-                  >
-                    
-                  </a>
+                  {/* Add any additional content or buttons here */}
                 </div>
               </div>
             ))}
