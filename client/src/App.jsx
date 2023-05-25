@@ -2,6 +2,7 @@ import Canvas from "./canvas"
 import Customizer from "./pages/Customizer"
 import Home from "./pages/Home"
 import ErrorPage from "./components/404Error"
+import ContactUs from "./components/ContactUs"
 import React, { useState } from "react";
 import { CustomButton } from './components'
 import { BrowserRouter, Routes, Route} from "react-router-dom"
@@ -37,6 +38,7 @@ function App() {
             }
           />
           <Route path="*" element={<ErrorPage />} />
+          <Route path="/contact" element={<ContactUs />} />
         </Routes>
       </BrowserRouter>
     

@@ -14,6 +14,7 @@ import {
   CustomButton,
   FilePicker,
   Tab,
+  ContactUs,
 } from "../components";
 import { CloseButton } from "@chakra-ui/close-button";
 
