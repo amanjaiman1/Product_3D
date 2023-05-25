@@ -1,0 +1,17 @@
+{
+  "name": "product_3d",
+  "version": "1.0.0",
+  "description": "Product_3D",
+  "main": "index.js",
+  "scripts": {
+    "install-all": "cd server && npm i && cd .. && cd client && npm i",
+    "server": "cd server && npm start",
+    "server-dev": "cd server && npm run dev",
+    "client-dev": "cd client && vite",
+    "client-build": "cd client && vite build",
+    "client-preview": "cd client && vite preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
