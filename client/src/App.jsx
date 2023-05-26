@@ -7,6 +7,7 @@ import { CustomButton } from './components'
 import { BrowserRouter, Routes, Route} from "react-router-dom"
 
 
+
 function App() {
   const [active, setActive] = useState(false);
   const handleClick = () => {
@@ -14,19 +15,20 @@ function App() {
   };
   return (
     <main className="app transition-all ease-in " style={{ backgroundColor: active ? "black" : "white",color :active ?"white":"black" }}>
-      <div className={'new'} >
+      {/* <div className={'new'} >
              <CustomButton 
               type="filled"
               title="Theme"
               handleClick={handleClick}
               />
-      </div>
+      </div> */}
       <div className={"new"}>
         <Customizer type="filled" handleClick={handleClick} />
       </div>
 
       <BrowserRouter>
         <Routes>
+
           <Route
             path="/"
             element={
@@ -36,6 +38,7 @@ function App() {
               </>
             }
           />
+          
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
