@@ -5,6 +5,7 @@ import ErrorPage from "./components/404Error"
 import React, { useState } from "react";
 import { CustomButton } from './components'
 import { BrowserRouter, Routes, Route} from "react-router-dom"
+import SignIn from "./pages/SignIn";
 
 
 function App() {
@@ -14,16 +15,16 @@ function App() {
   };
   return (
     <main className="app transition-all ease-in " style={{ backgroundColor: active ? "black" : "white",color :active ?"white":"black" }}>
-      <div className={'new'} >
+      {/* <div className={'new'} >
              <CustomButton 
               type="filled"
               title="Theme"
               handleClick={handleClick}
               />
-      </div>
-      <div className={"new"}>
+      </div> */}
+       <div className={"new"}>
         <Customizer type="filled" handleClick={handleClick} />
-      </div>
+      </div> 
 
       <BrowserRouter>
         <Routes>
@@ -34,6 +35,12 @@ function App() {
                 <Home isActive={active} />
                 <Canvas />
               </>
+            }
+          />
+          <Route
+            path="/signIn"
+            element={
+              <SignIn/>
             }
           />
           <Route path="*" element={<ErrorPage />} />
