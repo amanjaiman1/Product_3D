@@ -1,7 +1,7 @@
-import React, { useState } from 'react'
-import 'core-js/stable'
-import 'regenerator-runtime/runtime'
-import CustomButton from './CustomButton';
+import React, { useState } from "react";
+import "core-js/stable";
+import "regenerator-runtime/runtime";
+import CustomButton from "../CustomButton";
 // import the text to speech library
 // import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
@@ -27,10 +27,10 @@ const AIPicker = ({ prompt, setPrompt, generatingImg, handleSubmit }) => {
   // if (!browserSupportsSpeechRecognition) {
   //   return null;
   // }
-  
+
   return (
     <div className="aipicker-container">
-      <textarea 
+      <textarea
         placeholder="Ask AI..."
         rows={5}
         value={prompt} // set the transcript to the value
@@ -39,24 +39,24 @@ const AIPicker = ({ prompt, setPrompt, generatingImg, handleSubmit }) => {
       />
       <div className="flex flex-wrap gap-3">
         {generatingImg ? (
-          <CustomButton 
+          <CustomButton
             type="outline"
             title="Asking AI..."
             customStyles="text-xs"
           />
         ) : (
           <>
-            <CustomButton 
+            <CustomButton
               type="outline"
               title="AI Logo"
-              handleClick={() => handleSubmit('logo')}
+              handleClick={() => handleSubmit("logo")}
               customStyles="text-xs"
             />
 
-            <CustomButton 
+            <CustomButton
               type="filled"
               title="AI Full"
-              handleClick={() => handleSubmit('full')}
+              handleClick={() => handleSubmit("full")}
               customStyles="text-xs"
             />
             {/* <CustomButton 
@@ -75,7 +75,7 @@ const AIPicker = ({ prompt, setPrompt, generatingImg, handleSubmit }) => {
         )}
       </div>
     </div>
-  )
-}
+  );
+};
 
 export default AIPicker;
