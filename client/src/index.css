@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,600;1,900&display=swap");
 @import url("https://rsms.me/inter/inter.css");
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -7,6 +8,10 @@
 
 html {
   font-family: "Inter", sans-serif;
+}
+
+body {
+  scroll-behavior: smooth;
 }
 
 @supports (font-variation-settings: normal) {
@@ -158,19 +163,193 @@ h1{
   }
 
   .scrollbar::-webkit-scrollbar-track {
-    border-radius: 20vh;
+    border-radius: 5px;
     background: #f7f4ed;
   }
 
   .scrollbar::-webkit-scrollbar-thumb {
     background: #EFBD48;
-    height: 10px;
-    border-radius: 20vh;
-    border: 3px solid #f6f7ed;
+    border-radius: 2px;
+    border: 1px solid #f6f7ed;
   }
 
   .scrollbar::-webkit-scrollbar-thumb:hover {
     background: black;
   }
 }
+
+.navbar {
+  font-family: 'Poppins', sans-serif;
+  border-bottom: 1px solid black;
+}
+
+.dark-mode{
+  background-color: #1a1a1a;
+  color: white;
+}
+
+
+
+label {
+  display: flex;
+  width: 75px;
+  height: 35px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 6px;
+  background: #222;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+}
+
+label i {
+  font-size: 18px;
+}
+label .fa-sun {
+  color: gold;
+  transition: 0.8s;
+}
+label .fa-moon {
+  color: #fff;
+  transition: 0.8s;
+}
+label .ball {
+  display: none;
+}
+
+input:checked + label .fa-sun {
+  transform: translateX(-43px);
+}
+input:checked + label .fa-moon {
+  transform: translateX(43px);
+}
+
+label .fa-sun {
+  opacity: 1;
+}
+input:checked + label .fa-sun {
+  opacity: 0;
+}
+label .fa-moon {
+  opacity: 0;
+}
+input:checked + label .fa-moon {
+  opacity: 1;
+}
+
+label .ball {
+  position: absolute;
+  display: block;
+  width: 25px;
+  height: 25px;
+  top: 5px;
+  left: 5px;
+  background: #fff;
+  border-radius: 50%;
+  transition: 0.8s;
+}
+
+input:checked + label .ball {
+  transform: translateX(40px);
+}
+
+label .fa-moon {
+  transform: translateX(43px);
+}
+input:checked + label .fa-moon {
+  transform: translateX(0);
+}
+
+label {
+  transition: 0.3s;
+}
+input:checked + label {
+  background: #c0c0c0;
+}
+input:checked + label .ball {
+  background: #222;
+}
+input {
+  display: none;
+}
+
+input:checked + label .fa-sun {
+  transform: translateX(-43px) rotate(160deg);
+}
+label .fa-moon {
+  transform: translateX(43px) rotate(250deg);
+}
+input:checked + label .fa-moon {
+  transform: translateX(0), rotate(0);
+}
+
+.mobile-menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+
+.mobile-menu-toggle .bar {
+  width: 20px;
+  height: 2px;
+  background-color: #000;
+  margin-bottom: 4px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu-toggle.open .bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.mobile-menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.open .bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 7%;
+  left: 0%;
+  width: 100%;
+  background-color: #faff6b;
+  padding: 10px;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  z-index: 91;
+  animation: ease-in-out 1s;
+}
+
+.mobile-menu a {
+  color: #000;
+  text-decoration: none;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.mobile-menu button {
+  display: block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: #000;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+
 

@@ -1,2 +1,3 @@
 # Design for homepage
-[Home page design](https://www.figma.com/file/BIEHHpz5aZewBGr2fv1aHg/GSSOC?type=design&node-id=7-2&t=bDao5ViVQipnpBIp-0)
+
+![Product-3D-Landing_Page](https://github.com/amanjaiman1/Product_3D/assets/77478827/db622fd5-e1de-4f44-8d4d-8b9846dc6227)

@@ -1,7 +1,14 @@
 import CustomButton from "./CustomButton";
-import AIPicker from "./AIPicker"
-import ColorPicker from "./ColorPicker"
-import FilePicker from "./FilePicker"
+import Navbar from "./Navbar";
+import Contact from "./Contact";
+import Social from "./Social";
+
+
+
+
+import AIPicker from "./pickers/AIPicker"
+import ColorPicker from "./pickers/ColorPicker"
+import FilePicker from "./pickers/FilePicker"
 import Tab from "./Tab"
 
 export {
@@ -9,5 +16,8 @@ export {
      AIPicker,
      ColorPicker,
      FilePicker,
-     Tab,    
+     Tab,  
+     Navbar,
+     Contact,
+     Social,  
     };

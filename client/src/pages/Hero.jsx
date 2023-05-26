@@ -10,7 +10,7 @@ import {
     slideAnimation
 } from '../config/motion'
 
-const Home = ({props}) => {
+const Hero = ({props}) => {
     const snap = useSnapshot(state);
 
     return (   
@@ -27,7 +27,7 @@ const Home = ({props}) => {
                         <motion.div {...headTextAnimation}>
                         
                             <div className={props && props.isActive ? 'head-text' : 'head-text-dark'}>
-                            <h1 >
+                            <h1 className="max-sm:text-[70px]" >
                             LET'S <br className="xl:block hidden" /> DO IT.
                             </h1>
                             </div>
@@ -61,4 +61,4 @@ const Home = ({props}) => {
     )
 }
 
-export default Home
+export default Hero
