@@ -2,6 +2,7 @@ import Canvas from "./canvas"
 import Customizer from "./pages/Customizer"
 import Home from "./pages/Home"
 import ErrorPage from "./components/404Error"
+import Faq from "./components/FaqApp"
 import React, { useState } from "react";
 import { CustomButton } from './components'
 import { BrowserRouter, Routes, Route} from "react-router-dom"
@@ -36,6 +37,9 @@ function App() {
               </>
             }
           />
+          <Route path="/home" element={<Home />} />
+          <Route path="/faq" element={<Faq />} />
+
           <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
