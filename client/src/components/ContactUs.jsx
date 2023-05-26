@@ -5,7 +5,7 @@ function ContactUs() {
   const [contributors, setContributors] = useState([]);
   const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
-  const [usersPerPage] = useState(14);
+  const [usersPerPage] = useState(15);
 
   useEffect(() => {
     axios
