@@ -37,8 +37,8 @@ function App() {
               </>
             }
           />
-          <Route path="*" element={<ErrorPage />} />
           <Route path="/contact" element={<ContactUs />} />
+          <Route path="*" element={<ErrorPage />} />
         </Routes>
       </BrowserRouter>
     
