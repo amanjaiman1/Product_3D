@@ -27,7 +27,6 @@ function App() {
             <div className=" relative  z-0 bg-main">
               <div className="bg-hero-pattern overflow-x-hidden">
                 <Navbar />
-
                 <Hero />
               </div>
               <main className="app transition-all ease-in">
@@ -37,7 +36,6 @@ function App() {
               <div className="relative z-0">
                 <Contact />
               </div>
-
               <Social />
               <div>
                 <div style={{ marginTop: "100vh" }} />
