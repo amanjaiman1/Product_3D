@@ -2,6 +2,7 @@ import CustomButton from "./CustomButton";
 import Navbar from "./Navbar";
 import Contact from "./Contact";
 import Social from "./Social";
+import Faq from "./Faq";
 
 
 
@@ -20,4 +21,5 @@ export {
      Navbar,
      Contact,
      Social,  
+     Faq,
     };

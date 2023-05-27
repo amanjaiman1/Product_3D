@@ -1,0 +1,68 @@
+/* Media query for screens with a maximum width of 800px */
+@media only screen and (max-width: 800px) {
+  .illustration__woman-desktop {
+    max-width: 120%;
+  }
+}
+
+/* Media query for screens with a maximum width of 700px */
+@media only screen and (max-width: 700px) {
+  .container {
+    /* Added padding here to the mobile container
+    so illustration__woman-desktop would not be cropped at the top */
+    padding-top: 105px;
+  }
+
+  .component {
+    max-width: 327px;
+    background-image: url(../assets/bg-pattern-mobile.svg);
+    background-position: top;
+    flex-direction: column;
+  }
+
+  .illustration {
+    &__box {
+      display: none;
+    }
+
+    &__woman-desktop {
+      display: none;
+    }
+
+    &__woman-mobile {
+      display: block;
+      margin: 0 auto;
+      position: absolute;
+      top: -105px;
+      left: 12px;
+    }
+  }
+
+  .faq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 132px;
+    padding-bottom: 48px;
+  }
+
+  .faq__question {
+    max-width: 279px;
+    word-break: break-word;
+    text-align: center; /* Add this line to center the question */
+    margin-left: auto; /* Add this line to align question to the right */
+    margin-right: auto; /* Add this line to align question to the left */
+  }
+
+  .faq__question-button {
+    width: 100%;
+    max-width: 280px;
+    font-size: 13px;
+    line-height: 13px;
+  }
+
+  .faq__question-button::after {
+    padding-right: 0px;
+    margin-left:5vh;
+  }
+}
