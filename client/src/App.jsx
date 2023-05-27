@@ -15,7 +15,7 @@ function App() {
         <div className="bg-hero-pattern overflow-x-hidden">
           <Navbar />
         </div>
-        <main className="app transition-all ease-in" >
+        <main className="app transition-all ease-out" >
           <Routes>
             <Route path="/" element={<Hero />} />
             <Route path="/contact" element={<Contact />} />
@@ -25,11 +25,6 @@ function App() {
           <Canvas />
           <Customizer />
         </main>
-        <div className="relative z-0">
-      
-        
-        </div>
-        {/* <Social /> */}
       </div>
     </BrowserRouter>
   )
