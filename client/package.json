@@ -11,6 +11,7 @@
   "dependencies": {
     "@chakra-ui/close-button": "^2.0.17",
     "@react-three/drei": "^9.61.1",
+    "@react-three/fiber": "^8.13.0",
     "axios": "^1.4.0",
     "core-js": "^3.30.2",
     "framer-motion": "^10.10.0",
