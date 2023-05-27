@@ -11,6 +11,7 @@
   "dependencies": {
     "@chakra-ui/close-button": "^2.0.17",
     "@react-three/drei": "^9.61.1",
+    "axios": "^1.4.0",
     "core-js": "^3.30.2",
     "framer-motion": "^10.10.0",
     "maath": "^0.5.3",
@@ -18,8 +19,10 @@
     "react-color": "^2.19.3",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2",
+    "react-scroll": "^1.8.9",
     "react-speech-recognition": "^3.10.0",
     "regenerator-runtime": "^0.13.11",
+    "sass": "^1.62.1",
     "three": "^0.151.2",
     "valtio": "^1.10.3"
   },

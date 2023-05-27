@@ -1,10 +1,10 @@
 import Canvas from "./canvas"
 import Customizer from "./pages/Customizer"
-import { Navbar, Contact, Social } from "./components";
+import { Navbar, Contact, Social,Faq } from "./components";
 import Hero from "./pages/Hero";
 import ErrorPage from "./components/Error404"
 import React, { useState } from "react";
-import { BrowserRouter } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 
 
@@ -14,16 +14,22 @@ function App() {
       <div className=" relative  z-0 bg-main">
         <div className="bg-hero-pattern overflow-x-hidden">
           <Navbar />
-          <Hero />
         </div>
-        <main className="app transition-all ease-in">
+        <main className="app transition-all ease-in" >
+          <Routes>
+            <Route path="/" element={<Hero />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/faq" element={<Faq />} />
+            <Route path="*" element={<ErrorPage />} />
+          </Routes>
           <Canvas />
           <Customizer />
         </main>
         <div className="relative z-0">
-            <Contact />
+      
+        
         </div>
-        <Social />
+        {/* <Social /> */}
       </div>
     </BrowserRouter>
   )
