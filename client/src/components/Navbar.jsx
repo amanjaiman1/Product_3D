@@ -48,7 +48,7 @@ const Navbar = () => {
         <Link to="/guidebook">Guide Book</Link>
         <Link to="/customize">Customize</Link>
         <Link to="/contact">Contact Us</Link>
-        <Link to="/faq"> Faq's</Link>
+        <Link to="/faq"> FAQ's</Link>
         <button className="tryfree-btn  justify-center border-[1px] p-2 rounded-md">Try Free</button>
       </div>
 
@@ -65,7 +65,7 @@ const Navbar = () => {
           <Link to="/guidebook">Guide Book</Link>
           <Link to="/customize">Customize</Link>
           <Link to="/contact">Contact Us</Link>
-          <Link to="/faq"> Faq's</Link>
+          <Link to="/faq"> FAQ's</Link>
           <button className="justify-center border-[1px] p-2 rounded-md">Try Free</button>
         </div>
       )}
