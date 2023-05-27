@@ -1,0 +1,65 @@
+@import "config";
+
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+
+h3 {
+  color: $very-dark-desaturated-blue;
+  font-size: 100vh;
+  line-height: 32px;
+  font-weight: bold; /* Add this line to make the text bold */
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+  width: 50vh;
+
+}
+
+
+button {
+  color: $very-dark-grayish-blue;
+  font-size: 14px;
+  line-height: 14px;
+}
+
+/* https://developer.mozilla.org/en-US/docs/Web/CSS/:focus-visible */
+/* Remove the focus indicator on mouse-focus for browsers that do support :focus-visible */
+button:focus:not(:focus-visible) {
+  outline: 0;
+}
+
+button:focus-visible {
+  /* Draw a very noticeable focus style for
+     keyboard-focus on browsers that do support
+     :focus-visible */
+  outline: 2px dashed $soft-red;
+  outline-offset: 0px;
+}
+
+#root {
+  width: 100%;
+
+}
+
+.container {
+  max-width: 1440px;
+  width: 100%;
+  margin-top: 50px;
+}
+
+.font-weight-bold {
+  font-weight: 700;
+}
+
+@import "component";
+@import "illustration";
+@import "faq";
+@import "attribution";
+@import "animation";
+@import "responsive";

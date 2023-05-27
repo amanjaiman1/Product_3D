@@ -1,6 +1,7 @@
 import Canvas from "./canvas";
 import Customizer from "./pages/Customizer";
-import { Navbar, Contact, Social } from "./components";
+import { Navbar, Contact, Social, Faq } from "./components";
+
 import Hero from "./pages/Hero";
 import ErrorPage from "./components/Error404";
 import React, { useState, useEffect } from "react";
