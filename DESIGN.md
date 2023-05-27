@@ -3,3 +3,6 @@
 
 # <h1 style="font-family:Poppins, sans-serif" >Home Page Design</h1> <br> <br>
 ![Web-Landing_Page_1](https://github.com/amanjaiman1/Product_3D/assets/77478827/e2c1103e-e641-484f-b4e3-8a95f410950b)
+
+# <h1 style="font-family:Poppins, sans-serif" >Components Distribution</h1> <br> <br>
+![IMG_20230527_223439](https://github.com/amanjaiman1/Product_3D/assets/77478827/efa6d696-ca93-4dca-bb09-86e456fb05aa)
