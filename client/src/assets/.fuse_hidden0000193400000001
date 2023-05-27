@@ -1,0 +1,31 @@
+import React, { useRef } from "react";
+import { Canvas, useLoader, extend, useThree } from "@react-three/fiber";
+import { GLTFLoader } from "three/examples/jsm/loaders/GLTFLoader";
+import { OrbitControls } from "three/examples/jsm/controls/OrbitControls";
+
+extend({ OrbitControls });
+
+const Tshirt = () => {
+  const shirtRef = useRef();
+  const gltf = useLoader(GLTFLoader, "/shirt_baked.glb");
+  //   const { camera, gl } = useThree();
+
+  if (gltf.scene) {
+    const shirtMesh = gltf.scene.getObjectByProperty("name", "Shirt");
+
+    if (shirtMesh) {
+      return (
+        <Canvas>
+          <ambientLight intensity={0.5} />
+          <pointLight position={[10, 10, 10]} />
+          <primitive ref={shirtRef} object={shirtMesh} />
+          <OrbitControls />
+        </Canvas>
+      );
+    }
+  }
+
+//   return <h1>Loading</h1>; // Return null while the model is being loaded
+};
+
+export default Tshirt;
