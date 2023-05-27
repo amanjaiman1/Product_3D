@@ -15,6 +15,8 @@
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.2",
     "@react-three/drei": "^9.61.1",
+    "@react-three/fiber": "^8.13.0",
+    "axios": "^1.4.0",
     "core-js": "^3.30.2",
     "framer-motion": "^10.10.0",
     "maath": "^0.5.3",
@@ -22,10 +24,10 @@
     "react-color": "^2.19.3",
     "react-dom": "^18.2.0",
     "react-router-dom": "^6.11.2",
+    "react-scroll": "^1.8.9",
     "react-speech-recognition": "^3.10.0",
     "react-transition-group": "^4.4.5",
     "regenerator-runtime": "^0.13.11",
-    "three": "^0.151.3",
     "valtio": "^1.10.3"
   },
   "devDependencies": {
