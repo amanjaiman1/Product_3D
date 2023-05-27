@@ -367,3 +367,12 @@ input:checked + label .fa-moon {
     transform: translateY(-15px);
   }
 }
+/* css for loader */
+/* .loader {
+  width: 100%;
+  height: 100vh;
+  margin-top: 35%;
+  margin-left: 45%;
+  z-index: 1000;
+  box-shadow: white 8px;
+} */
