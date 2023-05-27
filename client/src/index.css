@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,200;0,600;1,900&display=swap");
 @import url("https://rsms.me/inter/inter.css");
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap");
 
 @tailwind base;
 @tailwind components;
@@ -96,35 +96,31 @@ input[type="file"] {
   display: none !important;
 }
 
-
-.editortabs-container{
+.editortabs-container {
   margin-left: 1em;
   border-radius: 15px;
   background: #0000;
-  box-shadow:  5px -5px 15px #989898,
-             -5px 5px 15px #ffffff;
+  box-shadow: 5px -5px 15px #989898, -5px 5px 15px #ffffff;
 }
-.filtertabs-container{
- width: max-content;
- position: absolute;
- padding: 4px;
+.filtertabs-container {
+  width: max-content;
+  position: absolute;
+  padding: 4px;
   left: 43.5%;
   border-radius: 15px;
   background: #0000;
-  box-shadow:  5px -5px 15px #989898,
-             -5px 5px 15px #ffffff;
+  box-shadow: 5px -5px 15px #989898, -5px 5px 15px #ffffff;
 }
 
-
-.editorContent{
-padding-left: 3em;
-margin-top: -15em;
-position: relative;
+.editorContent {
+  padding-left: 3em;
+  margin-top: -15em;
+  position: relative;
   width: fit-content;
   height: 222px;
 }
 
-.close{
+.close {
   position: absolute;
   top: 0;
   padding: 5px;
@@ -135,13 +131,13 @@ position: relative;
   color: black;
 }
 
-.new{
+.new {
   font-weight: 700;
   margin-top: 23px;
   margin-left: 1380px;
 }
 
-.head-text-dark{
+.head-text-dark {
   font-weight: 850;
   font-size: 155px;
   margin-bottom: -30px;
@@ -149,14 +145,14 @@ position: relative;
   word-spacing: -10px;
 }
 
-h1{
+h1 {
   line-height: 140px;
 }
 
-.up{
-  margin-top:-40px;
+.up {
+  margin-top: -40px;
 }
-@layer utilities{
+@layer utilities {
   .scrollbar::-webkit-scrollbar {
     width: 15px;
     height: 20px;
@@ -168,7 +164,7 @@ h1{
   }
 
   .scrollbar::-webkit-scrollbar-thumb {
-    background: #EFBD48;
+    background: #efbd48;
     border-radius: 2px;
     border: 1px solid #f6f7ed;
   }
@@ -179,16 +175,14 @@ h1{
 }
 
 .navbar {
-  font-family: 'Poppins', sans-serif;
+  font-family: "Poppins", sans-serif;
   border-bottom: 1px solid black;
 }
 
-.dark-mode{
+.dark-mode {
   background-color: #1a1a1a;
   color: white;
 }
-
-
 
 label {
   display: flex;
@@ -350,6 +344,26 @@ input:checked + label .fa-moon {
   border-radius: 4px;
   cursor: pointer;
 }
-
-
-
+/* css for ScrollToTop  */
+.scrlltop {
+  background-color: #f0c04f;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  animation: bounce 2s ease infinite;
+}
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
+}
