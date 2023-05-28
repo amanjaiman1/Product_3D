@@ -2,19 +2,19 @@ import React, { useState, useEffect } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useSnapshot } from "valtio";
 
-import config from "../config/config";
-import state from "../store";
-import { download } from "../assets";
-import { downloadCanvasToImage, reader } from "../config/helpers";
-import { EditorTabs, FilterTabs, DecalTypes } from "../config/constants";
-import { fadeAnimation, slideAnimation } from "../config/motion";
+import config from "../src/config/config";
+import state from "../src/store";
+import { download } from "../src/assets";
+import { downloadCanvasToImage, reader } from "../src/config/helpers";
+import { EditorTabs, FilterTabs, DecalTypes } from "../src/config/constants";
+import { fadeAnimation, slideAnimation } from "../src/config/motion";
 import {
   AIPicker,
   ColorPicker,
   CustomButton,
   FilePicker,
   Tab,
-} from "../components";
+} from "../src/components";
 import { CloseButton } from "@chakra-ui/close-button";
 
 const Customizer = () => {

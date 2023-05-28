@@ -1,12 +1,8 @@
-import { proxy } from "valtio";
+import { configureStore } from '@reduxjs/toolkit';
+import editorReducer from '../redux/editor/index'
 
-const state = proxy({
-    intro: true,
-    color: '#EFBD48',
-    isLogoTexture: true,
-    isFullTexture: false,
-    logoDecal: './threejs.png',
-    fullDecal: './threejs.png',
+export default configureStore({
+  reducer: {
+    design: editorReducer,
+  },
 });
-
-export default state;
