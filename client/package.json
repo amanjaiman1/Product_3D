@@ -12,6 +12,7 @@
     "@chakra-ui/close-button": "^2.0.17",
     "@react-three/drei": "^9.61.1",
     "@react-three/fiber": "^8.13.0",
+    "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.4.0",
     "core-js": "^3.30.2",
     "framer-motion": "^10.10.0",
@@ -19,12 +20,14 @@
     "react": "^18.2.0",
     "react-color": "^2.19.3",
     "react-dom": "^18.2.0",
+    "react-redux": "^8.0.5",
     "react-router-dom": "^6.11.2",
     "react-scroll": "^1.8.9",
     "react-speech-recognition": "^3.10.0",
     "regenerator-runtime": "^0.13.11",
     "sass": "^1.62.1",
     "three": "^0.151.2",
+    "uuid": "^9.0.0",
     "valtio": "^1.10.3"
   },
   "devDependencies": {
