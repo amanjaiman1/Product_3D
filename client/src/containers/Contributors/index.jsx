@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
-// import '../index.css';  
+import '../../index.css';  
 
 function Contributor( ) {
   const [contributors, setContributors] = useState([]);
@@ -37,7 +37,7 @@ function Contributor( ) {
       </div>
       <div className="p-6">
         <h2 className="text-3xl font-bold text-center mt-[-5px] backdrop-brightness-125 justify-center">Meet Our Talented Team</h2>
-        <p className="text-center mt-5 text-lg">
+        <p className="text-center mt-5 text-lg pt-6">
           Our project's success is attributed to the dedicated contributors who brought
           expertise and creativity. Meet the amazing individuals behind our accomplishments.
         </p>
