@@ -8,7 +8,7 @@ export default {
     extend: {
       colors:{
         'primary':"#293FCC",
-        "secondry":"#63657E",
+        "secondary":"#63657E",
         'hero-badge-color':"#293FCC",
         'hero-badge-bg':"#F8FAFF",
         "heading":"#090F4E"
