@@ -5,7 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      colors:{
+        'primary':"#293FCC",
+        "secondry":"#63657E",
+        'hero-badge':"#293FCC",
+        "heading":"#090F4E"
+      }
+    },
   },
   plugins: [require('tailwind-scrollbar')],
 };
