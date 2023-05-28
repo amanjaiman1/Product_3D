@@ -6,9 +6,12 @@ export default {
   ],
   theme: {
     extend: {
-      colors: {
-        custom: '#090F4E',
-        custom2:" #63657E",
+      colors:{
+        'primary':"#293FCC",
+        "secondry":"#63657E",
+        'hero-badge-color':"#293FCC",
+        'hero-badge-bg':"#F8FAFF",
+        "heading":"#090F4E"
       }
     },
   },
