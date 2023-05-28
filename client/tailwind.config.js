@@ -9,7 +9,8 @@ export default {
       colors:{
         'primary':"#293FCC",
         "secondry":"#63657E",
-        'hero-badge':"#293FCC",
+        'hero-badge-color':"#293FCC",
+        'hero-badge-bg':"#F8FAFF",
         "heading":"#090F4E"
       }
     },
