@@ -1,0 +1,257 @@
+@import url("https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap");
+
+.navbar {
+  font-family: "Poppins", sans-serif;
+  border-bottom: 1px solid black;
+}
+
+.dark-mode {
+  background-color: #1a1a1a;
+  color: white;
+}
+
+label {
+  display: flex;
+  width: 75px;
+  height: 35px;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 6px;
+  background: #222;
+  border-radius: 50px;
+  cursor: pointer;
+  position: relative;
+}
+
+label i {
+  font-size: 18px;
+}
+label .fa-sun {
+  color: gold;
+  transition: 0.8s;
+}
+label .fa-moon {
+  color: #fff;
+  transition: 0.8s;
+}
+label .ball {
+  display: none;
+}
+
+input:checked + label .fa-sun {
+  transform: translateX(-43px);
+}
+input:checked + label .fa-moon {
+  transform: translateX(43px);
+}
+
+label .fa-sun {
+  opacity: 1;
+}
+input:checked + label .fa-sun {
+  opacity: 0;
+}
+label .fa-moon {
+  opacity: 0;
+}
+input:checked + label .fa-moon {
+  opacity: 1;
+}
+
+label .ball {
+  position: absolute;
+  display: block;
+  width: 25px;
+  height: 25px;
+  top: 5px;
+  left: 5px;
+  background: #fff;
+  border-radius: 50%;
+  transition: 0.8s;
+}
+
+input:checked + label .ball {
+  transform: translateX(40px);
+}
+
+label .fa-moon {
+  transform: translateX(43px);
+}
+input:checked + label .fa-moon {
+  transform: translateX(0);
+}
+
+label {
+  transition: 0.3s;
+}
+input:checked + label {
+  background: #c0c0c0;
+}
+input:checked + label .ball {
+  background: #222;
+}
+input {
+  display: none;
+}
+
+input:checked + label .fa-sun {
+  transform: translateX(-43px) rotate(160deg);
+}
+label .fa-moon {
+  transform: translateX(43px) rotate(250deg);
+}
+input:checked + label .fa-moon {
+  transform: translateX(0), rotate(0);
+}
+
+.mobile-menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+  position: relative;
+  top: 30%;
+}
+
+.mobile-menu-toggle .bar {
+  width: 20px;
+  height: 2px;
+  background-color: #000;
+  margin-bottom: 4px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.mobile-menu-toggle.open .bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.mobile-menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.open .bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: #293fce;
+  padding-top: 7rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 91;
+  font-family: "Montserrat", sans-serif;
+}
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 21px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.mobile-menu button {
+  display: block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: white;
+  color: black;
+  font-family: "Montserrat", sans-serif;
+
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-in;
+}
+.mobile-menu button:hover {
+  color: white;
+  background-color: #efbd48;
+  transform: scale(1.1);
+}
+.mobile-menu > .link {
+  padding-left: 1rem;
+  padding-right: 1rem;
+}
+.mobile-menu > .link:hover {
+  background-color: white;
+  color: #293fce;
+  border-radius: 8px;
+  transform: scale(1.08);
+}
+
+.pl-5 {
+  display: flex;
+  align-items: center;
+  font-family: "Cherry Bomb One", cursive;
+  font-size: xx-large;
+  color: #293fce;
+}
+.nav-container {
+  background-color: #e7eeff;
+  font-weight: 600;
+}
+
+.tryfree-btn {
+  background-color: #293fce;
+  color: aliceblue;
+  width: 130px;
+  letter-spacing: 1px;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-in;
+}
+.tryfree-btn:hover{
+    color: #293fce;
+    border: 1px solid #293fce;
+    background-color: transparent;
+ 
+}
+
+.link {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+  color: inherit;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-in;
+}
+
+.link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background-color: #293fce;
+  transition: width 0.1s ease-in-out;
+}
+
+.link:hover::after {
+  width: 100%;
+}
+.active::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 100%;
+  height: 2px;
+  background-color: #293fce;
+  transition: width 0.3s ease-in-out;
+}
