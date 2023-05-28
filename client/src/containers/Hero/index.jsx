@@ -10,7 +10,7 @@ function Hero() {
           AI-Powered 3D T-Shirts
         </span>
         <div className="py-3">
-          <h1 className="text-heading font-semibold min-[600px]:text-5xl max-[600px]:text-4xl min-[600px]:leading-normal max-[600px]:leading-tight max-[600px]:text-center">
+          <h1 className="text-heading md:font-bold font-semibold min-[600px]:text-5xl max-[600px]:text-4xl min-[600px]:leading-normal max-[600px]:leading-tight max-[600px]:text-center">
             Elevate Your Style with Intelligent Fashion
           </h1>
           <p className="text-secondary font-normal pt-3 leading-loose max-[600px]:text-center">

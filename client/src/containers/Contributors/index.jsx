@@ -38,16 +38,16 @@ function Contributor() {
         <h1 className="text-center text-primary">Contributors</h1>
       </div>
       <div className="my-5">
-        <h2 className="text-3xl font-bold text-center justify-center">
+        <h2 className="text-2xl md:text-3xl md:font-extrabold font-bold text-center justify-center">
           Meet Our Talented Team
         </h2>
-        <p className="text-center text-secondary mt-5  text-lg lg:px-60">
+        <p className="text-center text-secondary mt-5  md:text-lg lg:px-60 text-sm">
           Our project's success is attributed to the dedicated contributors who
           brought expertise and creativity. Meet the amazing individuals behind
           our accomplishments.
         </p>
       </div>
-      <div className="flex flex-wrap justify-center p-6 gap-8 max-w-screen-sm max-h-screen-md lg:max-w-full lg:max-h-full">
+      <div className="flex flex-wrap justify-center p-2 md:p-6 gap-4 md:gap-8 max-w-screen-sm max-h-screen-md lg:max-w-full lg:max-h-full">
         {loading ? (
           <p>Loading...</p>
         ) : (

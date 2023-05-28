@@ -6,11 +6,11 @@ function NewsLetter() {
     <div className="pt-50 mx-auto max-w-1200 bg-cover bg-center" style={{ backgroundImage: `url(${background})`, borderRadius: '25px' }}>
       <div className="r-50 rounded-2xl flex flex-col items-center leading-8 p-[40px]">
         <div className="rounded-2xl flex flex-col items-center leading-14 text-center">
-          <h2 className="text-2xl font-bold text-[#090F4E] text-[2rem]" style={{ fontFamily: 'Poppins, sans-serif' }}>
+          <h2 className="text-2xl font-bold text-[#090F4E] md:text-[2rem] text-[1.2rem]" style={{ fontFamily: 'Poppins, sans-serif' }}>
             Sign up to our newsletter
           </h2>
         </div>
-        <div className="text-custom2 text-secondary font-normal pt-3 leading-loose text-center" style={{ fontFamily: 'Poppins, sans-serif' }}>
+        <div className="text-custom2 text-secondary md:text-[1.5rem] text-[0.7rem] pt-3 leading-loose text-center" style={{ fontFamily: 'Poppins, sans-serif' }}>
           <br />
           Receive latest news, updates, and many other
           <br />
