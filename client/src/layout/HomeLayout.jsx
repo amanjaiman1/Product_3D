@@ -1,6 +1,6 @@
 import React from "react";
 import Header from "../containers/Header/Navbar";
-import Footer from "../containers/Footer";
+import Footer from "../containers/Footer/index";
 
 function HomeLayout({ children }) {
   return (

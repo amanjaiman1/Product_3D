@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import ContributorCard from "../../components/ContributorCard";
 import Pagination from "../../components/Pagination";
+import "./index.css"
 
 function Contributor() {
 
@@ -34,14 +35,14 @@ function Contributor() {
 
   return (
     <div className="flex flex-col items-center min-h-screen  overflow-hidden">
-      <div className="mt-5  bg-primary bg-opacity-10 font-semibold rounded-lg pl-5 pr-5 py-2">
-        <h1 className="text-center text-primary">Contributors</h1>
+      <div className="contributor mt-5 pl-5 pr-5 py-2 position-relative">
+      <h1 className="ot-letter-bottom"><span data-letter="- Contributors -">- Contributors -</span></h1>
       </div>
       <div className="my-5">
         <h2 className="text-3xl font-bold text-center justify-center">
           Meet Our Talented Team
         </h2>
-        <p className="text-center text-secondary mt-5  text-lg lg:px-60">
+        <p className="text-center text-secondary mt-5 text-lg lg:px-60">
           Our project's success is attributed to the dedicated contributors who
           brought expertise and creativity. Meet the amazing individuals behind
           our accomplishments.

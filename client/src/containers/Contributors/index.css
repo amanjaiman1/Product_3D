@@ -1,0 +1,53 @@
+.ot-letter-bottom {
+  font-size: 2.5em;
+}
+
+/* Common styles for the letters */
+.ot-letter-bottom span {
+  position: relative;
+  font-weight: 900;
+  color: hsla(0, 0%, 0%, 0.6);
+  transform-style: preserve-3d;
+  perspective: 550px;
+  z-index: 1;
+}
+
+.ot-letter-bottom span:before,
+.ot-letter-bottom span:after {
+  position: absolute;
+  content: attr(data-letter);
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  transform-origin: 50% 0;
+  transition: all 0.3s;
+}
+
+.ot-letter-bottom span:before {
+  text-shadow: none;
+  color: hsla(0, 0%, 0%, 0.12);
+  transform: scale(1, 1.05) skew(4deg, 0deg);
+}
+
+.ot-letter-bottom span:after {
+  color: rgb(41 63 204);
+  text-shadow: 0px -1px 0px hsla(360, 100%, 100%, 0.1),
+    0px 3px 1px hsla(0, 0%, 0%, 0.4);
+  transform: rotateX(15deg);
+}
+.ot-letter-bottom:hover span:after {
+  color: rgb(41 63 204);
+  transform: translateY(0.045em) rotateX(40deg);
+}
+
+.ot-letter-bottom:hover span:before {
+  transform: translateY(-0.035em) scale(1, 1.2) skew(10deg, 0deg);
+}
+
+@media screen and (max-width: 510px) {
+  .ot-letter-bottom {
+    font-size: 2em;
+  }
+}

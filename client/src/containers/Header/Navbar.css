@@ -2,8 +2,7 @@
 
 .navbar {
   font-family: "Poppins", sans-serif;
-  padding: 10%;
-  
+  padding: 2%;
 }
 
 .dark-mode {
@@ -194,29 +193,28 @@ label .fa-moon {
   transform: scale(1.08);
 }
 
-.pl-5 {
+.wrapper {
   display: flex;
   align-items: center;
-  font-family: "Cherry Bomb One", cursive;
-  font-size: xx-large;
-  color: #293fce;
+  justify-content: center;
 }
 
+.wrapper h1 {
+  font-size: 28px;
+  cursor: pointer;
+}
 
 .tryfree-btn {
   background-color: #293fce;
   color: aliceblue;
   width: 130px;
   letter-spacing: 1px;
-  -webkit-transition-property: all;
-  -webkit-transition-duration: 0.5s;
-  -webkit-transition-timing-function: ease-in;
+  transition: all 0.5s ease;
 }
-.tryfree-btn:hover{
-    color: #293fce;
-    border: 1px solid #293fce;
-    background-color: transparent;
- 
+.tryfree-btn:hover {
+  color: #293fce;
+  border: 1px solid #293fce;
+  background-color: transparent;
 }
 
 .link {
@@ -224,9 +222,7 @@ label .fa-moon {
   display: inline-block;
   text-decoration: none;
   color: inherit;
-  -webkit-transition-property: all;
-  -webkit-transition-duration: 0.3s;
-  -webkit-transition-timing-function: ease-in;
+  transition: all 0.3s ease;
 }
 
 .link::after {
@@ -252,4 +248,24 @@ label .fa-moon {
   height: 2px;
   background-color: #293fce;
   transition: width 0.3s ease-in-out;
+}
+
+@media screen and (max-width:1050px) {
+  .link { 
+    margin-left: 15px !important;
+  }
+  .tryfree-btn {
+    margin-left: 20px !important;
+  }
+}
+
+@media screen and (max-width:920px) {
+    .menu {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .wrapper h1 {
+      font-size: 20px;
+    }
 }

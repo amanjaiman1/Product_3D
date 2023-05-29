@@ -1,6 +1,7 @@
 import React from "react";
 import { hero } from "../../assets";
 import Button from "../../components/Button";
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 function Hero() {
   return (
@@ -19,7 +20,7 @@ function Hero() {
           </p>
         </div>
         <div className="pt-3 max-[600px]:flex max-[600px]:justify-center">
-          <Button>Design Now</Button>
+          <Button>Design Now <ArrowForwardIcon className="ml-1" /></Button>
         </div>
       </div>
       <div className="flex-3">
