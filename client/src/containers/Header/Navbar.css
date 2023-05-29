@@ -2,11 +2,12 @@
 
 .navbar {
   font-family: "Poppins", sans-serif;
-  border-bottom: 1px solid black;
+  padding: 10%;
+  
 }
 
 .dark-mode {
-  background-color: #1a1a1a;
+  background-color: #000000;
   color: white;
 }
 
@@ -38,23 +39,23 @@ label .ball {
   display: none;
 }
 
-input:checked + label .fa-sun {
+.darkmode-input:checked + label .fa-sun {
   transform: translateX(-43px);
 }
-input:checked + label .fa-moon {
+.darkmode-input:checked + label .fa-moon {
   transform: translateX(43px);
 }
 
 label .fa-sun {
   opacity: 1;
 }
-input:checked + label .fa-sun {
+.darkmode-input:checked + label .fa-sun {
   opacity: 0;
 }
 label .fa-moon {
   opacity: 0;
 }
-input:checked + label .fa-moon {
+.darkmode-input:checked + label .fa-moon {
   opacity: 1;
 }
 
@@ -65,42 +66,44 @@ label .ball {
   height: 25px;
   top: 5px;
   left: 5px;
-  background: #fff;
+  background: rgb(255, 245, 154);
+  opacity: 0.5;
   border-radius: 50%;
   transition: 0.8s;
 }
 
-input:checked + label .ball {
+.darkmode-input:checked + label .ball {
   transform: translateX(40px);
 }
 
 label .fa-moon {
   transform: translateX(43px);
 }
-input:checked + label .fa-moon {
+.darkmode-input:checked + label .fa-moon {
   transform: translateX(0);
 }
 
 label {
   transition: 0.3s;
 }
-input:checked + label {
+.darkmode-input:checked + label {
   background: #c0c0c0;
 }
-input:checked + label .ball {
-  background: #222;
+.darkmode-input:checked + label .ball {
+  background: black;
+  opacity: 0.5;
 }
-input {
+.darkmode-input {
   display: none;
 }
 
-input:checked + label .fa-sun {
+.darkmode-input:checked + label .fa-sun {
   transform: translateX(-43px) rotate(160deg);
 }
 label .fa-moon {
   transform: translateX(43px) rotate(250deg);
 }
-input:checked + label .fa-moon {
+.darkmode-input:checked + label .fa-moon {
   transform: translateX(0), rotate(0);
 }
 
@@ -124,7 +127,7 @@ input:checked + label .fa-moon {
   height: 2px;
   background-color: #000;
   margin-bottom: 4px;
-  transition: transform 0.3s ease-in-out;
+  transition: transform 0.5s ease-in-out;
 }
 
 .mobile-menu-toggle.open .bar:nth-child(1) {
@@ -145,14 +148,14 @@ input:checked + label .fa-moon {
   left: 0%;
   width: 100%;
   height: 100%;
-  background-color: #293fce;
+  background-color: #1f67d3;
   padding-top: 7rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   display: flex;
   flex-direction: column;
   align-items: center;
   z-index: 91;
-  font-family: "Montserrat", sans-serif;
+  font-family: "Poppins", sans-serif;
 }
 .mobile-menu a {
   color: white;
@@ -168,8 +171,6 @@ input:checked + label .fa-moon {
   padding: 8px 16px;
   background-color: white;
   color: black;
-  font-family: "Montserrat", sans-serif;
-
   border: none;
   border-radius: 8px;
   cursor: pointer;
@@ -200,10 +201,7 @@ input:checked + label .fa-moon {
   font-size: xx-large;
   color: #293fce;
 }
-.nav-container {
-  background-color: #e7eeff;
-  font-weight: 600;
-}
+
 
 .tryfree-btn {
   background-color: #293fce;
@@ -211,7 +209,7 @@ input:checked + label .fa-moon {
   width: 130px;
   letter-spacing: 1px;
   -webkit-transition-property: all;
-  -webkit-transition-duration: 0.2s;
+  -webkit-transition-duration: 0.5s;
   -webkit-transition-timing-function: ease-in;
 }
 .tryfree-btn:hover{
