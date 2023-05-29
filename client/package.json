@@ -10,6 +10,10 @@
   },
   "dependencies": {
     "@chakra-ui/close-button": "^2.0.17",
+    "@emotion/react": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@mui/icons-material": "^5.11.16",
+    "@mui/material": "^5.13.3",
     "@react-three/drei": "^9.61.1",
     "@react-three/fiber": "^8.13.0",
     "@reduxjs/toolkit": "^1.9.5",
