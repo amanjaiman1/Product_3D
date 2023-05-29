@@ -4,7 +4,7 @@ import Button from "../../components/Button";
 
 function Hero() {
   return (
-    <div className="h-screen flex justify-center items-center flex-wrap-reverse ">
+    <div className="h-screen flex items-center items-center flex-wrap-reverse ">
       <div className="flex-1">
         <span className="text-primary bg-hero-badge-bg bg-opacity-60 text-opacity-70 font-semibold p-2 rounded max-[600px]:flex max-[600px]:justify-center">
           AI-Powered 3D T-Shirts

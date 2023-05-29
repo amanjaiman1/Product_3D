@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link , useLocation} from 'react-router-dom';
-import logoTshirt from '../../assets/image/icons8-shirt-512.png'
-import "./Navbar.css";
+import Button from '../../components/Button';
+import { logo } from '../../assets';
 
 const Navbar = () => {
   const [isDarkMode, setIsDarkMode] = useState(false);
@@ -37,19 +37,19 @@ const Navbar = () => {
   };
 
   return (
-    <nav className={`nav-container  navbar flex flex-row py-5 ${isDarkMode ? 'dark-mode' : ''}`}>
+    <nav className={`container mx-auto px-4 py-5 pt-8 nav-container  navbar flex flex-row ${isDarkMode ? 'dark-mode' : ''}`}>
       <div className="pl-5">
         <Link to="/">
-          <img className="w-12 justify-center align-middle" src={logoTshirt} alt="Logo" />
+          <img className="w-12 justify-center align-middle" src={logo} alt="Logo" />
         </Link>
           {/* <p className="Brand-heading">PRODUCT 3D</p> */}
       </div>
       <div className="ml-auto max-sm:hidden space-x-10 pr-5">
-        <Link to="/" className={`link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
-        <Link to="/guidebook"className={`link ${location.pathname === '/guidebook' ? 'active' : ''}`}>Guide Book</Link>
-        <Link to="/contact" className={`link ${location.pathname === '/contact' ? 'active' : ''}`}>Contributors</Link>
-        <Link to="/faq" className={`link ${location.pathname === '/faq' ? 'active' : ''}`}> FAQ's</Link>
-        <button className="tryfree-btn justify-center p-2 rounded-md">Try Free</button>
+        <Link to="/" className={`link hover:text-blue-500 cursor-pointer ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
+        <Link to="/guidebook"className={`link hover:text-blue-500 cursor-pointer ${location.pathname === '/guidebook' ? 'active' : ''}`}>Guide Book</Link>
+        <Link to="/contact" className={`link hover:text-blue-500 cursor-pointer ${location.pathname === '/contact' ? 'active' : ''}`}>Contributors</Link>
+        <Link to="/faq" className={`link hover:text-blue-500 cursor-pointer ${location.pathname === '/faq' ? 'active' : ''}`}> FAQ's</Link>
+        <Button>Try now</Button>
       </div>
 
       <div className="ml-auto mr-5 sm:hidden">
@@ -61,12 +61,12 @@ const Navbar = () => {
       </div>
       {isMobileMenuOpen && (
         <div className=" mobile-menu ">
-          <Link to="/" className={`link ${location.pathname === '/' ? 'active' : ''}`} onClick={toggleMobileMenu}>Home</Link>
-        <Link to="/guidebook"className={`link ${location.pathname === '/guidebook' ? 'active' : ''}`} onClick={toggleMobileMenu}>Guide Book</Link>
-        <Link to="/customize" className={`link ${location.pathname === '/customize' ? 'active' : ''}`} onClick={toggleMobileMenu}>Customize</Link>
-        <Link to="/contact" className={`link ${location.pathname === '/contact' ? 'active' : ''}`} onClick={toggleMobileMenu}>Contact Us</Link>
-        <Link to="/faq" className={`link ${location.pathname === '/faq' ? 'active' : ''}`} onClick={toggleMobileMenu}> FAQ's</Link>
-          <button className="justify-center border-[1px] p-2 rounded-md">Try Free</button>
+          <Link to="/" className={`link hover:text-blue-500 cursor-pointer ${location.pathname === '/' ? 'active' : ''}`} onClick={toggleMobileMenu}>Home</Link>
+        <Link to="/guidebook"className={`link hover:text-blue-500 cursor-pointer ${location.pathname === '/guidebook' ? 'active' : ''}`} onClick={toggleMobileMenu}>Guide Book</Link>
+        <Link to="/customize" className={`link hover:text-blue-500 cursor-pointer ${location.pathname === '/customize' ? 'active' : ''}`} onClick={toggleMobileMenu}>Customize</Link>
+        <Link to="/contact" className={`link hover:text-blue-500 cursor-pointer ${location.pathname === '/contact' ? 'active' : ''}`} onClick={toggleMobileMenu}>Contact Us</Link>
+        <Link to="/faq" className={`link hover:text-blue-500 cursor-pointer ${location.pathname === '/faq' ? 'active' : ''}`} onClick={toggleMobileMenu}> FAQ's</Link>
+        <Button>Try now</Button>
         </div>
       )}
 
