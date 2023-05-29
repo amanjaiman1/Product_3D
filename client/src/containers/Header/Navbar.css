@@ -1,4 +1,4 @@
-/* @import url("https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap");
 
 .navbar {
   font-family: "Poppins", sans-serif;
@@ -252,4 +252,4 @@ label .fa-moon {
   height: 2px;
   background-color: #293fce;
   transition: width 0.3s ease-in-out;
-} */
+}

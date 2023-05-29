@@ -7,7 +7,4 @@ import logoShirt from "./image/logo-tshirt.png";
 import stylishShirt from "./image/stylish-tshirt.png";
 import navTshirt from "./image/icons8-shirt-512.png";
 import hero from './image/hero.png'
-import Card1 from "./image/Card1.png"
-import Card2 from './image/Card2.png'
-import Card3 from './image/Card3.png'
-export { hero, ai, fileIcon, swatch, logoShirt,download, stylishShirt, navTshirt, menuToggle, Card1, Card2, Card3 };
+export { hero, ai, fileIcon, swatch, logoShirt,download, stylishShirt, navTshirt, menuToggle };
