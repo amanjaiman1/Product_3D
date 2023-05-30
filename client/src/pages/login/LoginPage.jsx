@@ -49,7 +49,8 @@ const Login = () => {
           <Button
             variant="contained"
             color="primary"
-            style={{ margin: "10px", background: "#efbc49" }}
+            style={{ margin: "10px", backgroundColor: "#7E56DA",
+            color: "white" }}
           >
             <ArrowBackIcon />
             Go Back

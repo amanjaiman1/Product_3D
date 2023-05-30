@@ -50,7 +50,8 @@ const Signup = () => {
           <Button
             variant="contained"
             color="primary"
-            style={{ margin: "10px", background: "#efbc49" }}
+            style={{ margin: "10px",backgroundColor: "#7E56DA",
+                  color: "white" }}
           >
             <ArrowBackIcon />
             Go Back
@@ -65,8 +66,8 @@ const Signup = () => {
           unmountOnExit
           timeout={1000}
         >
-          <div className="md:w-1/2 md:p-8 flex flex-col ">
-            <div className="login-section m:p-16 sm:p-8 p-0 lg:pl-36">
+          <div className="md:w-1/2 md:p-4 lg:p-6 p-0 ml-[-20px] sm:m-0 lg:m-0 md:m-0 flex flex-col ">
+            <div className="login-section md:p-16 sm:p-8 p-0 lg:pl-36">
             <h2 className="text-3xl mb-4 font-bold">
               {isSignup ? "Sign up" : "Welcome Back"}
             </h2>
