@@ -8,8 +8,8 @@ import { Autoplay, Pagination, Navigation } from "swiper";
 import "./Card.css";
 const Testimonials = () => {
   return (
-    <div className="px-8 py-6 md:py-0 md:p-10 mb-10 md:mb-16 lg:pl-44 lg:pr-44 md:items-center">
-      <div className="h-80">
+    <div className="px-6 py-6 md:py-0 md:p-10 mb-10 md:mb-16 lg:pl-44 lg:pr-44 md:items-center">
+      <div className="h-[25rem] md:h-96">
         <Swiper
           spaceBetween={30}
           centeredSlides={true}
