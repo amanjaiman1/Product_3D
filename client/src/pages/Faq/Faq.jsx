@@ -1,10 +1,10 @@
 import React from "react";
 import Accordion from "./Accordion";
-import "../scss/main.scss";
+import "./faq.css"
 
-import illustration__box from "../assets/svg/illustration-box-desktop.svg";
-import illustration__woman_desktop from "../assets/svg/illustration-woman-online-desktop.svg";
-import illustration__woman_mobile from "../assets/svg/illustration-woman-online-mobile.svg";
+import illustration__box from "../../assets/svg/illustration-box-desktop.svg";
+import illustration__woman_desktop from "../../assets/svg/illustration-woman-online-desktop.svg";
+import illustration__woman_mobile from "../../assets/svg/illustration-woman-online-mobile.svg";
 
 const questionsAnswers = [
   {
