@@ -1,35 +1,8 @@
-import React, { useState } from "react";
-import {Button, Slide, Fade } from "@mui/material";
+import React from "react";
 import canvas1 from "/src/assets/image/canvas1.gif";
 import faGoogle from "/src/assets/image/google-48.png";
-import { Link } from "react-router-dom";
 
-const Signup = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [pswd, setPswd] = useState("");
-  const [mobile, setMobile] = useState("");
-  const [Loading, setLoading] = useState("");
-  const [isSignup, setIsSignup] = useState(true);
-  const [checked, setChecked] = useState(false);
-  const [animation, setanimation] = useState(true);
-
-  const handleChange = () => {
-    setanimation((prev) => !prev);
-  };
-
-  const handleSwitchMode = () => {
-    setIsSignup(!isSignup);
-    setName("");
-    setEmail("");
-    setPswd("");
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Perform form submission logic here
-  };
-
+const Signup=()=>{
   return (
     <div
       className="signup-container"
@@ -38,22 +11,15 @@ const Signup = () => {
       }}
     >
       <div className="flex">
-        <Fade
-          direction="left"
-          in={animation}
-          mountOnEnter
-          unmountOnExit
-          timeout={1000}
-        >
           <div className="md:w-1/2 md:p-4 lg:p-6 p-0 ml-[-20px] pt-8 lg:m-0 md:m-0 flex flex-col ">
-            <div className="login-section md:p-16 sm:p-8 p-0 lg:pl-36">
+            <div className="md:p-16 sm:p-8 p-0 lg:pl-36">
             <h2 className="text-3xl mb-4 font-bold">
-              {isSignup ? "Sign up" : "Welcome Back"}
+             Sign up
             </h2>
             <h4 className="mb-4 md:w-[400px] md:text-lg w-[300px] text-sm">
-              {isSignup ? "Please enter your details" : "Enter your details"}
+              Please enter your details
             </h4>
-            <form onSubmit={handleSubmit}>
+            <form >
 
                 {/* ------------------Inputs-------------------------------- */}
 
@@ -64,8 +30,6 @@ const Signup = () => {
                   label="Name"
                   placeholder="Enter your Name"
                   type="name"
-                  value={name}
-                  onChange={(e) => setName(e.target.value)}
                 />
               </div>
 
@@ -76,8 +40,6 @@ const Signup = () => {
                   label="Email"
                   placeholder="Enter your Email"
                   type="email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
                 />
               </div>
 
@@ -91,85 +53,66 @@ const Signup = () => {
                 />
               </div>
               <div className="md:w-[400px] w-[300px] text-sm flex flex-inline justify-between mt-2">
+                <div>
                 <label
                   htmlFor="rememberMe"
                   className="bg-transparent w-[150px] text-xs md:text-sm"
                 >
                   <input
-                    className="mr-0"
-                    type="checkbox"
-                    id="rememberMe"
-                    checked={checked}
-                    onChange={() => {
-                      setChecked(!checked);
-                    }}
-                  />
-                  Remember me
-                </label>
-                <a className="md:w-[150px] md:text-sm text-xs text-purple-500 cursor-pointer mt-2">
-                  Forgot password?
-                </a>
-              </div>
+                      className="mr-1"
+                      type="checkbox"
+                      id="rememberMe"
+                    />
+                    Remember me
+                  </label>
+                </div>
+                  <a className="md:w-[150px] md:text-sm text-xs text-purple-500 cursor-pointer">
+                    Forgot password?
+                  </a>
+                </div>
+              
 
                     {/* ---------------------Signup buttons------------------------ */}
 
-              <div className="google-button-container mt-10">
+              <div className="mt-10">
               <button
-                className="md:w-[400px] w-[300px] text-center text-lg font-medium mb-4 p-2 border rounded"
-                // color="success"
-                style={{
-                  backgroundColor: "#7E56DA",
-                  color: "white",
-                }}
+                className="md:w-[400px] w-[300px] text-center bg-purple-500 text-white text-lg font-medium mb-4 p-2 border rounded"
                 type="submit"
               >
-                {isSignup ? "Sign up" : "Sign in"}
+                Sign up
               </button>
-                <Button
-                  variant="contained"
-                  size="large"
-                  className="md:w-[400px] w-[300px] text-center text-lg font-medium mt-4 p-2 border rounded"
-                  style={{
-                    background: "#fff",
-                    color: "#333",
-                    border:"1px gray",
-                    marginTop:"5px"
-                  }}
+                <button
+                  className="md:w-[400px] w-[300px] bg-white text-black shadow-md text-center text-lg font-medium mb-4 p-2 border rounded"
+                  
+                  type="submit"
                 >
-                  <img src={faGoogle} alt="google-Icon" style={{width:"25px"}}/>
-                  <span>
-                    {isSignup ? "Sign Up with Google" : "Sign in with Google"}
-                  </span>
-                </Button>
+                  <div className="flex justify-center">
+                  <img src={faGoogle} alt="google-Icon" className="w-[25px]"/>
+                  
+                 Sign Up with Google
+                
+                  </div>
+                  
+                </button>
               </div>
             </form>
             <div className="google-button-container">
             <p className="mt-4 md:w-[400px] w-[300px]">
-              {isSignup ? "Already have an account?" : "Don't have an account?"}
-              <button onClick={handleSwitchMode} className="ml-1 text-purple-500">
-                {isSignup ? "Login" : "Signup"}
+             Already have an account?
+              <button className="ml-1 text-purple-500">
+                Login
               </button>
             </p>
             </div>
           </div>
           </div>
-        </Fade>
-        <Slide
-          direction="left"
-          in={animation}
-          mountOnEnter
-          unmountOnExit
-          timeout={700}
-        >
 
                   {/* ----------------------Right side Image-------------------------------- */}
 
-          <div className="Right-panel hidden md:flex md:w-1/2 flex-grow">
-          <div className="slide-image-container">
-            <img src={canvas1} alt="canvas image"  className="md:w-[600px] h-[500px] lg:pr-24"/>
+          
+          <div className="hidden md:block">
+            <img src={canvas1} alt="canvas image"  className="pt-40 h-auto w-auto"/>
           </div>
-          </div>
-        </Slide>
       </div>
     </div>
   );
