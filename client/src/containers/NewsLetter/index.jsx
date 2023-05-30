@@ -20,9 +20,9 @@ function NewsLetter() {
         <form className="flex pt-[15px]">
           <input
             type="email"
-            placeholder="Enter your email address"
+            placeholder="Enter your email"
             required
-            className="px-4 py-2 border border-gray-300 rounded-l-[50px] focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-[480px] h-[67px] rounded-r-[50px] transition-shadow duration-300 hover:shadow-lg"
+            className="px-4 py-2 border border-gray-300 rounded-l-[50px] focus:outline-none md:text-[1.5rem] text-[0.7rem] focus:ring-blue-500 focus:border-blue-500 w-11/12 h-8 md:h-12 rounded-r-[50px] transition-shadow duration-300 hover:shadow-lg"
             style={{ fontFamily: 'Poppins, sans-serif' }}
           />
           <div className="flex items-center">
