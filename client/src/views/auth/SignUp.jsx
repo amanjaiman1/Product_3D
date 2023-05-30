@@ -1,8 +1,7 @@
 import React, { useState } from "react";
-import { TextField, Button, Slide, Fade } from "@mui/material";
-import canvas1 from "../assets/image/canvas1.gif";
-import ArrowBackIcon from "@mui/icons-material/ArrowBack";
-import faGoogle from "../assets/image/google-48.png";
+import {Button, Slide, Fade } from "@mui/material";
+import canvas1 from "/src/assets/image/canvas1.gif";
+import faGoogle from "/src/assets/image/google-48.png";
 import { Link } from "react-router-dom";
 
 const Signup = () => {
