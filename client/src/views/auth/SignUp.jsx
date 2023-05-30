@@ -4,14 +4,8 @@ import faGoogle from "/src/assets/image/google-48.png";
 
 const Signup=()=>{
   return (
-    <div
-      className="signup-container"
-      style={{
-        overflowX: "hidden",
-      }}
-    >
-      <div className="flex">
-          <div className="md:w-1/2 md:p-4 lg:p-6 p-0 ml-[-20px] pt-8 lg:m-0 md:m-0 flex flex-col ">
+  <div className="flex">
+          <div className="md:w-1/2 md:p-4 lg:p-6 p-0 pt-8 lg:m-0 md:m-0 flex flex-col m-4">
             <div className="md:p-16 sm:p-8 p-0 lg:pl-36">
             <h2 className="text-3xl mb-4 font-bold">
              Sign up
@@ -19,7 +13,7 @@ const Signup=()=>{
             <h4 className="mb-4 md:w-[400px] md:text-lg w-[300px] text-sm">
               Please enter your details
             </h4>
-            <form >
+            <form>
 
                 {/* ------------------Inputs-------------------------------- */}
 
@@ -74,27 +68,25 @@ const Signup=()=>{
 
                     {/* ---------------------Signup buttons------------------------ */}
 
-              <div className="mt-10">
-              <button
-                className="md:w-[400px] w-[300px] text-center bg-purple-500 text-white text-lg font-medium mb-4 p-2 border rounded"
-                type="submit"
-              >
-                Sign up
-              </button>
-                <button
-                  className="md:w-[400px] w-[300px] bg-white text-black shadow-md text-center text-lg font-medium mb-4 p-2 border rounded"
+                    <div className="google-button-container">
+                  <button
+                    className="md:w-[400px] w-[300px] text-center text-lg font-medium mt-14 mb-4 p-2 border rounded bg-purple-500 text-white"
+                    type="submit"
+                  >
+                    Sign in
+                  </button>
+                  <button
+                    className="md:w-[400px] w-[300px] shadow-md text-center text-lg font-medium mb-4 p-2 border rounded bg-white text-black"
+                    type="submit"
+                  >
+                    
                   
-                  type="submit"
-                >
-                  <div className="flex justify-center">
-                  <img src={faGoogle} alt="google-Icon" className="w-[25px]"/>
-                  
-                 Sign Up with Google
-                
-                  </div>
-                  
-                </button>
-              </div>
+                    <div className="flex justify-center"><img src={faGoogle} alt="google-Icon" className="w-8" />
+                    
+                   Sign In with Google
+                   </div>
+                    </button>
+                </div>
             </form>
             <div className="google-button-container">
             <p className="mt-4 md:w-[400px] w-[300px]">
@@ -114,7 +106,6 @@ const Signup=()=>{
             <img src={canvas1} alt="canvas image"  className="pt-40 h-auto w-auto"/>
           </div>
       </div>
-    </div>
   );
 };
 
