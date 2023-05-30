@@ -4,8 +4,8 @@ import Home from "./views/app/Home";
 import ErrorPage from "./views/app/Error";
 import './index.css'
 import Faq from "./views/app/Faq";
-// import LoginPage from "./views/auth/LoginPage";
-// import SignUp from "./views/auth/SignUp";
+import LoginPage from "./views/auth/LoginPage";
+import SignUp from "./views/auth/SignUp";
 
 function App() {
   return (
@@ -14,8 +14,8 @@ function App() {
         <Route Component={Home} path="/"/>
         <Route Component={Faq} path="/faq"/>
         <Route Component={ErrorPage} path="/*"/>
-        {/* <Route Component={LoginPage} path="/login"/>
-        <Route Component={SignUp} path="/signup"/> */}
+        <Route Component={LoginPage} path="/login"/>
+        <Route Component={SignUp} path="/signup"/>
       </Routes>
     </BrowserRouter>
   );
