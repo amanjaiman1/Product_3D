@@ -1,58 +1,31 @@
-import React, { useState, useEffect } from 'react';
-import { Link , useLocation} from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import logoTshirt from '../../assets/image/icons8-shirt-512.png'
-import "./Navbar.css";
 
 const Navbar = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const location = useLocation();
-
-  useEffect(() => {
-    const currentMode = localStorage.getItem('darkMode');
-    setIsDarkMode(currentMode === 'true');
-    applyDarkMode(currentMode === 'true');
-  }, []);
-
-  const toggleDarkMode = () => {
-    const newMode = !isDarkMode;
-    setIsDarkMode(newMode);
-    localStorage.setItem('darkMode', newMode);
-    applyDarkMode(newMode);
-  };
-
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
-  const applyDarkMode = (isDark) => {
-    // Apply dark mode styles to your application here
-    if (isDark) {
-      // Apply dark mode styles
-      document.documentElement.classList.add('dark-mode');
-    } else {
-      // Remove dark mode styles
-      document.documentElement.classList.remove('dark-mode');
-    }
-  };
 
   return (
-    <nav className={`nav-container  navbar flex flex-row py-5 ${isDarkMode ? 'dark-mode' : ''}`}>
+    <nav className={`navbar py-8 p-[10%] max-sm:px-0 max-sm:py-5 flex`}>
       <div className="pl-5">
         <Link to="/">
           <img className="w-12 justify-center align-middle" src={logoTshirt} alt="Logo" />
         </Link>
           {/* <p className="Brand-heading">PRODUCT 3D</p> */}
       </div>
-      <div className="ml-auto max-sm:hidden space-x-10 pr-5">
+      <div className="ml-auto max-lg:hidden space-x-10 pr-5">
         <Link to="/" className={`link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
         <Link to="/guidebook"className={`link ${location.pathname === '/guidebook' ? 'active' : ''}`}>Guide Book</Link>
         <Link to="/contact" className={`link ${location.pathname === '/contact' ? 'active' : ''}`}>Contributors</Link>
         <Link to="/faq" className={`link ${location.pathname === '/faq' ? 'active' : ''}`}> FAQ's</Link>
-        <button className="tryfree-btn justify-center p-2 rounded-md">Try Free</button>
+        <button className="tryfree-btn justify-center p-2 rounded-md h-10">Try Free</button>
       </div>
 
-      <div className="ml-auto mr-5 sm:hidden">
+      <div className="ml-auto mr-5 lg:hidden">
         <button className={`mobile-menu-toggle ${isMobileMenuOpen ? 'open' : ''}`} onClick={toggleMobileMenu}>
           <span className="bar"></span>
           <span className="bar"></span>
