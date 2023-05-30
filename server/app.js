@@ -1,10 +1,13 @@
 const express = require('express')
 const cors = require('cors')
+const path = require('path');
 const app = express();
 
 app.use(cors());
 app.use(express.json({ limig: "50mb" }))
-require('./config/db')
+require('./config/db') 
+
+
 
 const unsplashRoutes = require('./routes/unsplash.routes')
 const userRoutes = require('./routes/user.routes')
