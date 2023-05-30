@@ -5,6 +5,7 @@ import ErrorPage from "./views/app/Error";
 import './index.css'
 import Faq from "./views/app/Faq";
 import LoginPage from "./pages/login/LoginPage";
+import SignUp from "./pages/SignUp";
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         <Route Component={Faq} path="/faq"/>
         <Route Component={ErrorPage} path="/*"/>
         <Route Component={LoginPage} path="/login"/>
+        <Route Component={SignUp} path="/signup"/>
       </Routes>
     </BrowserRouter>
   );
