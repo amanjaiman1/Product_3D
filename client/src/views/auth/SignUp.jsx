@@ -1,6 +1,8 @@
 import React from "react";
 import canvas1 from "/src/assets/image/canvas1.gif";
 import faGoogle from "/src/assets/image/google-48.png";
+import LoginPage from "./LoginPage";
+import Login from "./LoginPage";
 
 const Signup = () => {
   return (
@@ -68,7 +70,7 @@ const Signup = () => {
 
             {/* ---------------------Signup buttons------------------------ */}
 
-            <div className="google-button-container">
+            <div className="flex flex-col">
               <button
                 className="md:w-[400px] w-[300px] text-center text-lg font-medium mt-14 mb-4 p-2 border rounded bg-purple-500 text-white"
                 type="submit"
@@ -92,7 +94,7 @@ const Signup = () => {
             <p className="mt-4 md:w-[400px] w-[300px]">
               Already have an account?
               <button className="ml-1 text-purple-500">
-                Login
+               <a href="./Login">Login</a>
               </button>
             </p>
           </div>

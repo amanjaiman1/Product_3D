@@ -4,7 +4,7 @@ import Home from "./views/app/Home";
 import ErrorPage from "./views/app/Error";
 import './index.css'
 import Faq from "./views/app/Faq";
-import LoginPage from "./views/auth/login/LoginPage";
+import LoginPage from "./views/auth/LoginPage";
 import SignUp from "./views/auth/SignUp";
 
 function App() {

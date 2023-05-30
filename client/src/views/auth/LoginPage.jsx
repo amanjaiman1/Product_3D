@@ -8,7 +8,7 @@ const Login = () => {
     <div className="flex">
       <div className="md:w-1/2 md:p-8 flex flex-col mt-4 m-4">
         <div className="md:p-16 sm:p-8 p-0 lg:pl-36 lg:m-4 md:w-1/2 lg:p-16 pt-8 md:m-0 flex flex-col ">
-          <h2 className="text-3xl mb-4 font-bold">
+          <h2 className="text-3xl mb-4 font-bold md:w-[400px]">
             Welcome Back
           </h2>
           <h4 className="mb-4 md:w-[400px] md:text-lg w-[300px] text-sm">
@@ -58,9 +58,9 @@ const Login = () => {
 
             {/* --------------------Sign In Buttons------------------------------ */}
 
-            <div className="google-button-container">
+            <div className="flex flex-col">
               <button
-                className="md:w-[400px] w-[300px] text-center text-lg font-medium mt-14 mb-4 p-2 border rounded bg-purple-500 text-white"
+                className="md:w-[400px] w-[300px] text-center text-lg font-medium mt-14 mb-4 mr-2 p-2 border rounded bg-purple-500 text-white"
                 type="submit"
               >
                 Sign in
@@ -80,7 +80,7 @@ const Login = () => {
             <p className="mt-4 md:w-[400px] w-[300px]">
               Don't have an account?
               <button className="ml-1 text-purple-500">
-                Signup
+                <a href="./Signup">Signup</a>
               </button>
             </p>
           </div>
