@@ -13,7 +13,7 @@ function App() {
         <Route Component={Home} path="/"/>
         <Route Component={Faq} path="/faq"/>
         {/* <Route Component={LoginPage} path="/login"/> */}
-        <Route Component={ErrorPage} path="/404"/> {/* please keep this the last path else '/*' means everything and is giving errors in the routes when typed */}
+        <Route Component={ErrorPage} path=""/> {/* please keep this the last path else '/*' means everything and is giving errors in the routes when typed */}
       </Routes>
     </BrowserRouter>
   );
