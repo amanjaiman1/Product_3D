@@ -56,6 +56,8 @@ const Signup = () => {
             </h4>
             <form onSubmit={handleSubmit}>
 
+                {/* ------------------Inputs-------------------------------- */}
+
             <div className="flex flex-col mb-4">
                 <p className="font-semibold md:w-[400px] md:text-lg w-[300px] text-sm">Name</p>
                 <input
@@ -109,6 +111,9 @@ const Signup = () => {
                   Forgot password?
                 </a>
               </div>
+
+                    {/* ---------------------Signup buttons------------------------ */}
+
               <div className="google-button-container mt-10">
               <button
                 className="md:w-[400px] w-[300px] text-center text-lg font-medium mb-4 p-2 border rounded"
@@ -157,6 +162,9 @@ const Signup = () => {
           unmountOnExit
           timeout={700}
         >
+
+                  {/* ----------------------Right side Image-------------------------------- */}
+
           <div className="Right-panel hidden md:flex md:w-1/2 flex-grow">
           <div className="slide-image-container">
             <img src={canvas1} alt="canvas image"  className="md:w-[600px] h-[500px] lg:pr-24"/>
