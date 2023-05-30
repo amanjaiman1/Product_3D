@@ -38,26 +38,6 @@ const Signup = () => {
         overflowX: "hidden",
       }}
     >
-      <div className="cus-flex ">
-        <h1 className="text-4xl font-bold mb-8 mt-4 ml-4 ">
-          Product{" "}
-          <span className="relative z-10">
-            <span className="transform rotate-6 inline-block">3</span>
-            <span className="transform -rotate-6 inline-block ml-1">D</span>
-          </span>
-        </h1>
-        <Link to="/">
-          <Button
-            variant="contained"
-            color="primary"
-            style={{ margin: "10px",backgroundColor: "#7E56DA",
-                  color: "white" }}
-          >
-            <ArrowBackIcon />
-            Go Back
-          </Button>
-        </Link>
-      </div>
       <div className="flex">
         <Fade
           direction="left"
@@ -66,7 +46,7 @@ const Signup = () => {
           unmountOnExit
           timeout={1000}
         >
-          <div className="md:w-1/2 md:p-4 lg:p-6 p-0 ml-[-20px] sm:m-0 lg:m-0 md:m-0 flex flex-col ">
+          <div className="md:w-1/2 md:p-4 lg:p-6 p-0 ml-[-20px] pt-8 lg:m-0 md:m-0 flex flex-col ">
             <div className="login-section md:p-16 sm:p-8 p-0 lg:pl-36">
             <h2 className="text-3xl mb-4 font-bold">
               {isSignup ? "Sign up" : "Welcome Back"}
