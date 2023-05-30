@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "../containers/Header/Navbar";
-import Footer from "../containers/Footer";
+import Footer from "../containers/Footer/index.jsx";
+import styles from '../style';
 
 function HomeLayout({ children }) {
   return (
@@ -9,7 +10,11 @@ function HomeLayout({ children }) {
       <main className="min-[400px]:px-10">
         <section className="container mx-auto px-4 py-8">{children}</section>
       </main>
-      <Footer />
+      <div className={`bg-[#F4F8FD] ${styles.paddingX} ${styles.flexStart}`}>
+        <div className={`${styles.boxWidth}`}>
+          <Footer />
+        </div>
+      </div>
     </div>
   );
 }
