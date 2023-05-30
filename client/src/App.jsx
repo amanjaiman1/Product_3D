@@ -4,8 +4,8 @@ import Home from "./views/app/Home";
 import ErrorPage from "./views/app/Error";
 import './index.css'
 import Faq from "./views/app/Faq";
-import LoginPage from "./pages/login/LoginPage";
-import SignUp from "./pages/SignUp";
+import LoginPage from "./views/auth/login/LoginPage";
+import SignUp from "./views/auth/SignUp";
 
 function App() {
   return (
