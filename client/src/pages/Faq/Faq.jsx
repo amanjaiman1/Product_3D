@@ -8,26 +8,58 @@ import illustration__woman_mobile from "../../assets/svg/illustration-woman-onli
 
 const questionsAnswers = [
   {
-    question: "How do I customize my t-shirt on your website?",
+    question: "How many t-shirt colours are available for selection in this customisation application?",
     answer:
-"To customize your t-shirt, simply choose the style, color, size, and explore options like adding text, uploading images, or selecting pre-designed patterns. Use our design tools and DalleAI integration to personalize your t-shirt.",
+"This customisation application offers a diverse range of t-shirt colours to cater to various stylesand moods",
   },
   {
-    question: "What customization options are available?",
+    question: "Can I personalise my t-shirt design by uploading my own logos or images",
     answer:
-      "We offer text, image upload, and pre-designed pattern options for customization.",
+      "Certainly, this application allows for seamless personalisation by enabling the upload of custom logos or images onto the t-shirt design",
   },
   {
-    question: "How does the DalleAI integration work?",
-    answer: `DalleAI uses AI algorithms to generate custom images based on your preferences or keywords. These images can be applied to your t-shirt design.`,
+    question: "What does the Unsplash integration feature entail and how does it elevate the t-shirt customisation experience?",
+
+    answer: `The Unsplash integration feature harnesses the power of Unsplash technology, empowering users to generate unique custom images that adorn the t-shirt as logos or complete designs`,
   },
   {
-    question: "Can I see a preview of my customized t-shirt before ordering?",
-    answer: `Yes, our website provides a real-time preview of your design as you make changes.`,
+    question: " Is there a functionality to remove logos or images that have been applied to the t-shirt ",
+  
+    answer: "Yes, users have the freedom to effortlessly remove any logos or images that have been applied to the t-shirt by simply clicking the designated remove button.",
   },
   {
-    question: "How do I place an order?",
-    answer: `Select the size and quantity, add to cart, provide shipping and payment details, review your order, and confirm your purchase.`,
+    question: " Can I download the final t-shirt design as an image file ",
+  
+    answer: "Absolutely, users can preserve their masterpiece by downloading the completed t-shirt design as an image file.",
+  },
+
+  {
+    question: " Is there a maximum limit on the number of logos or images that can be uploaded to personalise the t-shirt",
+  
+    answer: " No specific limit is mentioned regarding the number of logos or images that can be uploaded, thus allowing users to personalise their t-shirt with as many as desired.",
+  },
+
+  {
+    question: " Can I preview the t-shirt design before finalising and downloading it?",
+  
+    answer: "The availability of a preview feature is not specified in the provided information. It is advisable to explore the application to determine if such a feature exists.",
+  },
+
+  {
+    question: " Are there any restrictions on the file format or size when uploading logos or images",
+  
+    answer: "The information does not mention any restrictions on file format or size. Users can likely upload logos or images in common formats such as JPEG, PNG, or GIF.",
+  },
+  {
+    question: " Does the application offer additional customisation options beyond colour selection and  logo/image upload? ",
+  
+    answer: "Aside from colour selection, logo/image upload, Unsplash integration, removal functionality,and downloading options, no other specific customisation options are mentioned. ",
+  },
+  
+  {
+    question: "Is there a cost associated with using this t-shirt customisation application ",
+  
+    answer: " The pricing details of the application are not specified. It is recommended to visit the application's website or contact their support for information regarding any associated costs ",
   },
 ];
 
