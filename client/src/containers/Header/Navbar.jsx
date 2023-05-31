@@ -1,6 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import logoTshirt from '../../assets/image/icons8-shirt-512.png'
+import styles from '../../style.js'; 
+import navbbar from '../../../old/components/navbar.css';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -10,7 +12,7 @@ const Navbar = () => {
 
 
   return (
-    <nav className={`navbar py-8 p-[10%] max-sm:px-0 max-sm:py-5 flex`}>
+    <nav className={`navbar h-20 py-[28px] p-[10%] max-sm:px-0 max-sm:py-5 flex`} id='stickynavbar'>
       <div className="pl-5">
         <Link to="/">
           <img className="w-12 justify-center align-middle" src={logoTshirt} alt="Logo" />
