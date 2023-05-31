@@ -10,7 +10,7 @@ const Navbar = () => {
 
 
   return (
-    <nav className={`navbar py-8 p-[10%] max-sm:px-0 max-sm:py-5 flex`}>
+    <nav className={`sticky top-0 bg-blue-500/[.4] navbar py-8 p-[10%] max-sm:px-0 max-sm:py-5 flex`}>
       <div className="pl-5">
         <Link to="/">
           <img className="w-12 justify-center align-middle" src={logoTshirt} alt="Logo" />
