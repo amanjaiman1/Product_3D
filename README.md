@@ -170,5 +170,5 @@ If you'd like to contribute to this project, please fork the repository and subm
 </a>
 
 Thank you for using our 3D Product Customization Website!
-
+<!-- 1 -->
 <p align="right">(<a href="#top">Back to top</a>)</p>
