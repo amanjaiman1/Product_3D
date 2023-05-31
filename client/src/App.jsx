@@ -7,9 +7,9 @@ import "./index.css";
 import Faq from "./views/app/Faq";
 import Login from "./views/auth/Login";
 import SignUp from "./views/auth/SignUp";
+import { navTshirt } from "./assets";
 
-import { Grid } from "react-loader-spinner";
-
+import MoonLoader from "react-spinners/MoonLoader";
 function App() {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -22,14 +22,14 @@ function App() {
     <div>
       {loading ? (
         <div className="flex h-screen items-center justify-center bg-blue-100">
-          <Grid
+          <MoonLoader
             color="#293fce"
             ariaLabel="grid-loading"
             wrapperStyle={{}}
             wrapperClass=""
             visible={true}
-            size={12}
           />
+          <img src={navTshirt} className="h-14 w-14 -ml-16"></img>
         </div>
       ) : (
         <BrowserRouter>
