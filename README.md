@@ -21,8 +21,8 @@ Welcome to the 3D Product Customization Website! 🌟 This innovative web applic
 
 | Web | Mobile |
 |-----|--------|
-| <img src="https://imgur.com/DvEZnW7.png" width="300px" height="150px"/> | <img src="https://imgur.com/0B4fiun.png" width="90px" height="190px"/> |
-| <img src="https://imgur.com/dwkqsc0.png" width="300px" height="150px"/> | <img src="https://imgur.com/QmZYmSH.png" width="90px" height="160px"/> |
+| <img src="https://imgur.com/DvEZnW7.png" width="550px" height="300px"/> | <img src="https://imgur.com/0B4fiun.png" width="200px" height="300px"/> |
+| <img src="https://imgur.com/dwkqsc0.png" width="550px" height="300px"/> | <img src="https://imgur.com/QmZYmSH.png" width="200px" height="300px"/> |
 
 # Order and Delivery 🚚
 Once users are satisfied with their one-of-a-kind creations, our seamless ordering system ensures a smooth transaction. Simply select the desired size and quantity, and our dedicated team will handle the rest. With our efficient production and delivery processes, users can sit back and eagerly anticipate the arrival of their custom-designed t-shirts. 📦💨
