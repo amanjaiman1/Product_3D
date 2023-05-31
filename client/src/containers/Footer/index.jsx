@@ -1,8 +1,9 @@
 import React from "react";
 import styles from "../../style";
 import { objectFoot } from "../../assets";
-import { footerLinks } from ".";
+import { footerLinks } from "./index";
 
+// btn
 const Button = ({ styles }) => {
   return (
     <button type='button' 
@@ -23,12 +24,24 @@ const Button = ({ styles }) => {
 function Footer() {
   return (
     <footer className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
+
     <div className={`${styles.flexStart} md:flex-row flex-col mb-2 w-full`}>
-      <div className="flex-1 flex flex-col justify-start mr-10">
-        <img src={objectFoot} alt="3D-Tee" className="w-[465px] h-[265px] object-contain" />
+
+{/* img */}
+
+      <div 
+        className="flex-1 flex flex-row justify-center md:justify-start mr-10 lg:flex-col" 
+        style={{ 
+          paddingRight: '3rem', 
+          marginLeft: 'auto',
+        }}
+      >
+        <img src={objectFoot} alt="3D-Tee" className="w-[465px] h-[250px] object-contain" />
       </div>
 
-      <div className="flex-[1.5] w-full flex flex-row justify-between flex-wrap md:mt-0 mt-5 mr-10">
+{/* foot links */}
+
+      <div className="flex-[1.5] w-full flex flex-row justify-between ss:flex-wrap md:mt-0 mr-10">
         {footerLinks.map((footerLink) => (
           <div key={footerLink.key} className="flex flex-col ss:my-0 my-4 min-w-[150px]">
 
@@ -46,20 +59,24 @@ function Footer() {
 
           </div>
         ))}
+      </div>
 
-        <div className="mt-10 md:mb-5">
+{/* btn */}
+
+      <div className="flex-1 mt-10 md:mb-5 flex justify-center items-center">
           <Button />
-        </div>
-
       </div>
 
     </div>
+
+{/* copyright */}
 
     <div className="w-full flex justify-between items-center md:flex-row flex-col pt-6 border-t-[1px] border-t-[#BFC6F0]">
       <p  className={`font-poppins font-normal text-center text-[12px] leading-[27px] text-[#63657E] mx-auto`}>
         Opensource ©2023 | Fashion Forge 3D | All Rights Reserved.
       </p>
     </div>
+
   </footer>
   );
 }
