@@ -23,7 +23,13 @@ const Button = ({ styles }) => {
 
 function Footer() {
   return (
-    <footer className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
+    <footer 
+      className={`${styles.flexCenter} ${styles.paddingY} flex-col`}
+      style={{
+        paddingBottom: 25,
+        paddingTop: 0,
+      }}
+    >
 
     <div className="container mx-auto" style={{ marginBottom: 5 }}>
     <div className={`${styles.flexStart} md:flex-row flex-col mb-2 w-full
