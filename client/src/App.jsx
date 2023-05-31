@@ -7,7 +7,7 @@ import "./index.css";
 import Faq from "./views/app/Faq";
 import Login from "./views/auth/Login";
 import SignUp from "./views/auth/SignUp";
-import { navTshirt } from "./assets";
+import { favicon } from "./assets";
 
 import MoonLoader from "react-spinners/MoonLoader";
 function App() {
@@ -29,7 +29,7 @@ function App() {
             wrapperClass=""
             visible={true}
           />
-          <img src={navTshirt} className="h-14 w-14 -ml-16"></img>
+          <img src={favicon} className="h-14 w-12 -ml-16"></img>
         </div>
       ) : (
         <BrowserRouter>
