@@ -8,7 +8,7 @@ function Footer() {
     <footer className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
     <div className={`${styles.flexStart} md:flex-row flex-col mb-8 w-full`}>
       <div className="flex-1 flex flex-col justify-start mr-10">
-        <img src={objectFoot} alt="3D-Tee" className="w-[500px] h-[265px] object-contain" />
+        <img src={objectFoot} alt="3D-Tee" className="w-[465px] h-[265px] object-contain" />
       </div>
 
       <div className="flex-[1.5] w-full flex flex-row justify-between flex-wrap md:mt-0 mt-10 mr-10">
