@@ -8,6 +8,7 @@
 
 body {
   font-family: "Poppins", sans-serif;
+  scroll-behaviour: smooth;
 }
 
 .main-div::-webkit-scrollbar{
