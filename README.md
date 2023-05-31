@@ -19,8 +19,10 @@
 # 3D Product Customization Website 🎨
 Welcome to the 3D Product Customization Website! 🌟 This innovative web application empowers users to personalize their very own t-shirts with ease. With a wide range of customization options at their fingertips, users can unleash their creativity and design unique garments that reflect their individuality. Get ready to embark on a journey of self-expression and style! 🎉
 
-# DalleAI Integration 🤖
-We take customization to the next level with our integration of DalleAI technology. Powered by cutting-edge AI algorithms, DalleAI generates stunning custom images for users to apply to their t-shirts. This feature opens up a world of endless possibilities, allowing users to bring their wildest imaginations to life. From intricate patterns to personalized artwork, DalleAI adds an extra touch of magic to the customization experience. 🎨🤩
+| Web | Mobile |
+|-----|--------|
+| <img src="https://imgur.com/DvEZnW7.png" width="300px" height="150px"/> | <img src="https://imgur.com/0B4fiun.png" width="90px" height="190px"/> |
+| <img src="https://imgur.com/dwkqsc0.png" width="300px" height="150px"/> | <img src="https://imgur.com/QmZYmSH.png" width="90px" height="160px"/> |
 
 # Order and Delivery 🚚
 Once users are satisfied with their one-of-a-kind creations, our seamless ordering system ensures a smooth transaction. Simply select the desired size and quantity, and our dedicated team will handle the rest. With our efficient production and delivery processes, users can sit back and eagerly anticipate the arrival of their custom-designed t-shirts. 📦💨
@@ -76,25 +78,6 @@ This command will start the client application. It typically runs on port 5173, 
 ```
 npm start
 ```
-
-## Features 🌟
-This application boasts an array of impressive features to enhance your t-shirt customization experience:
-
-**Color Selection**: Choose from a delightful range of t-shirt colors to suit your style and mood.
-
-
-**Image/Logo Upload**: Personalize your t-shirt by uploading your own logos or images to be applied seamlessly.
-
-
-**DalleAI Integration**: Unlock the power of DalleAI technology, generating unique custom images to adorn your t-shirt as logos or full designs.
-
-
-**Remove Functionality**: Enjoy the freedom to remove any applied logos or images with a simple click of the "remove" button.
-
-
-**Download Option**: Capture your masterpiece by downloading your completed t-shirt design as an image file.
-
-Certainly! Here's a step-by-step guide on how to contribute to a project:
 
 
 ## How To Contributing 🤝
