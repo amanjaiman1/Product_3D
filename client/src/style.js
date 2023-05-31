@@ -25,4 +25,14 @@ const styles = {
     sectionInfo: `flex-1 ${styles.flexStart} flex-col`,
   };
   
+
+  // Sticky navbar function
+  window.addEventListener("scroll", function() {
+    var navbar = document.querySelector('nav');
+    navbar.classList.toggle("sticky" , this.scrollY > 0);
+  });
+
+
+
+
   export default styles;
