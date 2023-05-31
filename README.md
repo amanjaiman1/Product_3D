@@ -158,6 +158,7 @@ Certainly! Here's a step-by-step guide on how to contribute to a project:
 
 Congratulations! You've successfully contributed to the project. Your changes will now be reviewed by the project maintainers, and they may provide feedback or merge your changes into the main project if they are deemed appropriate.
 
+<!-- update it page -->
 
 ## Contributing 🤝
 
