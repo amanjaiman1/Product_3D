@@ -25,33 +25,40 @@ function Footer() {
   return (
     <footer className={`${styles.flexCenter} ${styles.paddingY} flex-col`}>
 
-    <div className={`${styles.flexStart} md:flex-row flex-col mb-2 w-full`}>
+    <div className="container mx-auto" style={{ marginBottom: 5 }}>
+    <div className={`${styles.flexStart} md:flex-row flex-col mb-2 w-full
+    flex flex-wrap justify-center md:justify-between`}>
 
 {/* img */}
 
       <div 
-        className="flex-1 flex flex-row justify-center md:justify-start mr-10 lg:flex-col" 
+        className="flex-1 flex flex-row justify-center md:justify-start mr-10
+        w-full md:w-auto mb-4 md:mb-0 md:mr-4" 
         style={{ 
-          paddingRight: '3rem', 
+          paddingRight: '2rem', 
           marginLeft: 'auto',
+          paddingLeft: '2rem',
         }}
       >
-        <img src={objectFoot} alt="3D-Tee" className="w-[465px] h-[250px] object-contain" />
+        <img src={objectFoot} alt="3D-Tee" className="w-[465px] h-[250px] object-contain w-full" />
       </div>
 
 {/* foot links */}
 
-      <div className="flex-[1.5] w-full flex flex-row justify-between ss:flex-wrap md:mt-0 mr-10">
+      <div className="flex-[1.5] w-full flex flex-row justify-between md:mt-0 mr-10">
         {footerLinks.map((footerLink) => (
-          <div key={footerLink.key} className="flex flex-col ss:my-0 my-4 min-w-[150px]">
+          <div key={footerLink.key} className="flex flex-col ss:my-0 my-4 min-w-[150px] 
+          w-full md:w-auto mb-4 md:mb-0 md:flex-1 md:mr-4">
 
-            <h4 className="font-poppins font-medium text-[18px] leading-[27px] text-[#090F4E]">
+            <h4 className="font-poppins font-medium text-[18px] leading-[27px] text-[#090F4E]
+            text-center md:text-left">
               {footerLink.title}
             </h4>
 
             <ul className="list-none mt-4">
               {footerLink.links.map((link, index) => (
-                <li key={link.name} className={`font-poppins font-normal text-[16px] leading-[24px] text-[#63657E] hover:text-[#6058f2] cusror-pointer ${styles.index !== footerLink.links.length -1 ? 'mb-4' : 'mb-0'}`}>
+                <li key={link.name} className={`font-poppins font-normal text-[16px] leading-[24px] text-[#63657E] hover:text-[#6058f2] cusror-pointer
+                text-center md:text-left ${styles.index !== footerLink.links.length -1 ? 'mb-4' : 'mb-0'}`}>
                   {link.name}
                 </li>
               ))}
@@ -63,10 +70,15 @@ function Footer() {
 
 {/* btn */}
 
-      <div className="flex-1 mt-10 md:mb-5 flex justify-center items-center">
+      <div 
+        className="flex-1 mt-10 md:mb-10 flex justify-center items-center 
+        w-full md:w-auto
+        xl:ml-[-12rem] lg:ml-[-6rem] md:ml-[-4rem] sm:ml-[-2rem]"
+      >
           <Button />
       </div>
 
+    </div>
     </div>
 
 {/* copyright */}
