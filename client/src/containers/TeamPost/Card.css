@@ -1,0 +1,27 @@
+.swiper {
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+}
+.te {
+  background-color: #F8F9FF;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+.swiper-slide {
+  text-align: center;
+  font-size: 18px;
+  border-radius: 1.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.swiper-slide img {
+  display: block;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.swiper-pagination-bullet {
+  background-color: black;
+}

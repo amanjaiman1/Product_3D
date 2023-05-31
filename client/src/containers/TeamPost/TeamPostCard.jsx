@@ -1,43 +1,222 @@
-import React from 'react'
-import CardData from './CardData';
-import wolf from '../TeamPost/wolf.jpg';
-import linkedin from '../TeamPost/linkedin.svg';
-import star from '../TeamPost/star.svg';
-
-const Card1 = (props) => {
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import img from "./wolf.jpg";
+import { Autoplay, Pagination, Navigation } from "swiper";
+import "./Card.css";
+const Testimonials = () => {
   return (
-    <>
-      <div className="main-div flex max-sm:flex-col max-lg:flex-col max-lg:items-center  my-20 mx-20  overflow-x-auto">
-
-        {props.details.map((value, index) => (
-
-          <div className="card border-e-white shadow-md max-w-1/2 rounded-3xl px-6 py-6 mx-4 my-5 overflow-hidden min-w-min ">
-
-            <ul className='flex py-6'>
-              <li className='h-4 w-4'><img src={star} alt="#" /></li>
-              <li className='h-4 w-4'><img src={star} alt="#" /></li>
-              <li className='h-4 w-4'><img src={star} alt="#" /></li>
-              <li className='h-4 w-4'><img src={star} alt="#" /></li>
-              <li className='h-4 w-4'><img src={star} alt="#" /></li>
-            </ul>
-            <p>{value.desc}</p>
-            <div className='profile-details my-5 flex  items-center'>
-              <img src={wolf} alt="#" className='w-11 h-11 rounded-full item-center mr-4' />
-              <div className="profileinfo mr-9">
-                <h1 className='font-semibold'>{value.profilename}</h1>
-                <p>{value.profiledesc}</p>
+    <div className="px-6 py-6 md:py-0 md:p-10 mb-10 md:mb-16 lg:pl-44 lg:pr-44 md:items-center">
+      <div className="h-[25rem] md:h-96">
+        <Swiper
+          spaceBetween={30}
+          centeredSlides={true}
+          autoplay={{
+            delay: 2500,
+            disableOnInteraction: false,
+          }}
+          pagination={{
+            clickable: true,
+          }}
+          navigation={false}
+          modules={[Autoplay, Pagination, Navigation]}
+          className="mySwiper"
+        >
+          <SwiperSlide>
+            <div className="te bg-[#F8F9FF]  h-60 md:h-48 w-[90%] md:w-[50%] p-7 rounded-[1.5rem]">
+              <div className="flex flex-row gap-x-4 pt-4 justify-center items-center">
+                <div>
+                  <img src={img} alt="img" className="max-w-[60px]" />
+                </div>
+                <div className="flex items-start flex-col">
+                  <h1 className="font-semibold text-xl h-full">
+                    Amelia Joseph
+                  </h1>
+                  <p className="font-normal">Web Developer</p>
+                </div>
               </div>
-              <img src={linkedin} alt="" className='w-10 h-10' />
+              <div className="mt-6 items-center">
+                <p className="text-slate-500">
+                  I have cracked internship at Samsung R&D and Nokia with the
+                  help of your Java Placemenent Course.
+                </p>
+              </div>
             </div>
-
-
-
-          </div>
-        ))}
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="te bg-[#F8F9FF] h-60 md:h-48 w-[90%] md:w-[50%] p-7 rounded-[1.5rem]">
+              <div className="flex flex-row gap-x-4 pt-4 justify-center items-center">
+                <div>
+                  <img src={img} alt="img" className="max-w-[60px]" />
+                </div>
+                <div className="flex items-start flex-col">
+                  <h1 className="font-semibold text-xl h-full">
+                    Amelia Joseph
+                  </h1>
+                  <p className="font-normal">Web Developer</p>
+                </div>
+              </div>
+              <div className="mt-6 items-center">
+                <p className="text-slate-500">
+                  I have cracked internship at Samsung R&D and Nokia with the
+                  help of your Java Placemenent Course.
+                </p>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="te bg-[#F8F9FF] h-60 md:h-48 w-[90%] md:w-[50%] p-7 rounded-[1.5rem]">
+              <div className="flex flex-row gap-x-4 pt-4 justify-center items-center">
+                <div>
+                  <img src={img} alt="img" className="max-w-[60px]" />
+                </div>
+                <div className="flex items-start flex-col">
+                  <h1 className="font-semibold text-xl h-full">
+                    Amelia Joseph
+                  </h1>
+                  <p className="font-normal">Web Developer</p>
+                </div>
+              </div>
+              <div className="mt-6 items-center">
+                <p className="text-slate-500">
+                  I have cracked internship at Samsung R&D and Nokia with the
+                  help of your Java Placemenent Course.
+                </p>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="te bg-[#F8F9FF] h-60 md:h-48 w-[90%] md:w-[50%] p-7 rounded-[1.5rem]">
+              <div className="flex flex-row gap-x-4 pt-4 justify-center items-center">
+                <div>
+                  <img src={img} alt="img" className="max-w-[60px]" />
+                </div>
+                <div className="flex items-start flex-col">
+                  <h1 className="font-semibold text-xl h-full">
+                    Amelia Joseph
+                  </h1>
+                  <p className="font-normal">Web Developer</p>
+                </div>
+              </div>
+              <div className="mt-6 items-center">
+                <p className="text-slate-500">
+                  I have cracked internship at Samsung R&D and Nokia with the
+                  help of your Java Placemenent Course.
+                </p>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="te bg-[#F8F9FF] h-60 md:h-48 w-[90%] md:w-[50%] p-7 rounded-[1.5rem]">
+              <div className="flex flex-row gap-x-4 pt-4 justify-center items-center">
+                <div>
+                  <img src={img} alt="img" className="max-w-[60px]" />
+                </div>
+                <div className="flex items-start flex-col">
+                  <h1 className="font-semibold text-xl h-full">
+                    Amelia Joseph
+                  </h1>
+                  <p className="font-normal">Web Developer</p>
+                </div>
+              </div>
+              <div className="mt-6 items-center">
+                <p className="text-slate-500">
+                  I have cracked internship at Samsung R&D and Nokia with the
+                  help of your Java Placemenent Course.
+                </p>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="te bg-[#F8F9FF] h-60 md:h-48 w-[90%] md:w-[50%] p-7 rounded-[1.5rem]">
+              <div className="flex flex-row gap-x-4 pt-4 justify-center items-center">
+                <div>
+                  <img src={img} alt="img" className="max-w-[60px]" />
+                </div>
+                <div className="flex items-start flex-col">
+                  <h1 className="font-semibold text-xl h-full">
+                    Amelia Joseph
+                  </h1>
+                  <p className="font-normal">Web Developer</p>
+                </div>
+              </div>
+              <div className="mt-6 items-center">
+                <p className="text-slate-500">
+                  I have cracked internship at Samsung R&D and Nokia with the
+                  help of your Java Placemenent Course.
+                </p>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="te bg-[#F8F9FF] h-60 md:h-48 w-[90%] md:w-[50%] p-7 rounded-[1.5rem]">
+              <div className="flex flex-row gap-x-4 pt-4 justify-center items-center">
+                <div>
+                  <img src={img} alt="img" className="max-w-[60px]" />
+                </div>
+                <div className="flex items-start flex-col">
+                  <h1 className="font-semibold text-xl h-full">
+                    Amelia Joseph
+                  </h1>
+                  <p className="font-normal">Web Developer</p>
+                </div>
+              </div>
+              <div className="mt-6 items-center">
+                <p className="text-slate-500">
+                  I have cracked internship at Samsung R&D and Nokia with the
+                  help of your Java Placemenent Course.
+                </p>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="te bg-[#F8F9FF] h-60 md:h-48 w-[90%] md:w-[50%] p-7 rounded-[1.5rem]">
+              <div className="flex flex-row gap-x-4 pt-4 justify-center items-center">
+                <div>
+                  <img src={img} alt="img" className="max-w-[60px]" />
+                </div>
+                <div className="flex items-start flex-col">
+                  <h1 className="font-semibold text-xl h-full">
+                    Amelia Joseph
+                  </h1>
+                  <p className="font-normal">Web Developer</p>
+                </div>
+              </div>
+              <div className="mt-6 items-center">
+                <p className="text-slate-500">
+                  I have cracked internship at Samsung R&D and Nokia with the
+                  help of your Java Placemenent Course.
+                </p>
+              </div>
+            </div>
+          </SwiperSlide>
+          <SwiperSlide>
+            <div className="te bg-[#F8F9FF] h-60 md:h-48 w-[90%] md:w-[50%] p-7 rounded-[1.5rem]">
+              <div className="flex flex-row gap-x-4 pt-4 justify-center items-center">
+                <div>
+                  <img src={img} alt="img" className="max-w-[60px]" />
+                </div>
+                <div className="flex items-start flex-col">
+                  <h1 className="font-semibold text-xl h-full">
+                    Amelia Joseph
+                  </h1>
+                  <p className="font-normal">Web Developer</p>
+                </div>
+              </div>
+              <div className="mt-6 items-center">
+                <p className="text-slate-500">
+                  I have cracked internship at Samsung R&D and Nokia with the
+                  help of your Java Placemenent Course.
+                </p>
+              </div>
+            </div>
+          </SwiperSlide>
+        </Swiper>
       </div>
+    </div>
+  );
+};
 
-    </>
-  )
-}
-
-export default Card1
+export default Testimonials;
