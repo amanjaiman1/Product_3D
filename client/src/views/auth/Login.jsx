@@ -120,6 +120,7 @@ const Login = () => {
                 placeholder="Enter your Email"
                 type="email"
                 value={email}
+                onChange={(e)=>setEmail(e.target.value)}
               />
             </div>
 
@@ -133,6 +134,7 @@ const Login = () => {
                 placeholder="Enter Password"
                 type="password"
                 value={password}
+                onChange={(e)=>setPassword(e.target.value)}
               />
             </div>
             <div className="md:w-[400px] w-[300px] text-sm flex flex-inline justify-between mt-2">
