@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import logoTshirt from '../../assets/image/icons8-shirt-512.png'
+import { Logo, textLogo } from '../../assets';
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -16,18 +17,19 @@ const Navbar = () => {
 
 
   return (
-    <nav className={`navbar h-16 py-[20px] p-[10%] max-sm:px-0 max-sm:py-5 flex`}>
+    <nav className={`navbar h-16 py-[20px] p-[4%] max-sm:px-0 max-sm:py-5 flex `}>
       <div className="pl-5">
-        <Link to="/">
-          <img className="w-12 justify-center align-middle" src={logoTshirt} alt="Logo" />
+        <Link to="/" className='flex'>
+          <img className="w-12 mr-5" src={Logo} alt="Logo" />
+          <img className="w-24" src={textLogo} alt="Logo" />
         </Link>
           {/* <p className="Brand-heading">PRODUCT 3D</p> */}
       </div>
       <div className="ml-auto max-lg:hidden space-x-10 pr-5">
-        <Link to="/" className={`link ${location.pathname === '/' ? 'active' : ''}`}>Home</Link>
-        <Link to="/guidebook"className={`link ${location.pathname === '/guidebook' ? 'active' : ''}`}>Guide Book</Link>
-        <Link to="/contact" className={`link ${location.pathname === '/contact' ? 'active' : ''}`}>Contributors</Link>
-        <Link to="/faq" className={`link ${location.pathname === '/faq' ? 'active' : ''}`}> FAQ's</Link>
+        <Link to="/" className={`link hover:text-blue-500 cursor-pointer ${location.pathname === '/' ? 'active' : ''}` }>Home</Link>
+        <Link to="/guidebook"className={`link hover:text-blue-500 cursor-pointer ${location.pathname === '/guidebook' ? 'active' : ''}`}>Guide Book</Link>
+        <Link to="/contact" className={`link hover:text-blue-500 cursor-pointer ${location.pathname === '/contact' ? 'active' : ''}`}>Contributors</Link>
+        <Link to="/faq" className={`link hover:text-blue-500 cursor-pointer ${location.pathname === '/faq' ? 'active' : ''}`}> FAQ's</Link>
         <button className="tryfree-btn justify-center p-2 rounded-md h-10">Try Free</button>
       </div>
 

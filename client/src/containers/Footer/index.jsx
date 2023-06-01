@@ -8,13 +8,14 @@ const Button = ({ styles }) => {
   return (
     <button type='button' 
       className={`
+        hover:shadow-lg transition-shadow duration-300
         py-4 px-6 
         bg-[#5867DD] 
         font-poppins font-medium 
         text-[18px] text-[#FFF5FB] 
         outline-none ${styles} 
         rounded-[15px]
-        w-full md:w-auto h-[49px] md:ml-0 max-sm:w-[49px] max-sm:h-[67px]  hover:shadow-lg transition-shadow
+        w-full md:w-auto h-[49px] md:ml-0 max-sm:w-[49px] max-sm:h-[67px] 
       `}>
       Lets Create
     </button>
@@ -24,7 +25,7 @@ const Button = ({ styles }) => {
 function Footer() {
   return (
     <footer 
-      className={`${styles.flexCenter} ${styles.paddingY} flex-col`}
+      className={`${styles.flexCenter} ${styles.paddingY} flex-col `}
       style={{
         paddingBottom: 25,
         paddingTop: 0,
@@ -57,11 +58,11 @@ function Footer() {
           w-full md:w-auto mb-4 md:mb-0 md:flex-1 md:mr-4">
 
             <h4 className="font-poppins font-medium text-[18px] leading-[27px] text-[#090F4E]
-            text-center md:text-left">
+            text-center md:text-left ">
               {footerLink.title}
             </h4>
 
-            <ul className="list-none mt-4">
+            <ul className="list-none mt-4 cursor-pointer">
               {footerLink.links.map((link, index) => (
                 <li key={link.name} className={`font-poppins font-normal text-[16px] leading-[24px] text-[#63657E] hover:text-[#6058f2] cusror-pointer
                 text-center md:text-left ${styles.index !== footerLink.links.length -1 ? 'mb-4' : 'mb-0'}`}>
