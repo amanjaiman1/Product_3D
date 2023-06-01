@@ -7,7 +7,7 @@ import "./index.css";
 import Faq from "./views/app/Faq";
 import Login from "./views/auth/Login";
 import SignUp from "./views/auth/SignUp";
-import blog from "./pages/Faq/Blog";
+import blog from "./views/app/Blog";
 import { favicon } from "./assets";
 
 import MoonLoader from "react-spinners/MoonLoader";
