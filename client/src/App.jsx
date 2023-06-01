@@ -7,6 +7,7 @@ import "./index.css";
 import Faq from "./views/app/Faq";
 import Login from "./views/auth/Login";
 import SignUp from "./views/auth/SignUp";
+import blog from "./pages/Faq/Blog";
 import { favicon } from "./assets";
 
 import MoonLoader from "react-spinners/MoonLoader";
@@ -39,6 +40,7 @@ function App() {
             <Route Component={ErrorPage} path="/*" />
             <Route Component={Login} path="/login" />
             <Route Component={SignUp} path="/signup" />
+            <Route Component={blog} path="/blog" />
           </Routes>
         </BrowserRouter>
       )}
