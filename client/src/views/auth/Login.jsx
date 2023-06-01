@@ -1,8 +1,102 @@
 import React from "react";
 import canvas1 from "/src/assets/image/canvas1.gif";
 import faGoogle from "/src/assets/image/google-48.png";
+import {
+  GoogleAuthProvider,
+  signInWithPopup,
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+  signOut,
+  onAuthStateChanged,
+} from "firebase/auth";
+import { auth } from "../../firebase";
 
 const Login = () => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [alert, setAlert] = useState({
+    open: false,
+    message: "",
+    type: "success"
+  })
+  const googleProvider = new GoogleAuthProvider();
+
+  const handleLoginSubmit = async () => {
+    if (!email || !password) {
+      setAlert({
+        open: true,
+        message: "Please fill all the Fields",
+        type: "error",
+      });
+      console.log(alert?.message);
+      return;
+    }
+
+    try {
+      const res = await signInWithEmailAndPassword(auth, email, password);     
+      setUser({
+        name: res?.user.displayName,
+        email: res?.user.email,
+        profilePic: "",
+      });
+
+      localStorage.setItem("name", user?.name);
+      localStorage.setItem("email", user?.email);
+      //localStorage.setItem("profilePic", profilePic);
+
+      setAlert({
+        open: true,
+        message: `Sign In Successful. Welcome ${user?.email}`,
+        type: "success",
+      });
+      console.log(alert?.message);
+    } catch (error) {
+      setAlert({
+        open: true,
+        message: error?.message,
+        type: "error",
+      });
+      console.log(alert?.message);
+      return;
+    }
+  };
+
+  const signInWithGoogle = () => {
+    signInWithPopup(auth, googleProvider)
+      .then((res) => {
+        // const name = res.user.displayName;
+        // const email = res.user.email;
+        // const profilePic = res.user.photoURL;
+        setUser({
+          name: res.user.displayName,
+          email: res.user.email,
+          profilePic: res.user.photoURL,
+        });
+        console.log(res.user);
+
+        localStorage.setItem("name", user.name);
+        localStorage.setItem("email", user.email);
+        localStorage.setItem("profilePic", user.profilePic);
+        setAlert({
+          open: true,
+          message: `Google Sign Up Successful. Welcome ${user?.email}`,
+          type: "success",
+        });
+
+        console.log("login using google successful");
+        console.log(alert?.message);
+      })
+      .catch((error) => {
+        setAlert({
+          open: true,
+          message: error.message,
+          type: "error",
+        });
+        console.log(alert?.message);
+        return;
+      });
+  };
+
 
   return (
     <div className="flex">
@@ -61,13 +155,13 @@ const Login = () => {
             <div className="flex flex-col">
               <button
                 className="md:w-[400px] w-[300px] text-center text-lg font-medium mt-14 mb-4 mr-2 p-2 border rounded bg-purple-500 text-white"
-                type="submit"
+                type="submit" onClick={handleLoginSubmit}
               >
                 Sign in
               </button>
               <button
                 className="md:w-[400px] w-[300px] shadow-md text-center text-lg font-medium mb-4 p-2 border rounded bg-white text-black"
-                type="submit"
+                type="submit" onClick={signInWithGoogle}
               >
                 <div className="flex justify-center"><img src={faGoogle} alt="google-Icon" className="w-8" />
 
