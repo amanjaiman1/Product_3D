@@ -20,9 +20,8 @@
 
 Welcome to the 3D Product Customization Website! 🌟 This innovative web application empowers users to personalize their very own t-shirts with ease. With a wide range of customization options at their fingertips, users can unleash their creativity and design unique garments that reflect their individuality. Get ready to embark on a journey of self-expression and style! 🎉
 
-<center><img src="https://imgur.com/DvEZnW7.png" width="600px"/></center>
-<center><img src="https://imgur.com/ZkZ78nH.png" width="600px" /></center>
-<center><img src="https://imgur.com/B1yHPt2.png" width="600px" /></center>
+<center><img src="https://imgur.com/DvEZnW7.png" /></center>
+<center><img src="https://imgur.com/B1yHPt2.png" /></center>
 <br/>
 
 # Features 🌟
@@ -55,10 +54,6 @@ The combination of React, Three.js, Tailwind CSS, and Node.js sets the stage for
 
 Stay tuned for more updates as we continue to explore and leverage the latest advancements in technology to enhance our project even further! 🚀🌟
 To get started with this project, you can follow the steps outlined below:
-
-# Order and Delivery 🚚
-
-Once users are satisfied with their one-of-a-kind creations, our seamless ordering system ensures a smooth transaction. Simply select the desired size and quantity, and our dedicated team will handle the rest. With our efficient production and delivery processes, users can sit back and eagerly anticipate the arrival of their custom-designed t-shirts. 📦💨
 
 # Join the Customization Revolution! 🚀
 
