@@ -168,11 +168,20 @@ npm start
 
 Congratulations! You've successfully contributed to the project. Your changes will now be reviewed by the project maintainers, and they may provide feedback or merge your changes into the main project if they are deemed appropriate.
 
-## 🤠 Project Admin & Mentors
-
 <a href="https://github.com/amanjaiman1/Product_3D/graphs/contributors"> 
     <img src="https://contrib.rocks/image?repo=amanjaiman1/Product_3D" /> 
 </a>
+
+<br/>
+
+## 🤠 Project Admin & Mentors
+
+<a href="https://github.com/amanjaiman1"><img src="https://imgur.com/av7nYpM.png" height="80px"/></a>
+
+<img src="https://imgur.com/4gVHX1q.png" height="70px"/>
+
+<a href="https://github.com/tarunsinghofficial/">Tarun Singh</a>
+<a href="https://github.com/SurajPratap10">Suraj Pratap</a>
 
 Thank you for using our 3D Product Customization Website!
 
