@@ -118,6 +118,7 @@ const Login = () => {
                 label="Email"
                 placeholder="Enter your Email"
                 type="email"
+                value={email}
               />
             </div>
 
@@ -130,6 +131,7 @@ const Login = () => {
                 label="Password"
                 placeholder="Enter Password"
                 type="password"
+                value={password}
               />
             </div>
             <div className="md:w-[400px] w-[300px] text-sm flex flex-inline justify-between mt-2">
