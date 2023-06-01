@@ -20,12 +20,9 @@
 
 Welcome to the 3D Product Customization Website! 🌟 This innovative web application empowers users to personalize their very own t-shirts with ease. With a wide range of customization options at their fingertips, users can unleash their creativity and design unique garments that reflect their individuality. Get ready to embark on a journey of self-expression and style! 🎉
 
-<center><img src="https://imgur.com/DvEZnW7.png" width="600px"/>
-</center>
-<center><img src="https://imgur.com/ZkZ78nH.png" width="600px" />
-</center>
-<center><img src="https://imgur.com/B1yHPt2.png" width="600px" />
-</center>
+<center><img src="https://imgur.com/DvEZnW7.png" width="600px"/></center>
+<center><img src="https://imgur.com/ZkZ78nH.png" width="600px" /></center>
+<center><img src="https://imgur.com/B1yHPt2.png" width="600px" /></center>
 <br/>
 
 # Features 🌟
