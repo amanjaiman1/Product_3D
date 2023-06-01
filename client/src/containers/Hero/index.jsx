@@ -10,7 +10,7 @@ function Hero() {
           AI-Powered 3D T-Shirts
         </span>
         <div className="py-3">
-          <h1 className="text-heading font-semibold min-[600px]:text-5xl max-[600px]:text-4xl min-[600px]:leading-normal max-[600px]:leading-tight max-[600px]:text-center">
+          <h1 className="mt-5 text-heading font-semibold min-[600px]:text-5xl max-[600px]:text-4xl min-[600px]:leading-normal max-[600px]:leading-tight max-[600px]:text-center animate__animated animate__fadeInLeft animation-duration: 2s; animate_slower">
             Elevate Your Style with Intelligent Fashion
           </h1>
           <p className="text-secondary font-normal pt-3 leading-loose max-[600px]:text-center">
@@ -22,7 +22,7 @@ function Hero() {
           <Button>Design Now</Button>
         </div>
       </div>
-      <div className="flex-3">
+      <div className="flex-3 animate__animated animate__zoomIn  animation-duration: 3s; animate__slow">
         <img src={hero} alt="" />
       </div>
     </div>

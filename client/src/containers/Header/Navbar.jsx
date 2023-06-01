@@ -8,9 +8,15 @@ const Navbar = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
 
+  // Sticky navbar function
+  window.addEventListener("scroll", function() {
+    var navbar = document.querySelector('nav');
+    navbar.classList.toggle("sticky" , this.scrollY > 0);
+  });
+
 
   return (
-    <nav className={`navbar py-8 p-[10%] max-sm:px-0 max-sm:py-5 flex`}>
+    <nav className={`navbar h-16 py-[20px] p-[10%] max-sm:px-0 max-sm:py-5 flex`}>
       <div className="pl-5">
         <Link to="/">
           <img className="w-12 justify-center align-middle" src={logoTshirt} alt="Logo" />

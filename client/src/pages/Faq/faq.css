@@ -44,6 +44,7 @@ h3 {
   color: var(--very-dark-desaturated-blue);
   font-size: 100vh;
   line-height: 32px;
+  font-family: "Poppins", sans-serif;
   font-weight: bold;
   text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   width: 50vh;
@@ -104,6 +105,7 @@ button:focus-visible {
 .illustration {
   width: 100%;
   position: relative;
+ 
 }
 
 .illustration__box {
@@ -111,6 +113,7 @@ button:focus-visible {
   z-index: 999;
   top: 200px;
   left: -95px;
+  
 }
 
 .illustration__woman-desktop {
@@ -122,12 +125,13 @@ button:focus-visible {
 
 .illustration__woman-mobile {
   display: none;
+  
 }
 /*****************************Illustration************************************  */
 
 .faq {
   color: #48556a;
-  font-family: "Kumbh Sans", sans-serif;
+  font-family: "Poppins", sans-serif;
   line-height: 18px;
   width: 100%;
   padding-top: 65px;
@@ -162,6 +166,7 @@ button:focus-visible {
   cursor: pointer;
   padding-top: 18px;
   padding-bottom: 18px;
+  text-align: left;
 }
 
 .faq__question-button::after {
@@ -180,6 +185,7 @@ button:focus-visible {
   height: 0;
   overflow: hidden;
   transition: all 200ms ease-out;
+  text-align: left;
 }
 
 
@@ -199,6 +205,7 @@ button:focus-visible {
   .faq__desc.show-description {
     height:auto;
     margin-bottom: 15px;
+    text-align: left;
     
   }
   

@@ -145,13 +145,21 @@ Congratulations! You've successfully contributed to the project. Your changes wi
 ## Contributing 🤝
 
 If you'd like to contribute to this project, please fork the repository and submit a pull request. We'd love to hear your ideas for improving this application! Thank you for considering contributing to our 3D Product Customization Website! Your ideas and contributions are valuable in improving this application and providing an exceptional user experience. Join us in revolutionizing customization and empowering individuals to express their creativity through personalized t-shirt designs.
-## :cowboy_hat_face: Project Admin & Mentors
-
-
-<a href="https://github.com/amanjaiman1/Product_3D/graphs/contributors"> 
-    <img src="https://contrib.rocks/image?repo=amanjaiman1/Product_3D" /> 
-</a>
 
 Thank you for using our 3D Product Customization Website!
+
+# ✨Our Contributors
+Thanks a lot for spending your time helping Product 3D grow. Thanks a lot! Keep rocking
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<table>
+	<tr>
+		<td>
+      <a href="https://github.com/amanjaiman1/Product_3D/graphs/contributors">
+        <img src="https://contrib.rocks/image?max=50&repo=amanjaiman1/Product_3D" />
+      </a>
+		</td>
+	</tr>
+</table>
 
 <p align="right">(<a href="#top">Back to top</a>)</p>
