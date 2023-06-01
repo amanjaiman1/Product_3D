@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, {useState} from "react";
 import canvas1 from "/src/assets/image/canvas1.gif";
 import faGoogle from "/src/assets/image/google-48.png";
+
 import {
   GoogleAuthProvider,
   signInWithPopup,
