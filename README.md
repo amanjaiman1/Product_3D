@@ -42,16 +42,6 @@ Remove Functionality: Enjoy the freedom to remove any applied logos or images wi
 
 Download Option: Capture your masterpiece by downloading your completed t-shirt design as an image file.
 
-# Order and Delivery 🚚
-
-Once users are satisfied with their one-of-a-kind creations, our seamless ordering system ensures a smooth transaction. Simply select the desired size and quantity, and our dedicated team will handle the rest. With our efficient production and delivery processes, users can sit back and eagerly anticipate the arrival of their custom-designed t-shirts. 📦💨
-
-# Join the Customization Revolution! 🚀
-
-We invite you to join us on this exciting customization journey. Whether you're an aspiring fashion designer, a creative soul, or simply looking for a unique gift, our 3D Product Customization Website has got you covered. Unleash your creativity, make a bold statement, and wear your personalized masterpiece with pride! 👕✨
-
-Get started today and experience the joy of designing your own custom t-shirts like never before!
-
 # Technologies Used 🛠️
 
 This project showcases the harmonious fusion of several cutting-edge technologies:
@@ -68,6 +58,20 @@ The combination of React, Three.js, Tailwind CSS, and Node.js sets the stage for
 
 Stay tuned for more updates as we continue to explore and leverage the latest advancements in technology to enhance our project even further! 🚀🌟
 To get started with this project, you can follow the steps outlined below:
+
+# Order and Delivery 🚚
+
+Once users are satisfied with their one-of-a-kind creations, our seamless ordering system ensures a smooth transaction. Simply select the desired size and quantity, and our dedicated team will handle the rest. With our efficient production and delivery processes, users can sit back and eagerly anticipate the arrival of their custom-designed t-shirts. 📦💨
+
+# Join the Customization Revolution! 🚀
+
+We invite you to join us on this exciting customization journey. Whether you're an aspiring fashion designer, a creative soul, or simply looking for a unique gift, our 3D Product Customization Website has got you covered. Unleash your creativity, make a bold statement, and wear your personalized masterpiece with pride! 👕✨
+
+Get started today and experience the joy of designing your own custom t-shirts like never before!
+
+## Contributing 🤝
+
+If you'd like to contribute to this project, please fork the repository and submit a pull request. We'd love to hear your ideas for improving this application! Thank you for considering contributing to our 3D Product Customization Website! Your ideas and contributions are valuable in improving this application and providing an exceptional user experience. Join us in revolutionizing customization and empowering individuals to express their creativity through personalized t-shirt designs.
 
 ## 🚀 Getting Started with the Project 🎉
 
@@ -168,13 +172,11 @@ npm start
     - You should see a notification banner indicating that you've recently pushed a new branch.
     - Click on the "Compare & pull request" button.
 
+## Thank you for contributors ✨
+
 Congratulations! You've successfully contributed to the project. Your changes will now be reviewed by the project maintainers, and they may provide feedback or merge your changes into the main project if they are deemed appropriate.
 
-## Contributing 🤝
-
-If you'd like to contribute to this project, please fork the repository and submit a pull request. We'd love to hear your ideas for improving this application! Thank you for considering contributing to our 3D Product Customization Website! Your ideas and contributions are valuable in improving this application and providing an exceptional user experience. Join us in revolutionizing customization and empowering individuals to express their creativity through personalized t-shirt designs.
-
-## :cowboy_hat_face: Project Admin & Mentors
+## 🤠 Project Admin & Mentors
 
 <a href="https://github.com/amanjaiman1/Product_3D/graphs/contributors"> 
     <img src="https://contrib.rocks/image?repo=amanjaiman1/Product_3D" /> 

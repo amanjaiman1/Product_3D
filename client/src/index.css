@@ -6,8 +6,31 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .scrollbar::-webkit-scrollbar {
+    width: 15px;
+    height: 20px;
+  }
+
+  .scrollbar::-webkit-scrollbar-track {
+    border-radius: 100vh;
+    background: #f7f4ed;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb {
+    background: #293FCE;
+    border-radius: 100vh;
+    border: 3px solid #f6f7ed;
+  }
+
+  .scrollbar::-webkit-scrollbar-thumb:hover {
+    background: #608AD8;
+  }
+}
+
 body {
   font-family: "Poppins", sans-serif;
+  scroll-behaviour: smooth;
 }
 
 .main-div::-webkit-scrollbar{
@@ -117,6 +140,21 @@ label .fa-moon {
   transform: translateX(0), rotate(0);
 } */
 
+/* Sticky navbar */
+nav {
+  background-color: transparent;
+  position: sticky;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+  transition: background-color 0.3s ease-in-out;
+}
+nav.sticky {
+  backdrop-filter: blur(20px);
+}
+
+
+/* Text animation on hero section */
 
 
 .mobile-menu-toggle {
@@ -159,7 +197,7 @@ label .fa-moon {
   top: 0%;
   left: 0%;
   width: 100%;
-  height: 100%;
+  height: 100vh;
   background-color: #1f67d3;
   padding-top: 7rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);

@@ -1,30 +1,7 @@
-export const navLinks = [
-  {
-    id: "home",
-    title: "Home",
-  },
-  {
-    id: "features",
-    title: "Features",
-  },
-  {
-    id: "product",
-    title: "Product",
-  },
-  {
-    id: "clients",
-    title: "Clients",
-  },
-];
-
 export const footerLinks = [
   {
     title: "Useful Links",
     links: [
-      {
-        name: "Content",
-        link: "https://www.3dtee.com/content/",
-      },
       {
         name: "How it Works",
         link: "https://www.3dtee.com/how-it-works/",
@@ -37,10 +14,6 @@ export const footerLinks = [
         name: "Explore",
         link: "https://www.3dtee.com/explore/",
       },
-      {
-        name: "Terms & Services",
-        link: "https://www.3dtee.com/terms-and-services/",
-      },
     ],
   },
   {
@@ -49,10 +22,6 @@ export const footerLinks = [
       {
         name: "Help Center",
         link: "https://www.3dtee.com/help-center/",
-      },
-      {
-        name: "Partners",
-        link: "https://www.3dtee.com/partners/",
       },
       {
         name: "Suggestions",
@@ -65,19 +34,6 @@ export const footerLinks = [
       {
         name: "Newsletters",
         link: "https://www.3dtee.com/newsletters/",
-      },
-    ],
-  },
-  {
-    title: "Partner",
-    links: [
-      {
-        name: "Our Partner",
-        link: "https://www.3dtee.com/our-partner/",
-      },
-      {
-        name: "Become a Partner",
-        link: "https://www.3dtee.com/become-a-partner/",
       },
     ],
   },
