@@ -9,7 +9,7 @@ import Login from "./views/auth/Login";
 import SignUp from "./views/auth/SignUp";
 import blog from "./views/app/Blog";
 import { favicon } from "./assets";
-import UserTest from './test/user.test'
+import UserTest from "./test/user.test";
 
 import MoonLoader from "react-spinners/MoonLoader";
 import ContributorPage from "./views/app/ContributorPage";
@@ -39,6 +39,7 @@ function App() {
           <Routes>
             <Route Component={Home} path="/" />
             <Route Component={Faq} path="/faq" />
+            <Route Component={ContributorPage} path="/contact" />
             <Route Component={ErrorPage} path="/*" />
             <Route Component={Login} path="/login" />
             <Route Component={SignUp} path="/signup" />

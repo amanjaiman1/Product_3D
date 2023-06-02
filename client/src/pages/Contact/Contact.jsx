@@ -40,20 +40,20 @@ function Contact() {
         </p>
       </div>
 
-      <div className="flex flex-wrap justify-center p-6 gap-4 rounded-xl sm:p-12 dark:bg-gray-900 dark:text-gray-100 h ml-2">
+      <div className="flex flex-wrap justify-center p-6 gap-4 rounded-xl sm:p-12 dark:text-gray-100 ml-2">
         {currentUsers.map((contributor) => (
           <div
             key={contributor.id}
             style={{ padding: "30px" }}
-            className="flex flex-col items-center space-y-4 text-center divide-y divide-gray-700 hover:shadow-lg transition-shadow hover:dark:text-violet-400"
+            className="flex flex-col items-center space-y-4 text-center divide-y divide-gray-700 hover:bg-blue-200 transition-shadow hover:dark:text-violet-400"
           >
             <img
               src={contributor.avatar_url}
               alt=""
               className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square"
             />
-            <div className="my-2 space-y-1">
-              <h2 className="text-xl font-semibold sm:text-2xl">
+            <div style={{ border: "none" }} className=" space-y-1">
+              <h2 className="text-xl text-[#6058f2] font-semibold sm:text-2xl">
                 {contributor.login}
               </h2>
               <p className="px-5 text-xs sm:text-base dark:text-gray-400">{`Contributions: ${contributor.contributions}`}</p>
