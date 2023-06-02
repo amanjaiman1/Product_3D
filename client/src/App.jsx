@@ -11,6 +11,7 @@ import blog from "./views/app/Blog";
 import { favicon } from "./assets";
 
 import MoonLoader from "react-spinners/MoonLoader";
+import ContributorPage from "./views/app/ContributorPage";
 function App() {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -37,6 +38,7 @@ function App() {
           <Routes>
             <Route Component={Home} path="/" />
             <Route Component={Faq} path="/faq" />
+            <Route Component={ContributorPage} path="/contact" />
             <Route Component={ErrorPage} path="/*" />
             <Route Component={Login} path="/login" />
             <Route Component={SignUp} path="/signup" />
