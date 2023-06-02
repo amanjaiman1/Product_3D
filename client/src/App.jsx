@@ -11,6 +11,8 @@ import blog from "./views/app/Blog";
 import { favicon } from "./assets";
 import UserTest from "./test/user.test";
 
+import ScrollToTop from "react-scroll-to-top";
+
 import MoonLoader from "react-spinners/MoonLoader";
 import ContributorPage from "./views/app/ContributorPage";
 function App() {
@@ -47,6 +49,16 @@ function App() {
             <Route Component={UserTest} path="/test" />
             <Route Component={ErrorPage} path="/*" />
           </Routes>
+
+          <div>
+            <ScrollToTop
+              smooth
+              className="scrlltop"
+              viewBox="-60 5 270 160"
+              top="100"
+              color="white"
+            />
+          </div>
         </BrowserRouter>
       )}
     </div>
