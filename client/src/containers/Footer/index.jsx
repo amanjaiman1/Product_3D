@@ -52,7 +52,7 @@ function Footer() {
 
 {/* foot links */}
 
-      <div className="flex-[1.5] w-full flex flex-row justify-between md:mt-0 mr-10">
+      <div className="flex-[1.5] w-full flex flex-row justify-between md:mt-0 mr-10 cursor-pointer">
         {footerLinks.map((footerLink) => (
           <div key={footerLink.key} className="flex flex-col ss:my-0 my-4 min-w-[150px] 
           w-full md:w-auto mb-4 md:mb-0 md:flex-1 md:mr-4">
