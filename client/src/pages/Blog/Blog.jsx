@@ -1,5 +1,4 @@
 import React from "react";
-import Navbar from "../../containers/Header/Navbar";
 import blogbar from "../../assets/image/blogbar.png";
 import searchIcon from "../../assets/image/searchIcon.jpg";
 import blogImage1 from "../../assets/image/blogImage1.png";
@@ -20,9 +19,6 @@ function Blog() {
     })
     return (
         <div style={{ fontFamily: 'Poppins, sans-serif' }}>
-            <div>
-                <Navbar />
-            </div>
             <div className="grid justify-center" >
                 <img src={blogbar} alt="blog bar" className="w-[96vw]" />
             </div>
@@ -71,14 +67,7 @@ function Blog() {
                 </div>
             </div>
             <NewsLetter/>
-
-            <div className="w-full flex justify-between items-center md:flex-row flex-col pt-6 border-t-[1px] border-t-[#BFC6F0]">
-      <p  className={`font-poppins font-normal text-center text-[12px] leading-[27px] text-[#63657E] mx-auto mb-4`}>
-        Opensource ©2023 | Fashion Forge 3D | All Rights Reserved.
-      </p>
-    </div>
-        </div>
-        
+        </div>   
     )
 }
 

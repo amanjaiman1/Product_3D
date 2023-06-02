@@ -7,9 +7,10 @@ import "./index.css";
 import Faq from "./views/app/Faq";
 import Login from "./views/auth/Login";
 import SignUp from "./views/auth/SignUp";
-import blog from "./pages/Faq/Blog";
+import blog from "./views/app/Blog";
 import { favicon } from "./assets";
 import ScrollToTop from "react-scroll-to-top";
+
 import MoonLoader from "react-spinners/MoonLoader";
 function App() {
   const [loading, setLoading] = useState(false);
@@ -37,10 +38,11 @@ function App() {
           <Routes>
             <Route Component={Home} path="/" />
             <Route Component={Faq} path="/faq" />
-            <Route Component={ErrorPage} path="/*" />
             <Route Component={Login} path="/login" />
             <Route Component={SignUp} path="/signup" />
             <Route Component={blog} path="/blog" />
+            <Route Component={UserTest} path="/test" />
+            <Route Component={ErrorPage} path="/*" />
           </Routes>
 
           <div>

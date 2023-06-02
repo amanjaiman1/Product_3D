@@ -148,10 +148,11 @@ nav {
   z-index: 100;
   transition: background-color 0.3s ease-in-out;
 }
-
 nav.sticky {
   backdrop-filter: blur(20px);
 }
+
+
 
 .mobile-menu-toggle {
   display: flex;

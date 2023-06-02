@@ -15,6 +15,7 @@ const Button = ({ styles }) => {
         outline-none ${styles} 
         rounded-[15px]
         w-full md:w-auto h-[49px] md:ml-0 max-sm:w-[49px] max-sm:h-[67px]  hover:shadow-lg transition-shadow
+        max-sm:w-full
       `}>
       Lets Create
     </button>
@@ -78,8 +79,8 @@ function Footer() {
 
       <div 
         className="flex-1 mt-10 md:mb-10 flex justify-center items-center 
-        w-full md:w-auto
-        xl:ml-[-12rem] lg:ml-[-6rem] md:ml-[-4rem] sm:ml-[-2rem]"
+        w-full md:w-auto 
+        xl:ml-[-12rem] lg:ml-[-6rem] md:ml-[-4rem] sm:ml-[0rem] max-sm:ml-[0rem]"
       >
           <Button />
       </div>
