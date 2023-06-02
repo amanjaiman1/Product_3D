@@ -300,12 +300,7 @@ nav.sticky {
 }
 /* css for scrolltotop */
 .scrlltop {
-  background: rgb(6, 87, 194) !important;
-  background: radial-gradient(
-    circle,
-    rgba(6, 87, 194, 1) 0%,
-    rgb(1, 1, 150) 100%
-  ) !important;
+  background-color: #293fcc !important;
   box-shadow: rgb(71, 106, 143) 0px 20px 30px -10px !important;
 
   animation: bounce 2s ease infinite;
