@@ -1,6 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap");
-
 
 @tailwind base;
 @tailwind components;
@@ -18,13 +17,13 @@
   }
 
   .scrollbar::-webkit-scrollbar-thumb {
-    background: #293FCE;
+    background: #293fce;
     border-radius: 100vh;
     border: 3px solid #f6f7ed;
   }
 
   .scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #608AD8;
+    background: #608ad8;
   }
 }
 
@@ -33,7 +32,7 @@ body {
   scroll-behaviour: smooth;
 }
 
-.main-div::-webkit-scrollbar{
+.main-div::-webkit-scrollbar {
   display: none;
 }
 
@@ -153,9 +152,7 @@ nav.sticky {
   backdrop-filter: blur(20px);
 }
 
-
 /* Text animation on hero section */
-
 
 .mobile-menu-toggle {
   display: flex;
@@ -252,7 +249,6 @@ nav.sticky {
   color: #293fce;
 }
 
-
 .tryfree-btn {
   background-color: #293fce;
   color: aliceblue;
@@ -262,11 +258,10 @@ nav.sticky {
   -webkit-transition-duration: 0.5s;
   -webkit-transition-timing-function: ease-in;
 }
-.tryfree-btn:hover{
-    color: #293fce;
-    border: 1px solid #293fce;
-    background-color: transparent;
- 
+.tryfree-btn:hover {
+  color: #293fce;
+  border: 1px solid #293fce;
+  background-color: transparent;
 }
 
 .link {
@@ -302,4 +297,31 @@ nav.sticky {
   height: 2px;
   background-color: #293fce;
   transition: width 0.3s ease-in-out;
+}
+/* css for scrolltotop */
+.scrlltop {
+  background: rgb(6, 87, 194) !important;
+  background: radial-gradient(
+    circle,
+    rgba(6, 87, 194, 1) 0%,
+    rgb(1, 1, 150) 100%
+  ) !important;
+  box-shadow: rgb(71, 106, 143) 0px 20px 30px -10px !important;
+
+  animation: bounce 2s ease infinite;
+}
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-30px);
+  }
+  60% {
+    transform: translateY(-15px);
+  }
 }
