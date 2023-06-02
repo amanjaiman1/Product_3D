@@ -4,15 +4,15 @@ export const footerLinks = [
     links: [
       {
         name: "How it Works",
-        link: "https://www.3dtee.com/how-it-works/",
+        link: "",
       },
       {
         name: "Create",
-        link: "https://www.3dtee.com/create/",
+        link: "",
       },
       {
         name: "Explore",
-        link: "https://www.3dtee.com/explore/",
+        link: "",
       },
     ],
   },
@@ -21,19 +21,19 @@ export const footerLinks = [
     links: [
       {
         name: "Help Center",
-        link: "https://www.3dtee.com/help-center/",
+        link: "",
       },
       {
         name: "Suggestions",
-        link: "https://www.3dtee.com/suggestions/",
+        link: "",
       },
       {
         name: "Blog",
-        link: "https://www.3dtee.com/blog/",
+        link: "./blog",
       },
       {
         name: "Newsletters",
-        link: "https://www.3dtee.com/newsletters/",
+        link: "",
       },
     ],
   },
