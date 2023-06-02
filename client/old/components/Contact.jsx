@@ -3,6 +3,7 @@ import axios from "axios";
 
 function Contact() {
   const [contributors, setContributors] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const [usersPerPage] = useState(14);
 
@@ -11,9 +12,11 @@ function Contact() {
       .get("https://api.github.com/repos/amanjaiman1/Product_3D/contributors")
       .then((response) => {
         setContributors(response.data);
+        setLoading(false);
       })
       .catch((error) => {
         console.log(error);
+        setLoading(false);
       });
   }, []);
 
@@ -29,49 +32,46 @@ function Contact() {
 
   return (
     <div className="contact-container">
-      <div className="my-5">
-        <h2 className="text-3xl font-bold text-center justify-center">
-          Meet Our Talented Team
-        </h2>
-        <p className="text-center text-secondary mt-5  text-lg lg:px-60">
-          Our project's success is attributed to the dedicated contributors who
-          brought expertise and creativity. Meet the amazing individuals behind
-          our accomplishments.
-        </p>
-      </div>
+      <h1 className="  text-center text-very-dark-desaturated-blue text-3xl leading-8 font-bold text-shadow-md mb-3 mt-3  ">
+        Our Valuable Contributors
+      </h1>
 
-      <div className="flex flex-wrap justify-center p-6 gap-4 rounded-xl sm:p-12 dark:bg-gray-900 dark:text-gray-100 h ml-2">
-        {currentUsers.map((contributor) => (
-          <div
-            key={contributor.id}
-            style={{ padding: "30px" }}
-            className="flex flex-col items-center space-y-4 text-center divide-y divide-gray-700 hover:shadow-lg transition-shadow hover:dark:text-violet-400"
-          >
-            <img
-              src={contributor.avatar_url}
-              alt=""
-              className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square"
-            />
-            <div className="my-2 space-y-1">
-              <h2 className="text-xl font-semibold sm:text-2xl">
-                {contributor.login}
-              </h2>
-              <p className="px-5 text-xs sm:text-base dark:text-gray-400">{`Contributions: ${contributor.contributions}`}</p>
-              <button
-                className="tryfree-btn justify-center p-2 rounded-md h-10"
-                onClick={() =>
-                  window.open(`https://github.com/${contributor.login}`)
-                }
+      <div className="flex flex-wrap justify-center p-6 gap-4 shadow-md rounded-xl sm:p-12 dark:bg-gray-900 dark:text-gray-100 ml-2">
+        {loading ? (
+          <p>Loading...</p>
+        ) : (
+          <>
+            {currentUsers.map((contributor) => (
+              <div
+                key={contributor.id}
+                className="flex flex-col items-center space-y-4 text-center divide-y divide-gray-700"
               >
-                Connect
-              </button>
-            </div>
-            <div className="flex justify-center pt-2 space-x-4 align-center">
-              {/* Add any additional content or buttons here */}
-            </div>
-          </div>
-        ))}
-        {contributors.length === 0 && <p>No contributors found.</p>}
+                <a
+                  rel="noopener noreferrer"
+                  href={`https://github.com/${contributor.login}`}
+                  aria-label="GitHub"
+                  className="p-2 rounded-md dark:text-gray-100 hover:dark:text-violet-400"
+                >
+                  <img
+                    src={contributor.avatar_url}
+                    alt=""
+                    className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square"
+                  />
+                </a>
+                <div className="my-2 space-y-1">
+                  <h2 className="text-xl font-semibold sm:text-2xl">
+                    {contributor.login}
+                  </h2>
+                  <p className="px-5 text-xs sm:text-base dark:text-gray-400">{`Contributions: ${contributor.contributions}`}</p>
+                </div>
+                <div className="flex justify-center pt-2 space-x-4 align-center">
+                  {/* Add any additional content or buttons here */}
+                </div>
+              </div>
+            ))}
+            {contributors.length === 0 && <p>No contributors found.</p>}
+          </>
+        )}
       </div>
       <div className="pagination">
         {contributors.length > 0 && (
