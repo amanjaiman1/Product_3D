@@ -79,7 +79,7 @@ This command will create a local copy of the project on your machine.
 
 ```
 cd client
-npm install --legacy-peer-deps
+npm install
 
 cd server
 npm install
