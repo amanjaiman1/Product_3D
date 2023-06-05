@@ -13,3 +13,5 @@
 # <h1 style="font-family:Poppins, sans-serif" >Logo for Fashion Forge 3D</h1> <br> <br>
 ![Instagram post - 2 (2)](https://github.com/MohamedMafaz/Product_3D/assets/113255500/cb890d22-b9c4-4876-89ea-90639b75b39e)
 
+# <h1 style="font-family:Poppins, sans-serif" >Customizer Page UI Design</h1> <br> <br>
+![Customize Page (1)](https://github.com/MohamedMafaz/Product_3D/assets/113255500/27c2cde2-b705-41c3-b6b7-5ba5c1687420)
