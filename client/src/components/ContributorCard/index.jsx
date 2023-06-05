@@ -1,6 +1,6 @@
 import React from "react";
 
-function ContributorCard({contributor,index}) {
+function ContributorCard({ contributor, index }) {
   return (
     <div
       key={contributor?.id}
@@ -18,6 +18,7 @@ function ContributorCard({contributor,index}) {
           src={contributor?.avatar_url}
           alt=""
           className="w-32 h-32 mx-auto rounded-full"
+          loading="lazy"
         />
       </a>
       <div className="space-y-1">

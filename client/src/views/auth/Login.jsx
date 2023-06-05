@@ -1,4 +1,4 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import canvas1 from "/src/assets/image/canvas1.gif";
 import faGoogle from "/src/assets/image/google-48.png";
 
@@ -120,7 +120,7 @@ const Login = () => {
                 placeholder="Enter your Email"
                 type="email"
                 value={email}
-                onChange={(e)=>setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
 
@@ -134,7 +134,7 @@ const Login = () => {
                 placeholder="Enter Password"
                 type="password"
                 value={password}
-                onChange={(e)=>setPassword(e.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <div className="md:w-[400px] w-[300px] text-sm flex flex-inline justify-between mt-2">
@@ -143,7 +143,11 @@ const Login = () => {
                   htmlFor="rememberMe"
                   className="bg-transparent w-[150px] text-xs md:text-sm"
                 >
-                  <input className="mr-1" type="checkbox" id="rememberMe" />
+                  <input
+                    className="mr-1"
+                    type="checkbox"
+                    id="rememberMe"
+                  />
                   Remember me
                 </label>
               </div>
@@ -168,7 +172,12 @@ const Login = () => {
                 onClick={signInWithGoogle}
               >
                 <div className="flex justify-center">
-                  <img src={faGoogle} alt="google-Icon" className="w-8" />
+                  <img
+                    src={faGoogle}
+                    alt="google-Icon"
+                    className="w-8"
+                    loading="lazy"
+                  />
                   Sign In with Google
                 </div>
               </button>
@@ -188,7 +197,12 @@ const Login = () => {
       {/* -------------------Right Side Image------------------ */}
 
       <div className="hidden md:block ">
-        <img src={canvas1} alt="canvas image" className="pt-40 h-auto w-auto" />
+        <img
+          src={canvas1}
+          alt="canvas image"
+          className="pt-40 h-auto w-auto"
+          loading="lazy"
+        />
       </div>
     </div>
   );
