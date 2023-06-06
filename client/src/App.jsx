@@ -15,6 +15,7 @@ import ScrollToTop from "react-scroll-to-top";
 
 import MoonLoader from "react-spinners/MoonLoader";
 import ContributorPage from "./views/app/ContributorPage";
+import { Middle } from "./pages/Middle/secondPagePipeline";
 function App() {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -48,6 +49,7 @@ function App() {
             <Route Component={blog} path="/blog" />
             <Route Component={UserTest} path="/test" />
             <Route Component={ErrorPage} path="/*" />
+            <Route Component={Middle} path="/middle" />
           </Routes>
 
           <div>

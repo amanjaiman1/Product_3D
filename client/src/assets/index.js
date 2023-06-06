@@ -9,10 +9,13 @@ import navTshirt from "./image/icons8-shirt-512.png";
 import hero from "./image/hero.png";
 import objectFoot from "./image/Objects.png";
 import favicon from "./image/Favicon1.png";
-import Card1 from "./image/Card1.png"
-import Card2 from './image/Card2.png'
-import Card3 from './image/Card3.png'
-import logo from './image/navbarLogo.png'
+import Card1 from "./image/Card1.png";
+import Card2 from "./image/Card2.png";
+import Card3 from "./image/Card3.png";
+import logo from "./image/navbarLogo.png";
+import canvas from "./image/canvas.png";
+import midimg from "./image/midimg.jpg";
+import mid from "./image/mid.gif";
 export {
   hero,
   ai,
@@ -25,5 +28,11 @@ export {
   menuToggle,
   objectFoot,
   favicon,
-  Card1, Card2, Card3, logo,
+  Card1,
+  Card2,
+  Card3,
+  logo,
+  canvas,
+  midimg,
+  mid,
 };
