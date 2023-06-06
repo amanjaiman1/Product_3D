@@ -1,43 +1,23 @@
-import React from "react";
-import { useEffect, useState } from "react";
+import React,{Suspense,lazy} from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Home from "./views/app/Home";
-import ErrorPage from "./views/app/Error";
 import "./index.css";
-import Faq from "./views/app/Faq";
-import Login from "./views/auth/Login";
-import SignUp from "./views/auth/SignUp";
-import blog from "./views/app/Blog";
-import { favicon } from "./assets";
 import UserTest from "./test/user.test";
-
+import Loading from './components/Loading'
 import ScrollToTop from "react-scroll-to-top";
 
-import MoonLoader from "react-spinners/MoonLoader";
-import ContributorPage from "./views/app/ContributorPage";
+const Login = lazy(() => import("./views/auth/Login"));
+const SignUp = lazy(() => import("./views/auth/SignUp"));
+const Home = lazy(() => import("./views/app/Home"));
+const Faq = lazy(() => import("./views/app/Faq"));
+const blog = lazy(() => import("./views/app/Blog"));
+const ErrorPage = lazy(() => import("./views/app/Error"));
+const ContributorPage = lazy(() => import("./views/app/ContributorPage"));
+
 function App() {
-  const [loading, setLoading] = useState(false);
-  useEffect(() => {
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-    }, 1000);
-  }, []);
+
   return (
-    <div>
-      {loading ? (
-        <div className="flex h-screen items-center justify-center bg-blue-100">
-          <MoonLoader
-            color="#293fce"
-            ariaLabel="grid-loading"
-            wrapperStyle={{}}
-            wrapperClass=""
-            visible={true}
-          />
-          <img src={favicon} className="h-14 w-12 -ml-16"></img>
-        </div>
-      ) : (
         <BrowserRouter>
+        <Suspense fallback={<Loading/>}>
           <Routes>
             <Route Component={Home} path="/" />
             <Route Component={Faq} path="/faq" />
@@ -59,9 +39,8 @@ function App() {
               color="white"
             />
           </div>
+          </Suspense>
         </BrowserRouter>
-      )}
-    </div>
   );
 }
 

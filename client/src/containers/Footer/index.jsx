@@ -47,7 +47,7 @@ function Footer() {
           paddingLeft: '2rem',
         }}
       >
-        <img src={objectFoot} alt="3D-Tee" className="w-[465px] h-[250px] object-contain w-full" />
+        <img src={objectFoot} alt="3D-Tee" className="w-[465px] h-[250px] object-contain w-full" loading="lazy"/>
       </div>
 
 {/* foot links */}

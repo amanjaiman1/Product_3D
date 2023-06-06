@@ -71,18 +71,18 @@ const Faq = () => {
           <img
             src={illustration__box}
             alt="illustration with box"
-            className="illustration__box"
+            className="illustration__box" loading="lazy"
           />
 
           <img
             className="illustration__woman-desktop"
             src={illustration__woman_desktop}
-            alt="illustration with woman"
+            alt="illustration with woman" loading="lazy"
           />
           <img
             className="illustration__woman-mobile"
             src={illustration__woman_mobile}
-            alt="illustration with woman"
+            alt="illustration with woman" loading="lazy"
           />
         </div>
         <Accordion questionsAnswers={questionsAnswers} />

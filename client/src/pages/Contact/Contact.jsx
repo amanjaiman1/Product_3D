@@ -50,7 +50,7 @@ function Contact() {
             <img
               src={contributor.avatar_url}
               alt=""
-              className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square"
+              className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square" loading="lazy"
             />
             <div style={{ border: "none" }} className=" space-y-1">
               <h2 className="text-xl text-[#6058f2] font-semibold sm:text-2xl">

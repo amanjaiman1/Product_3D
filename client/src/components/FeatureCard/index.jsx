@@ -22,7 +22,7 @@ function FeatureCard({ title, color, icon, desc }) {
     <div className='flex-1'>
       <div className="bg-white gap-y-2 m-14 p-6 rounded-lg flex flex-col items-center">
         <div className="flex justify-center items-center rounded-lg w-16 h-16 mx-auto" style={{ backgroundColor: color }}>
-          <img src={icon} alt="" />
+          <img src={icon} alt="" loading="lazy"/>
         </div>
         <div className="dark-primary font-Poppins my-6 text-2xl font-semibold text-center mx-auto px-4">{title}</div>
         <div className="text-secondary w-64 mx-auto px-4 leading-relaxed">

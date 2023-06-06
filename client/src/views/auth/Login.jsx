@@ -168,7 +168,7 @@ const Login = () => {
                 onClick={signInWithGoogle}
               >
                 <div className="flex justify-center">
-                  <img src={faGoogle} alt="google-Icon" className="w-8" />
+                  <img src={faGoogle} alt="google-Icon" className="w-8" loading="lazy"/>
                   Sign In with Google
                 </div>
               </button>
@@ -188,7 +188,7 @@ const Login = () => {
       {/* -------------------Right Side Image------------------ */}
 
       <div className="hidden md:block ">
-        <img src={canvas1} alt="canvas image" className="pt-40 h-auto w-auto" />
+        <img src={canvas1} alt="canvas image" className="pt-40 h-auto w-auto" loading="lazy"/>
       </div>
     </div>
   );
