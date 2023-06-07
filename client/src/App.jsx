@@ -7,7 +7,7 @@ import "./index.css";
 import Faq from "./views/app/Faq";
 import Login from "./views/auth/Login";
 import SignUp from "./views/auth/SignUp";
-import blog from "./views/app/Blog";
+import BlogPage from "./views/app/Blog";
 import { favicon } from "./assets";
 import UserTest from "./test/user.test";
 
@@ -15,6 +15,8 @@ import ScrollToTop from "react-scroll-to-top";
 
 import MoonLoader from "react-spinners/MoonLoader";
 import ContributorPage from "./views/app/ContributorPage";
+import Guide from "./views/app/Guide";
+
 function App() {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -45,9 +47,10 @@ function App() {
             <Route Component={ErrorPage} path="/*" />
             <Route Component={Login} path="/login" />
             <Route Component={SignUp} path="/signup" />
-            <Route Component={blog} path="/blog" />
+            <Route Component={BlogPage} path="/blog" />
             <Route Component={UserTest} path="/test" />
             <Route Component={ErrorPage} path="/*" />
+            <Route Component={Guide} path="/guidebook"/>
           </Routes>
 
           <div>

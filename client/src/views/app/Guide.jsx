@@ -1,16 +1,15 @@
 import React from "react";
 import HomeLayout from "../../layout/HomeLayout.jsx";
-import Blog from "../../pages/Blog/Blog.jsx";
-
-function BlogPage() {
+import GuideBook from "../../pages/Guidebook/guidebook.jsx";
+function Guide() {
   return (
     <HomeLayout>
      
-      <Blog />
+      <GuideBook />
     
 
     </HomeLayout>
   );
 }
 
-export default BlogPage;
+export default Guide;
