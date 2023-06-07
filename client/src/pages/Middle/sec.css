@@ -1,15 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:900i");
-
-* {
-  box-sizing: border-box;
-}
-
-body {
-  height: 100vh;
-  display: flex;
-}
-
-.wrapper {
+.button1 {
   display: flex;
 }
 
@@ -45,11 +34,11 @@ body {
   margin-right: 10px;
 }
 
-span {
+.cta span {
   transform: skewX(15deg);
 }
 
-span:nth-child(2) {
+.cta span:nth-child(2) {
   width: 20px;
   margin-left: 30px;
   position: relative;

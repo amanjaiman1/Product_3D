@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
-import Button from "../../components/Button";
+
 import "./sec.css";
-import { logo } from "../../assets";
+import { mid } from "../../assets";
 
 export function Middle() {
   return (
     <div>
-      <div className="flex bg-blue-100">
-        <img src={logo} className=" " />
+      <div className="flex bg-blue-100 h-20 pt-6 pl-6">
+        <img src={mid} className=" " />
       </div>
       <div className="h-screen flex justify-around items-center flex-wrap-reverse bg-blue-100">
         <div className=" ">
@@ -26,7 +26,7 @@ export function Middle() {
             </p>
           </div>
           <div className="pt-3 max-[600px]:flex max-[600px]:justify-center">
-            <div class="wrapper">
+            <div class="button1">
               <a class="cta" href="#">
                 <span>Customise</span>
                 <span>
