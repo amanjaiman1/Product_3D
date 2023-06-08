@@ -16,7 +16,7 @@ function NewsLetter() {
   };
 
   return (
-    <div className="pt-10 md:pt-50 mx-auto max-w-1200 bg-cover bg-center" style={{ backgroundImage: `url(${background})`, borderRadius: '25px' }}>
+    <div className="pt-10 pb-10 md:pt-50 mx-auto max-w-1200 bg-cover bg-center" style={{ backgroundImage: `url(${background})`, borderRadius: '25px' }}>
       <div className="r-50 rounded-2xl flex flex-col items-center leading-8 p-5">
         <div className="rounded-2xl flex flex-col items-center leading-14 text-center">
           <h2 className="text-2xl font-bold text-[#090F4E] text-[2rem]" style={{ fontFamily: 'Poppins, sans-serif' }}>
