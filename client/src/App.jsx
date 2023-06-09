@@ -49,7 +49,7 @@ function App() {
             <Route Component={blog} path="/blog" />
             <Route Component={UserTest} path="/test" />
             <Route Component={ErrorPage} path="/*" />
-            <Route Component={Middle} path="/middle" />
+            <Route Component={Middle} path="/tshirt-customisation" />
           </Routes>
 
           <div>

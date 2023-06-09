@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logoTshirt from "../../assets/image/icons8-shirt-512.png";
-
+import { mid } from "../../assets";
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => {
@@ -22,7 +22,7 @@ const Navbar = () => {
         <Link to="/">
           <img
             className="w-12 justify-center align-middle"
-            src={logoTshirt}
+            src={mid}
             alt="Logo"
           />
         </Link>
@@ -56,13 +56,7 @@ const Navbar = () => {
           {" "}
           FAQ's
         </Link>
-        <Link
-          to="/middle"
-          className={`link ${location.pathname === "/middle" ? "active" : ""}`}
-        >
-          {" "}
-          Customisation
-        </Link>
+
         <button className="tryfree-btn justify-center p-2 rounded-md h-10">
           Try Free
         </button>

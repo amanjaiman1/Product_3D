@@ -3,18 +3,23 @@
 }
 
 .cta {
-  height: 2.6rem;
+  height: 2.8rem;
   display: flex;
-  padding: 0.5rem;
+  padding: 10px 10px;
 
+  font-family: "Poppins", sans-serif !important;
+  font-weight: bold;
   font-size: 18px;
   color: rgb(229, 229, 238);
   background: rgb(9, 9, 179);
   transition: 1s;
   box-shadow: 6px 6px 0 rgb(64, 3, 247);
   transform: skewX(-15deg);
+  font-style: italic;
 }
-
+.text-cus {
+  padding-left: 1rem;
+}
 .cta:focus {
   outline: none;
 }
@@ -40,7 +45,7 @@
 
 .cta span:nth-child(2) {
   width: 20px;
-  margin-left: 30px;
+  margin-left: 15px;
   position: relative;
   top: 12%;
 }

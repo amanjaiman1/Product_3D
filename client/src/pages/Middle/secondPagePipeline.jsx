@@ -6,9 +6,9 @@ import { mid } from "../../assets";
 export function Middle() {
   return (
     <div>
-      <div className="flex bg-blue-100 h-20 pt-6 pl-6">
+      {/* <div className="flex bg-blue-100 h-20 pt-6 pl-6">
         <img src={mid} className=" " />
-      </div>
+      </div> */}
       <div className="h-screen flex justify-around items-center flex-wrap-reverse bg-blue-100">
         <div className=" ">
           <span className="text-primary bg-hero-badge-bg bg-opacity-60 text-opacity-70 font-semibold p-2 rounded max-[600px]:flex max-[600px]:justify-center">
@@ -28,12 +28,12 @@ export function Middle() {
           <div className="pt-3 max-[600px]:flex max-[600px]:justify-center">
             <div class="button1">
               <a class="cta" href="#">
-                <span>Customise</span>
+                <span className="text-cus">CUSTOMISE</span>
                 <span>
                   <svg
-                    width="75px"
+                    width="65px"
                     height="25px"
-                    viewBox="0 0 200 60"
+                    viewBox="0 0  150 53"
                     version="1.1"
                     xmlns="http://www.w3.org/2000/svg"
                     xmlns:xlink="http://www.w3.org/1999/xlink"
