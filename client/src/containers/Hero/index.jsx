@@ -1,8 +1,14 @@
+import { useNavigate } from "react-router-dom";
 import React from "react";
 import { hero } from "../../assets";
 import Button from "../../components/Button";
 
 function Hero() {
+  const navigate = useNavigate();
+
+  const navigateToCustomisation = () => {
+    navigate("/tshirt-customisation");
+  };
   return (
     <div className="h-screen flex justify-center items-center flex-wrap-reverse ">
       <div className="flex-1">
@@ -19,7 +25,7 @@ function Hero() {
           </p>
         </div>
         <div className="pt-3 max-[600px]:flex max-[600px]:justify-center">
-          <Button>Design Now</Button>
+          <Button onClick={navigateToCustomisation}>Design Now</Button>
         </div>
       </div>
       <div className="flex-3 animate__animated animate__zoomIn  animation-duration: 3s; animate__slow">

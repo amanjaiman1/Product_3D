@@ -15,7 +15,11 @@ import ScrollToTop from "react-scroll-to-top";
 
 import MoonLoader from "react-spinners/MoonLoader";
 import ContributorPage from "./views/app/ContributorPage";
+
+import { Middle } from "./pages/Middle/secondPagePipeline";
+
 import Guide from "./views/app/Guide";
+
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -50,7 +54,11 @@ function App() {
             <Route Component={BlogPage} path="/blog" />
             <Route Component={UserTest} path="/test" />
             <Route Component={ErrorPage} path="/*" />
+
+            <Route Component={Middle} path="/tshirt-customisation" />
+
             <Route Component={Guide} path="/guidebook"/>
+
           </Routes>
 
           <div>
