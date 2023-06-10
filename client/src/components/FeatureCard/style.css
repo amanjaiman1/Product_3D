@@ -1,0 +1,48 @@
+.card-grid {
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  grid-gap: 1rem;
+  padding: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  background-color: white;
+  border-radius: 20px;
+  height: 320px;
+  width: 320px;
+  transition: transform 0.5s;
+  transform-style: preserve-3d;
+  transform-origin: center;
+}
+
+.card:hover {
+  transform: rotateY(180deg);
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.card .front,
+.card .back {
+  position: absolute;
+  padding: 1rem;
+  backface-visibility: hidden;
+  text-align: center;
+}
+
+.card .front {
+  transform: rotateY(0deg);
+}
+
+.card .back {
+  transform: rotateY(180deg);
+  color: gray;
+  font-size: larger;
+}
