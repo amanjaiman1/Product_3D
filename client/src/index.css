@@ -321,7 +321,7 @@ nav.sticky {
   }
 }
 .animate-spin-slow {
-  animation: spin 5s infinite linear;
+  animation: spin 2.5s infinite linear;
 }
 
 @keyframes spin {
