@@ -320,3 +320,12 @@ nav.sticky {
     transform: translateY(-15px);
   }
 }
+.animate-spin-slow {
+  animation: spin 2.5s infinite linear;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
