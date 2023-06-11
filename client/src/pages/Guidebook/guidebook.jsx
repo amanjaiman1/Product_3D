@@ -15,7 +15,7 @@ function GuideBook(){
             <div className="flex justify-center mt-auto ease-in-out duration-200">
                 <img src={guide}/>
             </div>
-            <img src={guide1} className="animate-spin ml-auto hidden lg:block -mr-30 mt-[-620px]"/>
+            <img src={guide1} className="animate-spin-slow ml-auto hidden lg:block -mr-30 mt-[-620px]"/>
 
             <div className="grid justify-center mt-10">
                 <p className="text-blue-950  md:text-4xl lg:text-6xl font-bold items-center">Mastering 3D T-Shirt Design: <br/>
