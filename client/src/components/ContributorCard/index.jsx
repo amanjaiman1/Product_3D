@@ -16,7 +16,7 @@ function ContributorCard({contributor,index}) {
       >
         <img
           src={contributor?.avatar_url}
-          alt=""
+          alt="avatar"
           className="w-32 h-32 mx-auto rounded-full"
         />
       </a>

@@ -54,7 +54,7 @@ function Contact() {
                 >
                   <img
                     src={contributor.avatar_url}
-                    alt=""
+                    alt="avatar"
                     className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square"
                   />
                 </a>

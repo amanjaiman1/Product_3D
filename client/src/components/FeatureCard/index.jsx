@@ -26,7 +26,7 @@ function FeatureCard({ title, color, icon, desc }) {
         {/* front */}
         <div className="front">
           <div className="flex justify-center items-center rounded-lg w-16 h-16 mx-auto" style={{ backgroundColor: color }}>
-            <img src={icon} alt="" />
+            <img src={icon} alt={title} />
           </div>
           <div className="dark-primary font-Poppins my-6 text-2xl font-semibold text-center mx-auto px-4">
             {title}

@@ -30,7 +30,7 @@ const Testimonials = () => {
               <div className="te bg-[#F8F9FF] h-60 md:h-48 w-[90%] md:w-[50%] p-7 rounded-[1.5rem]">
                 <div className="flex flex-row gap-x-4 pt-4 justify-center items-center">
                   <div>
-                    <img src={img} alt="img" className="max-w-[60px]" />
+                    <img src={img} alt={card.name} className="max-w-[60px]" />
                   </div>
                   <div className="flex items-start flex-col">
                     <h1 className="font-semibold text-xl h-full">
