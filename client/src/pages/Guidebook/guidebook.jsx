@@ -7,7 +7,7 @@ import guide6 from "../../assets/image/guide6.jpg"
 
 function GuideBook(){
     return (
-        <div className="grid justify-center">
+        <div className="grid justify-center lg:mt-20">
             <div className="grid justify-center row-span-1">
             <p className="text-blue-800  md:text-4xl lg:text-6xl font-bold">Unlock Your Creativity: <span className="text-blue-950"> 3D</span><br/>
             <span className="text-blue-950 grid justify-center">T-Shirt Mastery</span></p>
