@@ -7,6 +7,7 @@ import img from "./wolf.jpg";
 import { Autoplay, Pagination, Navigation } from "swiper";
 import "./Card.css";
 import cardData from "./CardData";
+
 const Testimonials = () => {
   return (
     <div className="px-6 py-6 md:py-0 md:p-10 mb-10 md:mb-16 lg:pl-44 lg:pr-44 md:items-center">

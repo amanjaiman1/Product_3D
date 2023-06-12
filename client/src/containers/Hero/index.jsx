@@ -2,7 +2,10 @@ import { useNavigate } from "react-router-dom";
 import React from "react";
 import { hero } from "../../assets";
 import Button from "../../components/Button";
-
+import { motion } from "framer-motion";
+import { paraAnim } from "../../animation/motion";
+import { buttonAnim } from "../../animation/motion";
+import { imgAnim } from "../../animation/motion";
 function Hero() {
   const navigate = useNavigate();
 
@@ -12,25 +15,64 @@ function Hero() {
   return (
     <div className="h-screen flex justify-center items-center flex-wrap-reverse ">
       <div className="flex-1">
-        <span className="text-primary bg-hero-badge-bg bg-opacity-60 text-opacity-70 font-semibold p-2 rounded max-[600px]:flex max-[600px]:justify-center">
-          AI-Powered 3D T-Shirts
-        </span>
+        <motion.div
+          variants={paraAnim}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          transition={{ type: "spring", stiffness: 50 }}
+        >
+          <span className="text-primary bg-hero-badge-bg bg-opacity-60 text-opacity-70 font-semibold p-2 rounded max-[600px]:flex max-[600px]:justify-center">
+            AI-Powered 3D T-Shirts
+          </span>
+        </motion.div>
         <div className="py-3">
-          <h1 className="mt-5 text-heading font-semibold min-[600px]:text-5xl max-[600px]:text-4xl min-[600px]:leading-normal max-[600px]:leading-tight max-[600px]:text-center animate__animated animate__fadeInLeft animation-duration: 2s; animate_slower">
+          <motion.h1
+            variants={paraAnim}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ type: "spring", stiffness: 60 }}
+            className="mt-5 text-heading font-semibold min-[600px]:text-5xl max-[600px]:text-4xl min-[600px]:leading-normal max-[600px]:leading-tight max-[600px]:text-center "
+          >
             Elevate Your Style with Intelligent Fashion
-          </h1>
-          <p className="text-secondary font-normal pt-3 leading-loose max-[600px]:text-center">
+          </motion.h1>
+          <motion.p
+            variants={paraAnim}
+            initial="hidden"
+            whileInView="visible"
+            viewport={{ once: true }}
+            transition={{ type: "spring", stiffness: 50 }}
+            className="text-secondary font-normal pt-3 leading-loose max-[600px]:text-center"
+          >
             Indulge in the mesmerizing world of 3D fashion and elevate your
             style with our extraordinary collection of vibrant designs.
-          </p>
+          </motion.p>
         </div>
-        <div className="pt-3 max-[600px]:flex max-[600px]:justify-center">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+          variants={buttonAnim}
+          whileHover="hover"
+          className="pt-3 max-[600px]:flex max-[600px]:justify-center"
+        >
           <Button onClick={navigateToCustomisation}>Design Now</Button>
-        </div>
+        </motion.div>
       </div>
-      <div className="flex-3 animate__animated animate__zoomIn  animation-duration: 3s; animate__slow">
+      <motion.div
+        variants={imgAnim}
+        initial="hidden"
+        viewport={{ once: true, amount: 0.25 }}
+        whileInView={{
+          scale: [0, 1],
+          opacity: 1,
+        }}
+        transition={{ duration: 0.84, delay: 0.1 }}
+        className="flex-3"
+      >
         <img src={hero} alt="hero image" />
-      </div>
+      </motion.div>
     </div>
   );
 }
