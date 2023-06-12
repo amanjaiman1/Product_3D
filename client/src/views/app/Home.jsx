@@ -5,7 +5,6 @@ import HightLights from "../../containers/HightLights/index.jsx";
 import Contributor from "../../containers/Contributors/index.jsx";
 import TeamPost from "../../containers/TeamPost/index.jsx";
 import NewsLetter from "../../containers/NewsLetter/index.jsx";
-
 function Home() {
   return (
     <HomeLayout>
