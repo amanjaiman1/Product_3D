@@ -8,6 +8,7 @@ function TeamPost() {
   return (
     <>
       <div className="teamPostHeader text-center my-9">
+
         <motion.h4
           variants={imgAnim}
           initial="hidden"
@@ -44,9 +45,12 @@ function TeamPost() {
       </div>
       <div>
         <TeamPostCard />
+
       </div>
     </>
   );
 }
 
+
 export default TeamPost;
+
