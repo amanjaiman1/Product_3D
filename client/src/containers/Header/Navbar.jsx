@@ -2,12 +2,16 @@ import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import logoTshirt from "../../assets/image/icons8-shirt-512.png";
 import { mid } from "../../assets";
+import { useNavigate } from "react-router-dom";
 const Navbar = () => {
+  const navigate = useNavigate();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
   };
-
+  const handleClick = () => {
+    navigate("/Login");
+  };
   // Sticky navbar function
   window.addEventListener("scroll", function () {
     var navbar = document.querySelector("nav");
@@ -57,7 +61,10 @@ const Navbar = () => {
           FAQ's
         </Link>
 
-        <button className="tryfree-btn justify-center p-2 rounded-md h-10">
+        <button
+          className="tryfree-btn justify-center p-2 rounded-md h-10"
+          onClick={handleClick}
+        >
           Try Free
         </button>
       </div>

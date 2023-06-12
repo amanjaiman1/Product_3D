@@ -1,7 +1,7 @@
-import React, {useState} from "react";
+import React, { useState } from "react";
 import canvas1 from "/src/assets/image/canvas1.gif";
 import faGoogle from "/src/assets/image/google-48.png";
-
+import {useNavigate} from "react-router-dom"
 import {
   GoogleAuthProvider,
   signInWithPopup,
@@ -11,58 +11,68 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 import { auth } from "../../firebase/firebase";
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
+  const navigate=useNavigate()
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [alert, setAlert] = useState({
-    open: false,
-    message: "",
-    type: "success",
-  });
+  const [user,setUser]=useState({
+    name:"",
+    email:"",
+    profilePicL:""
+  })
   const googleProvider = new GoogleAuthProvider();
 
-  const handleLoginSubmit = async () => {
+  const handleLoginSubmit = async (e) => {
+    e.preventDefault();
     if (!email || !password) {
-      setAlert({
-        open: true,
-        message: "Please fill all the Fields",
-        type: "error",
-      });
-      console.log(alert?.message);
+      toast.error('Kindly Fill All Details', {
+        position: toast.POSITION.TOP_RIGHT
+    });
       return;
     }
 
     try {
       const res = await signInWithEmailAndPassword(auth, email, password);
+      console.log(res);
       setUser({
         name: res?.user.displayName,
         email: res?.user.email,
         profilePic: "",
       });
 
-      localStorage.setItem("name", user?.name);
-      localStorage.setItem("email", user?.email);
+      // localStorage.setItem("name", user?.name);
+      // localStorage.setItem("email", user?.email);
       //localStorage.setItem("profilePic", profilePic);
-
-      setAlert({
-        open: true,
-        message: `Sign In Successful. Welcome ${user?.email}`,
-        type: "success",
-      });
-      console.log(alert?.message);
     } catch (error) {
-      setAlert({
-        open: true,
-        message: error?.message,
-        type: "error",
+      console.log(error);
+      if(error.message==="Firebase: Error (auth/user-not-found)."){
+        toast.error('User Not Found!', {
+          position: toast.POSITION.TOP_RIGHT
       });
-      console.log(alert?.message);
+      }
+      else if(error.message==="Firebase: Error (auth/wrong-password)."){
+        toast.error('Wrong Password!', {
+          position: toast.POSITION.TOP_RIGHT
+      });
+      }
+      else if(error.message==="Firebase: Error (auth/invalid-email)."){
+        toast.error('Kindly enter a valid email! ', {
+          position: toast.POSITION.TOP_RIGHT
+      });
+      }
+      else{
+        toast.error('An Error Occurred ', {
+          position: toast.POSITION.TOP_RIGHT
+      });
+      }
       return;
     }
   };
 
-  const signInWithGoogle = () => {
+  const signInWithGoogle = (e) => {
+    e.preventDefault();
     signInWithPopup(auth, googleProvider)
       .then((res) => {
         // const name = res.user.displayName;
@@ -73,33 +83,22 @@ const Login = () => {
           email: res.user.email,
           profilePic: res.user.photoURL,
         });
-        console.log(res.user);
-
-        localStorage.setItem("name", user.name);
-        localStorage.setItem("email", user.email);
-        localStorage.setItem("profilePic", user.profilePic);
-        setAlert({
-          open: true,
-          message: `Google Sign Up Successful. Welcome ${user?.email}`,
-          type: "success",
-        });
-
+        // localStorage.setItem("name", user.name);
+        // localStorage.setItem("email", user.email);
+        // localStorage.setItem("profilePic", user.profilePic);
         console.log("login using google successful");
-        console.log(alert?.message);
+        navigate("/tshirt-customisation");
       })
       .catch((error) => {
-        setAlert({
-          open: true,
-          message: error.message,
-          type: "error",
-        });
-        console.log(alert?.message);
+        navigate("/signup")
+        console.log(error.message);
         return;
       });
   };
 
   return (
     <div className="flex">
+      <ToastContainer/>
       <div className="md:w-1/2 md:p-8 flex flex-col mt-4 m-4">
         <div className="md:p-16 sm:p-8 p-0 lg:pl-36 lg:m-4 md:w-1/2 lg:p-16 pt-8 md:m-0 flex flex-col ">
           <h2 className="text-3xl mb-4 font-bold md:w-[400px]">Welcome Back</h2>
@@ -120,7 +119,7 @@ const Login = () => {
                 placeholder="Enter your Email"
                 type="email"
                 value={email}
-                onChange={(e)=>setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
 
@@ -134,7 +133,7 @@ const Login = () => {
                 placeholder="Enter Password"
                 type="password"
                 value={password}
-                onChange={(e)=>setPassword(e.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <div className="md:w-[400px] w-[300px] text-sm flex flex-inline justify-between mt-2">
@@ -158,7 +157,7 @@ const Login = () => {
               <button
                 className="md:w-[400px] w-[300px] text-center text-lg font-medium mt-14 mb-4 mr-2 p-2 border rounded bg-purple-500 text-white"
                 type="submit"
-                onClick={handleLoginSubmit}
+                onClick={e=>handleLoginSubmit(e)}
               >
                 Sign in
               </button>
