@@ -20,11 +20,11 @@ function Blog() {
     return (
         <div style={{ fontFamily: 'Poppins, sans-serif' }}>
             <div className="grid justify-center" >
-                <img src={blogbar} alt="blog bar" className="w-[96vw]" />
+                <img src={blogbar} alt="blog bar" className="w-[96vw]" loading="lazy" />
             </div>
             <div className="grid justify-center md:mt-[-25px] mt-[-15px]">
                 <div className="inline-flex bg-white shadow-lg rounded-xl">
-                    <img src={searchIcon} alt="search icon" className="p-3 w-12 lg:w-16"/>
+                    <img src={searchIcon} alt="search icon" className="p-3 w-12 lg:w-16" loading="lazy"/>
                     <input
                         className="w-[50vw] lg:w-[40vw] lg:h-16 rounded-xl p-2"
                         label="Search"
@@ -42,7 +42,7 @@ function Blog() {
                 </div>
             </div>
             <div className="md:inline-flex justify-center lg:m-6">
-               <img src={blogImage1} alt="blogImage 1" className="md:w-2/4 md:m-4 m-2"/>
+               <img src={blogImage1} alt="blogImage 1" className="md:w-2/4 md:m-4 m-2" loading="lazy"/>
                <div className="flex flex-col md:w-2/4">
                 <p className="text-slate-500 text-sm lg:text-lg m-4">T-SHIRT DESIGN TIPS</p>
                 <p className="text-blue-900 font-extrabold text-lg md:text-2xl lg:text-4xl m-4">Mastering the Art: Essential Tips for Creating Eye-Catching T-shirt Designs</p>
@@ -52,7 +52,7 @@ function Blog() {
                      that make a lasting impression.
                 </p>
                 <div className="inline-flex md:mb-6">
-                    <img src={ceo} alt="ceo image" className="w-auto ml-4"/>
+                    <img src={ceo} alt="ceo image" className="w-auto ml-4" loading="lazy"/>
                     <div className="flex flex-col m-6">
                     <p className="font-bold">AMAN JAIMAN</p>
                     <p className="font-light text-slate-600">Founder & CEO</p>

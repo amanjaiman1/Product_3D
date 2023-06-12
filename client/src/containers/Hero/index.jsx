@@ -71,7 +71,7 @@ function Hero() {
         transition={{ duration: 0.84, delay: 0.1 }}
         className="flex-3"
       >
-        <img src={hero} alt="hero image" />
+        <img src={hero} alt="hero image" loading="lazy" />
       </motion.div>
     </div>
   );

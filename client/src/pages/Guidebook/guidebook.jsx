@@ -13,9 +13,9 @@ function GuideBook(){
             <span className="text-blue-950 grid justify-center">T-Shirt Mastery</span></p>
             </div>
             <div className="flex justify-center mt-auto ease-in-out duration-200">
-                <img src={guide}/>
+                <img src={guide} loading="lazy"/>
             </div>
-            <img src={guide1} className="animate-spin-slow ml-auto hidden lg:block -mr-30 mt-[-620px]"/>
+            <img src={guide1} className="animate-spin-slow ml-auto hidden lg:block -mr-30 mt-[-620px]" loading="lazy"/>
 
             <div className="grid justify-center mt-10">
                 <p className="text-blue-950  md:text-4xl lg:text-6xl font-bold items-center">Mastering 3D T-Shirt Design: <br/>
@@ -23,7 +23,7 @@ function GuideBook(){
             </div>
 
             <section className="grid md:grid-cols-2 grid-cols-1 justify-center p-4">
-                    <img src={guide3}/>
+                    <img src={guide3} loading="lazy"/>
                     <p className="text-blue-800 font-bold mt-20 lg:mt-35 md:text-xl lg:text-4xl text-center">What is 3D T-shirt Designing?<br/>
                     <span className="text-slate-800 font-normal w-1/2 text-sm md:text-lg lg:text-xl">3D T-shirt designing refers to the process of creating visually 
                         appealing and lifelike designs on T-shirts using 
@@ -41,10 +41,10 @@ function GuideBook(){
                       you can customize it by adding text, images, and other elements. You can also change the size, color, and placement of your design.
                       Once you're happy with your design, you can preview it to see how it will look on a t-shirt. You can view your design from different angles 
                       and zoom in to get a close-up look.</span></p>
-                    <img src={guide2} className="w-auto"/>
+                    <img src={guide2} className="w-auto" loading="lazy"/>
             </section>
             <section className="grid md:grid-cols-2 grid-cols-1 justify-center lg:-m-10 p-4">
-                    <img src={guide6} className="lg:-mt-8"/>
+                    <img src={guide6} className="lg:-mt-8" loading="lazy"/>
                     <p className="text-blue-800 font-bold mt-20 md:text-xl lg:text-4xl text-center">Additional Tips.<br/>
                     <span className="text-slate-800 font-normal w-1/2 text-sm md:text-lg lg:text-xl">Here are some additional tips for designing a t-shirt:<br/>
                     Keep your design simple. Too much text or too many images can make your design look cluttered.

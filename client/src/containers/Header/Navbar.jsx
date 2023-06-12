@@ -23,7 +23,7 @@ const Navbar = () => {
           <img
             className="w-12 justify-center align-middle"
             src={mid}
-            alt="Logo"
+            alt="Logo" loading="lazy"
           />
         </Link>
         {/* <p className="Brand-heading">PRODUCT 3D</p> */}

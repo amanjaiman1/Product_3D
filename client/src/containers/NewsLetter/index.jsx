@@ -73,7 +73,7 @@ function NewsLetter() {
                       marginRight: "8px",
                       width: "24px",
                       height: "30px",
-                    }}
+                    }} loading="lazy"
                   />
                   <span style={{ fontSize: "13px" }}>Sending</span>
                 </div>
