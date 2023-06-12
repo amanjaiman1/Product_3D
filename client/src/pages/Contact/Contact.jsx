@@ -49,7 +49,7 @@ function Contact() {
           >
             <img
               src={contributor.avatar_url}
-              alt=""
+              alt={contributor.login}
               className="w-32 h-32 mx-auto rounded-full dark:bg-gray-500 aspect-square"
             />
             <div style={{ border: "none" }} className=" space-y-1">

@@ -29,7 +29,7 @@ function Hero() {
         </div>
       </div>
       <div className="flex-3 animate__animated animate__zoomIn  animation-duration: 3s; animate__slow">
-        <img src={hero} alt="" />
+        <img src={hero} alt="hero image" />
       </div>
     </div>
   );
