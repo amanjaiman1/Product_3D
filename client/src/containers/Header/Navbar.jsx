@@ -22,8 +22,8 @@ const Navbar = () => {
         <Link to="/">
           <img
             className="w-12 justify-center align-middle"
-            src={mid}
-            alt="Logo"
+            src=""
+            alt=""
           />
         </Link>
         {/* <p className="Brand-heading">PRODUCT 3D</p> */}

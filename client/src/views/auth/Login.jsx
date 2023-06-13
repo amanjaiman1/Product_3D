@@ -1,14 +1,12 @@
-import React, {useState} from "react";
+import React, { useState, useEffect } from "react";
 import canvas1 from "/src/assets/image/canvas1.gif";
 import faGoogle from "/src/assets/image/google-48.png";
-
 import {
   GoogleAuthProvider,
-  signInWithPopup,
-  createUserWithEmailAndPassword,
+  getAuth,
+  getRedirectResult,
   signInWithEmailAndPassword,
-  signOut,
-  onAuthStateChanged,
+  signInWithPopup,
 } from "firebase/auth";
 import { auth } from "../../firebase/firebase";
 
@@ -20,16 +18,44 @@ const Login = () => {
     message: "",
     type: "success",
   });
+  const [user, setUser] = useState({
+    name: "",
+    email: "",
+    profilePic: "",
+  });
   const googleProvider = new GoogleAuthProvider();
+  const firebaseAuth = getAuth();
+
+  useEffect(() => {
+    getRedirectResult(firebaseAuth)
+      .then((result) => {
+        const credential = GoogleAuthProvider.credentialFromResult(result);
+        const token = credential.accessToken;
+        const user = result.user;
+        // Set the user data to the state or take appropriate actions
+        setUser({
+          name: user.displayName,
+          email: user.email,
+          profilePic: user.photoURL,
+        });
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        const email = error.email;
+        const credential = GoogleAuthProvider.credentialFromError(error);
+        // ...
+      });
+  }, []); // Empty dependency array to ensure this effect runs only once
 
   const handleLoginSubmit = async () => {
     if (!email || !password) {
       setAlert({
         open: true,
-        message: "Please fill all the Fields",
+        message: "Please fill in all the fields",
         type: "error",
       });
-      console.log(alert?.message);
       return;
     }
 
@@ -41,51 +67,42 @@ const Login = () => {
         profilePic: "",
       });
 
-      localStorage.setItem("name", user?.name);
-      localStorage.setItem("email", user?.email);
-      //localStorage.setItem("profilePic", profilePic);
-
       setAlert({
         open: true,
-        message: `Sign In Successful. Welcome ${user?.email}`,
+        message: `Sign In Successful. Welcome ${res?.user.email}`,
         type: "success",
       });
-      console.log(alert?.message);
     } catch (error) {
       setAlert({
         open: true,
         message: error?.message,
         type: "error",
       });
-      console.log(alert?.message);
-      return;
     }
   };
 
-  const signInWithGoogle = () => {
+  const handleGoogleSignIn = () => {
+    signInWithGooglePopup();
+  };
+
+  const signInWithGooglePopup = () => {
     signInWithPopup(auth, googleProvider)
       .then((res) => {
-        // const name = res.user.displayName;
-        // const email = res.user.email;
-        // const profilePic = res.user.photoURL;
         setUser({
           name: res.user.displayName,
           email: res.user.email,
           profilePic: res.user.photoURL,
         });
-        console.log(res.user);
 
-        localStorage.setItem("name", user.name);
-        localStorage.setItem("email", user.email);
-        localStorage.setItem("profilePic", user.profilePic);
+        localStorage.setItem("name", res.user.displayName);
+        localStorage.setItem("email", res.user.email);
+        localStorage.setItem("profilePic", res.user.photoURL);
+
         setAlert({
           open: true,
-          message: `Google Sign Up Successful. Welcome ${user?.email}`,
+          message: `Google Sign Up Successful. Welcome ${res.user.email}`,
           type: "success",
         });
-
-        console.log("login using google successful");
-        console.log(alert?.message);
       })
       .catch((error) => {
         setAlert({
@@ -93,8 +110,6 @@ const Login = () => {
           message: error.message,
           type: "error",
         });
-        console.log(alert?.message);
-        return;
       });
   };
 
@@ -104,10 +119,8 @@ const Login = () => {
         <div className="md:p-16 sm:p-8 p-0 lg:pl-36 lg:m-4 md:w-1/2 lg:p-16 pt-8 md:m-0 flex flex-col ">
           <h2 className="text-3xl mb-4 font-bold md:w-[400px]">Welcome Back</h2>
           <h4 className="mb-4 md:w-[400px] md:text-lg w-[300px] text-sm">
-            "Welcome back! Please enter your details"
+            Welcome back! Please enter your details
           </h4>
-
-          {/* ------------------Inputs-------------------------- */}
 
           <form>
             <div className="flex flex-col mb-4">
@@ -120,7 +133,7 @@ const Login = () => {
                 placeholder="Enter your Email"
                 type="email"
                 value={email}
-                onChange={(e)=>setEmail(e.target.value)}
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
 
@@ -134,7 +147,7 @@ const Login = () => {
                 placeholder="Enter Password"
                 type="password"
                 value={password}
-                onChange={(e)=>setPassword(e.target.value)}
+                onChange={(e) => setPassword(e.target.value)}
               />
             </div>
             <div className="md:w-[400px] w-[300px] text-sm flex flex-inline justify-between mt-2">
@@ -152,8 +165,6 @@ const Login = () => {
               </a>
             </div>
 
-            {/* --------------------Sign In Buttons------------------------------ */}
-
             <div className="flex flex-col">
               <button
                 className="md:w-[400px] w-[300px] text-center text-lg font-medium mt-14 mb-4 mr-2 p-2 border rounded bg-purple-500 text-white"
@@ -164,8 +175,8 @@ const Login = () => {
               </button>
               <button
                 className="md:w-[400px] w-[300px] shadow-md text-center text-lg font-medium mb-4 p-2 border rounded bg-white text-black"
-                type="submit"
-                onClick={signInWithGoogle}
+                type="button"
+                onClick={handleGoogleSignIn}
               >
                 <div className="flex justify-center">
                   <img src={faGoogle} alt="google-Icon" className="w-8" />
@@ -184,9 +195,6 @@ const Login = () => {
           </div>
         </div>
       </div>
-
-      {/* -------------------Right Side Image------------------ */}
-
       <div className="hidden md:block ">
         <img src={canvas1} alt="canvas image" className="pt-40 h-auto w-auto" />
       </div>
