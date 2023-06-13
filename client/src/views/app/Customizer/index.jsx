@@ -1,9 +1,12 @@
 import React from 'react'
 import EditorLayout from '../../../layout/EditorLayout'
+import CustomizerContainer from '../../../containers/Customizer'
 
 function Customizer() {
   return (
-    <EditorLayout>Customizer</EditorLayout>
+    <EditorLayout>
+      <CustomizerContainer/>
+    </EditorLayout>
   )
 }
 
