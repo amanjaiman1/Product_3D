@@ -19,6 +19,7 @@ import ContributorPage from "./views/app/ContributorPage";
 import { Middle } from "./pages/Middle/secondPagePipeline";
 
 import Guide from "./views/app/Guide";
+import Customizer from "./views/app/Customizer";
 
 
 function App() {
@@ -52,7 +53,7 @@ function App() {
             <Route Component={Login} path="/login" />
             <Route Component={SignUp} path="/signup" />
             <Route Component={BlogPage} path="/blog" />
-            <Route Component={UserTest} path="/test" />
+            <Route Component={Customizer} path="/test" />
             <Route Component={ErrorPage} path="/*" />
 
             <Route Component={Middle} path="/tshirt-customisation" />
