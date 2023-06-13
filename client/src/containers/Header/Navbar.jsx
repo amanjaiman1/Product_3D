@@ -22,7 +22,7 @@ const Navbar = () => {
         <Link to="/">
           <img
             className="w-12 justify-center align-middle"
-            src={mid}
+            src=""
             alt="Logo"
           />
         </Link>
