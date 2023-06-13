@@ -10,7 +10,7 @@ import SignUp from "./views/auth/SignUp";
 import BlogPage from "./views/app/Blog";
 import { favicon } from "./assets";
 import UserTest from "./test/user.test";
-
+import AutoScroll from "./utils/AutoScroll";
 import ScrollToTop from "react-scroll-to-top";
 
 import MoonLoader from "react-spinners/MoonLoader";
@@ -44,6 +44,7 @@ function App() {
         </div>
       ) : (
         <BrowserRouter>
+          <AutoScroll/>
           <Routes>
             <Route Component={Home} path="/" />
             <Route Component={Faq} path="/faq" />
