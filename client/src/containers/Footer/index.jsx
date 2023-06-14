@@ -4,7 +4,7 @@ import { objectFoot } from "../../assets";
 import { footerLinks } from "./index";
 import { imgAnim } from "../../animation/motion";
 import { motion } from "framer-motion";
-import { NavLink } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 
 // btn
 const Button = ({ styles }) => {
@@ -92,7 +92,7 @@ function Footer() {
                   styles.index !== footerLink.links.length - 1 ? "mb-4" : "mb-0"
                 }`}
                     >
-                      <NavLink to={link.link}>{link.name}</NavLink>
+                      <Link to={link.link}>{link.name}</Link>
                     </li>
                   ))}
                 </ul>
