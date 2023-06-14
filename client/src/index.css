@@ -30,6 +30,7 @@
 body {
   font-family: "Poppins", sans-serif;
   scroll-behaviour: smooth;
+  box-sizing:border-box;
 }
 
 .main-div::-webkit-scrollbar {

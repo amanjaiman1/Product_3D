@@ -19,6 +19,8 @@ import ContributorPage from "./views/app/ContributorPage";
 import { Middle } from "./pages/Middle/secondPagePipeline";
 
 import Guide from "./views/app/Guide";
+import Customizer from "./views/app/Customizer";
+import { HashLoader } from "react-spinners";
 
 
 function App() {
@@ -33,14 +35,14 @@ function App() {
     <div>
       {loading ? (
         <div className="flex h-screen items-center justify-center bg-blue-100">
-          <MoonLoader
+          <HashLoader
             color="#293fce"
             ariaLabel="grid-loading"
             wrapperStyle={{}}
             wrapperClass=""
             visible={true}
           />
-          <img src={favicon} className="h-14 w-12 -ml-16"></img>
+          {/* <img src={favicon} className="h-14 w-12 -ml-16"></img> */}
         </div>
       ) : (
         <BrowserRouter>
@@ -53,7 +55,7 @@ function App() {
             <Route Component={Login} path="/login" />
             <Route Component={SignUp} path="/signup" />
             <Route Component={BlogPage} path="/blog" />
-            <Route Component={UserTest} path="/test" />
+            <Route Component={Customizer} path="/test" />
             <Route Component={ErrorPage} path="/*" />
 
             <Route Component={Middle} path="/tshirt-customisation" />
