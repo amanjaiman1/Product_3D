@@ -118,7 +118,7 @@ function Footer() {
         <p
           className={`font-poppins font-normal text-center text-[12px] leading-[27px] text-[#63657E] mx-auto`}
         >
-          Opensource ©2023 | Fashion Forge 3D | All Rights Reserved.
+          Opensource ©2023 | Fashion Froze 3D | All Rights Reserved.
         </p>
       </div>
     </footer>
