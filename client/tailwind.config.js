@@ -6,6 +6,9 @@ export default {
   ],
   theme: {
     extend: {
+      backgroundImage:{
+        'hero-pattern': "url('../src/assets/svg/customizer.svg')",
+      },
       colors:{
         'primary':"#293FCC",
         "secondary":"#63657E",
