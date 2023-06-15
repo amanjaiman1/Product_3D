@@ -70,7 +70,7 @@ If you'd like to contribute to this project, please fork the repository and subm
 1. Clone the project repository:
 
 ```
-git clone https://github.com/your-username/your-repo-name.git
+git clone 
 ```
 
 This command will create a local copy of the project on your machine.
@@ -119,7 +119,7 @@ npm start
     - Run the following command to clone the repository:
 
         ```
-        git clone https://github.com/your-username/your-repo-name.git
+        git clone https://github.com/amanjaiman1/Product_3D.git
         ```
 
 3. Create a new branch for your changes:
