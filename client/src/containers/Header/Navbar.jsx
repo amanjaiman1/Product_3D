@@ -16,20 +16,17 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`navbar h-16 py-[20px] p-[5%] max-sm:px-0 max-sm:py-5 flex`}
+      className={`navbar h-16 py-[20px] p-[2%] max-sm:px-0 max-sm:py-5 flex`}
     >
       <div className="pl-5">
         <Link to="/">
           <div className="flex mt-1 align-center items-center">
+            <img className=" w-14 h-14" src={logo} alt="" />
             <img
-              className=" w-14 h-15"
-              src={logo}
+              src={logoText}
+              className="w-[11rem] h-[2.5rem] md:w-[18rem] md:h-[3rem] ml-2"
               alt=""
             />
-            <img 
-              src={logoText} 
-              className="w-15 h-10 ml-2"
-              alt="" />
           </div>
         </Link>
         {/* <p className="Brand-heading">PRODUCT 3D</p> */}
@@ -68,7 +65,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      <div className="ml-auto mr-5 lg:hidden">
+      <div className="ml-auto mr-5 mt-[-1rem] lg:hidden">
         <button
           className={`mobile-menu-toggle ${isMobileMenuOpen ? "open" : ""}`}
           onClick={toggleMobileMenu}
