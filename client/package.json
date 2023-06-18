@@ -14,7 +14,7 @@
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.11.16",
     "@mui/material": "^5.13.3",
-    "@react-three/drei": "^9.74.13",
+    "@react-three/drei": "^9.74.16",
     "@react-three/fiber": "^8.13.3",
     "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.4.0",

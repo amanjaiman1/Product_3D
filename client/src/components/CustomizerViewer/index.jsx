@@ -26,6 +26,7 @@ function CustomizerViewer() {
               <Shirt />
             </mesh>
           </Center>
+          {/* <CustomizerOptions /> */}
         </CameraRig>
       </Canvas>
     </div>

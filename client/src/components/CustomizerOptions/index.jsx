@@ -1,7 +1,7 @@
 import React,{useState} from "react";
 import zoomInIcon from "../../assets/svg/zoomin.svg";
 import zoomOutIcon from "../../assets/svg/zoomout.svg";
-import rotateX from "../../assets/svg/roatate-x.svg";
+import rotateX from "../../assets/svg/rotate-x.svg";
 import rotateY from "../../assets/svg/rotate-y.svg";
 
 export const ToolTip = ({ index, current, title, shortCut ,setselectedOption}) => {

@@ -1,4 +1,4 @@
-import React, { useRef } from 'react';
+import React, { useRef, useState, useEffect } from 'react';
 import { useFrame } from '@react-three/fiber';
 import { Decal, useGLTF, useTexture } from '@react-three/drei/core';
 import { useSnapshot } from 'valtio';
@@ -13,9 +13,41 @@ const Shirt = () => {
   const fullTexture = useTexture(snap.fullDecal);
 
   const shirtRef = useRef();
+  const [isDragging, setIsDragging] = useState(false);
+  const [prevMouseX, setPrevMouseX] = useState(0);
+
+  useEffect(() => {
+    const handleMouseDown = (e) => {
+      setIsDragging(true);
+      setPrevMouseX(e.clientX);
+    };
+
+    const handleMouseUp = () => {
+      setIsDragging(false);
+    };
+
+    const handleMouseMove = (e) => {
+      if (isDragging) {
+        const mouseDeltaX = e.clientX - prevMouseX;
+        const rotationSpeed = 0.005;
+        const newRotationY = shirtRef.current.rotation.y + mouseDeltaX * rotationSpeed;
+        shirtRef.current.rotation.y = newRotationY;
+        setPrevMouseX(e.clientX);
+      }
+    };
+
+    document.addEventListener('mousedown', handleMouseDown);
+    document.addEventListener('mouseup', handleMouseUp);
+    document.addEventListener('mousemove', handleMouseMove);
+
+    return () => {
+      document.removeEventListener('mousedown', handleMouseDown);
+      document.removeEventListener('mouseup', handleMouseUp);
+      document.removeEventListener('mousemove', handleMouseMove);
+    };
+  }, [isDragging, prevMouseX]);
 
   useFrame(({ clock }) => {
-
     materials.lambert1.color.set('yellow');
   });
 
@@ -32,7 +64,7 @@ const Shirt = () => {
         dispose={null}
       >
         {snap.isFullTexture && (
-          <Decal 
+          <Decal
             position={[0, 0, 0]}
             rotation={[0, 0, 0]}
             scale={1}
@@ -41,7 +73,7 @@ const Shirt = () => {
         )}
 
         {snap.isLogoTexture && (
-          <Decal 
+          <Decal
             position={[0, 0.04, 0.15]}
             rotation={[0, 0, 0]}
             scale={0.15}
