@@ -21,5 +21,5 @@
 
 # <h1 style="font-family:Poppins, sans-serif" >Contact Us Page UI Design</h1> <br> <br>
 ![Contact Us Page](https://github.com/MohamedMafaz/Product_3D/assets/113255500/8053dad3-4ec8-43fe-b801-1c889ac4ab3f)
-
-
+# <h1 style="font-family:Poppins, sans-serif" >Newsletter Design</h1> <br> <br>
+![newsletter](https://github.com/gaurimadan/Product_3D/assets/114764111/69bcef52-468c-47f3-ad16-5cf5bbd4f51c)
