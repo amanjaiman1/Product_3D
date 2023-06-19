@@ -4,9 +4,8 @@ function ContributorCard({contributor,index}) {
   return (
     <div
       key={contributor?.id}
-      className={`flex flex-col items-center space-y-4 text-center  ${
-        index % 10 >= 8 ? "ml-8" : ""
-      }`}
+      className={`flex flex-col items-center space-y-4 text-center`}
+      style={{width: '11rem'}}
     >
       <a
         rel="noopener noreferrer"

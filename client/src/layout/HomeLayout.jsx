@@ -8,7 +8,7 @@ function HomeLayout({ children }) {
     <div className="bg-gradient-to-t from-slate-50 to-blue-100">
       <Header />
       <main className="min-[400px]:px-10">
-        <section className="container mx-auto px-4 py-8">{children}</section>
+        <section className="container mx-auto">{children}</section>
       </main>
       <div className={`bg-[#F4F8FD] ${styles.paddingX} ${styles.flexStart}`}>
         <div className={`${styles.boxWidth}`}>

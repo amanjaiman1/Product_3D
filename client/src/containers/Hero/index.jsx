@@ -6,6 +6,7 @@ import { motion } from "framer-motion";
 import { paraAnim } from "../../animation/motion";
 import { buttonAnim } from "../../animation/motion";
 import { imgAnim } from "../../animation/motion";
+import "../Hero/homeUI.css"
 function Hero() {
   const navigate = useNavigate();
 
@@ -13,7 +14,7 @@ function Hero() {
     navigate("/tshirt-customisation");
   };
   return (
-    <div className="h-screen flex justify-center items-center flex-wrap-reverse ">
+    <div className="justify-center items-center heroUI">
       <div className="flex-1">
         <motion.div
           variants={paraAnim}
@@ -33,8 +34,8 @@ function Hero() {
             whileInView="visible"
             viewport={{ once: true }}
             transition={{ type: "spring", stiffness: 60 }}
-            className="mt-5 text-heading font-semibold min-[600px]:text-5xl max-[600px]:text-4xl min-[600px]:leading-normal max-[600px]:leading-tight max-[600px]:text-center "
-          >
+            // className="mt-5 text-heading font-semibold min-[600px]:text-5xl max-[600px]:text-4xl min-[600px]:leading-normal max-[600px]:leading-tight max-[600px]:text-center "> 
+            className="mt-5 text-heading font-semibold title">
             Elevate Your Style with Intelligent Fashion
           </motion.h1>
           <motion.p
@@ -55,7 +56,7 @@ function Hero() {
           viewport={{ once: true }}
           variants={buttonAnim}
           whileHover="hover"
-          className="pt-3 max-[600px]:flex max-[600px]:justify-center"
+          className="pt-3 max-[600px]:flex max-[850px]:justify-center"
         >
           <Button onClick={navigateToCustomisation}>Design Now</Button>
         </motion.div>
@@ -71,7 +72,7 @@ function Hero() {
         transition={{ duration: 0.84, delay: 0.1 }}
         className="flex-3"
       >
-        <img src={hero} alt="hero image" />
+        <img src={hero} alt="hero image" className="heroimg"/>
       </motion.div>
     </div>
   );
