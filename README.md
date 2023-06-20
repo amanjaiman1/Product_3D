@@ -105,64 +105,64 @@ npm start
 
 1. Fork the project repository:
 
-    - Go to the project repository on GitHub.
-    - Click on the "Fork" button in the top-right corner of the page.
+   - Go to the project repository on GitHub.
+   - Click on the "Fork" button in the top-right corner of the page.
 
-    ![image](https://github.com/Ayush-Tibrewal/Product_3D/assets/96817905/789dda31-5f38-4102-aca8-731d7f2f5f2f)
+   ![image](https://github.com/Ayush-Tibrewal/Product_3D/assets/96817905/789dda31-5f38-4102-aca8-731d7f2f5f2f)
 
-    - This will create a copy of the repository under your GitHub account.
+   - This will create a copy of the repository under your GitHub account.
 
 2. Clone the forked repository to your local machine:
 
-    - Open your terminal or command prompt.
-    - Navigate to the directory where you want to clone the repository.
-    - Run the following command to clone the repository:
+   - Open your terminal or command prompt.
+   - Navigate to the directory where you want to clone the repository.
+   - Run the following command to clone the repository:
 
-        ```
-        git clone https://github.com/your-username/your-repo-name.git
-        ```
+     ```
+     git clone https://github.com/your-username/your-repo-name.git
+     ```
 
 3. Create a new branch for your changes:
 
-    - Change to the repository's directory:
+   - Change to the repository's directory:
 
-        ```
-        cd your-repo-name
-        ```
+     ```
+     cd your-repo-name
+     ```
 
-    - Create a new branch with a descriptive name for your changes:
+   - Create a new branch with a descriptive name for your changes:
 
-        ```
-        git checkout -b your-branch-name
-        ```
+     ```
+     git checkout -b your-branch-name
+     ```
 
 4. Make and commit your changes:
 
-    - Make the necessary modifications and additions to the project codebase.
-    - Once you've made your changes, stage them for commit:
+   - Make the necessary modifications and additions to the project codebase.
+   - Once you've made your changes, stage them for commit:
 
-        ```
-        git add .
-        ```
+     ```
+     git add .
+     ```
 
-    - Commit your changes with a meaningful commit message:
+   - Commit your changes with a meaningful commit message:
 
-        ```
-        git commit -m "Add your commit message here"
-        ```
+     ```
+     git commit -m "Add your commit message here"
+     ```
 
 5. Push your changes to your forked repository:
 
-    - Push your changes to the branch you created on your forked repository:
+   - Push your changes to the branch you created on your forked repository:
 
-        ```
-        git push origin your-branch-name
-        ```
+     ```
+     git push origin your-branch-name
+     ```
 
 6. Create a pull request:
-    - Go to the original project repository on GitHub.
-    - You should see a notification banner indicating that you've recently pushed a new branch.
-    - Click on the "Compare & pull request" button.
+   - Go to the original project repository on GitHub.
+   - You should see a notification banner indicating that you've recently pushed a new branch.
+   - Click on the "Compare & pull request" button.
 
 ## Thank you for contributors ✨
 

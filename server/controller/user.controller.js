@@ -104,8 +104,8 @@ exports.addAddress = async (req, res) => {
 exports.updateAddress = async (req, res) => {
   try {
     const { userId, addressId, address } = req.body;
-    var user = undefined
-    if (user.modifiedCount>0) {
+    var user = undefined;
+    if (user.modifiedCount > 0) {
       res.status(200).json({ messsage: "Successfully Updated ✅" });
     } else {
       res.status(200).json({ messsage: "Failed to Update 💔" });
