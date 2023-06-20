@@ -1,18 +1,18 @@
-import { useNavigate } from "react-router-dom"
-import React from "react"
-import { hero } from "../../assets"
-import Button from "../../components/Button"
-import { motion } from "framer-motion"
-import { paraAnim } from "../../animation/motion"
-import { buttonAnim } from "../../animation/motion"
-import { imgAnim } from "../../animation/motion"
-import "../Hero/homeUI.css"
+import { useNavigate } from "react-router-dom";
+import React from "react";
+import { hero } from "../../assets";
+import Button from "../../components/Button";
+import { motion } from "framer-motion";
+import { paraAnim } from "../../animation/motion";
+import { buttonAnim } from "../../animation/motion";
+import { imgAnim } from "../../animation/motion";
+import "../Hero/homeUI.css";
 function Hero() {
-  const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const navigateToCustomisation = () => {
-    navigate("/tshirt-customisation")
-  }
+    navigate("/tshirt-customisation");
+  };
   return (
     <div className="justify-center items-center heroUI">
       <div className="flex-1">
@@ -76,7 +76,7 @@ function Hero() {
         <img src={hero} alt="hero image" className="heroimg" />
       </motion.div>
     </div>
-  )
+  );
 }
 
-export default Hero
+export default Hero;

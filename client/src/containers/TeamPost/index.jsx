@@ -1,8 +1,8 @@
-import React from "react"
-import TeamPostCard from "./TeamPostCard"
-import { motion } from "framer-motion"
-import { fadeIn } from "../../animation/motion"
-import { imgAnim } from "../../animation/motion"
+import React from "react";
+import TeamPostCard from "./TeamPostCard";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../animation/motion";
+import { imgAnim } from "../../animation/motion";
 
 function TeamPost() {
   return (
@@ -46,7 +46,7 @@ function TeamPost() {
         <TeamPostCard />
       </div>
     </>
-  )
+  );
 }
 
-export default TeamPost
+export default TeamPost;

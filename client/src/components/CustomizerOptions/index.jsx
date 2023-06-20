@@ -1,16 +1,16 @@
-import React, { useState } from "react"
-import zoomInIcon from "../../assets/svg/zoomin.svg"
-import zoomOutIcon from "../../assets/svg/zoomout.svg"
-import rotateX from "../../assets/svg/roatate-x.svg"
-import rotateY from "../../assets/svg/rotate-y.svg"
+import React, { useState } from "react";
+import zoomInIcon from "../../assets/svg/zoomin.svg";
+import zoomOutIcon from "../../assets/svg/zoomout.svg";
+import rotateX from "../../assets/svg/roatate-x.svg";
+import rotateY from "../../assets/svg/rotate-y.svg";
 
 export const ToolTip = ({ index, current, title, shortCut, setselectedOption }) => {
-  console.log("INDEX", index)
-  console.log("INDEX", current)
+  console.log("INDEX", index);
+  console.log("INDEX", current);
   const handleSelect = () => {
-    console.log("Hello")
-    setselectedOption(index)
-  }
+    console.log("Hello");
+    setselectedOption(index);
+  };
   return (
     <div onClick={handleSelect} className={`${index != current ? "hidden" : ""}`}>
       <div className=" bg-white border-2 border-gray-300 rounded p-3 absolute w-[200px] bottom-[65px] right-[-60px] flex z-10">
@@ -23,11 +23,11 @@ export const ToolTip = ({ index, current, title, shortCut, setselectedOption }) 
         <div class=" h-11 w-11 border-2 shadow-lg bg-white -rotate-45 transform origin-top-left border-gray-300"></div>
       </div>
     </div>
-  )
-}
+  );
+};
 
 function CustomizerOptions() {
-  const [selectedOption, setselectedOption] = useState(0)
+  const [selectedOption, setselectedOption] = useState(0);
   return (
     <div
       className="fixed
@@ -79,7 +79,7 @@ function CustomizerOptions() {
         />
       </div>
     </div>
-  )
+  );
 }
 
-export default CustomizerOptions
+export default CustomizerOptions;

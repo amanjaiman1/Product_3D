@@ -1,9 +1,9 @@
-import React from "react"
-import guide from "../../assets/image/guide_group.png"
-import guide1 from "../../assets/image/guide1.png"
-import guide3 from "../../assets/image/guide 3.png"
-import guide2 from "../../assets/image/guide 2.png"
-import guide6 from "../../assets/image/guide6.jpg"
+import React from "react";
+import guide from "../../assets/image/guide_group.png";
+import guide1 from "../../assets/image/guide1.png";
+import guide3 from "../../assets/image/guide 3.png";
+import guide2 from "../../assets/image/guide 2.png";
+import guide6 from "../../assets/image/guide6.jpg";
 
 function GuideBook() {
   return (
@@ -81,7 +81,7 @@ function GuideBook() {
         </p>
       </section>
     </div>
-  )
+  );
 }
 
-export default GuideBook
+export default GuideBook;

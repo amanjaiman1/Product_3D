@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react"
+import React, { useState, useEffect } from "react";
 
-import "./sec.css"
-import { mid } from "../../assets"
+import "./sec.css";
+import { mid } from "../../assets";
 
 export function Middle() {
   return (
@@ -70,5 +70,5 @@ export function Middle() {
         <div className="flex-3  ">{/* <img src={} className=""/> */}</div>
       </div>
     </div>
-  )
+  );
 }

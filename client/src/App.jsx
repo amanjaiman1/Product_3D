@@ -1,35 +1,35 @@
-import React from "react"
-import { useEffect, useState } from "react"
-import { BrowserRouter, Routes, Route } from "react-router-dom"
-import Home from "./views/app/Home"
-import ErrorPage from "./views/app/Error"
-import "./index.css"
-import Faq from "./views/app/Faq"
-import Login from "./views/auth/Login"
-import SignUp from "./views/auth/SignUp"
-import BlogPage from "./views/app/Blog"
-import { favicon } from "./assets"
-import UserTest from "./test/user.test"
-import AutoScroll from "./utils/AutoScroll"
-import ScrollToTop from "react-scroll-to-top"
+import React from "react";
+import { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Home from "./views/app/Home";
+import ErrorPage from "./views/app/Error";
+import "./index.css";
+import Faq from "./views/app/Faq";
+import Login from "./views/auth/Login";
+import SignUp from "./views/auth/SignUp";
+import BlogPage from "./views/app/Blog";
+import { favicon } from "./assets";
+import UserTest from "./test/user.test";
+import AutoScroll from "./utils/AutoScroll";
+import ScrollToTop from "react-scroll-to-top";
 
-import MoonLoader from "react-spinners/MoonLoader"
-import ContributorPage from "./views/app/ContributorPage"
+import MoonLoader from "react-spinners/MoonLoader";
+import ContributorPage from "./views/app/ContributorPage";
 
-import { Middle } from "./pages/Middle/secondPagePipeline"
+import { Middle } from "./pages/Middle/secondPagePipeline";
 
-import Guide from "./views/app/Guide"
-import Customizer from "./views/app/Customizer"
-import { HashLoader } from "react-spinners"
+import Guide from "./views/app/Guide";
+import Customizer from "./views/app/Customizer";
+import { HashLoader } from "react-spinners";
 
 function App() {
-  const [loading, setLoading] = useState(false)
+  const [loading, setLoading] = useState(false);
   useEffect(() => {
-    setLoading(true)
+    setLoading(true);
     setTimeout(() => {
-      setLoading(false)
-    }, 1000)
-  }, [])
+      setLoading(false);
+    }, 1000);
+  }, []);
   return (
     <div>
       {loading ? (
@@ -74,7 +74,7 @@ function App() {
         </BrowserRouter>
       )}
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

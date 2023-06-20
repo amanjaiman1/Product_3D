@@ -35,4 +35,4 @@ export default [
     title:
       "Design Like a Pro: 10 Essential Tips for Creating Professional T-shirt Artwork",
   },
-]
+];

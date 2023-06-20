@@ -1,12 +1,12 @@
-import React, { useState } from "react"
-import CustomizerTabPanel from "../CustomizerTabPanel"
-import CustomizerDesign from "../CustomizerDesign"
-import CustomizerColor from "../CustomizerColor"
-import CustomizerText from "../CustomizerText"
-import CustomizerLogo from "../CustomizerLogo"
+import React, { useState } from "react";
+import CustomizerTabPanel from "../CustomizerTabPanel";
+import CustomizerDesign from "../CustomizerDesign";
+import CustomizerColor from "../CustomizerColor";
+import CustomizerText from "../CustomizerText";
+import CustomizerLogo from "../CustomizerLogo";
 
 function CustomizerTabs() {
-  const [currentIndex, setcurrentIndex] = useState(0)
+  const [currentIndex, setcurrentIndex] = useState(0);
   const data = [
     {
       tabId: 1,
@@ -28,7 +28,7 @@ function CustomizerTabs() {
       tabName: "Logos",
       tabPanel: <CustomizerLogo />,
     },
-  ]
+  ];
   return (
     <div>
       <div className="flex justify-center items-center mt-10">
@@ -44,14 +44,14 @@ function CustomizerTabs() {
               >
                 {item?.tabName}
               </ul>
-            )
+            );
           })}
       </div>
       <div className="flex justify-center items-center mt-10  w-full ">
         <CustomizerTabPanel currentIndex={currentIndex} data={data} />
       </div>
     </div>
-  )
+  );
 }
 
-export default CustomizerTabs
+export default CustomizerTabs;

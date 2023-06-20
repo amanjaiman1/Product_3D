@@ -1,18 +1,18 @@
-import React, { useState } from "react"
-import { Link } from "react-router-dom"
-import { logo, logoText } from "../../assets"
-import { mid } from "../../assets"
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
+import { logo, logoText } from "../../assets";
+import { mid } from "../../assets";
 const Navbar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen)
-  }
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   // Sticky navbar function
   window.addEventListener("scroll", function () {
-    var navbar = document.querySelector("nav")
-    navbar.classList.toggle("sticky", this.scrollY > 0)
-  })
+    var navbar = document.querySelector("nav");
+    navbar.classList.toggle("sticky", this.scrollY > 0);
+  });
 
   return (
     <nav className={`navbar h-16 py-[20px] p-[2%] max-sm:px-0 max-sm:py-5 flex`}>
@@ -123,7 +123,7 @@ const Navbar = () => {
         </label>
       </div> */}
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

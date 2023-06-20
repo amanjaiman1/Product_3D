@@ -1,8 +1,8 @@
-import React from "react"
-import FeatureCard from "../../components/FeatureCard"
-import { Card1, Card2, Card3 } from "../../assets"
-import { motion } from "framer-motion"
-import { fadeIn } from "../../animation/motion"
+import React from "react";
+import FeatureCard from "../../components/FeatureCard";
+import { Card1, Card2, Card3 } from "../../assets";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../animation/motion";
 function HightLights() {
   const data = [
     {
@@ -23,7 +23,7 @@ function HightLights() {
       icon: Card3,
       desc: "AI-powered 3D T-Shirt website, where cutting-edge technology and stunning designs come together for an extraordinary fashion experience.",
     },
-  ]
+  ];
 
   return (
     <div className="my-20" style={{ fontFamily: "Poppins, sans-serif" }}>
@@ -66,7 +66,7 @@ function HightLights() {
         ))}
       </div>
     </div>
-  )
+  );
 }
 
-export default HightLights
+export default HightLights;

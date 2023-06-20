@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 function Pagination({ data, perPage, currentPage, paginate }) {
   return (
@@ -17,7 +17,7 @@ function Pagination({ data, perPage, currentPage, paginate }) {
         ))}
       </ul>
     </>
-  )
+  );
 }
 
-export default Pagination
+export default Pagination;

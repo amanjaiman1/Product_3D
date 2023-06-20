@@ -1,12 +1,12 @@
-import React from "react"
-import { Swiper, SwiperSlide } from "swiper/react"
-import "swiper/css"
-import "swiper/css/pagination"
-import "swiper/css/navigation"
-import img from "./wolf.jpg"
-import { Autoplay, Pagination, Navigation } from "swiper"
-import "./Card.css"
-import cardData from "./CardData"
+import React from "react";
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/pagination";
+import "swiper/css/navigation";
+import img from "./wolf.jpg";
+import { Autoplay, Pagination, Navigation } from "swiper";
+import "./Card.css";
+import cardData from "./CardData";
 
 const Testimonials = () => {
   return (
@@ -47,7 +47,7 @@ const Testimonials = () => {
         </Swiper>
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Testimonials
+export default Testimonials;

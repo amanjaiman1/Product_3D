@@ -1,7 +1,7 @@
-import React from "react"
+import React from "react";
 
 function CustomizerText() {
-  return <div>CustomizerText</div>
+  return <div>CustomizerText</div>;
 }
 
-export default CustomizerText
+export default CustomizerText;

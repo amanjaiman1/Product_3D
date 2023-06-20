@@ -1,5 +1,5 @@
-import { createSlice } from "@reduxjs/toolkit"
-import { v4 as uuid } from "uuid"
+import { createSlice } from "@reduxjs/toolkit";
+import { v4 as uuid } from "uuid";
 export const editorSlice = createSlice({
   name: "editor",
   initialState: [
@@ -20,21 +20,21 @@ export const editorSlice = createSlice({
       const design = {
         id: uuid(),
         data: action.payload,
-      }
-      return [...state, design]
+      };
+      return [...state, design];
     },
     updateDesign: (state, action) => {
-      const { id, data } = action.payload
+      const { id, data } = action.payload;
 
-      const design = state.find((design) => design.id === id)
-      design.data = data
+      const design = state.find((design) => design.id === id);
+      design.data = data;
     },
     deleteDesign: (state, action) => {
-      return state.filter((design) => design.id !== action.payload)
+      return state.filter((design) => design.id !== action.payload);
     },
   },
-})
+});
 
-export const { addDesign, updateDesign, deleteDesign } = editorSlice.actions
+export const { addDesign, updateDesign, deleteDesign } = editorSlice.actions;
 
-export default editorSlice.reducer
+export default editorSlice.reducer;

@@ -1,40 +1,40 @@
-import React, { useState, useEffect } from "react"
-import { Link, useLocation } from "react-router-dom"
-import { navTshirt } from "../assets"
-import "./navbar.css"
+import React, { useState, useEffect } from "react";
+import { Link, useLocation } from "react-router-dom";
+import { navTshirt } from "../assets";
+import "./navbar.css";
 
 const Navbar = () => {
-  const [isDarkMode, setIsDarkMode] = useState(false)
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
-  const location = useLocation()
+  const [isDarkMode, setIsDarkMode] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
-    const currentMode = localStorage.getItem("darkMode")
-    setIsDarkMode(currentMode === "true")
-    applyDarkMode(currentMode === "true")
-  }, [])
+    const currentMode = localStorage.getItem("darkMode");
+    setIsDarkMode(currentMode === "true");
+    applyDarkMode(currentMode === "true");
+  }, []);
 
   const toggleDarkMode = () => {
-    const newMode = !isDarkMode
-    setIsDarkMode(newMode)
-    localStorage.setItem("darkMode", newMode)
-    applyDarkMode(newMode)
-  }
+    const newMode = !isDarkMode;
+    setIsDarkMode(newMode);
+    localStorage.setItem("darkMode", newMode);
+    applyDarkMode(newMode);
+  };
 
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen)
-  }
+    setIsMobileMenuOpen(!isMobileMenuOpen);
+  };
 
   const applyDarkMode = (isDark) => {
     // Apply dark mode styles to your application here
     if (isDark) {
       // Apply dark mode styles
-      document.documentElement.classList.add("dark-mode")
+      document.documentElement.classList.add("dark-mode");
     } else {
       // Remove dark mode styles
-      document.documentElement.classList.remove("dark-mode")
+      document.documentElement.classList.remove("dark-mode");
     }
-  }
+  };
 
   return (
     <nav
@@ -149,7 +149,7 @@ const Navbar = () => {
         </label>
       </div>
     </nav>
-  )
-}
+  );
+};
 
-export default Navbar
+export default Navbar;

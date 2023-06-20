@@ -1,10 +1,10 @@
-import React from "react"
-import Accordion from "./Accordion"
-import "./faq.css"
+import React from "react";
+import Accordion from "./Accordion";
+import "./faq.css";
 
-import illustration__box from "../../assets/svg/illustration-box-desktop.svg"
-import illustration__woman_desktop from "../../assets/svg/illustration-woman-online-desktop.svg"
-import illustration__woman_mobile from "../../assets/svg/illustration-woman-online-mobile.svg"
+import illustration__box from "../../assets/svg/illustration-box-desktop.svg";
+import illustration__woman_desktop from "../../assets/svg/illustration-woman-online-desktop.svg";
+import illustration__woman_mobile from "../../assets/svg/illustration-woman-online-mobile.svg";
 
 const questionsAnswers = [
   {
@@ -77,7 +77,7 @@ const questionsAnswers = [
     answer:
       " The pricing details of the application are not specified. It is recommended to visit the application's website or contact their support for information regarding any associated costs ",
   },
-]
+];
 
 const Faq = () => {
   return (
@@ -104,7 +104,7 @@ const Faq = () => {
         <Accordion questionsAnswers={questionsAnswers} />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Faq
+export default Faq;

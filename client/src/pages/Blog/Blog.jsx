@@ -1,16 +1,16 @@
-import React from "react"
-import blogbar from "../../assets/image/blogbar.png"
-import searchIcon from "../../assets/image/searchIcon.jpg"
-import blogImage1 from "../../assets/image/blogImage1.png"
-import ceo from "../../assets/image/ceo.png"
-import Card from "../../components/BlogCard/bcard"
-import blogData from "../../store/blogData"
-import NewsLetter from "../../containers/NewsLetter"
+import React from "react";
+import blogbar from "../../assets/image/blogbar.png";
+import searchIcon from "../../assets/image/searchIcon.jpg";
+import blogImage1 from "../../assets/image/blogImage1.png";
+import ceo from "../../assets/image/ceo.png";
+import Card from "../../components/BlogCard/bcard";
+import blogData from "../../store/blogData";
+import NewsLetter from "../../containers/NewsLetter";
 
 function Blog() {
   const blogCard = blogData.map((item) => {
-    return <Card key={item.id} {...item} />
-  })
+    return <Card key={item.id} {...item} />;
+  });
   return (
     <div style={{ fontFamily: "Poppins, sans-serif" }}>
       <div className="grid justify-center">
@@ -78,7 +78,7 @@ function Blog() {
       </div>
       <NewsLetter />
     </div>
-  )
+  );
 }
 
-export default Blog
+export default Blog;

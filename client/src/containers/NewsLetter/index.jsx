@@ -1,20 +1,20 @@
-import React, { useState } from "react"
-import background from "../../assets/image/background.png"
-import ReactiveButton from "reactive-button"
-import sendImage from "../../assets/image/send2.gif"
-import { motion } from "framer-motion"
-import { fadeIn } from "../../animation/motion"
+import React, { useState } from "react";
+import background from "../../assets/image/background.png";
+import ReactiveButton from "reactive-button";
+import sendImage from "../../assets/image/send2.gif";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../animation/motion";
 function NewsLetter() {
-  const [buttonState, setButtonState] = useState("idle")
+  const [buttonState, setButtonState] = useState("idle");
 
   const onClickHandler = () => {
-    setButtonState("loading")
+    setButtonState("loading");
 
     // send an HTTP request
     setTimeout(() => {
-      setButtonState("success")
-    }, 5000)
-  }
+      setButtonState("success");
+    }, 5000);
+  };
 
   return (
     <div
@@ -94,7 +94,7 @@ function NewsLetter() {
         </form>
       </div>
     </div>
-  )
+  );
 }
 
-export default NewsLetter
+export default NewsLetter;

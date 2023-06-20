@@ -1,24 +1,24 @@
-import React, { useRef } from "react"
-import { useFrame } from "@react-three/fiber"
-import { Decal, useGLTF, useTexture } from "@react-three/drei/core"
-import { useSnapshot } from "valtio"
+import React, { useRef } from "react";
+import { useFrame } from "@react-three/fiber";
+import { Decal, useGLTF, useTexture } from "@react-three/drei/core";
+import { useSnapshot } from "valtio";
 
-import state from "./././valito"
+import state from "./././valito";
 
 const Shirt = () => {
-  const snap = useSnapshot(state)
-  const { nodes, materials } = useGLTF("/shirt_baked.glb")
+  const snap = useSnapshot(state);
+  const { nodes, materials } = useGLTF("/shirt_baked.glb");
 
-  const logoTexture = useTexture(snap.logoDecal)
-  const fullTexture = useTexture(snap.fullDecal)
+  const logoTexture = useTexture(snap.logoDecal);
+  const fullTexture = useTexture(snap.fullDecal);
 
-  const shirtRef = useRef()
+  const shirtRef = useRef();
 
   useFrame(({ clock }) => {
-    materials.lambert1.color.set("yellow")
-  })
+    materials.lambert1.color.set("yellow");
+  });
 
-  const stateString = JSON.stringify(snap)
+  const stateString = JSON.stringify(snap);
 
   return (
     <group key={stateString}>
@@ -52,7 +52,7 @@ const Shirt = () => {
         )}
       </mesh>
     </group>
-  )
-}
+  );
+};
 
-export default Shirt
+export default Shirt;

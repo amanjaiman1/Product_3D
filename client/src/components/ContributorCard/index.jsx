@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 function ContributorCard({ contributor, index }) {
   return (
@@ -24,7 +24,7 @@ function ContributorCard({ contributor, index }) {
         <p className="text-xs">{`Contributions: ${contributor?.contributions}`}</p>
       </div>
     </div>
-  )
+  );
 }
 
-export default ContributorCard
+export default ContributorCard;

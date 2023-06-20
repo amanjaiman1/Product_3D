@@ -1,7 +1,7 @@
-import React from "react"
+import React from "react";
 
 function CustomizerLogo() {
-  return <div>CustomizerLogo</div>
+  return <div>CustomizerLogo</div>;
 }
 
-export default CustomizerLogo
+export default CustomizerLogo;

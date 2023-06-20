@@ -1,7 +1,7 @@
-import React from "react"
-import Header from "../containers/Header/Navbar"
-import Footer from "../containers/Footer/index.jsx"
-import styles from "../style"
+import React from "react";
+import Header from "../containers/Header/Navbar";
+import Footer from "../containers/Footer/index.jsx";
+import styles from "../style";
 
 function HomeLayout({ children }) {
   return (
@@ -16,7 +16,7 @@ function HomeLayout({ children }) {
         </div>
       </div>
     </div>
-  )
+  );
 }
 
-export default HomeLayout
+export default HomeLayout;

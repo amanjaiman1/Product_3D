@@ -1,36 +1,36 @@
-import React, { useEffect, useState } from "react"
-import axios from "axios"
-import ContributorCard from "../../components/ContributorCard"
-import Pagination from "../../components/Pagination"
-import { motion } from "framer-motion"
-import { fadeIn } from "../../animation/motion"
-import { imgAnim } from "../../animation/motion"
+import React, { useEffect, useState } from "react";
+import axios from "axios";
+import ContributorCard from "../../components/ContributorCard";
+import Pagination from "../../components/Pagination";
+import { motion } from "framer-motion";
+import { fadeIn } from "../../animation/motion";
+import { imgAnim } from "../../animation/motion";
 function Contributor() {
-  const [contributors, setContributors] = useState([])
-  const [loading, setLoading] = useState(true)
-  const [currentPage, setCurrentPage] = useState(1)
-  const [usersPerPage] = useState(15)
+  const [contributors, setContributors] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [currentPage, setCurrentPage] = useState(1);
+  const [usersPerPage] = useState(15);
 
-  const indexOfLastUser = currentPage * usersPerPage
-  const indexOfFirstUser = indexOfLastUser - usersPerPage
-  const currentUsers = contributors.slice(indexOfFirstUser, indexOfLastUser)
+  const indexOfLastUser = currentPage * usersPerPage;
+  const indexOfFirstUser = indexOfLastUser - usersPerPage;
+  const currentUsers = contributors.slice(indexOfFirstUser, indexOfLastUser);
 
   useEffect(() => {
     axios
       .get("https://api.github.com/repos/amanjaiman1/Product_3D/contributors")
       .then((response) => {
-        setContributors(response.data)
-        setLoading(false)
+        setContributors(response.data);
+        setLoading(false);
       })
       .catch((error) => {
-        console.log(error)
-        setLoading(false)
-      })
-  }, [])
+        console.log(error);
+        setLoading(false);
+      });
+  }, []);
 
   const paginate = (pageNumber) => {
-    setCurrentPage(pageNumber)
-  }
+    setCurrentPage(pageNumber);
+  };
 
   return (
     <div className="flex flex-col items-center min-h-screen  overflow-hidden">
@@ -92,7 +92,7 @@ function Contributor() {
         />
       )}
     </div>
-  )
+  );
 }
 
-export default Contributor
+export default Contributor;

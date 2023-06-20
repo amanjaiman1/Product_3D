@@ -1,6 +1,6 @@
-import React from "react"
-import canvas1 from "/src/assets/image/canvas1.gif"
-import faGoogle from "/src/assets/image/google-48.png"
+import React from "react";
+import canvas1 from "/src/assets/image/canvas1.gif";
+import faGoogle from "/src/assets/image/google-48.png";
 
 const Signup = () => {
   return (
@@ -101,7 +101,7 @@ const Signup = () => {
         <img src={canvas1} alt="canvas image" className="pt-40 h-auto w-auto" />
       </div>
     </div>
-  )
-}
+  );
+};
 
-export default Signup
+export default Signup;

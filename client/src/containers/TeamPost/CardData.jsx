@@ -47,6 +47,6 @@ const cardData = [
     testimonial:
       "I have cracked internship at Samsung R&D and Nokia with the help of your Java Placement Course.",
   },
-]
+];
 
-export default cardData
+export default cardData;

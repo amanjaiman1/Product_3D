@@ -1,4 +1,4 @@
-import React from "react"
+import React from "react";
 
 const AccordionItem = ({
   showDescription,
@@ -30,6 +30,6 @@ const AccordionItem = ({
       </p>
     </dd>
   </div>
-)
+);
 
-export default AccordionItem
+export default AccordionItem;
