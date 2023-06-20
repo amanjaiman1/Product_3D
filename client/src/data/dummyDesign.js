@@ -1,4 +1,4 @@
-import designImg from "./../assets/image/design-card.png";
+import designImg from "./../assets/image/design-card.png"
 
 export default [
   {
@@ -82,4 +82,4 @@ export default [
     img: designImg,
     name: "Design 2",
   },
-];
+]

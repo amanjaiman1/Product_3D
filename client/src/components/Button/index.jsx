@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 function Button({ children, ...rest }) {
   return (
@@ -8,7 +8,7 @@ function Button({ children, ...rest }) {
     >
       {children}
     </button>
-  );
+  )
 }
 
-export default Button;
+export default Button

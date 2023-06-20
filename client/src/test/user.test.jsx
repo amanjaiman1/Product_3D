@@ -1,11 +1,11 @@
-import React from "react";
-import { useDispatch, useSelector } from "react-redux";
-import { updateUser } from "../redux/user";
-import Button from "../components/Button";
+import React from "react"
+import { useDispatch, useSelector } from "react-redux"
+import { updateUser } from "../redux/user"
+import Button from "../components/Button"
 
 function Test() {
-  const dispatch = useDispatch();
-  const userState = useSelector((state) => state.user);
+  const dispatch = useDispatch()
+  const userState = useSelector((state) => state.user)
   const handleSubmit = () => {
     let data = {
       isLoggedIn: true,
@@ -13,9 +13,9 @@ function Test() {
         email: "balaji@example.com",
         name: "balaji",
       },
-    };
-    dispatch(updateUser(data));
-  };
+    }
+    dispatch(updateUser(data))
+  }
   return (
     <div className="flex flex-col h-screen justify-center items-center">
       <div>
@@ -26,7 +26,7 @@ function Test() {
       </div>
       <Button onClick={() => handleSubmit()}>Update State</Button>
     </div>
-  );
+  )
 }
 
-export default Test;
+export default Test

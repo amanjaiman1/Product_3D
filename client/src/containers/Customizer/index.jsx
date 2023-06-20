@@ -1,8 +1,8 @@
-import React from "react";
-import customizer from "./../../assets/svg/customizer.svg";
-import CustomizerViewer from "../../components/CustomizerViewer";
-import CustomizerOptions from "../../components/CustomizerOptions";
-import CustomizerSettings from "../../components/CustomizerSettings";
+import React from "react"
+import customizer from "./../../assets/svg/customizer.svg"
+import CustomizerViewer from "../../components/CustomizerViewer"
+import CustomizerOptions from "../../components/CustomizerOptions"
+import CustomizerSettings from "../../components/CustomizerSettings"
 
 function CustomizerContainer() {
   return (
@@ -17,7 +17,7 @@ function CustomizerContainer() {
         <CustomizerSettings />
       </div>
     </div>
-  );
+  )
 }
 
-export default CustomizerContainer;
+export default CustomizerContainer

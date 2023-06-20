@@ -1,7 +1,7 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect } from "react"
 
-import "./sec.css";
-import { mid } from "../../assets";
+import "./sec.css"
+import { mid } from "../../assets"
 
 export function Middle() {
   return (
@@ -21,8 +21,7 @@ export function Middle() {
             </h1>
             <p className="text-secondary font-normal pt-3 leading-loose max-[600px]:text-center max-w-2xl">
               Create your unique and exclusive shirt with our brand-new 3D
-              customisation tool.Unleash your imagination and define your own
-              style.
+              customisation tool.Unleash your imagination and define your own style.
             </p>
           </div>
           <div className="pt-3 max-[600px]:flex max-[600px]:justify-center">
@@ -71,5 +70,5 @@ export function Middle() {
         <div className="flex-3  ">{/* <img src={} className=""/> */}</div>
       </div>
     </div>
-  );
+  )
 }

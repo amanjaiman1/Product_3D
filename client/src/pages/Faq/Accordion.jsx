@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import AccordionItem from "./AccordionItem";
+import React, { useState } from "react"
+import AccordionItem from "./AccordionItem"
 
 const Accordion = ({ questionsAnswers }) => {
-  const [activeIndex, setActiveIndex] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(1)
 
   const renderedQuestionsAnswers = questionsAnswers.map((item, index) => {
-    const showDescription = index === activeIndex ? "show-description" : "";
-    const fontWeightBold = index === activeIndex ? "font-weight-bold" : "";
-    const ariaExpanded = index === activeIndex ? "true" : "false";
+    const showDescription = index === activeIndex ? "show-description" : ""
+    const fontWeightBold = index === activeIndex ? "font-weight-bold" : ""
+    const ariaExpanded = index === activeIndex ? "true" : "false"
     return (
       <AccordionItem
         showDescription={showDescription}
@@ -16,18 +16,18 @@ const Accordion = ({ questionsAnswers }) => {
         item={item}
         index={index}
         onClick={() => {
-          setActiveIndex(index);
+          setActiveIndex(index)
         }}
       />
-    );
-  });
+    )
+  })
 
   return (
     <div className="faq">
       <h3 className="faq__title">FAQ</h3>
       <dl className="faq__list">{renderedQuestionsAnswers}</dl>
     </div>
-  );
-};
+  )
+}
 
-export default Accordion;
+export default Accordion

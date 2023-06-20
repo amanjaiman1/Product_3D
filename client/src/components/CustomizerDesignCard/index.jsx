@@ -1,4 +1,4 @@
-import React from "react";
+import React from "react"
 
 function CustomizerDesignCard({
   imgUrl,
@@ -8,9 +8,9 @@ function CustomizerDesignCard({
   setSelectedDesign,
 }) {
   const handleSelect = () => {
-    console.log("Index");
-    setSelectedDesign(index);
-  };
+    console.log("Index")
+    setSelectedDesign(index)
+  }
   return (
     <div
       onClick={handleSelect}
@@ -21,7 +21,7 @@ function CustomizerDesignCard({
       <img src={imgUrl} width={100} height={100} alt="" />
       <span>{name}</span>
     </div>
-  );
+  )
 }
 
-export default CustomizerDesignCard;
+export default CustomizerDesignCard

@@ -1,20 +1,20 @@
-import React, { useState } from "react";
-import "./style.css";
+import React, { useState } from "react"
+import "./style.css"
 
 function FeatureCard({ title, color, icon, desc }) {
-  const [flip, setFlip] = useState(false);
+  const [flip, setFlip] = useState(false)
 
   const handleCardHover = () => {
     setTimeout(() => {
-      setFlip(true);
-    }, 100);
-  };
+      setFlip(true)
+    }, 100)
+  }
 
   const handleCardLeave = () => {
     setTimeout(() => {
-      setFlip(false);
-    }, 100);
-  };
+      setFlip(false)
+    }, 100)
+  }
 
   return (
     <div className="card-grid">
@@ -39,7 +39,7 @@ function FeatureCard({ title, color, icon, desc }) {
         <div className="back">{desc}</div>
       </div>
     </div>
-  );
+  )
 }
 
-export default FeatureCard;
+export default FeatureCard

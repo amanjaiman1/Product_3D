@@ -1,9 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from "react"
 
 function Dot({ paginate, index, currentPage }) {
   const handlePage = () => {
-    paginate(index + 1);
-  };
+    paginate(index + 1)
+  }
   return (
     <div
       onClick={handlePage}
@@ -11,7 +11,7 @@ function Dot({ paginate, index, currentPage }) {
         index + 1 == currentPage ? "bg-primary" : "bg-gray-300"
       }`}
     ></div>
-  );
+  )
 }
 
 function DotPagination({ data, perPage, currentPage, paginate }) {
@@ -25,10 +25,10 @@ function DotPagination({ data, perPage, currentPage, paginate }) {
             paginate={paginate}
             currentPage={currentPage}
           />
-        );
+        )
       })}
     </div>
-  );
+  )
 }
 
-export default DotPagination;
+export default DotPagination

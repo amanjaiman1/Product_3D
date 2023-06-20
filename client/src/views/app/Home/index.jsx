@@ -1,10 +1,10 @@
-import React from "react";
-import HomeLayout from "../../../layout/HomeLayout.jsx";
-import Hero from "../../../containers/Hero/index.jsx";
-import HightLights from "../../../containers/HightLights/index.jsx";
-import Contributor from "../../../containers/Contributors/index.jsx";
-import TeamPost from "../../../containers/TeamPost/index.jsx";
-import NewsLetter from "../../../containers/NewsLetter/index.jsx";
+import React from "react"
+import HomeLayout from "../../../layout/HomeLayout.jsx"
+import Hero from "../../../containers/Hero/index.jsx"
+import HightLights from "../../../containers/HightLights/index.jsx"
+import Contributor from "../../../containers/Contributors/index.jsx"
+import TeamPost from "../../../containers/TeamPost/index.jsx"
+import NewsLetter from "../../../containers/NewsLetter/index.jsx"
 
 function Home() {
   return (
@@ -20,7 +20,7 @@ function Home() {
       {/* News Letter */}
       <NewsLetter />
     </HomeLayout>
-  );
+  )
 }
 
-export default Home;
+export default Home

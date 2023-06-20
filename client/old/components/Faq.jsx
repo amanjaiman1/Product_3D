@@ -1,10 +1,10 @@
-import React from "react";
-import Accordion from "./Accordion";
-import "../scss/main.scss";
+import React from "react"
+import Accordion from "./Accordion"
+import "../scss/main.scss"
 
-import illustration__box from "../assets/illustration-box-desktop.svg";
-import illustration__woman_desktop from "../assets/illustration-woman-online-desktop.svg";
-import illustration__woman_mobile from "../assets/illustration-woman-online-mobile.svg";
+import illustration__box from "../assets/illustration-box-desktop.svg"
+import illustration__woman_desktop from "../assets/illustration-woman-online-desktop.svg"
+import illustration__woman_mobile from "../assets/illustration-woman-online-mobile.svg"
 
 const questionsAnswers = [
   {
@@ -29,7 +29,7 @@ const questionsAnswers = [
     question: "How do I place an order?",
     answer: `Select the size and quantity, add to cart, provide shipping and payment details, review your order, and confirm your purchase.`,
   },
-];
+]
 
 const Faq = () => {
   return (
@@ -56,7 +56,7 @@ const Faq = () => {
         <Accordion questionsAnswers={questionsAnswers} />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Faq;
+export default Faq

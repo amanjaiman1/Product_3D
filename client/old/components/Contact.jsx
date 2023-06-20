@@ -1,34 +1,34 @@
-import React, { useEffect, useState } from "react";
-import axios from "axios";
+import React, { useEffect, useState } from "react"
+import axios from "axios"
 
 function Contact() {
-  const [contributors, setContributors] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [currentPage, setCurrentPage] = useState(1);
-  const [usersPerPage] = useState(14);
+  const [contributors, setContributors] = useState([])
+  const [loading, setLoading] = useState(true)
+  const [currentPage, setCurrentPage] = useState(1)
+  const [usersPerPage] = useState(14)
 
   useEffect(() => {
     axios
       .get("https://api.github.com/repos/amanjaiman1/Product_3D/contributors")
       .then((response) => {
-        setContributors(response.data);
-        setLoading(false);
+        setContributors(response.data)
+        setLoading(false)
       })
       .catch((error) => {
-        console.log(error);
-        setLoading(false);
-      });
-  }, []);
+        console.log(error)
+        setLoading(false)
+      })
+  }, [])
 
   // Get current users
-  const indexOfLastUser = currentPage * usersPerPage;
-  const indexOfFirstUser = indexOfLastUser - usersPerPage;
-  const currentUsers = contributors.slice(indexOfFirstUser, indexOfLastUser);
+  const indexOfLastUser = currentPage * usersPerPage
+  const indexOfFirstUser = indexOfLastUser - usersPerPage
+  const currentUsers = contributors.slice(indexOfFirstUser, indexOfLastUser)
 
   // Change page
   const paginate = (pageNumber) => {
-    setCurrentPage(pageNumber);
-  };
+    setCurrentPage(pageNumber)
+  }
 
   return (
     <div className="contact-container">
@@ -94,7 +94,7 @@ function Contact() {
         )}
       </div>
     </div>
-  );
+  )
 }
 
-export default Contact;
+export default Contact

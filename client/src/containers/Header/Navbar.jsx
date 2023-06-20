@@ -1,23 +1,21 @@
-import React, { useState } from "react";
-import { Link } from "react-router-dom";
-import { logo, logoText } from "../../assets";
-import { mid } from "../../assets";
+import React, { useState } from "react"
+import { Link } from "react-router-dom"
+import { logo, logoText } from "../../assets"
+import { mid } from "../../assets"
 const Navbar = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
   const toggleMobileMenu = () => {
-    setIsMobileMenuOpen(!isMobileMenuOpen);
-  };
+    setIsMobileMenuOpen(!isMobileMenuOpen)
+  }
 
   // Sticky navbar function
   window.addEventListener("scroll", function () {
-    var navbar = document.querySelector("nav");
-    navbar.classList.toggle("sticky", this.scrollY > 0);
-  });
+    var navbar = document.querySelector("nav")
+    navbar.classList.toggle("sticky", this.scrollY > 0)
+  })
 
   return (
-    <nav
-      className={`navbar h-16 py-[20px] p-[2%] max-sm:px-0 max-sm:py-5 flex`}
-    >
+    <nav className={`navbar h-16 py-[20px] p-[2%] max-sm:px-0 max-sm:py-5 flex`}>
       <div className="pl-5">
         <Link to="/">
           <div className="flex mt-1 align-center items-center">
@@ -32,17 +30,12 @@ const Navbar = () => {
         {/* <p className="Brand-heading">PRODUCT 3D</p> */}
       </div>
       <div className="ml-auto max-lg:hidden space-x-10 pr-5">
-        <Link
-          to="/"
-          className={`link ${location.pathname === "/" ? "active" : ""}`}
-        >
+        <Link to="/" className={`link ${location.pathname === "/" ? "active" : ""}`}>
           Home
         </Link>
         <Link
           to="/guidebook"
-          className={`link ${
-            location.pathname === "/guidebook" ? "active" : ""
-          }`}
+          className={`link ${location.pathname === "/guidebook" ? "active" : ""}`}
         >
           Guide Book
         </Link>
@@ -86,27 +79,21 @@ const Navbar = () => {
           </Link>
           <Link
             to="/guidebook"
-            className={`link ${
-              location.pathname === "/guidebook" ? "active" : ""
-            }`}
+            className={`link ${location.pathname === "/guidebook" ? "active" : ""}`}
             onClick={toggleMobileMenu}
           >
             Guide Book
           </Link>
           <Link
             to="/customize"
-            className={`link ${
-              location.pathname === "/customize" ? "active" : ""
-            }`}
+            className={`link ${location.pathname === "/customize" ? "active" : ""}`}
             onClick={toggleMobileMenu}
           >
             Customize
           </Link>
           <Link
             to="/contact"
-            className={`link ${
-              location.pathname === "/contact" ? "active" : ""
-            }`}
+            className={`link ${location.pathname === "/contact" ? "active" : ""}`}
             onClick={toggleMobileMenu}
           >
             Contact Us
@@ -136,7 +123,7 @@ const Navbar = () => {
         </label>
       </div> */}
     </nav>
-  );
-};
+  )
+}
 
-export default Navbar;
+export default Navbar

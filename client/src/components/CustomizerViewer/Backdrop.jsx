@@ -1,10 +1,10 @@
-import React, { useRef } from "react";
-import { easing } from "maath";
-import { useFrame } from "@react-three/fiber";
-import { AccumulativeShadows, RandomizedLight } from "@react-three/drei/core";
+import React, { useRef } from "react"
+import { easing } from "maath"
+import { useFrame } from "@react-three/fiber"
+import { AccumulativeShadows, RandomizedLight } from "@react-three/drei/core"
 
 const Backdrop = () => {
-  const shadows = useRef();
+  const shadows = useRef()
 
   return (
     <AccumulativeShadows
@@ -31,7 +31,7 @@ const Backdrop = () => {
         position={[-5, 5, -9]}
       />
     </AccumulativeShadows>
-  );
-};
+  )
+}
 
-export default Backdrop;
+export default Backdrop

@@ -1,35 +1,35 @@
-import React, { useState, useEffect } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { useSnapshot } from "valtio";
+import React, { useState, useEffect } from "react"
+import { AnimatePresence, motion } from "framer-motion"
+import { useSnapshot } from "valtio"
 
-import config from "../src/config/config";
-import state from "../src/store";
-import { download } from "../src/assets";
-import { downloadCanvasToImage, reader } from "../src/config/helpers";
-import { EditorTabs, FilterTabs, DecalTypes } from "../src/config/constants";
-import { fadeAnimation, slideAnimation } from "../src/config/motion";
+import config from "../src/config/config"
+import state from "../src/store"
+import { download } from "../src/assets"
+import { downloadCanvasToImage, reader } from "../src/config/helpers"
+import { EditorTabs, FilterTabs, DecalTypes } from "../src/config/constants"
+import { fadeAnimation, slideAnimation } from "../src/config/motion"
 import {
   AIPicker,
   ColorPicker,
   CustomButton,
   FilePicker,
   Tab,
-} from "../src/components";
-import { CloseButton } from "@chakra-ui/close-button";
+} from "../src/components"
+import { CloseButton } from "@chakra-ui/close-button"
 
 const Customizer = () => {
-  const snap = useSnapshot(state);
+  const snap = useSnapshot(state)
 
-  const [file, setFile] = useState("");
-  const [onclose, setonClose] = useState(false);
-  const [prompt, setPrompt] = useState("");
-  const [generatingImg, setGeneratingImg] = useState(false);
+  const [file, setFile] = useState("")
+  const [onclose, setonClose] = useState(false)
+  const [prompt, setPrompt] = useState("")
+  const [generatingImg, setGeneratingImg] = useState(false)
 
-  const [activeEditorTab, setActiveEditorTab] = useState("");
+  const [activeEditorTab, setActiveEditorTab] = useState("")
   const [activeFilterTab, setActiveFilterTab] = useState({
     logoShirt: true,
     stylishShirt: false,
-  });
+  })
 
   // show tab content depending on the activeTab
   const generateTabContent = () => {
@@ -42,12 +42,12 @@ const Customizer = () => {
               <CloseButton
                 className="close"
                 onClick={(prevState) => {
-                  setonClose((prevState) => !prevState);
+                  setonClose((prevState) => !prevState)
                 }}
               />
             </div>
           )
-        );
+        )
       case "filepicker":
         return (
           !onclose && (
@@ -61,12 +61,12 @@ const Customizer = () => {
               <CloseButton
                 className="close"
                 onClick={(prevState) => {
-                  setonClose((prevState) => !prevState);
+                  setonClose((prevState) => !prevState)
                 }}
               />
             </div>
           )
-        );
+        )
       case "aipicker":
         return (
           !onclose && (
@@ -80,22 +80,22 @@ const Customizer = () => {
               <CloseButton
                 className="close"
                 onClick={(prevState) => {
-                  setonClose((prevState) => !prevState);
+                  setonClose((prevState) => !prevState)
                 }}
               />
             </div>
           )
-        );
+        )
       default:
-        return null;
+        return null
     }
-  };
+  }
 
   const handleSubmit = async (type) => {
-    if (!prompt) return alert("Please enter a prompt");
+    if (!prompt) return alert("Please enter a prompt")
 
     try {
-      setGeneratingImg(true);
+      setGeneratingImg(true)
 
       const response = await fetch(
         "https://threed-tshirt-designer-5hrs.onrender.com/api/v1/unsplash",
@@ -108,41 +108,41 @@ const Customizer = () => {
             prompt,
           }),
         }
-      );
-      const data = await response.json();
+      )
+      const data = await response.json()
       if (data.data.length != 0) {
-        handleDecals(type, data.data[0]);
+        handleDecals(type, data.data[0])
       } else {
-        alert("No result found");
+        alert("No result found")
       }
     } catch (error) {
-      alert(error);
+      alert(error)
     } finally {
-      setGeneratingImg(false);
-      setActiveEditorTab("");
+      setGeneratingImg(false)
+      setActiveEditorTab("")
     }
-  };
+  }
 
   const handleDecals = (type, result) => {
-    const decalType = DecalTypes[type];
-    state[decalType.stateProperty] = result;
+    const decalType = DecalTypes[type]
+    state[decalType.stateProperty] = result
     if (!activeFilterTab[decalType.filterTab]) {
-      handleActiveFilterTab(decalType.filterTab);
+      handleActiveFilterTab(decalType.filterTab)
     }
-  };
+  }
 
   const handleActiveFilterTab = (tabName) => {
     switch (tabName) {
       case "logoShirt":
-        state.isLogoTexture = !activeFilterTab[tabName];
-        break;
+        state.isLogoTexture = !activeFilterTab[tabName]
+        break
       case "stylishShirt":
-        state.isFullTexture = !activeFilterTab[tabName];
-        break;
+        state.isFullTexture = !activeFilterTab[tabName]
+        break
       default:
-        state.isLogoTexture = true;
-        state.isFullTexture = false;
-        break;
+        state.isLogoTexture = true
+        state.isFullTexture = false
+        break
     }
 
     // after setting the state, activeFilterTab is updated
@@ -151,16 +151,16 @@ const Customizer = () => {
       return {
         ...prevState,
         [tabName]: !prevState[tabName],
-      };
-    });
-  };
+      }
+    })
+  }
 
   const readFile = (type) => {
     reader(file).then((result) => {
-      handleDecals(type, result);
-      setActiveEditorTab("");
-    });
-  };
+      handleDecals(type, result)
+      setActiveEditorTab("")
+    })
+  }
 
   return (
     <AnimatePresence>
@@ -179,8 +179,8 @@ const Customizer = () => {
                       key={tab.name}
                       tab={tab}
                       handleClick={(prevState) => {
-                        setActiveEditorTab(tab.name);
-                        setonClose((prevState) => !prevState);
+                        setActiveEditorTab(tab.name)
+                        setonClose((prevState) => !prevState)
                       }}
                     />
                   </div>
@@ -191,10 +191,7 @@ const Customizer = () => {
             </div>
           </motion.div>
 
-          <motion.div
-            className="absolute z-10 top-5 left-10"
-            {...fadeAnimation}
-          >
+          <motion.div className="absolute z-10 top-5 left-10" {...fadeAnimation}>
             <CustomButton
               type="filled"
               title="Go Back"
@@ -203,10 +200,7 @@ const Customizer = () => {
             />
           </motion.div>
 
-          <motion.div
-            className="filtertabs-container"
-            {...slideAnimation("up")}
-          >
+          <motion.div className="filtertabs-container" {...slideAnimation("up")}>
             {FilterTabs.map((tab) => (
               <Tab
                 key={tab.name}
@@ -227,7 +221,7 @@ const Customizer = () => {
         </>
       )}
     </AnimatePresence>
-  );
-};
+  )
+}
 
-export default Customizer;
+export default Customizer

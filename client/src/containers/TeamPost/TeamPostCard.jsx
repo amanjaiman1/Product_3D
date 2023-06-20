@@ -1,12 +1,12 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import img from "./wolf.jpg";
-import { Autoplay, Pagination, Navigation } from "swiper";
-import "./Card.css";
-import cardData from "./CardData";
+import React from "react"
+import { Swiper, SwiperSlide } from "swiper/react"
+import "swiper/css"
+import "swiper/css/pagination"
+import "swiper/css/navigation"
+import img from "./wolf.jpg"
+import { Autoplay, Pagination, Navigation } from "swiper"
+import "./Card.css"
+import cardData from "./CardData"
 
 const Testimonials = () => {
   return (
@@ -34,9 +34,7 @@ const Testimonials = () => {
                     <img src={img} alt={card.name} className="max-w-[60px]" />
                   </div>
                   <div className="flex items-start flex-col">
-                    <h1 className="font-semibold text-xl h-full">
-                      {card.name}
-                    </h1>
+                    <h1 className="font-semibold text-xl h-full">{card.name}</h1>
                     <p className="font-normal">{card.role}</p>
                   </div>
                 </div>
@@ -49,7 +47,7 @@ const Testimonials = () => {
         </Swiper>
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Testimonials;
+export default Testimonials

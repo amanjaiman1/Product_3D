@@ -1,6 +1,6 @@
-import { applyMiddleware, configureStore } from "@reduxjs/toolkit";
-import editorReducer from "../redux/editor/index";
-import userReducer from "../redux/user/index";
+import { applyMiddleware, configureStore } from "@reduxjs/toolkit"
+import editorReducer from "../redux/editor/index"
+import userReducer from "../redux/user/index"
 
 export default configureStore({
   reducer: {
@@ -8,4 +8,4 @@ export default configureStore({
     user: userReducer,
   },
   devTools: true,
-});
+})

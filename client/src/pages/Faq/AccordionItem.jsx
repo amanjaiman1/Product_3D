@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from "react"
 
 const AccordionItem = ({
   showDescription,
@@ -8,12 +8,12 @@ const AccordionItem = ({
   index,
   onClick,
 }) => {
-  const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false)
 
   const handleClick = () => {
-    setIsOpen(!isOpen);
-    onClick();
-  };
+    setIsOpen(!isOpen)
+    onClick()
+  }
 
   return (
     <div className="faq__question" key={item.question}>
@@ -38,7 +38,7 @@ const AccordionItem = ({
         </p>
       </dd>
     </div>
-  );
-};
+  )
+}
 
-export default AccordionItem;
+export default AccordionItem

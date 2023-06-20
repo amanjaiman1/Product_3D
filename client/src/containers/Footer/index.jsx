@@ -1,10 +1,10 @@
-import React from "react";
-import styles from "../../style";
-import { objectFoot } from "../../assets";
-import { footerLinks } from "./index";
-import { imgAnim } from "../../animation/motion";
-import { motion } from "framer-motion";
-import { Link } from "react-router-dom";
+import React from "react"
+import styles from "../../style"
+import { objectFoot } from "../../assets"
+import { footerLinks } from "./index"
+import { imgAnim } from "../../animation/motion"
+import { motion } from "framer-motion"
+import { Link } from "react-router-dom"
 
 // btn
 const Button = ({ styles }) => {
@@ -24,8 +24,8 @@ const Button = ({ styles }) => {
     >
       Lets Create
     </button>
-  );
-};
+  )
+}
 
 function Footer() {
   return (
@@ -122,7 +122,7 @@ function Footer() {
         </p>
       </div>
     </footer>
-  );
+  )
 }
 
-export default Footer;
+export default Footer

@@ -1,53 +1,53 @@
-import React, { useState, useEffect } from "react";
-import canvas1 from "/src/assets/image/canvas1.gif";
-import faGoogle from "/src/assets/image/google-48.png";
+import React, { useState, useEffect } from "react"
+import canvas1 from "/src/assets/image/canvas1.gif"
+import faGoogle from "/src/assets/image/google-48.png"
 import {
   GoogleAuthProvider,
   getAuth,
   getRedirectResult,
   signInWithEmailAndPassword,
   signInWithPopup,
-} from "firebase/auth";
-import { auth } from "../../firebase/firebase";
+} from "firebase/auth"
+import { auth } from "../../firebase/firebase"
 
 const Login = () => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
   const [alert, setAlert] = useState({
     open: false,
     message: "",
     type: "success",
-  });
+  })
   const [user, setUser] = useState({
     name: "",
     email: "",
     profilePic: "",
-  });
-  const googleProvider = new GoogleAuthProvider();
-  const firebaseAuth = getAuth();
+  })
+  const googleProvider = new GoogleAuthProvider()
+  const firebaseAuth = getAuth()
 
   useEffect(() => {
     getRedirectResult(firebaseAuth)
       .then((result) => {
-        const credential = GoogleAuthProvider.credentialFromResult(result);
-        const token = credential.accessToken;
-        const user = result.user;
+        const credential = GoogleAuthProvider.credentialFromResult(result)
+        const token = credential.accessToken
+        const user = result.user
         // Set the user data to the state or take appropriate actions
         setUser({
           name: user.displayName,
           email: user.email,
           profilePic: user.photoURL,
-        });
+        })
       })
       .catch((error) => {
         // Handle Errors here.
-        const errorCode = error.code;
-        const errorMessage = error.message;
-        const email = error.email;
-        const credential = GoogleAuthProvider.credentialFromError(error);
+        const errorCode = error.code
+        const errorMessage = error.message
+        const email = error.email
+        const credential = GoogleAuthProvider.credentialFromError(error)
         // ...
-      });
-  }, []); // Empty dependency array to ensure this effect runs only once
+      })
+  }, []) // Empty dependency array to ensure this effect runs only once
 
   const handleLoginSubmit = async () => {
     if (!email || !password) {
@@ -55,35 +55,35 @@ const Login = () => {
         open: true,
         message: "Please fill in all the fields",
         type: "error",
-      });
-      return;
+      })
+      return
     }
 
     try {
-      const res = await signInWithEmailAndPassword(auth, email, password);
+      const res = await signInWithEmailAndPassword(auth, email, password)
       setUser({
         name: res?.user.displayName,
         email: res?.user.email,
         profilePic: "",
-      });
+      })
 
       setAlert({
         open: true,
         message: `Sign In Successful. Welcome ${res?.user.email}`,
         type: "success",
-      });
+      })
     } catch (error) {
       setAlert({
         open: true,
         message: error?.message,
         type: "error",
-      });
+      })
     }
-  };
+  }
 
   const handleGoogleSignIn = () => {
-    signInWithGooglePopup();
-  };
+    signInWithGooglePopup()
+  }
 
   const signInWithGooglePopup = () => {
     signInWithPopup(auth, googleProvider)
@@ -92,26 +92,26 @@ const Login = () => {
           name: res.user.displayName,
           email: res.user.email,
           profilePic: res.user.photoURL,
-        });
+        })
 
-        localStorage.setItem("name", res.user.displayName);
-        localStorage.setItem("email", res.user.email);
-        localStorage.setItem("profilePic", res.user.photoURL);
+        localStorage.setItem("name", res.user.displayName)
+        localStorage.setItem("email", res.user.email)
+        localStorage.setItem("profilePic", res.user.photoURL)
 
         setAlert({
           open: true,
           message: `Google Sign Up Successful. Welcome ${res.user.email}`,
           type: "success",
-        });
+        })
       })
       .catch((error) => {
         setAlert({
           open: true,
           message: error.message,
           type: "error",
-        });
-      });
-  };
+        })
+      })
+  }
 
   return (
     <div className="flex">
@@ -199,7 +199,7 @@ const Login = () => {
         <img src={canvas1} alt="canvas image" className="pt-40 h-auto w-auto" />
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default Login;
+export default Login

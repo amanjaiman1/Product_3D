@@ -1,7 +1,7 @@
-import React, { useState } from "react";
-import "core-js/stable";
-import "regenerator-runtime/runtime";
-import CustomButton from "../CustomButton";
+import React, { useState } from "react"
+import "core-js/stable"
+import "regenerator-runtime/runtime"
+import CustomButton from "../CustomButton"
 // import the text to speech library
 // import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
 
@@ -39,11 +39,7 @@ const AIPicker = ({ prompt, setPrompt, generatingImg, handleSubmit }) => {
       />
       <div className="flex flex-wrap gap-3">
         {generatingImg ? (
-          <CustomButton
-            type="outline"
-            title="Asking AI..."
-            customStyles="text-xs"
-          />
+          <CustomButton type="outline" title="Asking AI..." customStyles="text-xs" />
         ) : (
           <>
             <CustomButton
@@ -75,7 +71,7 @@ const AIPicker = ({ prompt, setPrompt, generatingImg, handleSubmit }) => {
         )}
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default AIPicker;
+export default AIPicker
