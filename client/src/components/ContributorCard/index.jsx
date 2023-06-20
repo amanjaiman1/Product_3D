@@ -1,11 +1,11 @@
 import React from "react";
 
-function ContributorCard({contributor,index}) {
+function ContributorCard({ contributor, index }) {
   return (
     <div
       key={contributor?.id}
       className={`flex flex-col items-center space-y-4 text-center`}
-      style={{width: '11rem'}}
+      style={{ width: "11rem" }}
     >
       <a
         rel="noopener noreferrer"

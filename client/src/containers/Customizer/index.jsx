@@ -14,7 +14,7 @@ function CustomizerContainer() {
         <CustomizerOptions />
       </div>
       <div className="flex-1">
-        <CustomizerSettings/>
+        <CustomizerSettings />
       </div>
     </div>
   );

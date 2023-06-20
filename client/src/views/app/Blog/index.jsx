@@ -5,10 +5,7 @@ import Blog from "../../../pages/Blog/Blog.jsx";
 function BlogPage() {
   return (
     <HomeLayout>
-     
       <Blog />
-    
-
     </HomeLayout>
   );
 }

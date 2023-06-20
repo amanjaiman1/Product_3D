@@ -97,15 +97,18 @@ const Customizer = () => {
     try {
       setGeneratingImg(true);
 
-      const response = await fetch("https://threed-tshirt-designer-5hrs.onrender.com/api/v1/unsplash", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          prompt,
-        }),
-      });
+      const response = await fetch(
+        "https://threed-tshirt-designer-5hrs.onrender.com/api/v1/unsplash",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            prompt,
+          }),
+        }
+      );
       const data = await response.json();
       if (data.data.length != 0) {
         handleDecals(type, data.data[0]);

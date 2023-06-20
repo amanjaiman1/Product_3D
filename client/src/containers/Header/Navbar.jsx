@@ -21,15 +21,12 @@ const Navbar = () => {
       <div className="pl-5">
         <Link to="/">
           <div className="flex mt-1 align-center items-center">
+            <img className=" w-14 h-15" src={logo} alt="logo" />
             <img
-              className=" w-14 h-15"
-              src={logo}
-              alt="logo"
-            />
-            <img 
-              src={logoText} 
+              src={logoText}
               className="w-[11rem] h-[2.5rem] md:w-[18rem] md:h-[3rem] ml-2"
-              alt="logoText" />
+              alt="logoText"
+            />
           </div>
         </Link>
         {/* <p className="Brand-heading">PRODUCT 3D</p> */}

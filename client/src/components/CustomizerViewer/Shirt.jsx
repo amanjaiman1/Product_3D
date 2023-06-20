@@ -1,13 +1,13 @@
-import React, { useRef } from 'react';
-import { useFrame } from '@react-three/fiber';
-import { Decal, useGLTF, useTexture } from '@react-three/drei/core';
-import { useSnapshot } from 'valtio';
+import React, { useRef } from "react";
+import { useFrame } from "@react-three/fiber";
+import { Decal, useGLTF, useTexture } from "@react-three/drei/core";
+import { useSnapshot } from "valtio";
 
-import state from './././valito';
+import state from "./././valito";
 
 const Shirt = () => {
   const snap = useSnapshot(state);
-  const { nodes, materials } = useGLTF('/shirt_baked.glb');
+  const { nodes, materials } = useGLTF("/shirt_baked.glb");
 
   const logoTexture = useTexture(snap.logoDecal);
   const fullTexture = useTexture(snap.fullDecal);
@@ -15,8 +15,7 @@ const Shirt = () => {
   const shirtRef = useRef();
 
   useFrame(({ clock }) => {
-
-    materials.lambert1.color.set('yellow');
+    materials.lambert1.color.set("yellow");
   });
 
   const stateString = JSON.stringify(snap);
@@ -32,7 +31,7 @@ const Shirt = () => {
         dispose={null}
       >
         {snap.isFullTexture && (
-          <Decal 
+          <Decal
             position={[0, 0, 0]}
             rotation={[0, 0, 0]}
             scale={1}
@@ -41,7 +40,7 @@ const Shirt = () => {
         )}
 
         {snap.isLogoTexture && (
-          <Decal 
+          <Decal
             position={[0, 0.04, 0.15]}
             rotation={[0, 0, 0]}
             scale={0.15}
@@ -54,6 +53,6 @@ const Shirt = () => {
       </mesh>
     </group>
   );
-}
+};
 
 export default Shirt;
