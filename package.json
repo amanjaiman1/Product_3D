@@ -9,7 +9,8 @@
     "server-dev": "cd server && npm run dev",
     "client-dev": "cd client && vite",
     "client-build": "cd client && vite build",
-    "client-preview": "cd client && vite preview"
+    "client-preview": "cd client && vite preview",
+    "pre-commit": "cd ./client &&  npx prettier --write ."
   },
   "keywords": [],
   "author": "",
@@ -18,5 +19,8 @@
     "@headlessui/react": "^1.7.14",
     "@heroicons/react": "^2.0.18",
     "tailwind-scrollbar-hide": "^1.1.7"
+  },
+  "devDependencies": {
+    "husky": "^8.0.3"
   }
 }

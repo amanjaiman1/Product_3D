@@ -13,7 +13,6 @@ export const EditorTabs = [
     name: "aipicker",
     icon: ai,
   },
-  
 ];
 
 export const FilterTabs = [
@@ -25,7 +24,6 @@ export const FilterTabs = [
     name: "stylishShirt",
     icon: stylishShirt,
   },
-  
 ];
 
 export const DecalTypes = {

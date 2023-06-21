@@ -5,10 +5,7 @@ import FaqPage from "../../../pages/Faq/Faq.jsx";
 function Faq() {
   return (
     <HomeLayout>
-     
       <FaqPage />
-    
-
     </HomeLayout>
   );
 }

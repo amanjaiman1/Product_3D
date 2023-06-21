@@ -4,7 +4,7 @@ import { objectFoot } from "../../assets";
 import { footerLinks } from "./index";
 import { imgAnim } from "../../animation/motion";
 import { motion } from "framer-motion";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 // btn
 const Button = ({ styles }) => {
