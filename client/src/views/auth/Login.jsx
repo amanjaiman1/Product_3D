@@ -7,11 +7,10 @@ import {
   getRedirectResult,
   signInWithEmailAndPassword,
   signInWithPopup,
-  signInWithRedirect,
 } from "firebase/auth";
 import { auth, googleProvider } from "../../firebase/firebase";
 
-const Login = () => {
+const Login = ({ onAuthenticationSuccess, history }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [alert, setAlert] = useState({
@@ -24,7 +23,6 @@ const Login = () => {
     email: "",
     profilePic: "",
   });
-  //const googleProvider = new GoogleAuthProvider();
   const firebaseAuth = getAuth();
 
   useEffect(() => {
@@ -33,7 +31,6 @@ const Login = () => {
         const credential = GoogleAuthProvider.credentialFromResult(result);
         const token = credential.accessToken;
         const user = result.user;
-        // Set the user data to the state or take appropriate actions
         setUser({
           name: user.displayName,
           email: user.email,
@@ -41,14 +38,12 @@ const Login = () => {
         });
       })
       .catch((error) => {
-        // Handle Errors here.
         const errorCode = error.code;
         const errorMessage = error.message;
         const email = error.email;
         const credential = GoogleAuthProvider.credentialFromError(error);
-        // ...
       });
-  }, []); // Empty dependency array to ensure this effect runs only once
+  }, []);
 
   const handleLoginSubmit = async () => {
     if (!email || !password) {
@@ -73,6 +68,9 @@ const Login = () => {
         message: `Sign In Successful. Welcome ${res?.user.email}`,
         type: "success",
       });
+
+      onAuthenticationSuccess();
+      history.push("/home");
     } catch (error) {
       setAlert({
         open: true,
@@ -87,25 +85,21 @@ const Login = () => {
   };
 
   const signInWithGooglePopup = () => {
-    signInWithRedirect(firebaseAuth, googleProvider)
+    signInWithPopup(firebaseAuth, googleProvider)
       .then((res) => {
         setUser({
-          //name: res.user.displayName,
           ...user,
           email: res?.user.email,
-          //profilePic: res.user.photoURL,
         });
-
-        // localStorage.setItem("name", res.user.displayName);
-        // localStorage.setItem("email", res.user.email);
-        // localStorage.setItem("profilePic", res.user.photoURL);
 
         setAlert({
           open: true,
           message: `Google Sign Up Successful. Welcome ${res?.user.email}`,
           type: "success",
         });
-        console.log(alert.message);
+
+        onAuthenticationSuccess();
+        history.push("/home");
       })
       .catch((error) => {
         setAlert({

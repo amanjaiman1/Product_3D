@@ -1,6 +1,5 @@
-import React from "react";
-import { useEffect, useState } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Home from "./views/app/Home";
 import ErrorPage from "./views/app/Error";
 import "./index.css";
@@ -24,12 +23,20 @@ import { HashLoader } from "react-spinners";
 
 function App() {
   const [loading, setLoading] = useState(false);
+  const [userAuthenticated, setUserAuthenticated] = useState(false);
+
   useEffect(() => {
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
     }, 1000);
   }, []);
+
+  // Function to handle successful authentication
+  const handleAuthenticationSuccess = () => {
+    setUserAuthenticated(true);
+  };
+
   return (
     <div>
       {loading ? (
@@ -47,19 +54,26 @@ function App() {
         <BrowserRouter>
           <AutoScroll />
           <Routes>
-            <Route Component={Home} path="/" />
-            <Route Component={Faq} path="/faq" />
-            <Route Component={ContributorPage} path="/contact" />
-            <Route Component={ErrorPage} path="/*" />
-            <Route Component={Login} path="/login" />
-            <Route Component={SignUp} path="/signup" />
-            <Route Component={BlogPage} path="/blog" />
-            <Route Component={Customizer} path="/test" />
-            <Route Component={ErrorPage} path="/*" />
-
-            <Route Component={Middle} path="/tshirt-customisation" />
-
-            <Route Component={Guide} path="/guidebook" />
+            <Route
+              path="/"
+              element={
+                userAuthenticated ? (
+                  <Navigate to="/home" replace={true} />
+                ) : (
+                  <Login onAuthenticationSuccess={handleAuthenticationSuccess} />
+                )
+              }
+            />
+            <Route path="/home" element={<Home />} />
+            <Route path="/faq" element={<Faq />} />
+            <Route path="/contact" element={<ContributorPage />} />
+            <Route path="/login" element={<Login onAuthenticationSuccess={handleAuthenticationSuccess} />} />
+            <Route path="/signup" element={<SignUp />} />
+            <Route path="/blog" element={<BlogPage />} />
+            <Route path="/test" element={<Customizer />} />
+            <Route path="/tshirt-customisation" element={<Middle />} />
+            <Route path="/guidebook" element={<Guide />} />
+            <Route path="*" element={<ErrorPage />} />
           </Routes>
 
           <div>
