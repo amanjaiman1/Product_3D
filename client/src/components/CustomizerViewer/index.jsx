@@ -1,11 +1,11 @@
-import React from 'react';
-import { Canvas } from '@react-three/fiber';
-import { Environment, Center } from '@react-three/drei/core';
+import React from "react";
+import { Canvas } from "@react-three/fiber";
+import { Environment, Center } from "@react-three/drei/core";
 
-import Shirt from './Shirt';
-import Backdrop from './Backdrop';
-import CameraRig from './CameraRig';
-import CustomizerOptions from '../CustomizerOptions';
+import Shirt from "./Shirt";
+import Backdrop from "./Backdrop";
+import CameraRig from "./CameraRig";
+import CustomizerOptions from "../CustomizerOptions";
 
 function CustomizerViewer() {
   return (

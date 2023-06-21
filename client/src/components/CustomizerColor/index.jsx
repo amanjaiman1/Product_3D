@@ -1,9 +1,7 @@
-import React from 'react'
+import React from "react";
 
 function CustomizerColor() {
-  return (
-    <div>CustomizerColor</div>
-  )
+  return <div>CustomizerColor</div>;
 }
 
-export default CustomizerColor
+export default CustomizerColor;

@@ -10,7 +10,7 @@ const questionsAnswers = [
   {
     question: "How do I customize my t-shirt on your website?",
     answer:
-"To customize your t-shirt, simply choose the style, color, size, and explore options like adding text, uploading images, or selecting pre-designed patterns. Use our design tools and DalleAI integration to personalize your t-shirt.",
+      "To customize your t-shirt, simply choose the style, color, size, and explore options like adding text, uploading images, or selecting pre-designed patterns. Use our design tools and DalleAI integration to personalize your t-shirt.",
   },
   {
     question: "What customization options are available?",

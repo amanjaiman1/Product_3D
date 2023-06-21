@@ -30,7 +30,7 @@
 body {
   font-family: "Poppins", sans-serif;
   scroll-behaviour: smooth;
-  box-sizing:border-box;
+  box-sizing: border-box;
 }
 
 .main-div::-webkit-scrollbar {
@@ -326,7 +326,10 @@ nav.sticky {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
-

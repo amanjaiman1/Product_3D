@@ -22,7 +22,6 @@ import Guide from "./views/app/Guide";
 import Customizer from "./views/app/Customizer";
 import { HashLoader } from "react-spinners";
 
-
 function App() {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -46,7 +45,7 @@ function App() {
         </div>
       ) : (
         <BrowserRouter>
-          <AutoScroll/>
+          <AutoScroll />
           <Routes>
             <Route Component={Home} path="/" />
             <Route Component={Faq} path="/faq" />
@@ -60,8 +59,7 @@ function App() {
 
             <Route Component={Middle} path="/tshirt-customisation" />
 
-            <Route Component={Guide} path="/guidebook"/>
-
+            <Route Component={Guide} path="/guidebook" />
           </Routes>
 
           <div>

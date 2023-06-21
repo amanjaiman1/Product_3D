@@ -35,8 +35,8 @@ function Contact() {
         </h2>
         <p className="text-center text-secondary mt-5  text-lg lg:px-60">
           Our project's success is attributed to the dedicated contributors who
-          brought expertise and creativity. Meet the amazing individuals behind
-          our accomplishments.
+          brought expertise and creativity. Meet the amazing individuals behind our
+          accomplishments.
         </p>
       </div>
 
