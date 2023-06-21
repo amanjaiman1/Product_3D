@@ -7,8 +7,9 @@ import {
   getRedirectResult,
   signInWithEmailAndPassword,
   signInWithPopup,
+  signInWithRedirect,
 } from "firebase/auth";
-import { auth } from "../../firebase/firebase";
+import { auth, googleProvider } from "../../firebase/firebase";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -23,7 +24,7 @@ const Login = () => {
     email: "",
     profilePic: "",
   });
-  const googleProvider = new GoogleAuthProvider();
+  //const googleProvider = new GoogleAuthProvider();
   const firebaseAuth = getAuth();
 
   useEffect(() => {
@@ -86,23 +87,25 @@ const Login = () => {
   };
 
   const signInWithGooglePopup = () => {
-    signInWithPopup(auth, googleProvider)
+    signInWithRedirect(firebaseAuth, googleProvider)
       .then((res) => {
         setUser({
-          name: res.user.displayName,
-          email: res.user.email,
-          profilePic: res.user.photoURL,
+          //name: res.user.displayName,
+          ...user,
+          email: res?.user.email,
+          //profilePic: res.user.photoURL,
         });
 
-        localStorage.setItem("name", res.user.displayName);
-        localStorage.setItem("email", res.user.email);
-        localStorage.setItem("profilePic", res.user.photoURL);
+        // localStorage.setItem("name", res.user.displayName);
+        // localStorage.setItem("email", res.user.email);
+        // localStorage.setItem("profilePic", res.user.photoURL);
 
         setAlert({
           open: true,
-          message: `Google Sign Up Successful. Welcome ${res.user.email}`,
+          message: `Google Sign Up Successful. Welcome ${res?.user.email}`,
           type: "success",
         });
+        console.log(alert.message);
       })
       .catch((error) => {
         setAlert({
