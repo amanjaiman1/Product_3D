@@ -16,6 +16,4 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: Lint code with prettier
-        uses: creyD/prettier_action@v4.3
-        with:
-          prettier_options: --write **/*.{js,md}
+        run: npx prettier --config ./client/.prettierrc --write
