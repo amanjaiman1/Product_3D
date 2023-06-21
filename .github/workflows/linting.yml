@@ -16,4 +16,4 @@ jobs:
           ref: ${{ github.head_ref }}
 
       - name: Lint code with prettier
-        run: npx prettier --config ./client/.prettierrc --write
+        run: npx prettier --write .
