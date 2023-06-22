@@ -1,9 +1,7 @@
 .faq {
-
   color: $dark-grayish-blue;
   font-family: "Kumbh Sans", sans-serif;
   line-height: 18px;
-
 
   // -----------------------------------------------
   width: 100%;
@@ -16,9 +14,8 @@
     width: 50vh;
     text-align: center;
     font-size: 70px;
-  line-height: 30px;
-  font-weight: bold; 
-
+    line-height: 30px;
+    font-weight: bold;
   }
 
   &__question {

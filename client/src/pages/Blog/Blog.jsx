@@ -20,7 +20,7 @@ function Blog() {
     return (
         <div style={{ fontFamily: 'Poppins, sans-serif' }}>
             <div className="grid justify-center" >
-                <img src={blogbar} alt="blog bar" className="w-[96vw]" loading="lazy" />
+                <img src={blogbar} alt="blog bar" className="w-[96vw]" loading="lazy"/>
             </div>
             <div className="grid justify-center md:mt-[-25px] mt-[-15px]">
                 <div className="inline-flex bg-white shadow-lg rounded-xl">

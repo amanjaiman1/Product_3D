@@ -3,7 +3,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import { favicon } from "./assets";
 import UserTest from "./test/user.test";
-
+import AutoScroll from "./utils/AutoScroll";
 import ScrollToTop from "react-scroll-to-top";
 
 import MoonLoader from "react-spinners/MoonLoader";
@@ -40,13 +40,12 @@ function App() {
             <Route Component={Login} path="/login" />
             <Route Component={SignUp} path="/signup" />
             <Route Component={BlogPage} path="/blog" />
-            <Route Component={UserTest} path="/test" />
+            <Route Component={Customizer} path="/test" />
             <Route Component={ErrorPage} path="/*" />
 
             <Route Component={Middle} path="/tshirt-customisation" />
 
-            <Route Component={Guide} path="/guidebook"/>
-
+            <Route Component={Guide} path="/guidebook" />
           </Routes>
 
           <div>
@@ -61,7 +60,7 @@ function App() {
           </Suspense>
         </BrowserRouter>
     </div>
-  );
+  )
 }
 
 export default App;

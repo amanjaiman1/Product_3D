@@ -1,0 +1,8 @@
+version: 2
+updates:
+  # Update GitHub Actions and dependencies
+  - package-ecosystem: "github-actions"
+  - package-ecosystem: "npm"
+    directory: "/"
+    schedule:
+      interval: "daily"

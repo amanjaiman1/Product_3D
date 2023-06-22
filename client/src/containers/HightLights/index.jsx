@@ -48,10 +48,10 @@ function HightLights() {
           viewport={{ amount: 0.25, once: true }}
           className="text-secondary feature-desc text-center mx-auto px-4 leading-loose lg:px-60 font-[Poppins]"
         >
-          Revolutionize your fashion experience with our 3D T-Shirts' key
-          features. Discover unparalleled depth, vibrant colors, and dynamic
-          designs that come to life, thanks to cutting-edge AI technology.
-          Elevate your style with intelligent fashion.
+          Revolutionize your fashion experience with our 3D T-Shirts' key features.
+          Discover unparalleled depth, vibrant colors, and dynamic designs that come
+          to life, thanks to cutting-edge AI technology. Elevate your style with
+          intelligent fashion.
         </motion.div>
       </div>
       <div className="flex flex-wrap justify-center font-[Poppins]">

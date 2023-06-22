@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import logoTshirt from "../../assets/image/icons8-shirt-512.png";
+import { logo, logoText } from "../../assets";
 import { mid } from "../../assets";
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -15,31 +15,27 @@ const Navbar = () => {
   });
 
   return (
-    <nav
-      className={`navbar h-16 py-[20px] p-[10%] max-sm:px-0 max-sm:py-5 flex`}
-    >
+    <nav className={`navbar h-16 py-[20px] p-[2%] max-sm:px-0 max-sm:py-5 flex`}>
       <div className="pl-5">
         <Link to="/">
-          <img
-            className="w-12 justify-center align-middle"
-            src={mid}
-            alt="Logo" loading="lazy"
-          />
+          <div className="flex mt-1 align-center items-center">
+            <img className=" w-14 h-15" src={logo} alt="logo" loading="lazy"/>
+            <img
+              src={logoText}
+              className="w-[11rem] h-[2.5rem] md:w-[18rem] md:h-[3rem] ml-2"
+              alt="logoText" loading="lazy"
+            />
+          </div>
         </Link>
         {/* <p className="Brand-heading">PRODUCT 3D</p> */}
       </div>
       <div className="ml-auto max-lg:hidden space-x-10 pr-5">
-        <Link
-          to="/"
-          className={`link ${location.pathname === "/" ? "active" : ""}`}
-        >
+        <Link to="/" className={`link ${location.pathname === "/" ? "active" : ""}`}>
           Home
         </Link>
         <Link
           to="/guidebook"
-          className={`link ${
-            location.pathname === "/guidebook" ? "active" : ""
-          }`}
+          className={`link ${location.pathname === "/guidebook" ? "active" : ""}`}
         >
           Guide Book
         </Link>
@@ -62,7 +58,7 @@ const Navbar = () => {
         </button>
       </div>
 
-      <div className="ml-auto mr-5 lg:hidden">
+      <div className="ml-auto mr-5 mt-[-1rem] lg:hidden">
         <button
           className={`mobile-menu-toggle ${isMobileMenuOpen ? "open" : ""}`}
           onClick={toggleMobileMenu}
@@ -83,27 +79,21 @@ const Navbar = () => {
           </Link>
           <Link
             to="/guidebook"
-            className={`link ${
-              location.pathname === "/guidebook" ? "active" : ""
-            }`}
+            className={`link ${location.pathname === "/guidebook" ? "active" : ""}`}
             onClick={toggleMobileMenu}
           >
             Guide Book
           </Link>
           <Link
             to="/customize"
-            className={`link ${
-              location.pathname === "/customize" ? "active" : ""
-            }`}
+            className={`link ${location.pathname === "/customize" ? "active" : ""}`}
             onClick={toggleMobileMenu}
           >
             Customize
           </Link>
           <Link
             to="/contact"
-            className={`link ${
-              location.pathname === "/contact" ? "active" : ""
-            }`}
+            className={`link ${location.pathname === "/contact" ? "active" : ""}`}
             onClick={toggleMobileMenu}
           >
             Contact Us

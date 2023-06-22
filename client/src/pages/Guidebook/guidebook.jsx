@@ -1,9 +1,9 @@
-import React from "react"
-import guide from "../../assets/image/guide_group.png"
-import guide1 from "../../assets/image/guide1.png"
-import guide3 from "../../assets/image/guide 3.png"
-import guide2 from "../../assets/image/guide 2.png"
-import guide6 from "../../assets/image/guide6.jpg"
+import React from "react";
+import guide from "../../assets/image/guide_group.png";
+import guide1 from "../../assets/image/guide1.png";
+import guide3 from "../../assets/image/guide 3.png";
+import guide2 from "../../assets/image/guide 2.png";
+import guide6 from "../../assets/image/guide6.jpg";
 
 function GuideBook(){
     return (
@@ -17,10 +17,12 @@ function GuideBook(){
             </div>
             <img src={guide1} className="animate-spin-slow ml-auto hidden lg:block -mr-30 mt-[-620px]" loading="lazy"/>
 
-            <div className="grid justify-center mt-10">
-                <p className="text-blue-950  md:text-4xl lg:text-6xl font-bold items-center">Mastering 3D T-Shirt Design: <br/>
-                <span className="text-blue-800 grid justify-center">A Guidebook</span></p>
-            </div>
+      <div className="grid justify-center mt-10">
+        <p className="text-blue-950  md:text-4xl lg:text-6xl font-bold items-center">
+          Mastering 3D T-Shirt Design: <br />
+          <span className="text-blue-800 grid justify-center">A Guidebook</span>
+        </p>
+      </div>
 
             <section className="grid md:grid-cols-2 grid-cols-1 justify-center p-4">
                     <img src={guide3} loading="lazy"/>

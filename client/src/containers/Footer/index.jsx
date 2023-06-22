@@ -4,6 +4,8 @@ import { objectFoot } from "../../assets";
 import { footerLinks } from "./index";
 import { imgAnim } from "../../animation/motion";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+
 // btn
 const Button = ({ styles }) => {
   return (
@@ -90,7 +92,7 @@ function Footer() {
                   styles.index !== footerLink.links.length - 1 ? "mb-4" : "mb-0"
                 }`}
                     >
-                      {link.name}
+                      <Link to={link.link}>{link.name}</Link>
                     </li>
                   ))}
                 </ul>
@@ -116,7 +118,7 @@ function Footer() {
         <p
           className={`font-poppins font-normal text-center text-[12px] leading-[27px] text-[#63657E] mx-auto`}
         >
-          Opensource ©2023 | Fashion Forge 3D | All Rights Reserved.
+          Opensource ©2023 | Fashion Froze 3D | All Rights Reserved.
         </p>
       </div>
     </footer>

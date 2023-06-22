@@ -28,15 +28,15 @@ Welcome to the 3D Product Customization Website! 🌟 This innovative web applic
 
 This application boasts an array of impressive features to enhance your t-shirt customization experience:
 
-Color Selection: Choose from a delightful range of t-shirt colors to suit your style and mood.
+**Color Selection**: Choose from a delightful range of t-shirt colors to suit your style and mood.
 
-Image/Logo Upload: Personalize your t-shirt by uploading your own logos or images to be applied seamlessly.
+**Image/Logo Upload**: Personalize your t-shirt by uploading your own logos or images to be applied seamlessly.
 
-DalleAI Integration: Unlock the power of DalleAI technology, generating unique custom images to adorn your t-shirt as logos or full designs.
+**DalleAI Integration**: Unlock the power of DalleAI technology, generating unique custom images to adorn your t-shirt as logos or full designs.
 
-Remove Functionality: Enjoy the freedom to remove any applied logos or images with a simple click of the "remove" button.
+**Remove Functionality**: Enjoy the freedom to remove any applied logos or images with a simple click of the "remove" button.
 
-Download Option: Capture your masterpiece by downloading your completed t-shirt design as an image file.
+**Download Option**: Capture your masterpiece by downloading your completed t-shirt design as an image file.
 
 # Technologies Used 🛠️
 
@@ -70,7 +70,7 @@ If you'd like to contribute to this project, please fork the repository and subm
 1. Clone the project repository:
 
 ```
-git clone https://github.com/your-username/your-repo-name.git
+git clone https://github.com/amanjaiman1/Product_3D.git
 ```
 
 This command will create a local copy of the project on your machine.

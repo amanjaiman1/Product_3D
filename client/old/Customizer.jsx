@@ -97,15 +97,18 @@ const Customizer = () => {
     try {
       setGeneratingImg(true);
 
-      const response = await fetch("https://threed-tshirt-designer-5hrs.onrender.com/api/v1/unsplash", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          prompt,
-        }),
-      });
+      const response = await fetch(
+        "https://threed-tshirt-designer-5hrs.onrender.com/api/v1/unsplash",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify({
+            prompt,
+          }),
+        }
+      );
       const data = await response.json();
       if (data.data.length != 0) {
         handleDecals(type, data.data[0]);
@@ -188,10 +191,7 @@ const Customizer = () => {
             </div>
           </motion.div>
 
-          <motion.div
-            className="absolute z-10 top-5 left-10"
-            {...fadeAnimation}
-          >
+          <motion.div className="absolute z-10 top-5 left-10" {...fadeAnimation}>
             <CustomButton
               type="filled"
               title="Go Back"
@@ -200,10 +200,7 @@ const Customizer = () => {
             />
           </motion.div>
 
-          <motion.div
-            className="filtertabs-container"
-            {...slideAnimation("up")}
-          >
+          <motion.div className="filtertabs-container" {...slideAnimation("up")}>
             {FilterTabs.map((tab) => (
               <Tab
                 key={tab.name}
