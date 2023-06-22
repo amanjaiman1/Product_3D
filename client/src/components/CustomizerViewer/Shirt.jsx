@@ -7,19 +7,15 @@ import state from "./././valito";
 
 const Shirt = () => {
   const snap = useSnapshot(state);
-  const { nodes, materials } = useGLTF("/shirt_baked.glb");
-
+  const gltf = useGLTF("/shirt_baked.glb");
+  const { nodes, materials } = gltf;
   const logoTexture = useTexture(snap.logoDecal);
   const fullTexture = useTexture(snap.fullDecal);
-
   const shirtRef = useRef();
-
   useFrame(({ clock }) => {
-    materials.lambert1.color.set("yellow");
+    // materials.lambert1.color.set("0xffffff");
   });
-
   const stateString = JSON.stringify(snap);
-
   return (
     <group key={stateString}>
       <mesh
