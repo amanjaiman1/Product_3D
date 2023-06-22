@@ -4,18 +4,24 @@
   "description": "Product_3D",
   "main": "index.js",
   "scripts": {
+    "test": "echo Formating...",
     "install-all": "cd server && npm i && cd .. && cd client && npm i",
     "server": "cd server && npm start",
     "server-dev": "cd server && npm run dev",
     "client-dev": "cd client && vite",
     "client-build": "cd client && vite build",
     "client-preview": "cd client && vite preview",
-    "pre-commit": "cd ./client &&  npx prettier --write ."
+    "pre-commit": "lint-staged",
+    "prepare": "husky install"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "husky": "^8.0.3"
+    "@commitlint/cli": "^17.6.5",
+    "@commitlint/config-conventional": "^17.6.5",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.2.2",
+    "prettier": "2.8.8"
   }
 }
