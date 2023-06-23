@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState , useEffect } from "react";
 import { Link } from "react-router-dom";
 import { logo, logoText } from "../../assets";
 import { mid } from "../../assets";
@@ -13,7 +13,23 @@ const Navbar = () => {
     var navbar = document.querySelector("nav");
     navbar.classList.toggle("sticky", this.scrollY > 0);
   });
+  // function for dark mode button (Desktop)
+   useEffect(() => {
+    const handleCheckboxChange = () => {
+      document.body.classList.toggle('dark');
+    };
+    const checkbox = document.getElementById("checkbox");
+    checkbox.addEventListener('change', handleCheckboxChange);
+    return () => {
+      checkbox.removeEventListener('change', handleCheckboxChange);
+    };
+  }, []);
 
+  // styling ball of dark mode button
+   const styles = {
+    fontSize: '30px',
+  };
+  
   return (
     <nav className={`navbar h-16 py-[20px] p-[2%] max-sm:px-0 max-sm:py-5 flex`}>
       <div className="pl-5">
@@ -29,8 +45,11 @@ const Navbar = () => {
         </Link>
         {/* <p className="Brand-heading">PRODUCT 3D</p> */}
       </div>
-      <div className="ml-auto max-lg:hidden space-x-10 pr-5">
-        <Link to="/" className={`link ${location.pathname === "/" ? "active" : ""}`}>
+      <div className="ml-auto max-lg:hidden space-x-8 pr-10">
+        <Link
+          to="/"
+          className={`link ${location.pathname === "/" ? "active" : ""}`}
+        >
           Home
         </Link>
         <Link
@@ -111,9 +130,15 @@ const Navbar = () => {
           </button>
         </div>
       )}
-
+         <div class="mx-1">
+                <input type="checkbox" class="checkbox" id="checkbox" />
+                <label for="checkbox" class="label top-[-6px] lg:top-0" >
+                  <i class="material-symbols-outlined moon">dark_mode</i>
+                  <i class="material-symbols-outlined sun"> clear_day</i>
+                  <div class="material-symbols-outlined  ball" style={styles}>circle</div>
+                </label>
+              </div>
       {/* Dark Mode Feature - will add on customizer Page later  */}
-
       {/* <div className="switch-container max-sm:hidden flex flex-row overflow-hidden mr-5">
         <input className="darkmode-input" type="checkbox" id="switch" checked={isDarkMode} onChange={toggleDarkMode} />
         <label htmlFor="switch">
