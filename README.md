@@ -65,6 +65,7 @@ Get started today and experience the joy of designing your own custom t-shirts l
 
 If you'd like to contribute to this project, please fork the repository and submit a pull request. We'd love to hear your ideas for improving this application! Thank you for considering contributing to our 3D Product Customization Website! Your ideas and contributions are valuable in improving this application and providing an exceptional user experience. Join us in revolutionizing customization and empowering individuals to express their creativity through personalized t-shirt designs.
 
+
 ## 🚀 Getting Started with the Project 🎉
 
 1. Clone the project repository:
@@ -200,6 +201,9 @@ If you encounter any issues during the setup process or have questions, please f
 
 🎉Let's ensure that everyone has the necessary environment properly configured to work efficiently. Thank you for your attention and cooperation!🙌
  
+## Do join our disocrd :<a href="https://discord.gg/55sbm5ye">
+  <img src="https://img.icons8.com/color/2x/discord--v2.png" height="50px"></img>
+</a>
 
 ## Thank you for contributors ✨
 
