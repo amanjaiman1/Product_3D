@@ -140,6 +140,53 @@ label .fa-moon {
   transform: translateX(0), rotate(0);
 } */
 
+/* Css for dark mode button */
+* {
+  box-sizing: border-box;
+  padding: 0;
+}
+
+.dark {
+  background-color: #000000;
+  color: white;
+}
+.label {
+  background: #181717;
+  box-shadow: inset 0px 5px 15px rgba(0, 0, 0, 0.4),
+    inset 0px -5px 15px rgba(255, 255, 255, 0.4);
+  border-radius: 30px;
+  position: relative;
+  height: 32px;
+  width: 65px;
+  padding: 3px;
+  display: flex;
+  transition: 0.3s;
+  align-items: center;
+}
+.moon {
+  color: yellow;
+  transition: 0.3s;
+}
+.sun {
+  color: yellow;
+  margin-left: 10px;
+  transition: 0.3s;
+}
+.ball {
+  color: white;
+  position: absolute;
+  transition: transform 0.3s linear;
+}
+.checkbox {
+  opacity: 0;
+  position: absolute;
+
+}
+.checkbox:checked+.label .ball {
+  transform: translate(30px);
+}
+
+
 /* Sticky navbar */
 nav {
   background-color: transparent;
