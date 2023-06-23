@@ -67,8 +67,8 @@ function Contributor() {
           className="text-center text-secondary mt-5  text-lg lg:px-60"
         >
           Our project's success is attributed to the dedicated contributors who
-          brought expertise and creativity. Meet the amazing individuals behind
-          our accomplishments.
+          brought expertise and creativity. Meet the amazing individuals behind our
+          accomplishments.
         </motion.p>
       </div>
       <div className="flex flex-wrap justify-center p-6 gap-8 max-w-screen-sm max-h-screen-md lg:max-w-full lg:max-h-full">
@@ -77,11 +77,7 @@ function Contributor() {
         ) : (
           <>
             {currentUsers.map((contributor, index) => (
-              <ContributorCard
-                key={index}
-                index={index}
-                contributor={contributor}
-              />
+              <ContributorCard key={index} index={index} contributor={contributor} />
             ))}
             {currentUsers.length === 0 && <p>No contributors found.</p>}
           </>

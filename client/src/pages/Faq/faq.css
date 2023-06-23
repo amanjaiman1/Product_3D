@@ -1,32 +1,32 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
- 
+@import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
 /* Primary Text colors */
 :root {
-    --very-dark-desaturated-blue: hsl(238, 29%, 16%);
-    --soft-red: hsl(14, 88%, 65%);
-  }
-  
-  /* Background gradient */
-  :root {
-    --soft-violet: hsl(273, 75%, 66%);
-    --soft-blue: hsl(240, 73%, 65%);
-  }
-  
-  /* Neutral Text colors */
-  :root {
-    --very-dark-grayish-blue: hsl(237, 12%, 33%);
-    --dark-grayish-blue: hsl(240, 6%, 50%);
-  }
-  
-  /* Dividers */
-  :root {
-    --light-grayish-blue: hsl(240, 5%, 91%);
-  }
-  .my-element {
-    color: var(--very-dark-desaturated-blue);
-    background-color: var(--soft-red);
-  }
-  /* ***********************Config file ********************************************* */
+  --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+  --soft-red: hsl(14, 88%, 65%);
+}
+
+/* Background gradient */
+:root {
+  --soft-violet: hsl(273, 75%, 66%);
+  --soft-blue: hsl(240, 73%, 65%);
+}
+
+/* Neutral Text colors */
+:root {
+  --very-dark-grayish-blue: hsl(237, 12%, 33%);
+  --dark-grayish-blue: hsl(240, 6%, 50%);
+}
+
+/* Dividers */
+:root {
+  --light-grayish-blue: hsl(240, 5%, 91%);
+}
+.my-element {
+  color: var(--very-dark-desaturated-blue);
+  background-color: var(--soft-red);
+}
+/* ***********************Config file ********************************************* */
 
 html {
   box-sizing: border-box;
@@ -38,7 +38,6 @@ html {
   box-sizing: inherit;
   font-family: "Poppins", sans-serif;
 }
-
 
 h3 {
   color: var(--very-dark-desaturated-blue);
@@ -85,7 +84,6 @@ button:focus-visible {
   font-weight: 700;
 }
 
-    
 /* ```````````````````````````````````main```````````````````````````````````````````` */
 .component {
   margin: 0 auto;
@@ -101,11 +99,9 @@ button:focus-visible {
 }
 /***********************************Component****************************************  */
 
-
 .illustration {
   width: 100%;
   position: relative;
- 
 }
 
 .illustration__box {
@@ -113,7 +109,6 @@ button:focus-visible {
   z-index: 999;
   top: 200px;
   left: -95px;
-  
 }
 
 .illustration__woman-desktop {
@@ -125,7 +120,6 @@ button:focus-visible {
 
 .illustration__woman-mobile {
   display: none;
-  
 }
 /*****************************Illustration************************************  */
 
@@ -188,7 +182,6 @@ button:focus-visible {
   text-align: left;
 }
 
-
 /* **********************************Faq*************************************** */
 .attribution {
   font-size: 50px;
@@ -200,98 +193,91 @@ button:focus-visible {
 .attribution a {
   color: var(--soft-violet);
 }
-  /***********************************attribution****************************************  */
+/***********************************attribution****************************************  */
 
-  .faq__desc.show-description {
-    height:auto;
-    margin-bottom: 15px;
-    text-align: left;
-    
-  }
-  
-  /* Arrows */
-  
-  /* closed */
-  .faq__question-button::after {
-    transition: transform 300ms ease-out;
-  }
-  
-  /* open */
-  .font-weight-bold::after {
-    transform: rotate(720deg);
-  }
-  /*******************************animation***********************************  */
+.faq__desc.show-description {
+  height: auto;
+  margin-bottom: 15px;
+  text-align: left;
+}
 
+/* Arrows */
+
+/* closed */
+.faq__question-button::after {
+  transition: transform 300ms ease-out;
+}
+
+/* open */
+.font-weight-bold::after {
+  transform: rotate(720deg);
+}
+/*******************************animation***********************************  */
 
 /* Media query for screens with a maximum width of 800px */
 @media (max-width: 800px) {
-    .illustration__woman-desktop {
-      max-width: 120%;
-    }
+  .illustration__woman-desktop {
+    max-width: 120%;
   }
-  
-  /* Media query for screens with a maximum width of 700px */
-  @media (max-width: 700px) {
-    .container {
-      /* Added padding here to the mobile container
+}
+
+/* Media query for screens with a maximum width of 700px */
+@media (max-width: 700px) {
+  .container {
+    /* Added padding here to the mobile container
       so illustration__woman-desktop would not be cropped at the top */
-      padding-top: 105px;
-    }
-  
-    .component {
-      max-width: 327px;
-      background-image: url(../../assets/svg/bg-pattern-mobile.svg);
-      background-position: top;
-      flex-direction: column;
-    }
-  
-    .illustration__box {
-      display: none;
-    }
-  
-    .illustration__woman-desktop {
-      display: none;
-    }
-  
-    .illustration__woman-mobile {
-      display: block;
-      margin: 0 auto;
-      position: absolute;
-      top: -105px;
-      left: 12px;
-    }
-  
-    .faq {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-top: 132px;
-      padding-bottom: 48px;
-    }
-  
-    .faq__question {
-      max-width: 279px;
-      word-break: break-word;
-      text-align: center; /* Add this line to center the question */
-      margin-left: auto; /* Add this line to align question to the right */
-      margin-right: auto; /* Add this line to align question to the left */
-    }
-  
-    .faq__question-button {
-      width: 100%;
-      max-width: 280px;
-      font-size: 13px;
-      line-height: 13px;
-    }
-  
-    .faq__question-button::after {
-      padding-right: 0px;
-      margin-left: 5vh;
-    }
+    padding-top: 105px;
   }
-  /* *****************************responsive****************************** */
 
+  .component {
+    max-width: 327px;
+    background-image: url(../../assets/svg/bg-pattern-mobile.svg);
+    background-position: top;
+    flex-direction: column;
+  }
 
-  
- 
-   
+  .illustration__box {
+    display: none;
+  }
+
+  .illustration__woman-desktop {
+    display: none;
+  }
+
+  .illustration__woman-mobile {
+    display: block;
+    margin: 0 auto;
+    position: absolute;
+    top: -105px;
+    left: 12px;
+  }
+
+  .faq {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 132px;
+    padding-bottom: 48px;
+  }
+
+  .faq__question {
+    max-width: 279px;
+    word-break: break-word;
+    text-align: center; /* Add this line to center the question */
+    margin-left: auto; /* Add this line to align question to the right */
+    margin-right: auto; /* Add this line to align question to the left */
+  }
+
+  .faq__question-button {
+    width: 100%;
+    max-width: 280px;
+    font-size: 13px;
+    line-height: 13px;
+  }
+
+  .faq__question-button::after {
+    padding-right: 0px;
+    margin-left: 5vh;
+  }
+}
+/* *****************************responsive****************************** */
