@@ -164,6 +164,43 @@ npm start
     - You should see a notification banner indicating that you've recently pushed a new branch.
     - Click on the "Compare & pull request" button.
 
+      
+## :warning: Steps for setting up the environment (Vite + React) :hammer_and_wrench:
+Please follow the instructions below carefully:
+
+1️⃣ Environment Setup :
+
+In the ```./client ```directory of our project, you'll find a file named ``` .example.env```. This file serves as a template for the environment variables required to run the application. Make a copy of this file and rename it to ``` .env ```in the same directory.
+
+2️⃣ Adding Environment Variables :
+
+Open the newly created ```.env``` file and update the values of the environment variables according to the platform we're working on (Vite + React). For example, you might need to set environment variables related to Firebase, API keys, or other configurations specific to our project.
+
+Make sure to keep sensitive information, such as API keys and credentials, confidential and avoid committing them to the version control system.
+
+3️⃣ Building the Project :
+
+Once you've added the necessary environment variables, navigate to the ```./client``` directory in your terminal and run the following command to build the project:
+
+```npm run build```
+
+This command will generate the production-ready optimized build of our application.
+
+4️⃣ Running the Project :
+
+To start the development server and run the application locally, use the following command:
+
+```npm run dev```
+
+🚀This will launch the application at the specified development server URL.
+
+Remember to perform these steps whenever you set up the project on a new machine or need to update the environment variables.
+
+If you encounter any issues during the setup process or have questions, please feel free to ask in the ⁠```#issues```  channel.
+
+🎉Let's ensure that everyone has the necessary environment properly configured to work efficiently. Thank you for your attention and cooperation!🙌
+ 
+
 ## Thank you for contributors ✨
 
 Congratulations! You've successfully contributed to the project. Your changes will now be reviewed by the project maintainers, and they may provide feedback or merge your changes into the main project if they are deemed appropriate.
