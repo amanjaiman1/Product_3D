@@ -8,6 +8,7 @@ import CameraRig from "./CameraRig";
 import CustomizerOptions from "../CustomizerOptions";
 
 function CustomizerViewer() {
+  const [isGrabbing, setIsGrabbing] = useState(false);
   const cameraState = useState({
     zoom: 1.7,
     rotateY: 0,
@@ -15,9 +16,25 @@ function CustomizerViewer() {
     intensity: 0.8,
   });
   const cameraRef = useRef(null);
+
+  const handleCanvasMouseDown = () => {
+    setIsGrabbing(true);
+  };
+
+  const handleCanvasMouseUp = () => {
+    setIsGrabbing(false);
+  };
+
   return (
-    <div className="w-[500px] h-[500px] absolute left-28">
+    <div
+      className={`w-[500px] h-[500px] absolute left-28 ${
+        isGrabbing ? "cursor-grabbing" : "cursor-grab"
+      }`}
+      onMouseDown={handleCanvasMouseDown}
+      onMouseUp={handleCanvasMouseUp}
+    >
       <Canvas
+        mouse
         shadows
         camera={{ position: [0, 0, 0], fov: 25 }}
         gl={{ preserveDrawingBuffer: true }}
@@ -26,6 +43,7 @@ function CustomizerViewer() {
         <ambientLight intensity={cameraState[0].intensity} />
         <Environment preset="city" />
         <CameraRig cameraState={cameraState} ref={cameraRef}>
+          {/* <Backdrop /> */}
           <Center>
             <mesh position={[-1.6, 0, 0]}>
               <Shirt />
