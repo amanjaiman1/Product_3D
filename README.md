@@ -165,7 +165,7 @@ npm start
     - You should see a notification banner indicating that you've recently pushed a new branch.
     - Click on the "Compare & pull request" button.
 
-      
+
 ## :warning: Steps for setting up the environment (Vite + React) :hammer_and_wrench:
 Please follow the instructions below carefully:
 
@@ -201,7 +201,8 @@ If you encounter any issues during the setup process or have questions, please f
 
 🎉Let's ensure that everyone has the necessary environment properly configured to work efficiently. Thank you for your attention and cooperation!🙌
  
-## Do join our disocrd :<a href="https://discord.gg/55sbm5ye">
+## Do join our discord :
+<a href="https://discord.gg/V48uzUSW">
   <img src="https://img.icons8.com/color/2x/discord--v2.png" height="50px"></img>
 </a>
 
