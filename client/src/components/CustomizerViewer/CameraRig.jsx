@@ -25,8 +25,7 @@ const CameraRig = forwardRef(({ children, cameraState }, group) => {
     // set the model rotation smoothly
     easing.dampE(
       group.current.rotation,
-      [(state.pointer.y * 10) / 10, (-state.pointer.x * 10) / 5, 0],
-      0.25,
+      [state.pointer.y / 10, -state.pointer.x / 5, 0],
       delta
     );
   });
