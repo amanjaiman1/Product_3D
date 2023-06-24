@@ -1,14 +1,14 @@
 import React, { useRef, useState } from "react";
 import { Canvas } from "@react-three/fiber";
 import { Environment, Center } from "@react-three/drei/core";
-
 import Shirt from "./Shirt";
-import Backdrop from "./Backdrop";
 import CameraRig from "./CameraRig";
 import CustomizerOptions from "../CustomizerOptions";
-
+import Lottie from "lottie-react";
+import loader from "../../assets/lottie/95250-3d-loader.json";
 function CustomizerViewer() {
   const [isGrabbing, setIsGrabbing] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   const cameraState = useState({
     zoom: 1.7,
     rotateY: 0,
@@ -33,6 +33,7 @@ function CustomizerViewer() {
       onMouseDown={handleCanvasMouseDown}
       onMouseUp={handleCanvasMouseUp}
     >
+      {isLoading && <Lottie animationData={loader} loop={true} />}
       <Canvas
         mouse
         shadows
@@ -43,10 +44,9 @@ function CustomizerViewer() {
         <ambientLight intensity={cameraState[0].intensity} />
         <Environment preset="city" />
         <CameraRig cameraState={cameraState} ref={cameraRef}>
-          {/* <Backdrop /> */}
           <Center>
             <mesh position={[-1.6, 0, 0]}>
-              <Shirt />
+              <Shirt setIsLoading={setIsLoading} />
             </mesh>
           </Center>
         </CameraRig>

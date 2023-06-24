@@ -23,11 +23,7 @@ const CameraRig = forwardRef(({ children, cameraState }, group) => {
     // set model camera position
     easing.damp3(state.camera.position, [0, 0, cord.zoom], 0.25, delta);
     // set the model rotation smoothly
-    easing.dampE(
-      group.current.rotation,
-      [state.pointer.y / 10, -state.pointer.x / 5, 0],
-      delta
-    );
+    easing.dampE(group.current.rotation, [0, 0, 0], delta);
   });
   return <mesh ref={group}>{children}</mesh>;
 });
