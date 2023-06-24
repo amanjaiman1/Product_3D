@@ -261,8 +261,8 @@ nav.sticky {
 }
 .tryfree-btn:hover {
   color: #293fce;
-  border: 1px solid #293fce;
-  background-color: transparent;
+  cursor: pointer;
+  background-color: rgb(29 78 216 / var(--tw-bg-opacity));
 }
 
 .link {
