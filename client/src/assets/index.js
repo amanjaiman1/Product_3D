@@ -15,8 +15,7 @@ import Card3 from "./image/Card3.png";
 import canvas from "./image/canvas.png";
 import midimg from "./image/midimg.jpg";
 import mid from "./image/mid.png";
-import logo from "./image/productLogo1.png";
-import logoText from "./image/productLogo2.png";
+import logo from "./image/logo.png";
 export {
   hero,
   ai,
@@ -33,7 +32,6 @@ export {
   Card2,
   Card3,
   logo,
-  logoText,
   canvas,
   midimg,
   mid,

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { logo, logoText } from "../../assets";
-import { mid } from "../../assets";
+import { logo } from "../../assets";
+
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => {
@@ -15,19 +15,17 @@ const Navbar = () => {
   });
 
   return (
-    <nav className={`navbar h-16 py-[20px] p-[2%] max-sm:px-0 max-sm:py-5 flex`}>
+    <nav className={`navbar h-16 pt-[25px] pb-[60px] p-[5%] max-sm:px-0 max-sm:py-5 flex`}>
       <div className="pl-5">
         <Link to="/">
-          <div className="flex mt-1 align-center items-center">
-            <img className=" w-14 h-15" src={logo} alt="logo" />
+          <div className="mt-9 align-center items-center">
             <img
-              src={logoText}
-              className="w-[11rem] h-[2.5rem] md:w-[18rem] md:h-[3rem] ml-2"
-              alt="logoText"
+              className="w-50 h-40"
+              src={logo}
+              alt="ProductLogo"
             />
           </div>
         </Link>
-        {/* <p className="Brand-heading">PRODUCT 3D</p> */}
       </div>
       <div className="ml-auto max-lg:hidden space-x-10 pr-5">
         <Link to="/" className={`link ${location.pathname === "/" ? "active" : ""}`}>
