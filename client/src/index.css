@@ -1,6 +1,10 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cherry+Bomb+One&display=swap");
 
+/* Google icons for dark mode button */
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,1,0");
+@import url("https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,100,1,-25");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -35,6 +39,55 @@ body {
 
 .main-div::-webkit-scrollbar {
   display: none;
+}
+
+/* Css for dark mode button */
+* {
+  box-sizing: border-box;
+  padding: 0;
+} 
+
+ body {
+  transition: 0.4s linear;
+}
+
+.dark{
+  background-color: #111;
+  color: white;
+}
+.label {
+  background-color:#0b0505;
+  border-radius: 30px;
+  position: relative;
+  height: 33px;
+  width: 66px;
+  padding: 3px;
+  display: flex;
+  align-items: center;
+}
+
+.moon {
+  color: yellow;
+}
+
+.sun {
+  color: yellow;
+  margin-left: 12px;
+}
+
+.ball {
+  color: white;
+  position: absolute;
+  transition: transform 0.3s linear;
+}
+
+.checkbox {
+  opacity: 0;
+  position: absolute;
+
+}
+.checkbox:checked+.label .ball {
+  transform: translate(34px);
 }
 
 /* Dark Mode Functionality  */
@@ -167,7 +220,7 @@ nav.sticky {
   cursor: pointer;
   z-index: 100;
   position: relative;
-  top: 30%;
+  top: 19px;
 }
 
 .mobile-menu-toggle .bar {

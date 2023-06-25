@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { logo } from "../../assets";
 
@@ -13,6 +13,23 @@ const Navbar = () => {
     var navbar = document.querySelector("nav");
     navbar.classList.toggle("sticky", this.scrollY > 0);
   });
+
+   //function for dark mode button
+   useEffect(() => {
+    const handleCheckboxChange = () => {
+      document.body.classList.toggle('dark');
+    };
+    const checkbox = document.getElementById("checkbox");
+    checkbox.addEventListener('change', handleCheckboxChange);
+    return () => {
+      checkbox.removeEventListener('change', handleCheckboxChange);
+    };
+  }, []);
+
+  // styling ball of dark mode button
+  const style = {
+    fontSize: '30px',
+  };
 
   return (
     <nav className={`navbar h-16 pt-[25px] pb-[60px] p-[5%] max-sm:px-0 max-sm:py-5 flex`}>
@@ -109,6 +126,14 @@ const Navbar = () => {
           </button>
         </div>
       )}
+              <div>
+                <input type="checkbox" class="checkbox" id="checkbox" />
+                <label for="checkbox" class="label "  >
+                  <i class="material-symbols-outlined moon">dark_mode</i>
+                  <i class="material-symbols-outlined sun"> clear_day</i>
+                  <div class="material-symbols-outlined  ball" style={style}>circle</div>
+                </label>
+              </div>
 
       {/* Dark Mode Feature - will add on customizer Page later  */}
 
