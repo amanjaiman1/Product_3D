@@ -1,71 +1,45 @@
 import React from "react";
 import FeatureCard from "../../components/FeatureCard";
-import { Card1, Card2, Card3 } from "../../assets";
+import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../animation/motion";
+import { services } from ".";
+
 function HightLights() {
-  const data = [
-    {
-      title: "3D Visualization",
-      color: "#FFF0E9",
-      icon: Card1,
-      desc: "Provide a dynamic and interactive viewing experience that allows customers to rotate, zoom in, and explore the 3D designs on the T-Shirts from different angles.",
-    },
-    {
-      title: "Customization",
-      color: "#E9EDFF",
-      icon: Card2,
-      desc: "Allow customers to personalize their 3D T-Shirts by adding custom text, graphics, or images, creating a truly unique and one-of-a-kind piece.",
-    },
-    {
-      title: "AI-Powered 3D Design",
-      color: "#FFF6DD",
-      icon: Card3,
-      desc: "AI-powered 3D T-Shirt website, where cutting-edge technology and stunning designs come together for an extraordinary fashion experience.",
-    },
-  ];
+  const ServiceCard = ({ index, title, icon }) => {
+    return (
+      <Tilt className="w-[300px]  mx-10">
+        <motion.div
+          variants={fadeIn}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ amount: 0.25, once: true }}
+          transition={{ delay: 0.1, duration: 0.5 }}
+          className=" p-2 rounded-lg  shadow-card"
+        >
+          <div className="rounded-lg p-4 flex min-h-[300px] flex-col shadow-card1 items-center">
+            <div className="flex justify-center items-center mt-[40px]">
+              <img src={icon} alt={title} className="mt-8 h-28 object-contain" />
+            </div>
+            <h3 className="text-white text-[23px] p-5 text-center font-bold mt-20">
+              {title}
+            </h3>
+          </div>
+        </motion.div>
+      </Tilt>
+    );
+  };
 
   return (
-    <div className="my-20" style={{ fontFamily: "Poppins, sans-serif" }}>
-      <div className="feature-header my-3">
-        <motion.div
-          variants={fadeIn}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ amount: 0.25, once: true }}
-          transition={{ delay: 0.1, duration: 0.4 }}
-          className="feature-title my-8 text-center"
-        >
-          <h1 className="text-heading text-3xl font-semibold">
-            Essential Product Highlights and Features
-          </h1>
-        </motion.div>
-        <motion.div
-          variants={fadeIn}
-          whileInView="visible"
-          initial="hidden"
-          transition={{ duration: 0.2, delay: 0.45 }}
-          viewport={{ amount: 0.25, once: true }}
-          className="text-secondary feature-desc text-center mx-auto px-4 leading-loose lg:px-60 font-[Poppins]"
-        >
-          Revolutionize your fashion experience with our 3D T-Shirts' key features.
-          Discover unparalleled depth, vibrant colors, and dynamic designs that come
-          to life, thanks to cutting-edge AI technology. Elevate your style with
-          intelligent fashion.
-        </motion.div>
-      </div>
-      <div className="flex flex-wrap justify-center font-[Poppins]">
-        {data.map((item) => (
-          <FeatureCard
-            key={item.title}
-            title={item.title}
-            color={item.color}
-            icon={item.icon}
-            desc={item.desc}
-          />
-        ))}
-      </div>
-    </div>
+    <>
+      <motion.div>
+        <div className="mt-20 pb-40 flex gap-16 justify-center">
+          {services.map((service, index) => (
+            <ServiceCard key={service.title} index={index} {...service} />
+          ))}
+        </div>
+      </motion.div>
+    </>
   );
 }
 

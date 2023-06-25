@@ -51,15 +51,36 @@ function Hero() {
             with our extraordinary collection of vibrant designs.
           </motion.p>
         </div>
+
         <motion.div
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true }}
           variants={buttonAnim}
-          whileHover="hover"
           className="pt-3 max-[600px]:flex max-[850px]:justify-center"
         >
-          <Button onClick={navigateToCustomisation}>Design Now</Button>
+          <button
+            onClick={navigateToCustomisation}
+            className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-pink-500 hover:to-purple-500
+            text-white font-semibold py-4 px-6 rounded-[10px] shadow-lg
+             transform transition-transform ease-in-out focus:outline-none focus:ring-2 focus:ring-purple-600"
+          >
+            <span className="flex items-center">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                className="h-5 w-5 mr-2"
+                viewBox="0 0 20 20"
+                fill="currentColor"
+              >
+                <path
+                  fillRule="evenodd"
+                  d="M10 18a8 8 0 100-16 8 8 0 000 16zm0-2a6 6 0 100-12 6 6 0 000 12zm0-5a1 1 0 011-1h3a1 1 0 010 2h-2v2a1 1 0 01-2 0v-2H9a1 1 0 01-1-1zm1-7a1 1 0 011-1h4a1 1 0 010 2h-4a1 1 0 01-1-1z"
+                  clipRule="evenodd"
+                />
+              </svg>
+              Design Now
+            </span>
+          </button>
         </motion.div>
       </div>
       <motion.div
