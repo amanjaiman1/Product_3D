@@ -260,9 +260,8 @@ nav.sticky {
   -webkit-transition-timing-function: ease-in;
 }
 .tryfree-btn:hover {
-  color: #293fce;
   cursor: pointer;
-  background-color: rgb(29 78 216 / var(--tw-bg-opacity));
+  background-color: rgb(29 78 216 #293fce);
 }
 
 .link {
