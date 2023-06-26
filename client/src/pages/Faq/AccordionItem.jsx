@@ -1,19 +1,6 @@
 import React, { useState } from "react";
 
-const AccordionItem = ({
-  showDescription,
-  ariaExpanded,
-  fontWeightBold,
-  item,
-  index,
-  onClick,
-}) => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const handleClick = () => {
-    setIsOpen(!isOpen);
-    onClick();
-  };
+const AccordionItem = ({ showDescription, ariaExpanded, fontWeightBold, item, index, onClick, isOpen }) => {
 
   return (
     <div className="faq__question" key={item.question}>
@@ -23,7 +10,7 @@ const AccordionItem = ({
           aria-controls={`faq${index + 1}_desc`}
           data-qa="faq__question-button"
           className={`faq__question-button ${fontWeightBold}`}
-          onClick={handleClick}
+          onClick={onClick}
         >
           {item.question}
         </button>
