@@ -10,6 +10,8 @@
   },
   "dependencies": {
     "@chakra-ui/close-button": "^2.0.17",
+    "@cloudinary/react": "^1.11.2",
+    "@cloudinary/url-gen": "^1.10.1",
     "@emotion/react": "^11.11.0",
     "@emotion/styled": "^11.11.0",
     "@mui/icons-material": "^5.11.16",
