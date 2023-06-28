@@ -79,54 +79,63 @@ const Navbar = () => {
         </button>
       </div>
       {isMobileMenuOpen && (
-        <div className=" mobile-menu ">
-          <Link
-            to="/"
-            className={`link ${location.pathname === "/" ? "active" : ""}`}
-            onClick={toggleMobileMenu}
-          >
-            Home
-          </Link>
-          <Link
-            to="/guidebook"
-            className={`link ${
-              location.pathname === "/guidebook" ? "active" : ""
-            }`}
-            onClick={toggleMobileMenu}
-          >
-            Guide Book
-          </Link>
-          <Link
-            to="/customize"
-            className={`link ${
-              location.pathname === "/customize" ? "active" : ""
-            }`}
-            onClick={toggleMobileMenu}
-          >
-            Customize
-          </Link>
-          <Link
-            to="/contact"
-            className={`link ${
-              location.pathname === "/contact" ? "active" : ""
-            }`}
-            onClick={toggleMobileMenu}
-          >
-            Contact Us
-          </Link>
-          <Link
-            to="/faq"
-            className={`link ${location.pathname === "/faq" ? "active" : ""}`}
-            onClick={toggleMobileMenu}
-          >
-            {" "}
-            FAQ's
-          </Link>
-          <button className="justify-center border-[1px] p-2 rounded-md">
-            Try Free
-          </button>
-        </div>
-      )}
+  <div className="mobile-menu" style={{ width: "70%", textAlign: "right" }}>
+    <Link
+      to="/"
+      className={`link ${location.pathname === "/" ? "active" : ""}`}
+      onClick={toggleMobileMenu}
+      style={{ justifyContent: "flex-end" }}
+    >
+      Home
+    </Link>
+    <Link
+      to="/guidebook"
+      className={`link ${
+        location.pathname === "/guidebook" ? "active" : ""
+      }`}
+      onClick={toggleMobileMenu}
+      style={{ justifyContent: "flex-end" }}
+    >
+      Guide Book
+    </Link>
+    <Link
+      to="/customize"
+      className={`link ${
+        location.pathname === "/customize" ? "active" : ""
+      }`}
+      onClick={toggleMobileMenu}
+      style={{ justifyContent: "flex-end" }}
+    >
+      Customize
+    </Link>
+    <Link
+      to="/contact"
+      className={`link ${
+        location.pathname === "/contact" ? "active" : ""
+      }`}
+      onClick={toggleMobileMenu}
+      style={{ justifyContent: "flex-end" }}
+    >
+      Contact Us
+    </Link>
+    <Link
+      to="/faq"
+      className={`link ${location.pathname === "/faq" ? "active" : ""}`}
+      onClick={toggleMobileMenu}
+      style={{ justifyContent: "flex-end" }}
+    >
+      {" "}
+      FAQ's
+    </Link>
+    <button
+      className="justify-center border-[1px] p-2 rounded-md"
+      style={{ justifyContent: "center" }}
+    >
+      Try Free
+    </button>
+  </div>
+)}
+
 
       {/* Dark Mode Feature - will add on customizer Page later  */}
 
