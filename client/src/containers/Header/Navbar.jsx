@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { logo, logoText } from "../../assets";
-import { mid } from "../../assets";
+import { logo } from "../../assets";
+
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => {
@@ -15,37 +15,25 @@ const Navbar = () => {
   });
 
   return (
-    <nav
-      className={`navbar h-16 py-[20px] p-[2%] max-sm:px-0 max-sm:py-5 flex`}
-    >
+    <nav className={`navbar h-16 pt-[25px] pb-[60px] p-[5%] max-sm:px-0 max-sm:py-5 flex`}>
       <div className="pl-5">
         <Link to="/">
-          <div className="flex mt-1 align-center items-center">
+          <div className="mt-9 align-center items-center">
             <img
-              className=" w-14 h-15"
+              className="w-50 h-40"
               src={logo}
-              alt="logo"
+              alt="ProductLogo"
             />
-            <img 
-              src={logoText} 
-              className="w-[11rem] h-[2.5rem] md:w-[18rem] md:h-[3rem] ml-2"
-              alt="logoText" />
           </div>
         </Link>
-        {/* <p className="Brand-heading">PRODUCT 3D</p> */}
       </div>
       <div className="ml-auto max-lg:hidden space-x-10 pr-5">
-        <Link
-          to="/"
-          className={`link ${location.pathname === "/" ? "active" : ""}`}
-        >
+        <Link to="/" className={`link ${location.pathname === "/" ? "active" : ""}`}>
           Home
         </Link>
         <Link
           to="/guidebook"
-          className={`link ${
-            location.pathname === "/guidebook" ? "active" : ""
-          }`}
+          className={`link ${location.pathname === "/guidebook" ? "active" : ""}`}
         >
           Guide Book
         </Link>
@@ -79,6 +67,7 @@ const Navbar = () => {
         </button>
       </div>
       {isMobileMenuOpen && (
+
   <div className="mobile-menu" style={{ width: "70%", textAlign: "right" }}>
     <Link
       to="/"
@@ -135,7 +124,6 @@ const Navbar = () => {
     </button>
   </div>
 )}
-
 
       {/* Dark Mode Feature - will add on customizer Page later  */}
 

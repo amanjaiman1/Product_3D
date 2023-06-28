@@ -16,8 +16,8 @@ const Testimonials = () => {
           spaceBetween={30}
           centeredSlides={true}
           autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
+            delay: 5000,
+            // disableOnInteraction: false,
           }}
           pagination={{
             clickable: true,
@@ -34,9 +34,7 @@ const Testimonials = () => {
                     <img src={img} alt={card.name} className="max-w-[60px]" />
                   </div>
                   <div className="flex items-start flex-col">
-                    <h1 className="font-semibold text-xl h-full">
-                      {card.name}
-                    </h1>
+                    <h1 className="font-semibold text-xl h-full">{card.name}</h1>
                     <p className="font-normal">{card.role}</p>
                   </div>
                 </div>

@@ -1,72 +1,85 @@
-import designImg from './../assets/image/design-card.png'
+import designImg from "./../assets/image/design-card.png";
 
-export default [{
+export default [
+  {
     img: designImg,
-    name: "Design 1"
+    name: "Design 1",
   },
   {
     img: designImg,
-    name: "Design 2"
+    name: "Design 2",
   },
   {
     img: designImg,
-    name: "Design 3"
+    name: "Design 3",
   },
   {
     img: designImg,
-    name: "Design 4"
+    name: "Design 4",
   },
   {
     img: designImg,
-    name: "Design 1"
+    name: "Design 1",
   },
   {
     img: designImg,
-    name: "Design 1"
+    name: "Design 1",
   },
   {
     img: designImg,
-    name: "Design 1"
+    name: "Design 1",
   },
   {
     img: designImg,
-    name: "Design 1"
-  }, {
-    img: designImg,
-    name: "Design 1"
-  }, {
-    img: designImg,
-    name: "Design 1"
-  }, {
-    img: designImg,
-    name: "Design 2"
-  }, {
-    img: designImg,
-    name: "Design 2"
-  }, {
-    img: designImg,
-    name: "Design 2"
+    name: "Design 1",
   },
   {
     img: designImg,
-    name: "Design 2"
-  }, {
-    img: designImg,
-    name: "Design 2"
-  }, {
-    img: designImg,
-    name: "Design 2"
-  }, {
-    img: designImg,
-    name: "Design 2"
-  }, {
-    img: designImg,
-    name: "Design 2"
-  }, {
-    img: designImg,
-    name: "Design 2"
+    name: "Design 1",
   },
-  , {
+  {
     img: designImg,
-    name: "Design 2"
-  }]
+    name: "Design 1",
+  },
+  {
+    img: designImg,
+    name: "Design 2",
+  },
+  {
+    img: designImg,
+    name: "Design 2",
+  },
+  {
+    img: designImg,
+    name: "Design 2",
+  },
+  {
+    img: designImg,
+    name: "Design 2",
+  },
+  {
+    img: designImg,
+    name: "Design 2",
+  },
+  {
+    img: designImg,
+    name: "Design 2",
+  },
+  {
+    img: designImg,
+    name: "Design 2",
+  },
+  {
+    img: designImg,
+    name: "Design 2",
+  },
+  {
+    img: designImg,
+    name: "Design 2",
+  },
+  ,
+  {
+    img: designImg,
+    name: "Design 2",
+  },
+];

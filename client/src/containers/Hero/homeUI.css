@@ -1,60 +1,60 @@
 /* CSS of Hero div */
-.heroUI{
-    display: flex;
-    align-items: center;
-    width: 90%;
-    margin: auto;
-    padding: 4rem 2rem 5rem 2rem;
+.heroUI {
+  display: flex;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  padding: 4rem 2rem 5rem 2rem;
 }
-.title{
-    font-size: 3rem;
+.title {
+  font-size: 3rem;
 }
 
 @media screen and (min-width: 850px) and (max-width: 1000px) {
-    .heroUI{
-        padding: 4rem 1rem 4rem 1rem;
-    }
-    .title{
-        font-size: 2.2rem;
-        width: 105%;
-    }
+  .heroUI {
+    padding: 4rem 1rem 4rem 1rem;
+  }
+  .title {
+    font-size: 2.2rem;
+    width: 105%;
+  }
 }
 @media screen and (min-width: 850px) {
-    .flex-1{
-        width: 40%;
-    }
-    .flex-3{
-        width: 60%;
-    }
+  .flex-1 {
+    width: 40%;
+  }
+  .flex-3 {
+    width: 60%;
+  }
 }
 @media only screen and (min-width: 600px) and (max-width: 850px) {
-    .heroUI{
-        margin: auto;
-        width: 90%;
-        padding: 3rem 1rem 3rem 1rem;
-    }
-    .heroimg{
-        transform: scale(1);
-    }
+  .heroUI {
+    margin: auto;
+    width: 90%;
+    padding: 3rem 1rem 3rem 1rem;
+  }
+  .heroimg {
+    transform: scale(1);
+  }
 }
-@media only screen and (max-width: 850px){
-    .heroUI{
-        margin-top: -3rem;
-        flex-wrap: wrap-reverse;
-        height: auto;
-    }
-    .container{
-        margin-top: -50px !important;
-    }
-    .title{
-        font-size: 2rem;
-    } 
+@media only screen and (max-width: 850px) {
+  .heroUI {
+    margin-top: -3rem;
+    flex-wrap: wrap-reverse;
+    height: auto;
+  }
+  .container {
+    margin-top: -50px !important;
+  }
+  .title {
+    font-size: 2rem;
+  }
 }
-@media only screen and (max-width: 600px){
-    .heroimg{
-        transform: scale(1.2);
-    }
-    .heroUI{
-        width: 100%;
-    }
+@media only screen and (max-width: 600px) {
+  .heroimg {
+    transform: scale(1.2);
+  }
+  .heroUI {
+    width: 100%;
+  }
 }

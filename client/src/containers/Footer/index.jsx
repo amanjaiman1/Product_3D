@@ -4,7 +4,7 @@ import { objectFoot } from "../../assets";
 import { footerLinks } from "./index";
 import { imgAnim } from "../../animation/motion";
 import { motion } from "framer-motion";
-import { Link } from 'react-router-dom'
+import { Link } from "react-router-dom";
 
 // btn
 const Button = ({ styles }) => {
@@ -118,7 +118,7 @@ function Footer() {
         <p
           className={`font-poppins font-normal text-center text-[12px] leading-[27px] text-[#63657E] mx-auto`}
         >
-          Opensource ©2023 | Fashion Froze 3D | All Rights Reserved.
+          Opensource ©{new Date().getFullYear()} | Fashion Froze 3D | All Rights Reserved.
         </p>
       </div>
     </footer>

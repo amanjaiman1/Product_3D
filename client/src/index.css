@@ -30,7 +30,7 @@
 body {
   font-family: "Poppins", sans-serif;
   scroll-behaviour: smooth;
-  box-sizing:border-box;
+  box-sizing: border-box;
 }
 
 .main-div::-webkit-scrollbar {
@@ -326,7 +326,19 @@ nav.sticky {
 }
 
 @keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
+.shadow-card {
+  background-color: rgba(59, 131, 246, 0.197);
+}
+
+.shadow-card1 {
+  background-color: #8ec5fcc7;
+  background-image: linear-gradient(62deg, #8ec5fc4e 0%, #e0c3fc49 100%);
+}

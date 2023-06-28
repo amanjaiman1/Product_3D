@@ -2,12 +2,13 @@ import React, { useState } from "react";
 import AccordionItem from "./AccordionItem";
 
 const Accordion = ({ questionsAnswers }) => {
-  const [activeIndex, setActiveIndex] = useState(1);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   const renderedQuestionsAnswers = questionsAnswers.map((item, index) => {
     const showDescription = index === activeIndex ? "show-description" : "";
     const fontWeightBold = index === activeIndex ? "font-weight-bold" : "";
     const ariaExpanded = index === activeIndex ? "true" : "false";
+
     return (
       <AccordionItem
         showDescription={showDescription}
@@ -15,8 +16,10 @@ const Accordion = ({ questionsAnswers }) => {
         ariaExpanded={ariaExpanded}
         item={item}
         index={index}
+        isOpen={index === activeIndex}
         onClick={() => {
-          setActiveIndex(index);
+          const newIndex = index === activeIndex ? null : index;
+          setActiveIndex(newIndex);
         }}
       />
     );

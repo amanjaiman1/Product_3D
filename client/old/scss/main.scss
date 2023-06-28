@@ -10,17 +10,14 @@ html {
   box-sizing: inherit;
 }
 
-
 h3 {
   color: $very-dark-desaturated-blue;
   font-size: 100vh;
   line-height: 32px;
   font-weight: bold; /* Add this line to make the text bold */
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3); 
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
   width: 50vh;
-
 }
-
 
 button {
   color: $very-dark-grayish-blue;
@@ -44,7 +41,6 @@ button:focus-visible {
 
 #root {
   width: 100%;
-
 }
 
 .container {
