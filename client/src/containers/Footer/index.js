@@ -14,6 +14,10 @@ export const footerLinks = [
         name: "Explore",
         link: "/",
       },
+      {
+        name: "Discord",
+        link: "https://discord.gg/3W7QFzQW",
+      }
     ],
   },
   {
