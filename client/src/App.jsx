@@ -21,6 +21,7 @@ import { Middle } from "./pages/Middle/secondPagePipeline";
 import Guide from "./views/app/Guide";
 import Customizer from "./views/app/Customizer";
 import { HashLoader } from "react-spinners";
+import EditorHome from "./views/app/EditorHome";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -54,11 +55,10 @@ function App() {
             <Route Component={Login} path="/login" />
             <Route Component={SignUp} path="/signup" />
             <Route Component={BlogPage} path="/blog" />
-            <Route Component={Customizer} path="/test" />
             <Route Component={ErrorPage} path="/*" />
-
             <Route Component={Middle} path="/tshirt-customisation" />
-
+            <Route Component={Customizer} path="/app/customizer/editor" />
+            <Route Component={EditorHome} path="/app/customizer" />
             <Route Component={Guide} path="/guidebook" />
           </Routes>
 
