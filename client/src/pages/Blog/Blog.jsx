@@ -69,10 +69,10 @@ function Blog() {
         </div>
       </div>
       <div>
-        <p className="text-blue-900 font-extrabold text-lg lg:text-4xl m-4 grid justify-center">
+        <p className="text-blue-900 font-extrabold text-lg lg:text-4xl m-4 mb-14 grid justify-center items-center">
           Our Articles
         </p>
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 justify-center">
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 justify-items-center content-center">
           {blogCard}
         </div>
       </div>
