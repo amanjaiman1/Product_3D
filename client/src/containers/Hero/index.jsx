@@ -11,7 +11,7 @@ function Hero() {
   const navigate = useNavigate();
 
   const navigateToCustomisation = () => {
-    navigate("/tshirt-customisation");
+    navigate("/app/customizer");
   };
   return (
     <div className="justify-center items-center heroUI">
