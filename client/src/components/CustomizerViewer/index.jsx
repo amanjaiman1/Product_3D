@@ -4,6 +4,7 @@ import { Environment, Center } from "@react-three/drei/core";
 import Shirt from "./Shirt";
 import CameraRig from "./CameraRig";
 import CustomizerOptions from "../CustomizerOptions";
+
 import Lottie from "lottie-react";
 import loader from "../../assets/lottie/95250-3d-loader.json";
 function CustomizerViewer() {
@@ -52,6 +53,8 @@ function CustomizerViewer() {
         </CameraRig>
       </Canvas>
       <CustomizerOptions cameraState={cameraState} camerRef={cameraRef} />
+
+
     </div>
   );
 }

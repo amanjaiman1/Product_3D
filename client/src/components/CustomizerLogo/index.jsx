@@ -1,10 +1,10 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useSnapshot } from 'valtio';
 import state from '../CustomizerViewer/valito';
-import { proxy } from "valtio";
 import Confetti from 'react-confetti';
 
-const Index = () => {
+
+const CustomizerLogo = () => {
   const [prompt, setPrompt] = useState("");
   const [currentIndex, setCurrentIndex] = useState(0);
   const [resultUrls, setResultUrls] = useState([]);
@@ -83,7 +83,9 @@ const Index = () => {
         type="text"
         value={prompt}
         onChange={(e) => setPrompt(e.target.value)}
-        className="w-64 h-48 px-2 pb-20 mt-5 rounded-md shadow-lg focus:outline-none focus:ring-2 focus:ring-purple-400"
+        className="w-80 h-12 px-4 py-2 rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white border border-gray-300 text-gray-700 placeholder-gray-400 text-sm"
+        placeholder="Search for images..."
+
       />
       <button
         onClick={handleSubmit}
@@ -113,4 +115,4 @@ const Index = () => {
   );
 };
 
-export default Index;
+export default CustomizerLogo;
