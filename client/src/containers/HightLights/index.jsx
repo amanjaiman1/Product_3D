@@ -19,7 +19,11 @@ function HightLights() {
         >
           <div className="rounded-lg p-4 flex min-h-[300px] flex-col shadow-card1 items-center">
             <div className="flex justify-center items-center mt-[40px]">
-              <img src={icon} alt={title} className="mt-8 h-28 object-contain" />
+            <img
+              src={icon}
+              alt={title}
+              className="mt-8 h-28 object-contain"
+            />
             </div>
             <h3 className="text-white text-[23px] p-5 text-center font-bold mt-20">
               {title}
@@ -33,7 +37,7 @@ function HightLights() {
   return (
     <>
       <motion.div>
-        <div className="mt-20 pb-40 flex gap-16 justify-center">
+        <div className="mt-20 pb-40 flex flex-wrap gap-16 justify-center">
           {services.map((service, index) => (
             <ServiceCard key={service.title} index={index} {...service} />
           ))}
