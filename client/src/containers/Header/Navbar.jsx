@@ -20,7 +20,7 @@ const Navbar = () => {
         <Link to="/">
           <div className="mt-9 align-center items-center">
             <img
-              className="w-50 h-40"
+              className="w-50 h-40 max-sm:ml-[-5px] max-sm:h-32 max-sm:mt-[-30px] "
               src={logo}
               alt="ProductLogo"
             />
