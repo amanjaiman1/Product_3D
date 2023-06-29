@@ -1,4 +1,5 @@
 import { proxy } from "valtio";
+import { gssoc, logo } from "../../assets";
 
 const state = proxy({
   intro: true,
@@ -6,14 +7,14 @@ const state = proxy({
   color: "#9E9E9E",
   isLogoTexture: true,
   isFullTexture: false,
-  logoDecal: "./logo.png",
-  fullDecal: "./logo.png",
+  logoDecal: gssoc,
+  fullDecal: gssoc,
   textDecal: {
     content: "  ",
     position: [0, 0, 0],
-    fontSize: 0.08, 
+    fontSize: 0.08,
     textcolor: "",
-    fontFamily: "Verdana", 
+    fontFamily: "Verdana",
   },
 });
 

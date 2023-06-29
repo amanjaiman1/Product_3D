@@ -18,6 +18,7 @@ import mid from "./image/mid.png";
 import logo from "./image/logo.png";
 import loginImgGif from "./image/loginImgGif.gif";
 import googleImg from "./image/google-48.png";
+import gssoc from "./../assets/image/gssoc.png";
 export {
   hero,
   ai,
@@ -39,4 +40,5 @@ export {
   mid,
   loginImgGif,
   googleImg,
+  gssoc,
 };
