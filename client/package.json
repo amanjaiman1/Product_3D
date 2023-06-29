@@ -20,6 +20,7 @@
     "@react-three/fiber": "^8.13.3",
     "@reduxjs/toolkit": "^1.9.5",
     "axios": "^1.4.0",
+    "clsx": "^1.2.1",
     "core-js": "^3.30.2",
     "cors": "^2.8.5",
     "firebase": "^9.22.1",
@@ -46,6 +47,7 @@
     "regenerator-runtime": "^0.13.11",
     "sass": "^1.62.1",
     "swiper": "^9.3.2",
+    "tailwind-merge": "^1.13.2",
     "three": "^0.151.3",
     "uuid": "^9.0.0",
     "valtio": "^1.10.5"
