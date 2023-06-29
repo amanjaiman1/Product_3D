@@ -7,9 +7,10 @@ import CustomizerOptions from "../CustomizerOptions";
 
 import Lottie from "lottie-react";
 import loader from "../../assets/lottie/95250-3d-loader.json";
+import { useSelector } from "react-redux";
 function CustomizerViewer() {
   const [isGrabbing, setIsGrabbing] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
+  const isLoading = useSelector((state) => state.customizerLoader);
   const cameraState = useState({
     zoom: 1.7,
     rotateY: 0,
@@ -47,14 +48,12 @@ function CustomizerViewer() {
         <CameraRig cameraState={cameraState} ref={cameraRef}>
           <Center>
             <mesh position={[-1.6, 0, 0]}>
-              <Shirt setIsLoading={setIsLoading} />
+              <Shirt />
             </mesh>
           </Center>
         </CameraRig>
       </Canvas>
       <CustomizerOptions cameraState={cameraState} camerRef={cameraRef} />
-
-
     </div>
   );
 }

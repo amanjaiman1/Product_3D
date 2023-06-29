@@ -5,14 +5,20 @@ import { easing } from "maath";
 import { useSnapshot } from "valtio";
 import state from "./././valito";
 import ShirtDrag from "./ShirtDrag";
+import { useDispatch } from "react-redux";
+import { UpdateCustomizerLoader } from "../../redux/customizer-load";
 
-const Shirt = ({ setIsLoading }) => {
+const Shirt = () => {
   const snap = useSnapshot(state);
+  const dispatch = useDispatch();
   const gltf = useGLTF("/shirt_baked.glb");
   const { nodes, materials } = gltf;
   useEffect(() => {
-    if (gltf) setIsLoading(false);
-  }, [gltf]);
+    if (gltf) dispatch(UpdateCustomizerLoader(false));
+    else {
+      dispatch(UpdateCustomizerLoader(true));
+    }
+  }, [gltf, dispatch]);
   const logoTexture = useTexture(snap.logoDecal);
   const fullTexture = useTexture(snap.fullDecal);
 
@@ -57,7 +63,7 @@ const Shirt = ({ setIsLoading }) => {
       {snap.textDecal && (
         <mesh position={[0.4, 0.9, 1]}>
           <Text
-          position={snap.textDecal.position}
+            position={snap.textDecal.position}
             fontSize={snap.textDecal.fontSize} // Accessing fontSize property
             color={snap.textDecal.textcolor} // Accessing color property
             scale={0.2}
