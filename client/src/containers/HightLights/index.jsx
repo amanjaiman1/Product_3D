@@ -2,7 +2,7 @@ import React from "react";
 import FeatureCard from "../../components/FeatureCard";
 import Tilt from "react-parallax-tilt";
 import { motion } from "framer-motion";
-import { fadeIn } from "../../animation/motion";
+import { fadeIn, imgAnim } from "../../animation/motion";
 import { services } from ".";
 
 function HightLights() {
@@ -35,7 +35,20 @@ function HightLights() {
   };
 
   return (
-    <>
+    <div className="flex flex-col items-center min-h-screen  overflow-hidden">
+      <motion.div
+        variants={imgAnim}
+        initial="hidden"
+        viewport={{ once: true, amount: 0.25 }}
+        whileInView={{
+          scale: [0, 1],
+          opacity: 1,
+        }}
+        transition={{ duration: 0.84, delay: 0.1 }}
+        className="mt-5  bg-primary bg-opacity-10 font-semibold rounded-lg pl-5 pr-5 py-2"
+      >
+        <h1 className="text-center text-primary">Highlights</h1>
+      </motion.div>
       <motion.div>
         <div className="mt-20 pb-40 flex flex-wrap gap-16 justify-center">
           {services.map((service, index) => (
@@ -43,7 +56,7 @@ function HightLights() {
           ))}
         </div>
       </motion.div>
-    </>
+    </div>
   );
 }
 
