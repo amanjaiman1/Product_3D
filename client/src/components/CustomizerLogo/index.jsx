@@ -40,7 +40,7 @@ const CustomizerLogo = () => {
         setResultUrls([]);
         setCurrentIndex(0);
         state.isLogoTexture = false;
-        state.logoDecal = "./logo.png";
+        state.logoDecal = "./logo.webp";
         setShowConfetti(false);
       }
     } catch (error) {
@@ -64,7 +64,7 @@ const CustomizerLogo = () => {
     if (state.isFullTexture && currentIndex < resultUrls.length) {
       state.fullDecal = resultUrls[currentIndex].urls.full;
     } else {
-      state.fullDecal = "./logo.png";
+      state.fullDecal = "./logo.webp";
     }
   };
 
