@@ -1,9 +1,9 @@
 import React from "react";
-import guide from "../../assets/image/guide_group.png";
-import guide1 from "../../assets/image/guide1.png";
-import guide3 from "../../assets/image/guide 3.png";
-import guide2 from "../../assets/image/guide 2.png";
-import guide6 from "../../assets/image/guide6.jpg";
+import guide from "../../assets/image/guide_group.webp";
+import guide1 from "../../assets/image/guide1.webp";
+import guide3 from "../../assets/image/guide 3.webp";
+import guide2 from "../../assets/image/guide 2.webp";
+import guide6 from "../../assets/image/guide6.webp";
 
 function GuideBook() {
   return (
