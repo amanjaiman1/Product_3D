@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 function CustomizerTopbar() {
   const navigate = useNavigate();
   return (
-    <div className="shadow m-3 p-3 flex justify-between items-center">
+    <div className="shadow m-3 p-3 flex justify-between  items-center sticky top-0 z-100 backdrop-filter backdrop-blur-lg">
       <div>Recents</div>
       <div className="flex space-x-2">
         <Button
