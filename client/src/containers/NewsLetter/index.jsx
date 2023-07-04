@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import background from "../../assets/image/background.png";
+import background from "../../assets/image/background.webp";
 import ReactiveButton from "reactive-button";
 import sendImage from "../../assets/image/send2.gif";
 import { motion } from "framer-motion";

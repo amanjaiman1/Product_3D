@@ -4,7 +4,7 @@ export const downloadCanvasToImage = () => {
   const link = document.createElement("a");
 
   link.href = dataURL;
-  link.download = "canvas.png";
+  link.download = "canvas.webp";
   document.body.appendChild(link);
   link.click();
   document.body.removeChild(link);

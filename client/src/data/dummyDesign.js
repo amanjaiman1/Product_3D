@@ -1,4 +1,4 @@
-import designImg from "./../assets/image/design-card.png";
+import designImg from "./../assets/image/design-card.webp";
 
 export default [
   {
