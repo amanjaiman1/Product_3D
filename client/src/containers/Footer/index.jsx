@@ -77,7 +77,7 @@ function Footer() {
             <img
               src={objectFoot}
               alt="3D-Tee"
-              className="w-[465px] h-[250px] object-contain"
+              className="w-[465px] h-[250px] object-contain"  loading="lazy"
             />
           </motion.div>
 

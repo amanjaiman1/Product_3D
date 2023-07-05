@@ -16,12 +16,12 @@ function GuideBook() {
         </p>
       </div>
       <div className="flex justify-center mt-auto ease-in-out duration-200">
-        <img src={guide} alt="Guide" className="lg:h-[74vh] mb-14" />
+        <img src={guide} alt="Guide" className="lg:h-[74vh] mb-14" loading="lazy"/>
       </div>
       <img
         src={guide1}
         className="animate-spin-slow mx-auto lg:ml-[150vh] mt-[-580px] max-w-full lg:max-h-[300px] lg:mt-[-630px] md:max-h-[200px] mt-[2vh] mb-[10vh]"
-        alt="Guide 1"
+        alt="Guide 1" loading="lazy"
       />
       <div className="grid justify-center">
         <p className="text-blue-950 md:text-4xl lg:text-4xl font-bold items-center">
@@ -43,12 +43,12 @@ function GuideBook() {
           </span>
         </p>
         <div className="max-w-full mt-19 ml-[25vh]">
-          <img src={guide3} alt="Guide 3" className="max-h-[250px]" />
+          <img src={guide3} alt="Guide 3" className="max-h-[250px]" loading="lazy"/>
         </div>
       </section>
       <section className="grid md:grid-cols-2 grid-cols-1 justify-center lg:-m-10 p-4">
         <div className="flex justify-center items-center">
-          <img src={guide2} alt="Guide 2" className="w-auto max-h-[250px]" />
+          <img src={guide2} alt="Guide 2" className="w-auto max-h-[250px]" loading="lazy"/>
         </div>
         <p className="text-blue-800 font-bold mt-20 md:text-xl lg:text-3xl text-justify">
           How to design a T-shirt?
@@ -82,7 +82,7 @@ function GuideBook() {
           </span>
         </p>
         <div className="flex justify-center items-center mt-20">
-          <img src={guide6} alt="Guide 6" className="lg:-mt-8 max-w-full max-h-[250px]" />
+          <img src={guide6} alt="Guide 6" className="lg:-mt-8 max-w-full max-h-[250px]"  loading="lazy"/>
         </div>
       </section>
     </div>

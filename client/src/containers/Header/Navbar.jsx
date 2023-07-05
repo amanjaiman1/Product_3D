@@ -22,7 +22,7 @@ const Navbar = () => {
             <img
               className="w-50 h-40 max-sm:ml-[-5px] max-sm:h-32 max-sm:mt-[-30px] "
               src={logo}
-              alt="ProductLogo"
+              alt="ProductLogo" loading="lazy"
             />
           </div>
         </Link>

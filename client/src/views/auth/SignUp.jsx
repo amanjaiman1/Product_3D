@@ -8,7 +8,7 @@ const Signup = () => {
         {/* image container */}
 
         <div className="md:block hidden w-1/2 " alt="right-bar">
-          <img src={loginImgGif} alt="" className="rounded-xl" />
+          <img src={loginImgGif} alt="" className="rounded-xl" loading="lazy"/>
         </div>
 
         <div className="md:w-1/2 px-8 sm:mt-0 mt-5 md:px-16 max-w-[500px] ml-5 items-center justify-center">
@@ -58,7 +58,7 @@ const Signup = () => {
             className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 text-[#002D74]"
             type="submit"
           >
-            <img src={googleImg} className="w-5 h-5 mr-2" alt="" />
+            <img src={googleImg} className="w-5 h-5 mr-2" alt="" loading="lazy" />
             Sign up with Google
           </button>
 
