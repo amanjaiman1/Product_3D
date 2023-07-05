@@ -7,6 +7,7 @@ import AutoScroll from "./utils/AutoScroll";
 import ScrollToTop from "react-scroll-to-top";
 
 import MoonLoader from "react-spinners/MoonLoader";
+import { HashLoader } from "react-spinners";
 
 const Login=lazy(()=>import('./views/auth/Login'))
 const SignUp=lazy(()=>import('./views/auth/SignUp'))
@@ -15,6 +16,9 @@ const BlogPage=lazy(()=>import('./views/app/Blog'))
 const Faq=lazy(()=>import('./views/app/Faq'))
 const ErrorPage=lazy(()=>import('./views/app/Error'))
 const Guide=lazy(()=>import('./views/app/Guide'))
+const EditorHome=lazy(()=>import('./views/app/EditorHome'))
+const Profile=lazy(()=>import('./views/app/Profile'))
+const Customizer=lazy(()=>import('./views/app/Customizer'))
 const ContributorPage=lazy(()=>import('./views/app/ContributorPage'))
 const Middle=lazy(()=>import('./pages/Middle/secondPagePipeline').then(module => ({ default: module.Middle })))
 
@@ -40,11 +44,11 @@ function App() {
             <Route Component={Login} path="/login" />
             <Route Component={SignUp} path="/signup" />
             <Route Component={BlogPage} path="/blog" />
-            <Route Component={Customizer} path="/test" />
             <Route Component={ErrorPage} path="/*" />
-
             <Route Component={Middle} path="/tshirt-customisation" />
-
+            <Route Component={Customizer} path="/app/customizer/editor" />
+            <Route Component={Profile} path="/app/customizer/profile" />
+            <Route Component={EditorHome} path="/app/customizer" />
             <Route Component={Guide} path="/guidebook" />
           </Routes>
 

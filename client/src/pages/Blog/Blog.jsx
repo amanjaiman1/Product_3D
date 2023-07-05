@@ -1,8 +1,8 @@
 import React from "react";
-import blogbar from "../../assets/image/blogbar.png";
-import searchIcon from "../../assets/image/searchIcon.jpg";
-import blogImage1 from "../../assets/image/blogImage1.png";
-import ceo from "../../assets/image/ceo.png";
+import blogbar from "../../assets/image/blogbar.webp";
+import searchIcon from "../../assets/image/searchIcon.webp";
+import blogImage1 from "../../assets/image/blogImage1.webp";
+import ceo from "../../assets/image/ceo.webp";
 import Card from "../../components/BlogCard/bcard";
 import blogData from "../../store/blogData";
 import NewsLetter from "../../containers/NewsLetter";
@@ -66,9 +66,20 @@ function Blog() {
                     {blogCard}
                 </div>
             </div>
-            <NewsLetter/>
-        </div>   
-    )
+          </div>
+        </div>
+      </div>
+      <div>
+        <p className="text-blue-900 font-extrabold text-lg lg:text-4xl m-4 mb-14 grid justify-center items-center">
+          Our Articles
+        </p>
+        <div className="grid lg:grid-cols-3 md:grid-cols-2 justify-items-center content-center">
+          {blogCard}
+        </div>
+      </div>
+      <NewsLetter />
+    </div>
+  );
 }
 
 export default Blog;

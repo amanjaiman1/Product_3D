@@ -3,7 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import img from "./wolf.jpg";
+import img from "./wolf.webp";
 import { Autoplay, Pagination, Navigation } from "swiper";
 import "./Card.css";
 import cardData from "./CardData";
@@ -16,8 +16,8 @@ const Testimonials = () => {
           spaceBetween={30}
           centeredSlides={true}
           autoplay={{
-            delay: 2500,
-            disableOnInteraction: false,
+            delay: 5000,
+            // disableOnInteraction: false,
           }}
           pagination={{
             clickable: true,

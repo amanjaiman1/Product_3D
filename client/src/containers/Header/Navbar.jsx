@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { logo, logoText } from "../../assets";
-import { mid } from "../../assets";
+import { logo } from "../../assets";
+
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => {
@@ -15,19 +15,17 @@ const Navbar = () => {
   });
 
   return (
-    <nav className={`navbar h-16 py-[20px] p-[2%] max-sm:px-0 max-sm:py-5 flex`}>
+    <nav className={`navbar h-16 pt-[25px] pb-[60px] p-[5%] max-sm:px-0 max-sm:py-5 flex`}>
       <div className="pl-5">
         <Link to="/">
-          <div className="flex mt-1 align-center items-center">
-            <img className=" w-14 h-15" src={logo} alt="logo" loading="lazy"/>
+          <div className="mt-9 align-center items-center">
             <img
-              src={logoText}
-              className="w-[11rem] h-[2.5rem] md:w-[18rem] md:h-[3rem] ml-2"
-              alt="logoText" loading="lazy"
+              className="w-50 h-40 max-sm:ml-[-5px] max-sm:h-32 max-sm:mt-[-30px] "
+              src={logo}
+              alt="ProductLogo" loading="lazy"
             />
           </div>
         </Link>
-        {/* <p className="Brand-heading">PRODUCT 3D</p> */}
       </div>
       <div className="ml-auto max-lg:hidden space-x-10 pr-5">
         <Link to="/" className={`link ${location.pathname === "/" ? "active" : ""}`}>
@@ -69,48 +67,63 @@ const Navbar = () => {
         </button>
       </div>
       {isMobileMenuOpen && (
-        <div className=" mobile-menu ">
-          <Link
-            to="/"
-            className={`link ${location.pathname === "/" ? "active" : ""}`}
-            onClick={toggleMobileMenu}
-          >
-            Home
-          </Link>
-          <Link
-            to="/guidebook"
-            className={`link ${location.pathname === "/guidebook" ? "active" : ""}`}
-            onClick={toggleMobileMenu}
-          >
-            Guide Book
-          </Link>
-          <Link
-            to="/customize"
-            className={`link ${location.pathname === "/customize" ? "active" : ""}`}
-            onClick={toggleMobileMenu}
-          >
-            Customize
-          </Link>
-          <Link
-            to="/contact"
-            className={`link ${location.pathname === "/contact" ? "active" : ""}`}
-            onClick={toggleMobileMenu}
-          >
-            Contact Us
-          </Link>
-          <Link
-            to="/faq"
-            className={`link ${location.pathname === "/faq" ? "active" : ""}`}
-            onClick={toggleMobileMenu}
-          >
-            {" "}
-            FAQ's
-          </Link>
-          <button className="justify-center border-[1px] p-2 rounded-md">
-            Try Free
-          </button>
-        </div>
-      )}
+
+  <div className="mobile-menu" style={{ width: "70%", textAlign: "right" }}>
+    <Link
+      to="/"
+      className={`link ${location.pathname === "/" ? "active" : ""}`}
+      onClick={toggleMobileMenu}
+      style={{ justifyContent: "flex-end" }}
+    >
+      Home
+    </Link>
+    <Link
+      to="/guidebook"
+      className={`link ${
+        location.pathname === "/guidebook" ? "active" : ""
+      }`}
+      onClick={toggleMobileMenu}
+      style={{ justifyContent: "flex-end" }}
+    >
+      Guide Book
+    </Link>
+    <Link
+      to="/customize"
+      className={`link ${
+        location.pathname === "/customize" ? "active" : ""
+      }`}
+      onClick={toggleMobileMenu}
+      style={{ justifyContent: "flex-end" }}
+    >
+      Customize
+    </Link>
+    <Link
+      to="/contact"
+      className={`link ${
+        location.pathname === "/contact" ? "active" : ""
+      }`}
+      onClick={toggleMobileMenu}
+      style={{ justifyContent: "flex-end" }}
+    >
+      Contact Us
+    </Link>
+    <Link
+      to="/faq"
+      className={`link ${location.pathname === "/faq" ? "active" : ""}`}
+      onClick={toggleMobileMenu}
+      style={{ justifyContent: "flex-end" }}
+    >
+      {" "}
+      FAQ's
+    </Link>
+    <button
+      className="justify-center border-[1px] p-2 rounded-md"
+      style={{ justifyContent: "center" }}
+    >
+      Try Free
+    </button>
+  </div>
+)}
 
       {/* Dark Mode Feature - will add on customizer Page later  */}
 
