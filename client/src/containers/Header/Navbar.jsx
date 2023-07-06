@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { logo } from "../../assets";
 
 const Navbar = () => {
+  const navigate=useNavigate();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const toggleMobileMenu = () => {
     setIsMobileMenuOpen(!isMobileMenuOpen);
@@ -51,7 +52,7 @@ const Navbar = () => {
           FAQ's
         </Link>
 
-        <button className="tryfree-btn justify-center p-2 rounded-md h-10">
+        <button className="tryfree-btn justify-center p-2 rounded-md h-10" onClick={()=>navigate("/signup")}>
           Try Free
         </button>
       </div>
