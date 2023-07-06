@@ -25,14 +25,8 @@ function CustomizerColor() {
   };
 
   return (
-    <div>
-      <div className="flex justify-center items-center">
-      <input
-          type="color"
-          value={selectedColor}
-          onChange={handleColorChange}
-          className=" mb-20 rounded border-gray-300 shadow border-2"
-        />
+    <div className="flex flex-col items-center">
+      <div className="flex flex-wrap justify-center">
         {basicColors.map((color, index) => (
           <div
             key={index}
@@ -44,9 +38,12 @@ function CustomizerColor() {
           ></div>
         ))}
       </div>
-      <div className="absolute top-0 left-0">
-      
-      </div>
+      <input
+        type="color"
+        value={selectedColor}
+        onChange={handleColorChange}
+        className="my-4 rounded border-gray-300 shadow border-2"
+      />
     </div>
   );
 }
