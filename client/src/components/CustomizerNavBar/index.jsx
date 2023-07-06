@@ -53,7 +53,7 @@ function CustomizerNavBar() {
   };
   return (
     <div className="bg-white p-2 px-5 shadow-lg rounded-full">
-      <div className="flex justify-center items-center space-x-6">
+      <div className="flex justify-center items-center space-x-2 sm:space-x-6">
         <div onClick={onSave} className="cursor-pointer hover:text-blue-500">
           Save
         </div>
