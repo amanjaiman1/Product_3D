@@ -1,3 +1,4 @@
+//login page
 import React, { useState, useEffect } from "react";
 import { googleImg, loginImgGif } from "../../assets";
 import Cookies from "js-cookie";
@@ -6,6 +7,7 @@ import {
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
   signInWithRedirect,
+  signInWithPopup,
 } from "firebase/auth";
 import { auth, googleProvider } from "../../firebase/firebase";
 import { useNavigate } from "react-router-dom";
@@ -31,37 +33,26 @@ const Login = () => {
       console.log("Error sending reset password email:", error);
     }
   };
-  const [user, setUser] = useState({
-    name: "",
-    email: "",
-    profilePic: "",
-  });
-  //const googleProvider = new GoogleAuthProvider();
-  const firebaseAuth = getAuth();
 
-  // useEffect(() => {
-  //   getRedirectResult(firebaseAuth)
-  //     .then((result) => {
-  //       const credential = GoogleAuthProvider.credentialFromResult(result);
-  //       const token = credential.accessToken;
-  //       const user = result.user;
-  //       Cookies.set('access_token', token, { expires: 7 });
-  //       // Set the user data to the state or take appropriate actions
-  //       setUser({
-  //         name: user.displayName,
-  //         email: user.email,
-  //         profilePic: user.photoURL,
-  //       });
-  //     })
-  //     .catch((error) => {
-  //       // Handle Errors here.
-  //       const errorCode = error.code;
-  //       const errorMessage = error.message;
-  //       const email = error.email;
-  //       const credential = GoogleAuthProvider.credentialFromError(error);
-  //       // ...
-  //     });
-  // }, []); // Empty dependency array to ensure this effect runs only once
+  //google auth
+  const [value, setValue] = useState("");
+  const handleGoogleSignIn = () => {
+    signInWithPopup(auth, googleProvider).then((data) => {
+      console.log(data);
+      setValue(data.user.email);
+      setValue(data.user.photoURL);
+      setValue(data.user.DisplayName);
+      localStorage.setItem("email", data.user.email);
+      localStorage.setItem("photoURL", data.user.photoURL);
+      localStorage.setItem("displayName", data.user.displayName);
+    });
+  };
+  useEffect(() => {
+    setValue(localStorage.getItem("email"));
+    setValue(localStorage.getItem("photoURL"));
+    setValue(localStorage.getItem("displayName"));
+  });
+
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     if (!email || !password) {
@@ -73,40 +64,6 @@ const Login = () => {
     } catch (error) {
       console.log(error.message);
     }
-  };
-
-  const handleGoogleSignIn = () => {
-    signInWithGooglePopup();
-  };
-
-  const signInWithGooglePopup = () => {
-    signInWithRedirect(firebaseAuth, googleProvider)
-      .then((res) => {
-        setUser({
-          //name: res.user.displayName,
-          ...user,
-          email: res?.user.email,
-          //profilePic: res.user.photoURL,
-        });
-
-        // localStorage.setItem("name", res.user.displayName);
-        // localStorage.setItem("email", res.user.email);
-        // localStorage.setItem("profilePic", res.user.photoURL);
-
-        setAlert({
-          open: true,
-          message: `Google Sign Up Successful. Welcome ${res?.user.email}`,
-          type: "success",
-        });
-        console.log(alert.message);
-      })
-      .catch((error) => {
-        setAlert({
-          open: true,
-          message: error.message,
-          type: "error",
-        });
-      });
   };
 
   return (
@@ -183,15 +140,17 @@ const Login = () => {
           </div>
           {showPopup && <ForgotPasswordPopup />}
           {/* button inputs */}
-          {/* 
-          <button
-            className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 text-[#002D74]"
-            onClick={handleGoogleSignIn}
-          >
-            <img src={googleImg} className="w-5 h-5 mr-2" alt="" />
-            Login with Google
-          </button> */}
-
+          {value ? (
+            navigate("/app/customizer")
+          ) : (
+            <button
+              className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 text-[#002D74]"
+              onClick={handleGoogleSignIn}
+            >
+              <img src={googleImg} className="w-5 h-5 mr-2" alt="" />
+              Login with Google
+            </button>
+          )}
           <div className="mt-3 text-xs flex justify-center items-center text-[#002D74] mb-2">
             <p>Don't have an account?</p>
             <button className="py-2 px-5 ml-2 bg-white border rounded-xl hover:scale-110 duration-300">
