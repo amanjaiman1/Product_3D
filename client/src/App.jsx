@@ -24,6 +24,7 @@ import Guide from "./views/app/Guide";
 import Customizer from "./views/app/Customizer";
 import { HashLoader } from "react-spinners";
 import EditorHome from "./views/app/EditorHome";
+import Profile from "./views/app/Profile";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -60,6 +61,7 @@ function App() {
             <Route Component={ErrorPage} path="/*" />
             <Route Component={Middle} path="/tshirt-customisation" />
             <Route Component={Customizer} path="/app/customizer/editor" />
+            <Route Component={Profile} path="/app/customizer/profile" />
             <Route Component={EditorHome} path="/app/customizer" />
             <Route Component={Guide} path="/guidebook" />
             <Route Component={Develop} path="/develop" />
