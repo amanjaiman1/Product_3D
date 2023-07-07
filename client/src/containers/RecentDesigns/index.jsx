@@ -5,7 +5,7 @@ function RecentDesigns() {
   const data = [
     {
       id: "qwerthsjd",
-      title: "t-shirt design for kids 1",
+      title: "design 1",
       lastEdit: "08/03/2002",
     },
     {
@@ -65,7 +65,7 @@ function RecentDesigns() {
     },
   ];
   return (
-    <div className="flex space-x-1 flex-wrap p-4 items-center">
+    <div className="flex space-x-1 flex-wrap p-4 items-center justify-around">
       {[...data, ...data]?.map((item) => (
         <RecentDesignCard data={item} />
       ))}
