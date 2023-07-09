@@ -9,12 +9,12 @@
   height: 100%;
   transform-style: preserve-3d;
   transition: transform 300ms;
-  box-shadow: 0px 0px 10px 1px #000000ee;
+  box-shadow: 0px 1px 1px 1px #000000ee;
   border-radius: 5px;
 }
 
 .front, .back {
-  background-color: white;
+  background-color: #E0EDFE;
   position: absolute;
   width: 100%;
   height: 100%;
@@ -95,6 +95,7 @@
 
 .description {
   box-shadow: 0px 0px 10px 5px #00000088;
+  margin-top: 20px;
   width: 100%;
   padding: 10px;
   background-color: #00000099;
@@ -116,7 +117,8 @@
 .card-footer {
   color: #ffffff88;
   margin-top: 5px;
-  font-size: 8px;
+  font-size: 10px; 
+  content: flex-end;
 }
 
 .front .img {
@@ -127,33 +129,7 @@
   object-position: center;
 }
 
-.circle {
-  width: 90px;
-  height: 90px;
-  border-radius: 50%;
-  background-color: #ffbb66;
-  position: relative;
-  filter: blur(15px);
-  animation: floating 2600ms infinite linear;
-}
 
-#bottom {
-  background-color: #ff8866;
-  left: 50px;
-  top: 0px;
-  width: 150px;
-  height: 150px;
-  animation-delay: -800ms;
-}
-
-#right {
-  background-color: #ae22ff;
-  left: 160px;
-  top: -80px;
-  width: 30px;
-  height: 30px;
-  animation-delay: -1800ms;
-}
 
 @keyframes floating {
   0% {
