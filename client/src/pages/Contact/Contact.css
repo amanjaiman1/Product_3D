@@ -9,7 +9,7 @@
   height: 100%;
   transform-style: preserve-3d;
   transition: transform 300ms;
-  box-shadow: 0px 1px 1px 1px #000000ee;
+  box-shadow: 0px 0.6px 1px 1px #000000ee;
   border-radius: 5px;
 }
 
@@ -115,10 +115,10 @@
 }
 
 .card-footer {
-  color: #ffffff88;
-  margin-top: 5px;
+  color: black;
+  /* margin-top: 5px; */
   font-size: 10px; 
-  content: flex-end;
+  /* content: flex-end; */
 }
 
 .front .img {

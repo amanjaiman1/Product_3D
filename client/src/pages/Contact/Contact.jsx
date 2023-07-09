@@ -108,32 +108,22 @@ function Contact() {
                 <div className="back">
                   <div className="back-content">
                     <div className="front-content">
-                      <small className="badge">
-                        Contributions: {contributor.contributions}
-                      </small>
-                      <img
-                        src={contributor.avatar_url}
-                        className="rounded-full w-20 h-20 mx-auto "
-                        alt=""
-                      />
-                      <div className="description"
-                       style={{ cursor: "pointer" }}
-                       onClick={() =>
-                         window.open(`https://github.com/${contributor.login}`)
-                       }
+                      <div
+                        className="text-black"
+                        style={{ cursor: "pointer" }}
+                        onClick={() =>
+                          window.open(`https://github.com/${contributor.login}`)
+                        }
                       >
-                        
                         <div className="title">
                           <p className="title">
                             <strong>{contributor.login}</strong>
                           </p>
                         </div>
-                        {/* if the name bio loaction is null show Not avilable else show the data */}
-
                         {contributor.bio === null ? (
-                          <p className="card-footer">Bio: Not Available</p>
+                          <p className="card-footer mx-10">Bio: Not Available</p>
                         ) : (
-                          <p className="card-footer">Bio: {contributor.bio}</p>
+                          <p className="card-footer mx-10">Bio: {contributor.bio}</p>
                         )}
 
                         {contributor.location === null ? (
@@ -153,20 +143,21 @@ function Contact() {
                     <div className="circle" id="right"></div>
                     <div className="circle" id="bottom"></div>
                   </div>
-                  <img src={contributor.avatar_url} alt={contributor.login} />
+                  <img
+                    src={contributor.avatar_url}
+                    className="rounded-full w-40 h-40 mx-auto "
+                    alt=""
+                  />
 
-                  <strong
-                    className="text-black  font-bold"
-                  >
-                     <img src={verify} alt="" 
-                      className="w-4 h-4 inline-block mr-1"
-                      />
-                      
-                    {contributor.name === null
-                      ? contributor.login
-                      : contributor.name}
-                     
+                  <strong className="text-black font-bold">
+                    <img src={verify} alt="" className="w-4 h-4 inline-block mr-1" />
+                    {contributor.name ? contributor.name : contributor.login}
                   </strong>
+
+                  <div className="text-black text-xs">
+                    <h4>{contributor.location}</h4>
+                    <h4>Contributions : {contributor.contributions}</h4>
+                  </div>
                 </div>
               </div>
             </div>
