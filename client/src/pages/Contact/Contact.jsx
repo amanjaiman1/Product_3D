@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Contact.css";
 import { HashLoader } from "react-spinners";
+import verify from "../../assets/verification.png";
 
 function Contact() {
   const [contributors, setContributors] = useState([]);
@@ -91,11 +92,13 @@ function Contact() {
 
       {loading ? (
         <div className="flex justify-center mt-10">
-          <HashLoader color="red"
+          <HashLoader
+            color="red"
             ariaLabel="grid-loading"
             wrapperStyle={{}}
             wrapperClass=""
-            visible={true} />
+            visible={true}
+          />
         </div>
       ) : (
         <div className="flex flex-wrap justify-center p-6 gap-4 rounded-xl sm:p-12 dark:text-gray-100 ml-2">
@@ -104,19 +107,44 @@ function Contact() {
               <div className="content">
                 <div className="back">
                   <div className="back-content">
-                    <img src={contributor.avatar_url} alt={contributor.login} />
+                    <div className="front-content">
+                      <small className="badge">
+                        Contributions: {contributor.contributions}
+                      </small>
+                      <img
+                        src={contributor.avatar_url}
+                        className="rounded-full w-20 h-20 mx-auto "
+                        alt=""
+                      />
+                      <div className="description"
+                       style={{ cursor: "pointer" }}
+                       onClick={() =>
+                         window.open(`https://github.com/${contributor.login}`)
+                       }
+                      >
+                        
+                        <div className="title">
+                          <p className="title">
+                            <strong>{contributor.login}</strong>
+                          </p>
+                        </div>
+                        {/* if the name bio loaction is null show Not avilable else show the data */}
 
-                    <strong
-                      className="text-black mb-10 font-bold"
-                      style={{ cursor: "pointer" }}
-                      onClick={() =>
-                        window.open(`https://github.com/${contributor.login}`)
-                      }
-                    >
-                      {contributor.name === null
-                        ? contributor.login
-                        : contributor.name}
-                    </strong>
+                        {contributor.bio === null ? (
+                          <p className="card-footer">Bio: Not Available</p>
+                        ) : (
+                          <p className="card-footer">Bio: {contributor.bio}</p>
+                        )}
+
+                        {contributor.location === null ? (
+                          <p className="card-footer">Location: Not Available</p>
+                        ) : (
+                          <p className="card-footer">
+                            Location: {contributor.location}
+                          </p>
+                        )}
+                      </div>
+                    </div>
                   </div>
                 </div>
                 <div className="front">
@@ -125,44 +153,20 @@ function Contact() {
                     <div className="circle" id="right"></div>
                     <div className="circle" id="bottom"></div>
                   </div>
-                  <div className="front-content">
-                    <small className="badge">
-                      Contributions: {contributor.contributions}
-                    </small>
-                    <img
-                      src={contributor.avatar_url}
-                      className="rounded-full w-20 h-20 mx-auto "
-                      alt=""
-                    />
-                    <div className="description">
-                      <div className="title">
-                        <p className="title">
-                          <strong>{contributor.login}</strong>
-                        </p>
-                      </div>
-                      {/* if the name bio loaction is null show Not avilable else show the data */}
+                  <img src={contributor.avatar_url} alt={contributor.login} />
 
-                      {contributor.name === null ? (
-                        <p className="card-footer">Name: Not Available</p>
-                      ) : (
-                        <p className="card-footer">Name: {contributor.name}</p>
-                      )}
-
-                      {contributor.bio === null ? (
-                        <p className="card-footer">Bio: Not Available</p>
-                      ) : (
-                        <p className="card-footer">Bio: {contributor.bio}</p>
-                      )}
-
-                      {contributor.location === null ? (
-                        <p className="card-footer">Location: Not Available</p>
-                      ) : (
-                        <p className="card-footer">
-                          Location: {contributor.location}
-                        </p>
-                      )}
-                    </div>
-                  </div>
+                  <strong
+                    className="text-black  font-bold"
+                  >
+                     <img src={verify} alt="" 
+                      className="w-4 h-4 inline-block mr-1"
+                      />
+                      
+                    {contributor.name === null
+                      ? contributor.login
+                      : contributor.name}
+                     
+                  </strong>
                 </div>
               </div>
             </div>
@@ -183,7 +187,7 @@ function Contact() {
                     currentPage === index + 1 ? "font-bold" : ""
                   }`}
                   onClick={() => paginate(index + 1)}
-                  >
+                >
                   {index + 1}
                 </li>
               )
