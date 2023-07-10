@@ -16,6 +16,8 @@ import ScrollToTop from "react-scroll-to-top";
 import MoonLoader from "react-spinners/MoonLoader";
 import ContributorPage from "./views/app/ContributorPage";
 
+import Develop from "./pages/Development/Develop";
+
 import { Middle } from "./pages/Middle/secondPagePipeline";
 
 import Guide from "./views/app/Guide";
@@ -62,6 +64,7 @@ function App() {
             <Route Component={Profile} path="/app/customizer/profile" />
             <Route Component={EditorHome} path="/app/customizer" />
             <Route Component={Guide} path="/guidebook" />
+            <Route Component={Develop} path="/develop" />
           </Routes>
 
           <div>

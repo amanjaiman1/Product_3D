@@ -4,20 +4,20 @@ export const footerLinks = [
     links: [
       {
         name: "How it Works",
-        link: "/",
+        link: "/develop",
       },
       {
         name: "Create",
-        link: "/",
+        link: "/develop",
       },
       {
         name: "Explore",
-        link: "/",
+        link: "/develop",
       },
       {
         name: "Discord",
         link: "https://discord.gg/3W7QFzQW",
-      }
+      },
     ],
   },
   {
@@ -25,11 +25,11 @@ export const footerLinks = [
     links: [
       {
         name: "Help Center",
-        link: "/",
+        link: "/develop",
       },
       {
         name: "Suggestions",
-        link: "/",
+        link: "/develop",
       },
       {
         name: "Blog",
@@ -37,7 +37,7 @@ export const footerLinks = [
       },
       {
         name: "Newsletters",
-        link: "/",
+        link: "/develop",
       },
     ],
   },
