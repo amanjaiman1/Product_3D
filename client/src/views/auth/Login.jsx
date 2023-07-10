@@ -2,6 +2,10 @@
 import React, { useState, useEffect } from "react";
 import { googleImg, loginImgGif } from "../../assets";
 import Cookies from "js-cookie";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { AiFillEye } from "react-icons/ai";
+import { BsFillEyeSlashFill } from "react-icons/bs";
 import {
   getAuth,
   sendPasswordResetEmail,
@@ -14,6 +18,7 @@ import { useNavigate } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
+  const [hideshowPassword, setHideShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [resetSent, setResetSent] = useState(false);
@@ -23,6 +28,7 @@ const Login = () => {
     type: "success",
   });
   const [showPopup, setShowPopup] = useState(false);
+  const [error, setError] = useState(false);
   const handleResetPassword = async (event) => {
     event.preventDefault();
     try {
@@ -30,7 +36,18 @@ const Login = () => {
       console.log(res);
       setResetSent(true);
     } catch (error) {
-      console.log("Error sending reset password email:", error);
+      if (error.message === "Firebase: Error (auth/missing-email).") {
+        toast.error("Kindly, provide a email", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: 1,
+          theme: "light",
+        });
+      }
     }
   };
 
@@ -52,17 +69,65 @@ const Login = () => {
     setValue(localStorage.getItem("photoURL"));
     setValue(localStorage.getItem("displayName"));
   });
-
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     if (!email || !password) {
+      toast.error("Fields can't be empty", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
       return;
     }
     try {
       await signInWithEmailAndPassword(auth, email, password);
+      Cookies.set("access_token", email, { expires: 7 });
       navigate("/app/customizer");
     } catch (error) {
       console.log(error.message);
+      setError(true);
+      if (error.message === "Firebase: Error (auth/wrong-password).") {
+        toast.error("Wrong Password", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      } else if (
+        error.message ===
+        "Firebase: Access to this account has been temporarily disabled due to many failed login attempts. You can immediately restore it by resetting your password or you can try again later. (auth/too-many-requests)."
+      ) {
+        toast.error("Too many failed attempts", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: 1,
+          theme: "light",
+        });
+      } else if (error.message === "Firebase: Error (auth/user-not-found).") {
+        toast.error("User not found", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: 1,
+          theme: "light",
+        });
+      }
     }
   };
 
@@ -97,15 +162,28 @@ const Login = () => {
             {resetSent ? (
               ""
             ) : (
-              <div className="relative">
+              <div className="flex border-2 rounded-xl">
                 <input
-                  className="p-2 rounded-xl border w-full"
-                  type="password"
+                  type={!hideshowPassword ? "password" : "text"}
+                  className="p-2  w-full rounded-l-xl"
                   name="password"
                   placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
+                <div className="pl-2 bg-white">
+                  {hideshowPassword ? (
+                    <AiFillEye
+                      onClick={() => setHideShowPassword(!hideshowPassword)}
+                      className="h-full bg-white rounded-r-xl cursor-pointer "
+                    />
+                  ) : (
+                    <BsFillEyeSlashFill
+                      onClick={() => setHideShowPassword(!hideshowPassword)}
+                      className="h-full bg-white rounded-r-xl cursor-pointer"
+                    />
+                  )}
+                </div>
               </div>
             )}
             <a
@@ -127,7 +205,9 @@ const Login = () => {
           <div className="forgot-password-popup">
             {resetSent ? (
               <p className="mt-2">
-                Password reset email sent. Please check your inbox.
+                {error
+                  ? "Something went wrong"
+                  : "Password reset email sent. Please check your inbox."}
               </p>
             ) : (
               ""
@@ -159,8 +239,31 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </section>
   );
 };
 
 export default Login;
+  // useEffect(() => {
+  //   getRedirectResult(firebaseAuth)
+  //     .then((result) => {
+  //       const credential = GoogleAuthProvider.credentialFromResult(result);
+  //       const token = credential.accessToken;
+  //       const user = result.user;
+  //       // Set the user data to the state or take appropriate actions
+  //       setUser({
+  //         name: user.displayName,
+  //         email: user.email,
+  //         profilePic: user.photoURL,
+  //       });
+  //     })
+  //     .catch((error) => {
+  //       // Handle Errors here.
+  //       const errorCode = error.code;
+  //       const errorMessage = error.message;
+  //       const email = error.email;
+  //       const credential = GoogleAuthProvider.credentialFromError(error);
+  //       // ...
+  //     });
+  // }, []); // Empty dependency array to ensure this effect runs only once
