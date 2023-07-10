@@ -1,6 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { auth } from "../../firebase/firebase";
+import { AiFillEye } from "react-icons/ai";
+import { BsFillEyeSlashFill } from "react-icons/bs";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
@@ -10,6 +14,7 @@ import {
 import { googleImg, loginImgGif } from "../../assets";
 import { HashLoader } from "react-spinners";
 const Signup = () => {
+  const [hideshowPassword, setHideShowPassword] = useState(false);
   const [loading, setLoading] = useState(false);
   useEffect(() => {
     setLoading(true);
@@ -25,8 +30,19 @@ const Signup = () => {
 
   const handleRegistration = (e) => {
     e.preventDefault();
-    if (!email || !password || !name) return;
-    setSubmitDisabled(true);
+    if (!email || !password || !name) {
+      toast.error("Fields can't be empty", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      return;
+    }
     createUserWithEmailAndPassword(auth, email, password)
       .then((res) => {
         const user = res.user;
@@ -38,7 +54,34 @@ const Signup = () => {
         setSubmitDisabled(false);
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error.message);
+        if (error.message === "Firebase: Error (auth/email-already-in-use).") {
+          toast.error("Email is already registered", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        } else if (
+          error.message ===
+          "Firebase: Password should be at least 6 characters (auth/weak-password)."
+        ) {
+          toast.error("Password should be at least 6 characters", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        }
+
         setSubmitDisabled(false);
       });
   };
@@ -94,14 +137,29 @@ const Signup = () => {
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <input
-                className="p-2 rounded-xl border w-full"
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                name="password"
-                placeholder="Password"
-              />
+              <div className="flex border-2 rounded-xl">
+                <input
+                  type={!hideshowPassword ? "password" : "text"}
+                  className="p-2  w-full rounded-l-xl"
+                  name="password"
+                  placeholder="Password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                />
+                <div className="pl-2 bg-white">
+                  {hideshowPassword ? (
+                    <AiFillEye
+                      onClick={() => setHideShowPassword(!hideshowPassword)}
+                      className="h-full bg-white rounded-r-xl cursor-pointer"
+                    />
+                  ) : (
+                    <BsFillEyeSlashFill
+                      onClick={() => setHideShowPassword(!hideshowPassword)}
+                      className="h-full bg-white rounded-r-xl cursor-pointer"
+                    />
+                  )}
+                </div>
+              </div>
               <button
                 className={`bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-xl text-white p-3 hover:scale-105 duration-300 max-w-[400px] ${
                   submitDisabled ? "cursor-not-allowed pointer-events-none" : ""
@@ -140,6 +198,7 @@ const Signup = () => {
           </div>
         </div>
       )}
+      <ToastContainer />
     </section>
   );
 };

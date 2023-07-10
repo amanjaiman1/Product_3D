@@ -1,6 +1,10 @@
+import Cookies from "js-cookie";
+
 export const useAuth = () => {
+  const token = Cookies.get("access_token");
   const user = {
-    token: document.cookie.access_token,
+    token: token,
   };
-  return user && user.token;
+  if (user) return true;
+  return false;
 };
