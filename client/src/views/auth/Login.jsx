@@ -34,7 +34,18 @@ const Login = () => {
       console.log(res);
       setResetSent(true);
     } catch (error) {
-      console.log("Error sending reset password email:", error);
+      if (error.message === "Firebase: Error (auth/missing-email).") {
+        toast.error("Kindly, provide a email", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: 1,
+          theme: "light",
+        });
+      }
     }
   };
   const [user, setUser] = useState({
@@ -45,28 +56,7 @@ const Login = () => {
   //const googleProvider = new GoogleAuthProvider();
   const firebaseAuth = getAuth();
 
-  // useEffect(() => {
-  //   getRedirectResult(firebaseAuth)
-  //     .then((result) => {
-  //       const credential = GoogleAuthProvider.credentialFromResult(result);
-  //       const token = credential.accessToken;
-  //       const user = result.user;
-  //       // Set the user data to the state or take appropriate actions
-  //       setUser({
-  //         name: user.displayName,
-  //         email: user.email,
-  //         profilePic: user.photoURL,
-  //       });
-  //     })
-  //     .catch((error) => {
-  //       // Handle Errors here.
-  //       const errorCode = error.code;
-  //       const errorMessage = error.message;
-  //       const email = error.email;
-  //       const credential = GoogleAuthProvider.credentialFromError(error);
-  //       // ...
-  //     });
-  // }, []); // Empty dependency array to ensure this effect runs only once
+
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     if (!email || !password) {
@@ -92,7 +82,7 @@ const Login = () => {
       if (error.message === "Firebase: Error (auth/wrong-password).") {
         toast.error("Wrong Password", {
           position: "top-right",
-          autoClose: 5000,
+          autoClose: 2000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -106,7 +96,7 @@ const Login = () => {
       ) {
         toast.error("Too many failed attempts", {
           position: "top-right",
-          autoClose: 5000,
+          autoClose: 2000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -117,7 +107,7 @@ const Login = () => {
       } else if (error.message === "Firebase: Error (auth/user-not-found).") {
         toast.error("User not found", {
           position: "top-right",
-          autoClose: 5000,
+          autoClose: 2000,
           hideProgressBar: false,
           closeOnClick: true,
           pauseOnHover: true,
@@ -275,3 +265,25 @@ const Login = () => {
 };
 
 export default Login;
+  // useEffect(() => {
+  //   getRedirectResult(firebaseAuth)
+  //     .then((result) => {
+  //       const credential = GoogleAuthProvider.credentialFromResult(result);
+  //       const token = credential.accessToken;
+  //       const user = result.user;
+  //       // Set the user data to the state or take appropriate actions
+  //       setUser({
+  //         name: user.displayName,
+  //         email: user.email,
+  //         profilePic: user.photoURL,
+  //       });
+  //     })
+  //     .catch((error) => {
+  //       // Handle Errors here.
+  //       const errorCode = error.code;
+  //       const errorMessage = error.message;
+  //       const email = error.email;
+  //       const credential = GoogleAuthProvider.credentialFromError(error);
+  //       // ...
+  //     });
+  // }, []); // Empty dependency array to ensure this effect runs only once
