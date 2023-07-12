@@ -87,7 +87,7 @@ button:focus-visible {
 /* ```````````````````````````````````main```````````````````````````````````````````` */
 .component {
   margin: 0 auto;
-  max-width: 920px;
+  max-width: 1120px;
   width: 100%;
   background-color: #ffffff;
   background-image: url(../../assets/svg/bg-pattern-desktop.svg);
@@ -143,9 +143,9 @@ button:focus-visible {
 }
 
 .faq__question {
-  font-size: 13px;
+  font-size: 15px;
   line-height: 18px;
-  max-width: 350px;
+  max-width: 530px;
   width: 100%;
   border-bottom: 1px solid #d8e1e9;
 }
@@ -157,6 +157,7 @@ button:focus-visible {
   border: none;
   background-color: transparent;
   padding: 0px;
+  font-size: 16px;
   cursor: pointer;
   padding-top: 18px;
   padding-bottom: 18px;
@@ -178,9 +179,10 @@ button:focus-visible {
   margin-bottom: 3px;
   height: 0;
   overflow: hidden;
-  transition: all 200ms ease-out;
+  transition: 600ms ease-out;
   text-align: left;
 }
+
 
 /* **********************************Faq*************************************** */
 .attribution {
@@ -210,7 +212,7 @@ button:focus-visible {
 
 /* open */
 .font-weight-bold::after {
-  transform: rotate(720deg);
+  transform: rotate(360deg);
 }
 /*******************************animation***********************************  */
 
