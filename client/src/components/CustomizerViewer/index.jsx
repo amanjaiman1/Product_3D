@@ -29,7 +29,7 @@ function CustomizerViewer() {
 
   return (
     <div
-      className={`w-[500px] h-[500px] absolute left-28 ${
+      className={`w-[500px] h-[500px] absolute ${
         isGrabbing ? "cursor-grabbing" : "cursor-grab"
       }`}
       onMouseDown={handleCanvasMouseDown}
