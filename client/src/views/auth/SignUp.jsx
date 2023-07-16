@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../../firebase/firebase";
+import { auth,googleProvider } from "../../firebase/firebase";
 import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
@@ -41,6 +41,19 @@ const Signup = () => {
         console.log(error);
         setSubmitDisabled(false);
       });
+  };
+
+    const [value, setValue] = useState("");
+  const handleGoogleSignIn = () => {
+    signInWithPopup(auth, googleProvider).then((data) => {
+      console.log(data);
+      setValue(data.user.email);
+      setValue(data.user.photoURL);
+      setValue(data.user.DisplayName);
+      localStorage.setItem("email", data.user.email);
+      localStorage.setItem("photoURL", data.user.photoURL);
+      localStorage.setItem("displayName", data.user.displayName);
+    });
   };
   return (
     <section className="bg-gray-200 min-h-screen flex items-center justify-center">
@@ -113,14 +126,14 @@ const Signup = () => {
 
             {/* button inputs  */}
 
-            {/* <button
+             <button
             className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 text-[#002D74]"
             type="submit"
-            onClick={googleSignin}
+            onClick={handleGoogleSignIn}
           >
             <img src={googleImg} className="w-5 h-5 mr-2" alt="" />
             Sign up with Google
-          </button> */}
+          </button> 
 
             <div className="mt-5 text-xs flex justify-center items-center text-[#002D74] mb-2">
               <p>Already have an account ?</p>
