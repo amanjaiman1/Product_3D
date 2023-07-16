@@ -11,7 +11,7 @@ const questionsAnswers = [
     question:
       "How many t-shirt colours are available for selection in this customisation application?",
     answer:
-      "This customisation application offers a diverse range of t-shirt colours to cater to various stylesand moods",
+      "This customisation application offers a diverse range of t-shirt colours to cater to various styles and moods",
   },
   {
     question:
