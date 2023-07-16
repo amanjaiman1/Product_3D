@@ -1,7 +1,7 @@
 import React from "react";
 import { cn } from "../../utils/utils";
 
-function Avatar({ title, className, ...rest }) {
+function Avatar({ title, user, className, ...rest }) {
   return (
     <div
       {...rest}
@@ -10,7 +10,13 @@ function Avatar({ title, className, ...rest }) {
         className
       )}
     >
-      B
+      <img
+        width={"100%"}
+        height={"100%"}
+        src={user?.profilePic}
+        alt="User Profile"
+        className="rounded-full h-16 w-16 sm:h-5 sm:w-5 lg:h-10 lg:w-10 cursor-pointer hover:scale-110 transform transition-transform"
+      />
     </div>
   );
 }
