@@ -67,19 +67,19 @@ const Login = () => {
   };
 
   return (
-    <section className="bg-gray-200 min-h-screen flex items-center justify-center">
-      <div className="bg-gray-100 flex rounded-2xl shadow-lg max-w-7xl items-center">
+    <section className="loginSec min-h-screen flex items-center justify-center">
+      <div className="loginDiv flex rounded-2xl shadow-lg max-w-7xl items-center p-20">
         {/* image container   */}
 
-        <div className="md:block hidden w-1/2 ">
+        {/* <div className="md:block hidden w-1/3 ml-20  ">
           <img src={loginImgGif} alt="" className="rounded-xl" />
-        </div>
+        </div> */}
 
-        <div className="md:w-1/2 px-8 sm:mt-0 mt-5 md:px-16 max-w-[500px] ml-5">
-          <h2 className="font-normal text-3xl text-[#002D74]">
+        <div className=" w-[500px]">
+          <h2 className="text-3xl text-[#b7ecff]">
             Welcome back to <span className="font-semibold">Fashion Froze</span>{" "}
           </h2>
-          <p className="text-lg mt-4 text-[#002D74]">
+          <p className="text-sm mt-4 text-[#b6d2ff]">
             Where creativity meets your wardrobe, once again
           </p>
 
@@ -87,7 +87,7 @@ const Login = () => {
 
           <form action="" className="flex flex-col gap-4">
             <input
-              className="p-2 mt-8 rounded-xl border font-normal"
+              className="p-2 mt-8 rounded-[5px] border font-normal"
               type="email"
               name="email"
               placeholder="Email"
@@ -99,7 +99,7 @@ const Login = () => {
             ) : (
               <div className="relative">
                 <input
-                  className="p-2 rounded-xl border w-full"
+                  className="p-2 rounded-[5px] border w-full"
                   type="password"
                   name="password"
                   placeholder="Password"
@@ -111,7 +111,7 @@ const Login = () => {
             <a
               href="#"
               onClick={handleResetPassword}
-              className="text-sm bg-gradient-to-r bg-clip-text from-indigo-500 via-purple-500 to-pink-500 text-right cursor-pointer"
+              className="text-sm text-[#bec9ff] text-right cursor-pointer"
             >
               Forgot your password?
             </a>
@@ -151,7 +151,7 @@ const Login = () => {
               Login with Google
             </button>
           )}
-          <div className="mt-3 text-xs flex justify-center items-center text-[#002D74] mb-2">
+          <div className="mt-3 text-xs flex justify-center items-center text-[#c0fffa] mb-2">
             <p>Don't have an account?</p>
             <button className="py-2 px-5 ml-2 bg-white border rounded-xl hover:scale-110 duration-300">
               <a href="./Signup">Signup</a>
