@@ -16,11 +16,11 @@ function GuideBook() {
         </p>
       </div>
       <div className="flex justify-center mt-auto ease-in-out duration-200">
-        <img src={guide} alt="Guide" className="lg:h-[74vh] mb-14" />
+        <img src={guide} alt="Guide" className="lg:h-[55vh] mb-14" />
       </div>
       <img
         src={guide1}
-        className="animate-spin-slow mx-auto lg:ml-[150vh] mt-[-580px] max-w-full lg:max-h-[300px] lg:mt-[-630px] md:max-h-[200px] mt-[2vh] mb-[10vh]"
+        className="animate-spin-slow  mx-auto max-w-full xl:w-[107px] xl:mt-[-61vh] xl:ml-[1035px] md:max-h-[200px] mt-[2vh] mb-[10vh]"
         alt="Guide 1"
       />
       <div className="grid justify-center">
