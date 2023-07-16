@@ -92,13 +92,7 @@ function Contact() {
 
       {loading ? (
         <div className="flex justify-center mt-10">
-          <HashLoader
-            color="red"
-            ariaLabel="grid-loading"
-            wrapperStyle={{}}
-            wrapperClass=""
-            visible={true}
-          />
+          <HashLoader color="red" aria-label="grid-loading" visible={"true"} />
         </div>
       ) : (
         <div className="flex flex-wrap justify-center p-6 gap-4 rounded-xl sm:p-12 dark:text-gray-100 ml-2">

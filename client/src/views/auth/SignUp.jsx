@@ -46,13 +46,7 @@ const Signup = () => {
     <section className="bg-gray-200 min-h-screen flex items-center justify-center">
       {loading ? (
         <div className="flex h-screen w-screen items-center justify-center bg-blue-100">
-          <HashLoader
-            color="#293fce"
-            ariaLabel="grid-loading"
-            wrapperStyle={{}}
-            wrapperClass=""
-            visible={true}
-          />
+          <HashLoader color="#293fce" aria-label="grid-loading" visible={"true"} />
         </div>
       ) : (
         <div className="bg-gray-100 flex rounded-2xl shadow-lg max-w-7xl items-center">

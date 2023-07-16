@@ -36,6 +36,7 @@ function CustomizerTabs() {
           data?.map((item, index) => {
             return (
               <ul
+                key={index}
                 onClick={() => setcurrentIndex(index)}
                 className={` cursor-pointer font-semibold text-black relative px-5 ${
                   index == currentIndex &&

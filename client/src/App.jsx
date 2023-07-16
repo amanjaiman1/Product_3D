@@ -12,12 +12,8 @@ import { favicon } from "./assets";
 import UserTest from "./test/user.test";
 import AutoScroll from "./utils/AutoScroll";
 import ScrollToTop from "react-scroll-to-top";
-
 import MoonLoader from "react-spinners/MoonLoader";
 import ContributorPage from "./views/app/ContributorPage";
-
-import { Middle } from "./pages/Middle/secondPagePipeline";
-
 import Guide from "./views/app/Guide";
 import Customizer from "./views/app/Customizer";
 import { HashLoader } from "react-spinners";
@@ -36,14 +32,7 @@ function App() {
     <div>
       {loading ? (
         <div className="flex h-screen items-center justify-center bg-blue-100">
-          <HashLoader
-            color="#293fce"
-            ariaLabel="grid-loading"
-            wrapperStyle={{}}
-            wrapperClass=""
-            visible={true}
-          />
-          {/* <img src={favicon} className="h-14 w-12 -ml-16"></img> */}
+          <HashLoader color="#293fce" aria-label="grid-loading" visible={"true"} />
         </div>
       ) : (
         <BrowserRouter>
@@ -57,7 +46,6 @@ function App() {
             <Route Component={SignUp} path="/signup" />
             <Route Component={BlogPage} path="/blog" />
             <Route Component={ErrorPage} path="/*" />
-            <Route Component={Middle} path="/tshirt-customisation" />
             <Route Component={Customizer} path="/app/customizer/editor" />
             <Route Component={Profile} path="/app/customizer/profile" />
             <Route Component={EditorHome} path="/app/customizer" />
