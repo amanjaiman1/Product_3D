@@ -24,6 +24,7 @@
     "core-js": "^3.30.2",
     "cors": "^2.8.5",
     "firebase": "^9.22.1",
+    "formik": "^2.4.2",
     "framer-motion": "^10.12.16",
     "js-cookie": "^3.0.5",
     "lottie-react": "^2.4.0",
