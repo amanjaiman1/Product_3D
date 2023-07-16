@@ -1,13 +1,18 @@
-import React from "react";
+import React, { useState } from "react";
 import TextField from "./../../components/TextField";
 import FormGroup from "../../components/FormGroup";
 import Avatar from "../../components/Avatar";
 import Button from "../../components/Button";
+import { useSelector } from "react-redux";
+import PopupModel from "../../components/PopupModel";
+import ProfileEditor from "../ProfileEditor";
 function ProfileContainer() {
+  const [isVisible, setIsVisible] = useState(false);
+  const userInfo = useSelector((state) => state.userInfo);
   return (
     <div className="flex flex-col p-10">
       <div className="flex justify-center items-center">
-        <Avatar className={"w-28 h-28"} />
+        <Avatar user={userInfo} className={"w-28 h-28"} />
       </div>
       <div className="flex flex-col space-y-3 mt-5">
         <FormGroup title={"Name"}>
@@ -27,8 +32,17 @@ function ProfileContainer() {
         </FormGroup>
       </div>
       <div className="mt-5">
-        <Button>Edit Profile</Button>
+        <Button
+          onClick={() => {
+            setIsVisible(true);
+          }}
+        >
+          Edit Profile
+        </Button>
       </div>
+      <PopupModel visible={isVisible} setVisible={setIsVisible}>
+        <ProfileEditor />
+      </PopupModel>
     </div>
   );
 }
