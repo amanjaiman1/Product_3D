@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Avatar from "../Avatar";
 import { downloadCanvasToImage } from "../../utils/customizer.help";
+import { useNavigate, useNavigation } from "react-router-dom";
 
 function CustomizerNavBar() {
   const [isLoading, setIsLoading] = useState(false);
@@ -47,7 +48,10 @@ function CustomizerNavBar() {
   const onSave = () => {
     alert("onSaved");
   };
-  const onProfile = () => {};
+  const navigate = useNavigate();
+  const onProfile = () => {
+    navigate("/app/customizer/profile");
+  };
   const onDownload = () => {
     downloadCanvasToImage();
   };
@@ -63,7 +67,7 @@ function CustomizerNavBar() {
         <div onClick={onDownload} className="cursor-pointer hover:text-blue-500">
           Export to PNG
         </div>
-        <Avatar onClick={onProfile} />
+        <Avatar className={"w-10 h-10"} onClick={onProfile} />
       </div>
     </div>
   );
