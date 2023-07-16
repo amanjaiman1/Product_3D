@@ -66,8 +66,8 @@ function RecentDesigns() {
   ];
   return (
     <div className="flex space-x-1 flex-wrap p-4 items-center">
-      {[...data, ...data]?.map((item) => (
-        <RecentDesignCard data={item} />
+      {[...data, ...data]?.map((item, index) => (
+        <RecentDesignCard key={index} data={item} />
       ))}
     </div>
   );

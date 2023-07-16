@@ -10,8 +10,8 @@ const ToolTip = ({ index, current, title, shortCut, setselectedOption }) => {
           {shortCut}
         </span>
       </div>
-      <div class="w-16 overflow-hidden inline-block absolute bottom-8 left-[10] z-0 ">
-        <div class=" h-11 w-11 border-2 shadow-lg bg-white -rotate-45 transform origin-top-left border-gray-300"></div>
+      <div className="w-16 overflow-hidden inline-block absolute bottom-8 left-[10] z-0 ">
+        <div className=" h-11 w-11 border-2 shadow-lg bg-white -rotate-45 transform origin-top-left border-gray-300"></div>
       </div>
     </div>
   );
