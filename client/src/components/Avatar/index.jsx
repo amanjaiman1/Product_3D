@@ -6,16 +6,16 @@ function Avatar({ title, user, className, ...rest }) {
     <div
       {...rest}
       className={cn(
-        `cursor-pointer flex justify-center items-center bg-pink-400 p-5 w-8 h-8 rounded-full`,
+        `cursor-pointer flex justify-center items-center bg-pink-400  rounded-full`,
         className
       )}
     >
       <img
-        width={"100%"}
-        height={"100%"}
-        src={user?.profilePic}
+        src={
+          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpPsDc4aXHKSmc9M7sBCaUJnwFs7xww7vlgq2Ix_XGgA&s"
+        }
         alt="User Profile"
-        className="rounded-full h-16 w-16 sm:h-5 sm:w-5 lg:h-10 lg:w-10 cursor-pointer hover:scale-110 transform transition-transform"
+        className="rounded-full h-full w-full cursor-pointer hover:scale-110 transform transition-transform"
       />
     </div>
   );
