@@ -52,8 +52,8 @@ function GuideBook() {
         </div>
         <p className="text-blue-800 font-bold mt-20 md:text-xl lg:text-3xl text-justify">
           How to design a T-shirt?
-          <br />
-          <span className="text-slate-800 font-normal w-1/2 text-sm md:text-lg lg:text-base ml-10">
+          <br/>
+          <span className="text-slate-800 font-normal w-1/2 text-sm md:text-lg lg:text-base">
             You need to choose a t-shirt style. There are many different styles to
             choose from. If you have a design that you'd like to use, you can upload
             it to the design website. If you don't have a design, you can use one of
