@@ -79,7 +79,7 @@ const Login = () => {
           <h2 className="font-normal text-3xl text-[#002D74]">
             Welcome back to <span className="font-semibold">Fashion Froze</span>{" "}
           </h2>
-          <p className="text-sm mt-4 text-[#002D74]">
+          <p className="text-lg mt-4 text-[#002D74]">
             Where creativity meets your wardrobe, once again
           </p>
 
