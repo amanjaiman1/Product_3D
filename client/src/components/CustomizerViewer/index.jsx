@@ -29,7 +29,7 @@ function CustomizerViewer() {
 
   return (
     <div
-      className={`w-[500px] h-[500px] absolute left-28 ${
+      className={`w-[500px] h-[500px] absolute ${
         isGrabbing ? "cursor-grabbing" : "cursor-grab"
       }`}
       onMouseDown={handleCanvasMouseDown}
@@ -37,14 +37,14 @@ function CustomizerViewer() {
     >
       {isLoading && <Lottie animationData={loader} loop={true} />}
       <Canvas
-        mouse
+        mouse="true"
         shadows
         camera={{ position: [0, 0, 0], fov: 25 }}
         gl={{ preserveDrawingBuffer: true }}
         className="w-full max-w-full h-full transition-all ease-in"
       >
         <ambientLight intensity={cameraState[0].intensity} />
-        <Environment preset="city" />
+        {/* <Environment preset="city" /> */}
         <CameraRig cameraState={cameraState} ref={cameraRef}>
           <Center>
             <mesh position={[-1.6, 0, 0]}>

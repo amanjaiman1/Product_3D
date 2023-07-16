@@ -7,20 +7,23 @@ import { imgAnim } from "../../animation/motion";
 function TeamPost() {
   return (
     <>
-      <div className="teamPostHeader text-center my-9">
-        <motion.h4
-          variants={imgAnim}
-          initial="hidden"
-          viewport={{ once: true, amount: 0.25 }}
-          whileInView={{
-            scale: [0, 1],
-            opacity: 1,
-          }}
-          transition={{ duration: 0.84, delay: 0.1 }}
-          className="text-pink-700 text-lg py-4 font-medium"
-        >
-          REVIEWS
-        </motion.h4>
+      <div className="flex flex-col items-center teamPostHeader text-center my-9">
+        <motion.div
+        variants={imgAnim}
+        initial="hidden"
+        viewport={{ once: true, amount: 0.25 }}
+        whileInView={{
+          scale: [0, 1],
+          opacity: 1,
+        }}
+        transition={{ duration: 0.84, delay: 0.1 }}
+        className="mt-5 mb-5 bg-primary bg-opacity-10 font-semibold rounded-lg pl-5 pr-5 py-2"
+        style={{ width: 'max-content' }}
+      >
+        <h1 className="text-center text-primary">REVIEWS</h1>
+      </motion.div>
+
+
         <motion.h1
           variants={fadeIn}
           initial="hidden"

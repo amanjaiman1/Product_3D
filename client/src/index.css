@@ -348,3 +348,19 @@ nav.sticky {
   background-color: #8ec5fcc7;
   background-image: linear-gradient(62deg, #8ec5fc4e 0%, #e0c3fc49 100%);
 }
+
+.loginSec {
+  background: url(../src/assets/image/night-sky-colorful-beautiful-clouds-mountain-valley-digital-art-4k-wallpaper-uhdpaper.com-608@1@k.jpg);
+}
+
+.loginDiv {
+  backdrop-filter: blur(20px);
+  box-shadow: rgba(31, 31, 31, 0.896) 0px 30px 60px -12px,
+    rgba(47, 47, 47, 0.797) 0px 18px 36px -18px;
+  border: 1px solid wheat;
+}
+
+.loginDiv h2 {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+}

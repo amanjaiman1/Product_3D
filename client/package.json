@@ -25,6 +25,7 @@
     "cors": "^2.8.5",
     "firebase": "^9.22.1",
     "framer-motion": "^10.12.16",
+    "js-cookie": "^3.0.5",
     "lottie-react": "^2.4.0",
     "maath": "^0.5.3",
     "react": "^18.2.0",

@@ -6,7 +6,7 @@ import customizer from "../assets/svg/customizer.svg";
 
 function EditorLayout({ children }) {
   return (
-    <div className="bg-gradient-to-t from-slate-50 to-blue-100">
+    <div className="bg-gradient-to-t from-slate-50 to-blue-100 min-h-screen">
       <main>{children}</main>
     </div>
   );

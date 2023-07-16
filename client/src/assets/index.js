@@ -16,7 +16,7 @@ import canvas from "./image/canvas.webp";
 import midimg from "./image/midimg.webp";
 import mid from "./image/mid.webp";
 import logo from "./image/logo.webp";
-import loginImgGif from "./image/loginImgGif.gif";
+import loginImgGif from "./image/loginImg.png";
 import googleImg from "./image/google-48.webp";
 import gssoc from "./../assets/image/gssoc.webp";
 export {
