@@ -36,7 +36,7 @@ const Signup = () => {
         pauseOnHover: true,
         draggable: true,
         progress: undefined,
-        theme: "light",
+        theme: "dark",
       });
       return;
     }
@@ -61,7 +61,7 @@ const Signup = () => {
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-            theme: "light",
+            theme: "dark",
           });
         } else if (
           error.message ===
@@ -75,7 +75,7 @@ const Signup = () => {
             pauseOnHover: true,
             draggable: true,
             progress: undefined,
-            theme: "light",
+            theme: "dark",
           });
         }
 
