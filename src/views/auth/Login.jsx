@@ -32,7 +32,18 @@ const Login = () => {
       console.log(res);
       setResetSent(true);
     } catch (error) {
-      console.log("Error sending reset password email:", error);
+      if (error.message === "Firebase: Error (auth/missing-email).") {
+        toast.error("Kindly, provide a email", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: 1,
+          theme: "dark",
+        });
+      }
     }
   };
 
@@ -53,7 +64,7 @@ const Login = () => {
     setValue(localStorage.getItem("email"));
     setValue(localStorage.getItem("photoURL"));
     setValue(localStorage.getItem("displayName"));
-  });
+  }, []);
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
@@ -76,7 +87,7 @@ const Login = () => {
       navigate("/app/customizer");
     } catch (error) {
       console.log(error.message);
-      setError(true);
+      // setError(true);
       if (error.message === "Firebase: Error (auth/wrong-password).") {
         toast.error("Wrong Password", {
           position: "top-right",
@@ -179,7 +190,7 @@ const Login = () => {
           </form>
           <div className="forgot-password-popup">
             {resetSent ? (
-              <p className="mt-2">
+              <p className="mt-2 text-white">
                 Password reset email sent. Please check your inbox.
               </p>
             ) : (
@@ -191,7 +202,7 @@ const Login = () => {
             <p className="text-center text-sm">OR</p>
             <hr className="border-gray-400" />
           </div>
-          {showPopup && <ForgotPasswordPopup />}
+          {/* {showPopup && <ForgotPasswordPopup />} */}
           {/* button inputs */}
           {value ? (
             navigate("/app/customizer")

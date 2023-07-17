@@ -19,6 +19,7 @@ import Customizer from "./views/app/Customizer";
 import { HashLoader } from "react-spinners";
 import EditorHome from "./views/app/EditorHome";
 import Profile from "./views/app/Profile";
+import PrivateRoute from "./utils/PrivateRoute";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -46,9 +47,11 @@ function App() {
             <Route Component={SignUp} path="/signup" />
             <Route Component={BlogPage} path="/blog" />
             <Route Component={ErrorPage} path="/*" />
-            <Route Component={Customizer} path="/app/customizer/editor" />
-            <Route Component={Profile} path="/app/customizer/profile" />
-            <Route Component={EditorHome} path="/app/customizer" />
+            <Route element={<PrivateRoute />}>
+              <Route Component={Customizer} path="/app/customizer/editor" />
+              <Route Component={Profile} path="/app/customizer/profile" />
+              <Route Component={EditorHome} path="/app/customizer" />
+            </Route>
             <Route Component={Guide} path="/guidebook" />
           </Routes>
 
