@@ -67,8 +67,8 @@ const Login = () => {
   };
 
   return (
-    <section className="loginSec min-h-screen flex items-center justify-center">
-      <div className="loginDiv flex rounded-2xl shadow-lg max-w-7xl items-center p-20">
+    <section className="loginSec  min-h-screen flex items-center justify-center">
+      <div className="loginDiv shape flex rounded-[10px] shadow-lg max-w-7xl items-center p-20">
         {/* image container   */}
 
         {/* <div className="md:block hidden w-1/3 ml-20  ">
