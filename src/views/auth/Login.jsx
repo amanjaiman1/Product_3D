@@ -11,6 +11,8 @@ import {
 } from "firebase/auth";
 import { auth, googleProvider } from "../../firebase/firebase";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -56,13 +58,62 @@ const Login = () => {
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     if (!email || !password) {
+      toast.error("Fields can't be empty!!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "dark",
+      });
       return;
     }
     try {
       await signInWithEmailAndPassword(auth, email, password);
+      Cookies.set("access_token", email, { expires: 7 });
       navigate("/app/customizer");
     } catch (error) {
       console.log(error.message);
+      setError(true);
+      if (error.message === "Firebase: Error (auth/wrong-password).") {
+        toast.error("Wrong Password", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: undefined,
+          theme: "light",
+        });
+      } else if (
+        error.message ===
+        "Firebase: Access to this account has been temporarily disabled due to many failed login attempts. You can immediately restore it by resetting your password or you can try again later. (auth/too-many-requests)."
+      ) {
+        toast.error("Too many failed attempts", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: 1,
+          theme: "light",
+        });
+      } else if (error.message === "Firebase: Error (auth/user-not-found).") {
+        toast.error("User not found", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: 1,
+          theme: "light",
+        });
+      }
     }
   };
 
@@ -119,7 +170,9 @@ const Login = () => {
               className={`bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-xl text-white p-3 hover:scale-105 duration-300 max-w-[400px] ${
                 showPopup ? "cursor-not-allowed pointer-events-none" : ""
               }`}
-              onClick={handleLoginSubmit}
+              onClick={(e) => {
+                handleLoginSubmit(e);
+              }}
             >
               Login
             </button>
@@ -159,6 +212,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </section>
   );
 };

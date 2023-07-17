@@ -7,6 +7,8 @@ import {
   signInWithPopup,
   updateProfile,
 } from "firebase/auth";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { googleImg, loginImgGif } from "../../assets";
 import { HashLoader } from "react-spinners";
 const Signup = () => {
@@ -25,8 +27,19 @@ const Signup = () => {
 
   const handleRegistration = (e) => {
     e.preventDefault();
-    if (!email || !password || !name) return;
-    setSubmitDisabled(true);
+    if (!email || !password || !name) {
+      toast.error("Fields can't be empty!!", {
+        position: "top-right",
+        autoClose: 5000,
+        hideProgressBar: false,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        progress: undefined,
+        theme: "light",
+      });
+      return;
+    }
     createUserWithEmailAndPassword(auth, email, password)
       .then((res) => {
         const user = res.user;
@@ -38,7 +51,34 @@ const Signup = () => {
         setSubmitDisabled(false);
       })
       .catch((error) => {
-        console.log(error);
+        console.log(error.message);
+        if (error.message === "Firebase: Error (auth/email-already-in-use).") {
+          toast.error("Email is already registered", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        } else if (
+          error.message ===
+          "Firebase: Password should be at least 6 characters (auth/weak-password)."
+        ) {
+          toast.error("Password should be at least 6 characters", {
+            position: "top-right",
+            autoClose: 5000,
+            hideProgressBar: false,
+            closeOnClick: true,
+            pauseOnHover: true,
+            draggable: true,
+            progress: undefined,
+            theme: "light",
+          });
+        }
+
         setSubmitDisabled(false);
       });
   };
@@ -134,6 +174,7 @@ const Signup = () => {
           </div>
         </div>
       )}
+      <ToastContainer />
     </section>
   );
 };
