@@ -130,18 +130,18 @@ const Login = () => {
 
   return (
     <section className="loginSec min-h-screen flex items-center justify-center">
-      <div className="loginDiv flex rounded-2xl shadow-lg max-w-7xl items-center p-20">
+      <div className="loginDiv shape flex rounded-[10px] shadow-lg items-center p-20 max-sm:p-10">
         {/* image container   */}
 
         {/* <div className="md:block hidden w-1/3 ml-20  ">
           <img src={loginImgGif} alt="" className="rounded-xl" />
         </div> */}
 
-        <div className=" w-[500px]">
-          <h2 className="text-3xl text-[#b7ecff]">
+        <div className=" max-sm:w-[200px] max-sm:-10 max-sm:h-[] w-[500px]">
+          <h2 className="text-3xl max-sm:text-2xl text-[#b7ecff]">
             Welcome back to <span className="font-semibold">Fashion Froze</span>{" "}
           </h2>
-          <p className="text-sm mt-4 text-[#b6d2ff]">
+          <p className="text-sm max-sm:text-[10px] mt-2 text-[#b6d2ff]">
             Where creativity meets your wardrobe, once again
           </p>
 
@@ -149,7 +149,7 @@ const Login = () => {
 
           <form action="" className="flex flex-col gap-4">
             <input
-              className="p-2 mt-8 rounded-[5px] border font-normal"
+              className="p-2 mt-8 max-sm:mt-4 max-sm:h-8 rounded-[5px] border font-normal"
               type="email"
               name="email"
               placeholder="Email"
@@ -161,7 +161,7 @@ const Login = () => {
             ) : (
               <div className="relative">
                 <input
-                  className="p-2 rounded-[5px] border w-full"
+                  className="p-2 max-sm:h-8 rounded-[5px] border w-full"
                   type="password"
                   name="password"
                   placeholder="Password"
@@ -173,7 +173,7 @@ const Login = () => {
             <a
               href="#"
               onClick={handleResetPassword}
-              className="text-sm text-[#bec9ff] text-right cursor-pointer"
+              className="text-sm max-sm:text-[10px] text-[#bec9ff] text-right cursor-pointer"
             >
               Forgot your password?
             </a>
