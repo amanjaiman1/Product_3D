@@ -44,15 +44,15 @@ const Signup = () => {
   };
   return (
     <section className="loginSec min-h-screen flex items-center justify-center">
-      <div className="loginDiv shape flex rounded-[10px] shadow-lg max-w-7xl items-center">
+      <div className="loginDiv shape flex rounded-[10px] shadow-lg items-center max-sm:p-10 p-10">
         {/* image container */}
 
-        <div className="px-20 py-10 items-center justify-center">
-          <h2 className="font-normal text-3xl text-[#cadfff]">
+        <div className="max-sm:w-[200px] max-sm:-10 max-sm:h-[] w-[500px]">
+          <h2 className="text-3xl max-sm:text-2xl text-[#cadfff]">
             Welcome to
             <span className="font-semibold"> Fashion Froze </span>
           </h2>
-          <p className="text-sm mt-4 text-[#3cdcf5]">
+          <p className="text-sm max-sm:text-[10px] mt-2 text-[#3cdcf5]">
             Where creativity meets your wardrobe
           </p>
 
@@ -64,7 +64,7 @@ const Signup = () => {
             onSubmit={handleRegistration}
           >
             <input
-              className="p-2 mt-8 rounded-[5px] border font-normal"
+              className="p-2 mt-8 max-sm:mt-4 max-sm:h-8 rounded-[5px] border font-normal"
               type="UserName"
               name="UserName"
               placeholder="UserName"
@@ -72,7 +72,7 @@ const Signup = () => {
               onChange={(e) => setName(e.target.value)}
             />
             <input
-              className="p-2 rounded-[5px] border font-normal"
+              className="p-2 max-sm:h-8 rounded-[5px] border font-normal"
               type="email"
               name="email"
               placeholder="Email"
@@ -80,7 +80,7 @@ const Signup = () => {
               onChange={(e) => setEmail(e.target.value)}
             />
             <input
-              className="p-2 rounded-[5px] border w-full"
+              className="p-2 max-sm:h-8 rounded-[5px] border w-full"
               type="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
@@ -105,7 +105,7 @@ const Signup = () => {
           <div className="mt-5 text-xs flex justify-center items-center text-[#002D74] mb-2">
             <p>Already have an account ?</p>
             <button
-              className="py-2 px-5 ml-2 bg-white border rounded-xl hover:scale-110 duration-300"
+              className="py-2 px-5 bg-white border rounded-xl hover:scale-110 duration-300"
               type="submit"
             >
               <a href="./Login">Sign in</a>
