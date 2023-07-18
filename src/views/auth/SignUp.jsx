@@ -7,8 +7,12 @@ import {
   signInWithPopup,
   updateProfile,
 } from "firebase/auth";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import { googleImg, loginImgGif } from "../../assets";
 import { HashLoader } from "react-spinners";
+import createError from "../../utils/errorHandler";
+import ToastMake from "../../utils/toastMaker";
 const Signup = () => {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -25,8 +29,10 @@ const Signup = () => {
 
   const handleRegistration = (e) => {
     e.preventDefault();
-    if (!email || !password || !name) return;
-    setSubmitDisabled(true);
+    if (!email || !password || !name) {
+      ToastMake("Fields can't be empty!!", "error");
+      return;
+    }
     createUserWithEmailAndPassword(auth, email, password)
       .then((res) => {
         const user = res.user;
@@ -38,7 +44,9 @@ const Signup = () => {
         setSubmitDisabled(false);
       })
       .catch((error) => {
-        console.log(error);
+        let type = "error";
+        // console.log(error.message);
+        createError(error.code, type);
         setSubmitDisabled(false);
       });
   };
@@ -113,6 +121,7 @@ const Signup = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </section>
   );
 };

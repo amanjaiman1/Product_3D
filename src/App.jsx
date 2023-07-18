@@ -19,6 +19,7 @@ import Customizer from "./views/app/Customizer";
 import { HashLoader } from "react-spinners";
 import EditorHome from "./views/app/EditorHome";
 import Profile from "./views/app/Profile";
+import PrivateRoute from "./utils/PrivateRoute";
 
 function App() {
   const [loading, setLoading] = useState(false);

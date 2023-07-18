@@ -11,6 +11,10 @@ import {
 } from "firebase/auth";
 import { auth, googleProvider } from "../../firebase/firebase";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import createError from "../../utils/errorHandler";
+import ToastMake from "../../utils/toastMaker";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -30,7 +34,18 @@ const Login = () => {
       console.log(res);
       setResetSent(true);
     } catch (error) {
-      console.log("Error sending reset password email:", error);
+      if (error.message === "Firebase: Error (auth/missing-email).") {
+        toast.error("Kindly, provide a email", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: 1,
+          theme: "dark",
+        });
+      }
     }
   };
 
@@ -51,18 +66,24 @@ const Login = () => {
     setValue(localStorage.getItem("email"));
     setValue(localStorage.getItem("photoURL"));
     setValue(localStorage.getItem("displayName"));
-  });
+  }, []);
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     if (!email || !password) {
+      ToastMake("Fields can't be empty!!", "error");
+
       return;
     }
     try {
       await signInWithEmailAndPassword(auth, email, password);
+      Cookies.set("access_token", email, { expires: 7 });
       navigate("/app/customizer");
     } catch (error) {
-      console.log(error.message);
+      // let type = ;
+      createError(error.code, "error");
+      // console.log(error.message);
+      // setError(true);
     }
   };
 
@@ -119,14 +140,16 @@ const Login = () => {
               className={`bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-xl text-white p-3 hover:scale-105 duration-300 max-w-[400px] ${
                 showPopup ? "cursor-not-allowed pointer-events-none" : ""
               }`}
-              onClick={handleLoginSubmit}
+              onClick={(e) => {
+                handleLoginSubmit(e);
+              }}
             >
               Login
             </button>
           </form>
           <div className="forgot-password-popup">
             {resetSent ? (
-              <p className="mt-2">
+              <p className="mt-2 text-white">
                 Password reset email sent. Please check your inbox.
               </p>
             ) : (
@@ -138,7 +161,7 @@ const Login = () => {
             <p className="text-center text-sm">OR</p>
             <hr className="border-gray-400" />
           </div>
-          {showPopup && <ForgotPasswordPopup />}
+          {/* {showPopup && <ForgotPasswordPopup />} */}
           {/* button inputs */}
           {value ? (
             navigate("/app/customizer")
@@ -159,6 +182,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </section>
   );
 };
