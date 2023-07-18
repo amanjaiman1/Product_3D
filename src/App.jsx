@@ -9,7 +9,6 @@ import Login from "./views/auth/Login";
 import SignUp from "./views/auth/SignUp";
 import BlogPage from "./views/app/Blog";
 import { favicon } from "./assets";
-import UserTest from "./test/user.test";
 import AutoScroll from "./utils/AutoScroll";
 import ScrollToTop from "react-scroll-to-top";
 import MoonLoader from "react-spinners/MoonLoader";
@@ -47,10 +46,31 @@ function App() {
           <Route Component={SignUp} path="/signup" />
           <Route Component={BlogPage} path="/blog" />
           <Route Component={ErrorPage} path="/*" />
-          <Route Component={Customizer} path="/app/customizer/editor" />
-          <Route Component={Profile} path="/app/customizer/profile" />
-          <Route Component={EditorHome} path="/app/customizer" />
           <Route Component={Guide} path="/guidebook" />
+          <Route
+            element={
+              <PrivateRoute>
+                <Customizer />
+              </PrivateRoute>
+            }
+            path="/app/customizer/editor"
+          />
+          <Route
+            element={
+              <PrivateRoute>
+                <Profile />
+              </PrivateRoute>
+            }
+            path="/app/customizer/profile"
+          />
+          <Route
+            element={
+              <PrivateRoute>
+                <EditorHome />
+              </PrivateRoute>
+            }
+            path="/app/customizer"
+          />
         </Routes>
 
         <div>
