@@ -1,27 +1,35 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Button from "../Button";
 import { useNavigate } from "react-router-dom";
 import Avatar from "./../Avatar";
 
 function CustomizerTopbar() {
+  const [userInfo, setuserInfo] = useState({
+    loading: true,
+    data: {},
+  });
   const navigate = useNavigate();
   const Logout = () => {
     localStorage.clear();
     navigate("/login");
   };
-
   const imageRedirect = () => {
     navigate("/app/customizer/profile");
   };
-
-  const user = {
-    email: localStorage.getItem("email"),
-    profilePic: localStorage.getItem("photoURL"),
-    displayName: localStorage.getItem("displayName"),
-  };
+  useEffect(() => {
+    async function getUserInfo() {
+      let localUser = await JSON.parse(localStorage.getItem("userInfo"));
+      setuserInfo((prev) => {
+        return { data: localUser, loading: false };
+      });
+    }
+    getUserInfo();
+  }, []);
   // console.log(user);
 
-  return (
+  return userInfo?.data?.loading ? (
+    <h1>Loading..</h1>
+  ) : (
     <div className="shadow m-3 p-3 flex justify-between  items-center sticky top-0 z-100 backdrop-filter backdrop-blur-lg">
       <div>Recents</div>
       <div className="flex space-x-2 items-center">
@@ -37,10 +45,10 @@ function CustomizerTopbar() {
           Logout
         </Button>
         <span className="ml-2">
-          Welcome, {user.displayName ? user.displayName : "XXXX"}
+          Welcome, {userInfo?.data?.fullName ? userInfo?.data?.fullName : "XXXX"}
         </span>
         <Avatar
-          user={user}
+          user={userInfo?.data}
           className={"hover:bg-pink-500 w-10 h-10"}
           onClick={() => navigate("/app/customizer/profile")}
         />
