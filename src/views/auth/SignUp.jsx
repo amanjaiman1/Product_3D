@@ -11,6 +11,8 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { googleImg, loginImgGif } from "../../assets";
 import { HashLoader } from "react-spinners";
+import createError from "../../utils/errorHandler";
+import ToastMake from "../../utils/toastMaker";
 const Signup = () => {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -28,16 +30,7 @@ const Signup = () => {
   const handleRegistration = (e) => {
     e.preventDefault();
     if (!email || !password || !name) {
-      toast.error("Fields can't be empty!!", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      });
+      ToastMake("Fields can't be empty!!", "error");
       return;
     }
     createUserWithEmailAndPassword(auth, email, password)
@@ -51,34 +44,9 @@ const Signup = () => {
         setSubmitDisabled(false);
       })
       .catch((error) => {
-        console.log(error.message);
-        if (error.message === "Firebase: Error (auth/email-already-in-use).") {
-          toast.error("Email is already registered", {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-          });
-        } else if (
-          error.message ===
-          "Firebase: Password should be at least 6 characters (auth/weak-password)."
-        ) {
-          toast.error("Password should be at least 6 characters", {
-            position: "top-right",
-            autoClose: 5000,
-            hideProgressBar: false,
-            closeOnClick: true,
-            pauseOnHover: true,
-            draggable: true,
-            progress: undefined,
-            theme: "dark",
-          });
-        }
-
+        let type = "error";
+        // console.log(error.message);
+        createError(error.code, type);
         setSubmitDisabled(false);
       });
   };

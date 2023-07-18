@@ -13,6 +13,8 @@ import { auth, googleProvider } from "../../firebase/firebase";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import createError from "../../utils/errorHandler";
+import ToastMake from "../../utils/toastMaker";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -69,16 +71,8 @@ const Login = () => {
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     if (!email || !password) {
-      toast.error("Fields can't be empty!!", {
-        position: "top-right",
-        autoClose: 5000,
-        hideProgressBar: false,
-        closeOnClick: true,
-        pauseOnHover: true,
-        draggable: true,
-        progress: undefined,
-        theme: "dark",
-      });
+      ToastMake("Fields can't be empty!!", "error");
+
       return;
     }
     try {
@@ -86,45 +80,10 @@ const Login = () => {
       Cookies.set("access_token", email, { expires: 7 });
       navigate("/app/customizer");
     } catch (error) {
-      console.log(error.message);
+      // let type = ;
+      createError(error.code, "error");
+      // console.log(error.message);
       // setError(true);
-      if (error.message === "Firebase: Error (auth/wrong-password).") {
-        toast.error("Wrong Password", {
-          position: "top-right",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: undefined,
-          theme: "light",
-        });
-      } else if (
-        error.message ===
-        "Firebase: Access to this account has been temporarily disabled due to many failed login attempts. You can immediately restore it by resetting your password or you can try again later. (auth/too-many-requests)."
-      ) {
-        toast.error("Too many failed attempts", {
-          position: "top-right",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: 1,
-          theme: "light",
-        });
-      } else if (error.message === "Firebase: Error (auth/user-not-found).") {
-        toast.error("User not found", {
-          position: "top-right",
-          autoClose: 2000,
-          hideProgressBar: false,
-          closeOnClick: true,
-          pauseOnHover: true,
-          draggable: true,
-          progress: 1,
-          theme: "light",
-        });
-      }
     }
   };
 
