@@ -12,7 +12,7 @@ function Avatar({ title, user, className, ...rest }) {
     >
       <img
         referrerpolicy="no-referrer"
-        src={user?.profilePic}
+        src={`${user?.profilePic}`}
         alt="User Profile"
         className="rounded-full h-full w-full cursor-pointer hover:scale-110 transform transition-transform"
       />
