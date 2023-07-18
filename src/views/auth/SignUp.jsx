@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { auth } from "../../firebase/firebase";
+import { auth, db, googleProvider } from "../../firebase/firebase";
 import {
   GoogleAuthProvider,
   createUserWithEmailAndPassword,
@@ -13,6 +13,9 @@ import { googleImg, loginImgGif } from "../../assets";
 import { HashLoader } from "react-spinners";
 import createError from "../../utils/errorHandler";
 import ToastMake from "../../utils/toastMaker";
+import { async } from "regenerator-runtime";
+import { doc, setDoc } from "firebase/firestore";
+import Cookies from "js-cookie";
 const Signup = () => {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -26,7 +29,20 @@ const Signup = () => {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [submitDisabled, setSubmitDisabled] = useState(false);
-
+  const handleSignUpWithGoogle = (e) => {
+    signInWithPopup(auth, googleProvider).then(async (data) => {
+      const user = await setDoc(doc(db, "users", data.user.uid), {
+        fullName: data.user.displayName,
+        email: data.user.email,
+        profilePic: data.user.photoURL,
+      }).catch((err) => console.log(err));
+      let userInfo = { ...user, uid: data.user.uid };
+      console.log(data);
+      Cookies.set("access_token", data.user.accessToken, { expires: 3600 });
+      localStorage.setItem("userInfo", JSON.stringify(userInfo));
+      navigate("/app/customizer");
+    });
+  };
   const handleRegistration = (e) => {
     e.preventDefault();
     if (!email || !password || !name) {
@@ -34,18 +50,23 @@ const Signup = () => {
       return;
     }
     createUserWithEmailAndPassword(auth, email, password)
-      .then((res) => {
+      .then(async (res) => {
         const user = res.user;
-        updateProfile(user, {
-          displayName: name,
-        });
-        console.log(user);
+        let userInfo = {
+          fullName: name,
+          email: email,
+        };
+        await setDoc(doc(db, "users", user.uid), userInfo).catch((err) =>
+          console.log(err)
+        );
+        Cookies.set("access_token", res.user.accessToken, { expires: 3600 });
+        localStorage.setItem("userInfo", JSON.stringify(userInfo));
         navigate("/app/customizer");
         setSubmitDisabled(false);
       })
       .catch((error) => {
         let type = "error";
-        // console.log(error.message);
+        console.log(error);
         createError(error.code, type);
         setSubmitDisabled(false);
       });
@@ -96,7 +117,7 @@ const Signup = () => {
               placeholder="Password"
             />
             <button
-              className={`bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-xl text-white p-3 hover:scale-105 duration-300 max-w-[400px] ${
+              className={`bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-xl text-white p-3 hover:scale-105 duration-300 max-w-full ${
                 submitDisabled ? "cursor-not-allowed pointer-events-none" : ""
               }`}
             >
@@ -109,6 +130,13 @@ const Signup = () => {
             <p className="text-center text-sm">OR</p>
             <hr className="border-gray-400" />
           </div>
+          <button
+            className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 text-[#002D74]"
+            onClick={handleSignUpWithGoogle}
+          >
+            <img src={googleImg} className="w-5 h-5 mr-2" alt="" />
+            SignUp with Google
+          </button>
 
           <div className="mt-5 text-xs flex justify-center items-center text-[#002D74] mb-2">
             <p>Already have an account ?</p>
