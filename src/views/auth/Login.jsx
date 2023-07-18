@@ -11,6 +11,10 @@ import {
 } from "firebase/auth";
 import { auth, googleProvider } from "../../firebase/firebase";
 import { useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import createError from "../../utils/errorHandler";
+import ToastMake from "../../utils/toastMaker";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -30,7 +34,18 @@ const Login = () => {
       console.log(res);
       setResetSent(true);
     } catch (error) {
-      console.log("Error sending reset password email:", error);
+      if (error.message === "Firebase: Error (auth/missing-email).") {
+        toast.error("Kindly, provide a email", {
+          position: "top-right",
+          autoClose: 2000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          progress: 1,
+          theme: "dark",
+        });
+      }
     }
   };
 
@@ -51,35 +66,41 @@ const Login = () => {
     setValue(localStorage.getItem("email"));
     setValue(localStorage.getItem("photoURL"));
     setValue(localStorage.getItem("displayName"));
-  });
+  }, []);
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     if (!email || !password) {
+      ToastMake("Fields can't be empty!!", "error");
+
       return;
     }
     try {
       await signInWithEmailAndPassword(auth, email, password);
+      Cookies.set("access_token", email, { expires: 7 });
       navigate("/app/customizer");
     } catch (error) {
-      console.log(error.message);
+      // let type = ;
+      createError(error.code, "error");
+      // console.log(error.message);
+      // setError(true);
     }
   };
 
   return (
     <section className="loginSec min-h-screen flex items-center justify-center">
-      <div className="loginDiv flex rounded-2xl shadow-lg max-w-7xl items-center p-20">
+      <div className="loginDiv shape flex rounded-[10px] shadow-lg items-center p-20 max-sm:p-10">
         {/* image container   */}
 
         {/* <div className="md:block hidden w-1/3 ml-20  ">
           <img src={loginImgGif} alt="" className="rounded-xl" />
         </div> */}
 
-        <div className=" w-[500px]">
-          <h2 className="text-3xl text-[#b7ecff]">
+        <div className=" max-sm:w-[200px] max-sm:-10 max-sm:h-[] w-[500px]">
+          <h2 className="text-3xl max-sm:text-2xl text-[#b7ecff]">
             Welcome back to <span className="font-semibold">Fashion Froze</span>{" "}
           </h2>
-          <p className="text-sm mt-4 text-[#b6d2ff]">
+          <p className="text-sm max-sm:text-[10px] mt-2 text-[#b6d2ff]">
             Where creativity meets your wardrobe, once again
           </p>
 
@@ -87,7 +108,7 @@ const Login = () => {
 
           <form action="" className="flex flex-col gap-4">
             <input
-              className="p-2 mt-8 rounded-[5px] border font-normal"
+              className="p-2 mt-8 max-sm:mt-4 max-sm:h-8 rounded-[5px] border font-normal"
               type="email"
               name="email"
               placeholder="Email"
@@ -99,7 +120,7 @@ const Login = () => {
             ) : (
               <div className="relative">
                 <input
-                  className="p-2 rounded-[5px] border w-full"
+                  className="p-2 max-sm:h-8 rounded-[5px] border w-full"
                   type="password"
                   name="password"
                   placeholder="Password"
@@ -111,7 +132,7 @@ const Login = () => {
             <a
               href="#"
               onClick={handleResetPassword}
-              className="text-sm text-[#bec9ff] text-right cursor-pointer"
+              className="text-sm max-sm:text-[10px] text-[#bec9ff] text-right cursor-pointer"
             >
               Forgot your password?
             </a>
@@ -119,14 +140,16 @@ const Login = () => {
               className={`bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-xl text-white p-3 hover:scale-105 duration-300 max-w-[400px] ${
                 showPopup ? "cursor-not-allowed pointer-events-none" : ""
               }`}
-              onClick={handleLoginSubmit}
+              onClick={(e) => {
+                handleLoginSubmit(e);
+              }}
             >
               Login
             </button>
           </form>
           <div className="forgot-password-popup">
             {resetSent ? (
-              <p className="mt-2">
+              <p className="mt-2 text-white">
                 Password reset email sent. Please check your inbox.
               </p>
             ) : (
@@ -138,7 +161,7 @@ const Login = () => {
             <p className="text-center text-sm">OR</p>
             <hr className="border-gray-400" />
           </div>
-          {showPopup && <ForgotPasswordPopup />}
+          {/* {showPopup && <ForgotPasswordPopup />} */}
           {/* button inputs */}
           {value ? (
             navigate("/app/customizer")
@@ -159,6 +182,7 @@ const Login = () => {
           </div>
         </div>
       </div>
+      <ToastContainer />
     </section>
   );
 };
