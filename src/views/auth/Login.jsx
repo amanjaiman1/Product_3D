@@ -1,32 +1,30 @@
-//login page
 import React, { useState, useEffect } from "react";
-import { googleImg, loginImgGif } from "../../assets";
+import { googleImg } from "../../assets";
 import Cookies from "js-cookie";
+import { AiFillEye } from "react-icons/ai";
+import { BsFillEyeSlashFill } from "react-icons/bs";
 import {
-  getAuth,
   sendPasswordResetEmail,
   signInWithEmailAndPassword,
-  signInWithRedirect,
   signInWithPopup,
 } from "firebase/auth";
-import { auth, googleProvider } from "../../firebase/firebase";
-import { useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { auth, db, googleProvider } from "../../firebase/firebase";
 import "react-toastify/dist/ReactToastify.css";
 import createError from "../../utils/errorHandler";
 import ToastMake from "../../utils/toastMaker";
+import { Link, useNavigate } from "react-router-dom";
+import { collection, doc, getDoc } from "firebase/firestore";
+import axios from "axios";
+import { ToastContainer, toast } from "react-toastify";
 
 const Login = () => {
   const navigate = useNavigate();
+  const [hideshowPassword, setHideShowPassword] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [resetSent, setResetSent] = useState(false);
-  const [alert, setAlert] = useState({
-    open: false,
-    message: "",
-    type: "success",
-  });
   const [showPopup, setShowPopup] = useState(false);
+  const [error, setError] = useState(false);
   const handleResetPassword = async (event) => {
     event.preventDefault();
     try {
@@ -50,29 +48,27 @@ const Login = () => {
   };
 
   //google auth
-  const [value, setValue] = useState("");
   const handleGoogleSignIn = () => {
-    signInWithPopup(auth, googleProvider).then((data) => {
+    signInWithPopup(auth, googleProvider).then(async (data) => {
+      const user = await getDoc(doc(db, "users", data.user.uid)).catch((err) =>
+        console.log(err)
+      );
+      if (!user.exists()) {
+        toast.error("User Not Found");
+        return;
+      }
+      let userInfo = { ...user.data(), uid: user.id };
       console.log(data);
-      setValue(data.user.email);
-      setValue(data.user.photoURL);
-      setValue(data.user.DisplayName);
-      localStorage.setItem("email", data.user.email);
-      localStorage.setItem("photoURL", data.user.photoURL);
-      localStorage.setItem("displayName", data.user.displayName);
+      Cookies.set("access_token", data.user.accessToken, { expires: 3600 });
+      localStorage.setItem("userInfo", JSON.stringify(userInfo));
+      navigate("/app/customizer");
     });
   };
-  useEffect(() => {
-    setValue(localStorage.getItem("email"));
-    setValue(localStorage.getItem("photoURL"));
-    setValue(localStorage.getItem("displayName"));
-  }, []);
 
   const handleLoginSubmit = async (e) => {
     e.preventDefault();
     if (!email || !password) {
       ToastMake("Fields can't be empty!!", "error");
-
       return;
     }
     try {
@@ -86,26 +82,34 @@ const Login = () => {
       // setError(true);
     }
   };
-
+  useEffect(() => {
+    async function getVerify() {
+      let userInfo = JSON.parse(await localStorage.getItem("userInfo"));
+      let access_token = await Cookies.get("access_token");
+      if (access_token && userInfo) {
+        const response = await axios
+          .post("http://localhost:3000/v1/verify", {
+            access_token: access_token,
+            ...userInfo,
+          })
+          .catch((err) => console.log(err));
+        if (response?.data?.isVerified) {
+          navigate("/app/customizer");
+        }
+      }
+    }
+    getVerify();
+  }, []);
   return (
     <section className="loginSec min-h-screen flex items-center justify-center">
-      <div className="loginDiv shape flex rounded-[10px] shadow-lg items-center p-20 max-sm:p-10">
-        {/* image container   */}
-
-        {/* <div className="md:block hidden w-1/3 ml-20  ">
-          <img src={loginImgGif} alt="" className="rounded-xl" />
-        </div> */}
-
-        <div className=" max-sm:w-[200px] max-sm:-10 max-sm:h-[] w-[500px]">
-          <h2 className="text-3xl max-sm:text-2xl text-[#b7ecff]">
+      <div className="loginDiv flex rounded-2xl shadow-lg max-w-7xl items-center p-20">
+        <div className=" w-full">
+          <h2 className="text-3xl text-[#b7ecff]">
             Welcome back to <span className="font-semibold">Fashion Froze</span>{" "}
           </h2>
           <p className="text-sm max-sm:text-[10px] mt-2 text-[#b6d2ff]">
             Where creativity meets your wardrobe, once again
           </p>
-
-          {/* form inputs */}
-
           <form action="" className="flex flex-col gap-4">
             <input
               className="p-2 mt-8 max-sm:mt-4 max-sm:h-8 rounded-[5px] border font-normal"
@@ -118,26 +122,39 @@ const Login = () => {
             {resetSent ? (
               ""
             ) : (
-              <div className="relative">
+              <div className="flex border-2 rounded-xl">
                 <input
-                  className="p-2 max-sm:h-8 rounded-[5px] border w-full"
-                  type="password"
+                  type={!hideshowPassword ? "password" : "text"}
+                  className="p-2  w-full rounded-l-xl"
                   name="password"
                   placeholder="Password"
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                 />
+                <div className="pl-2 bg-white">
+                  {hideshowPassword ? (
+                    <AiFillEye
+                      onClick={() => setHideShowPassword(!hideshowPassword)}
+                      className="h-full bg-white rounded-r-xl cursor-pointer "
+                    />
+                  ) : (
+                    <BsFillEyeSlashFill
+                      onClick={() => setHideShowPassword(!hideshowPassword)}
+                      className="h-full bg-white rounded-r-xl cursor-pointer"
+                    />
+                  )}
+                </div>
               </div>
             )}
-            <a
-              href="#"
+            <Link
+              to={"#"}
               onClick={handleResetPassword}
               className="text-sm max-sm:text-[10px] text-[#bec9ff] text-right cursor-pointer"
             >
               Forgot your password?
-            </a>
+            </Link>
             <button
-              className={`bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-xl text-white p-3 hover:scale-105 duration-300 max-w-[400px] ${
+              className={`bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-xl text-white p-3 hover:scale-105 duration-300 max-w-full ${
                 showPopup ? "cursor-not-allowed pointer-events-none" : ""
               }`}
               onClick={(e) => {
@@ -149,8 +166,10 @@ const Login = () => {
           </form>
           <div className="forgot-password-popup">
             {resetSent ? (
-              <p className="mt-2 text-white">
-                Password reset email sent. Please check your inbox.
+              <p className="mt-2">
+                {error
+                  ? "Something went wrong"
+                  : "Password reset email sent. Please check your inbox."}
               </p>
             ) : (
               ""
@@ -161,24 +180,20 @@ const Login = () => {
             <p className="text-center text-sm">OR</p>
             <hr className="border-gray-400" />
           </div>
-          {/* {showPopup && <ForgotPasswordPopup />} */}
-          {/* button inputs */}
-          {value ? (
-            navigate("/app/customizer")
-          ) : (
-            <button
-              className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 text-[#002D74]"
-              onClick={handleGoogleSignIn}
-            >
-              <img src={googleImg} className="w-5 h-5 mr-2" alt="" />
-              Login with Google
-            </button>
-          )}
+          <button
+            className="bg-white border py-2 w-full rounded-xl mt-5 flex justify-center items-center text-sm hover:scale-105 duration-300 text-[#002D74]"
+            onClick={handleGoogleSignIn}
+          >
+            <img src={googleImg} className="w-5 h-5 mr-2" alt="" />
+            Login with Google
+          </button>
+
           <div className="mt-3 text-xs flex justify-center items-center text-[#c0fffa] mb-2">
-            <p>Don't have an account?</p>
-            <button className="py-2 px-5 ml-2 bg-white border rounded-xl hover:scale-110 duration-300">
-              <a href="./Signup">Signup</a>
-            </button>
+            <p>Don't have an account?&nbsp;</p>
+            <Link className="text-blue-300" to="/signup">
+              {" "}
+              Signup
+            </Link>
           </div>
         </div>
       </div>
