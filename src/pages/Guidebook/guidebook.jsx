@@ -1,92 +1,146 @@
 import React from "react";
-import guide from "../../assets/guideImage/guide_group.png";
-import guide1 from "../../assets/guideImage/guide1.png";
-import guide3 from "../../assets/guideImage/guide 3.png";
-import guide2 from "../../assets/guideImage/guide 2.png";
-import guide6 from "../../assets/guideImage/guide6.png";
+import Group1 from "../../assets/guideImage/Group 1.png";
+import Group2 from "../../assets/guideImage/Group 2.png";
+import Group3 from "../../assets/guideImage/Group 3.png";
+import EC from "../../assets/guideImage/EC.png";
 
 function GuideBook() {
   return (
-    <div className="grid justify-center mt-2 mx-5">
-      <div className="grid justify-center row-span-1">
-        <p className="text-blue-800 md:text-4xl lg:text-4xl font-bold">
-          Unlock Your Creativity: <span className="text-blue-950">3D</span>
-          <br />
-          <span className="text-blue-950 grid justify-center">T-Shirt Mastery</span>
+    <div className="bg-slate-900  text-white">
+      {/*----------------------- Title of page------------------------------- */}
+      <section className="w-[100%] sm:mt-4 p-4">
+        <p className="lg:text-8xl md:text-6xl text-4xl text-white font-bold text-center p-4">
+          GUIDEBOOK
         </p>
-      </div>
-      <div className="flex justify-center mt-auto ease-in-out duration-200">
-        <img src={guide} alt="Guide" className="lg:h-[55vh] mb-14" />
-      </div>
-      <img
-        src={guide1}
-        className="animate-spin-slow  mx-auto max-w-full xl:w-[107px] xl:mt-[-61vh] xl:ml-[1035px] md:max-h-[200px] mt-[2vh] mb-[10vh]"
-        alt="Guide 1"
-      />
-      <div className="grid justify-center">
-        <p className="text-blue-950 md:text-4xl lg:text-4xl font-bold items-center">
-          Mastering 3D T-Shirt Design: <br />
-          <span className="text-blue-800 grid justify-center">A Guidebook</span>
+        <p className="text-white text-center md:text-2xl lg:text-4xl mb-2 ">
+          3D T-shirt Mastery
         </p>
-      </div>
-      <section className="grid md:grid-cols-2 grid-cols-1 justify-right p-4">
-        <p className="text-blue-800 font-bold mt-20 lg:mt-35 md:text-xl lg:text-3xl text-justify">
-          What is 3D T-Shirt Designing?
-          <br />
-          <span className="text-slate-800 font-normal w-1/2 text-sm md:text-lg lg:text-base">
-            3D T-shirt designing refers to the process of creating visually appealing
-            and lifelike designs on T-shirts using three-dimensional elements and
-            techniques. By utilizing software and tools, designers can add depth,
-            textures, shadows, and special effects to their designs, resulting in
-            eye-catching and immersive visuals that enhance the overall appearance of
-            the T-shirt.
-          </span>
-        </p>
-        <div className="max-w-full mt-19 ml-[25vh]">
-          <img src={guide3} alt="Guide 3" className="max-h-[250px]" />
+
+        {/* ------------------------Introduction------------------------------- */}
+
+        <div className="grid md:grid-flow-col justify-items-center p-4">
+          <div className="w-[60%] md:w-[90%] lg:w-[100%] p-4">
+            <img src={Group2} />
+          </div>
+          <div className="grid p-6 text-justify align-text-bottom w-[90%] lg:w-[80%] md:p-2 lg:mt-[5rem] md:mt-[0rem] md:w-[90%] lg:text-2xl">
+            <p>
+              <div className="flex justify-center">
+                <span className="font-normal text-l md:text-xl lg:text-4xl p-2">
+                  What is T-shirt Designing?
+                </span>
+                <br />
+              </div>
+              <div className=" text-slate-300 opacity-70 font-light text-sm lg:text-base">
+                3D T-shirt designing refers to the process of creating visually
+                appealing and lifelike designs on T-shirts using three-dimensional
+                elements and techniques. By utilizing software and tools, you can add
+                depth, textures, shadows, and special effects to your designs,
+                resulting in immersive visuals that enhance the overall appearance of
+                the T-shirt.
+              </div>
+            </p>
+          </div>
         </div>
       </section>
-      <section className="grid md:grid-cols-2 grid-cols-1 justify-center lg:-m-10 p-4">
-        <div className="flex justify-center items-center">
-          <img src={guide2} alt="Guide 2" className="w-auto max-h-[250px]" />
+      {/* ---------------------Design your style------------------------------ */}
+      <section className="w-[100%]">
+        <p className="lg:text-6xl md:text-4xl text-2xl text-white font-semibold text-center p-4 mb-4">
+          Design your style
+        </p>
+        <div className="grid grid-flow-col overflow-y-auto justify-start lg:justify-center scrollbar-none ease-linear">
+          <div className="">
+            <div className="w-[15rem] h-[20rem] bg-green-200 m-4 rounded-2xl">
+              <p className="p-2 text-center pt-10 opacity-60 text-black">
+                You need to choose a t-shirt style. There are many different styles
+                to choose from.
+                <br />
+                Select your favorite color, for the T-shirt you are designing.
+              </p>
+            </div>
+            <div className="w-[15rem] h-[3.2rem] bg-green-300 m-4 -mt-2 rounded-2xl ">
+              <p className="p-3 text-center text-lg text-black opacity-70 font-semibold">
+                Step: 1
+              </p>
+            </div>
+          </div>
+          <div className="">
+            <div className="w-[15rem] h-[20rem] bg-green-200 m-4 rounded-2xl">
+              <p className="p-2 text-center pt-10 opacity-60 text-black">
+                Enter the customizer text, you would like to display. Adjust where
+                you want it to be placed.
+                <br />
+                Choose the logo you'll be having on your T-shirt.
+              </p>
+            </div>
+            <div className="w-[15rem] h-[3.2rem] bg-green-300 m-4 -mt-2 rounded-2xl ">
+              <p className="p-3 text-center text-lg  text-black opacity-70 font-semibold">
+                Step: 2
+              </p>
+            </div>
+          </div>
+          <div className="">
+            <div className="w-[15rem] h-[20rem] bg-green-200 m-4 rounded-2xl">
+              <p className="p-2 text-center pt-10 opacity-60 text-black">
+                You can zoom in and out, rotate your T-shirt to design it. This will
+                help you create your designs more closely and enjoy the 3D
+                experience.
+              </p>
+            </div>
+            <div className="w-[15rem] h-[3.2rem]  bg-green-300 m-4 -mt-2 rounded-2xl ">
+              <p className="p-3 text-center text-lg  text-black opacity-70 font-semibold">
+                Step: 3
+              </p>
+            </div>
+          </div>
+          <div className="">
+            <div className="w-[15rem] h-[20rem] bg-green-200 m-4 rounded-2xl">
+              <p className="p-2 text-center pt-10 opacity-60 text-black">
+                Once done with your design, just save it. You can look at your
+                designs by visiting the recent designs and your favorite ones remain
+                in favorite bar.
+              </p>
+            </div>
+            <div className="w-[15rem] h-[3.2rem] bg-green-300 m-4 -mt-2 rounded-2xl">
+              <p className="p-3 text-center text-lg  text-black opacity-70 font-semibold">
+                Step: 4
+              </p>
+            </div>
+          </div>
         </div>
-        <p className="text-blue-800 font-bold mt-20 md:text-xl lg:text-3xl text-justify">
-          How to design a T-shirt?
-          <br />
-          <span className="text-slate-800 font-normal w-1/2 text-sm md:text-lg lg:text-base ml-10">
-            You need to choose a t-shirt style. There are many different styles to
-            choose from. If you have a design that you'd like to use, you can upload
-            it to the design website. If you don't have a design, you can use one of
-            the website's templates or create your own using the website's design
-            tools. Once you've uploaded your design, you can customize it by adding
-            text, images, and other elements. You can also change the size, color,
-            and placement of your design. Once you're happy with your design, you can
-            preview it to see how it will look on a t-shirt. You can view your design
-            from different angles and zoom in to get a close-up look.
-          </span>
-        </p>
       </section>
-      <section className="grid md:grid-cols-2 grid-cols-1 justify-left lg:-m-10 p-4">
-        <p className="text-blue-800 font-bold mt-20 md:text-xl lg:text-3xl text-justify">
-          Additional Tips.
-          <br />
-          <span className="text-slate-800 font-normal w-1/2 text-sm md:text-lg lg:text-base mt-5">
-            Here are some additional tips for designing a t-shirt:
-            <br />
-            Keep your design simple. Too much text or too many images can make your
-            design look cluttered. Use high-quality images. If you're using images in
-            your design, make sure they're high-quality. Low-quality images will look
-            pixelated and unprofessional. Choose a font that is easy to read. Avoid
-            using fonts that are too small or too difficult to read. Proofread your
-            design carefully. Do share your designs on your favorite platforms.
-          </span>
+      {/* --------------Flaunt your designs------------------ */}
+      <section>
+        <p className="lg:text-6xl md:text-4xl text-2xl text-white font-semibold text-center p-4 mt-8">
+          Flaunt your Designs
         </p>
-        <div className="flex justify-center items-center mt-20">
-          <img
-            src={guide6}
-            alt="Guide 6"
-            className="lg:-mt-8 max-w-full max-h-[250px]"
-          />
+        <div className="grid md:grid-flow-col justify-items-center">
+          <p className="text-justify md:text-xl mt-[3rem] m-[2rem] text-slate-300 opacity-70 font-light text-sm lg:text-2xl lg:w-[80%] lg:mt-[12rem]">
+            Meticulously crafted with attention to detail, your designs are works of
+            art. When you've created styles that you're particularly proud of, you
+            can share them with others or save them for future use. You can also
+            export them as a PNG file. Now its your turn to flaunt your desings on
+            your favorite social handles.
+          </p>
+          <div className="w-[50%] md:w-[80%] lg:w-[100%] p-4">
+            <img src={Group1} />
+          </div>
+        </div>
+      </section>
+      {/* -------------------Additional Tips------------------- */}
+      <section>
+        <p className="lg:text-6xl md:text-4xl text-2xl text-white font-semibold text-center p-4 mb-8">
+          Additional Tips
+        </p>
+        <div className="flex justify-center">
+          <img className=" w-[80%] lg:w-[80%]" src={Group3} />
+        </div>
+      </section>
+      <section className="">
+        <p className="lg:text-6xl md:text-4xl text-2xl text-white font-semibold text-center p-6 mt-6 mb-8">
+          Enjoy Creating
+        </p>
+        <div className="flex justify-center p-4 -mt-14">
+          <img className="pt-4 w-[80%]" src={EC} />
         </div>
       </section>
     </div>
