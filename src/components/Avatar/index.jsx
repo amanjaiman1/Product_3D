@@ -11,9 +11,8 @@ function Avatar({ title, user, className, ...rest }) {
       )}
     >
       <img
-        src={
-          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpPsDc4aXHKSmc9M7sBCaUJnwFs7xww7vlgq2Ix_XGgA&s"
-        }
+        referrerpolicy="no-referrer"
+        src={`${user?.profilePic}`}
         alt="User Profile"
         className="rounded-full h-full w-full cursor-pointer hover:scale-110 transform transition-transform"
       />
