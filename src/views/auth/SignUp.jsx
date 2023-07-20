@@ -16,6 +16,8 @@ import ToastMake from "../../utils/toastMaker";
 import { async } from "regenerator-runtime";
 import { doc, setDoc } from "firebase/firestore";
 import Cookies from "js-cookie";
+import ReCAPTCHA from "react-google-recaptcha";
+
 const Signup = () => {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
@@ -27,8 +29,11 @@ const Signup = () => {
   const navigate = useNavigate();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [name, setName] = useState("");
   const [submitDisabled, setSubmitDisabled] = useState(false);
+  const [captchaToken, setCaptchaToken] = useState(null); // Added state for reCAPTCHA token
+
   const handleSignUpWithGoogle = (e) => {
     signInWithPopup(auth, googleProvider).then(async (data) => {
       const user = await setDoc(doc(db, "users", data.user.uid), {
@@ -43,12 +48,37 @@ const Signup = () => {
       navigate("/app/customizer");
     });
   };
+
   const handleRegistration = (e) => {
     e.preventDefault();
     if (!email || !password || !name) {
       ToastMake("Fields can't be empty!!", "error");
       return;
     }
+    if (!validateEmail(email)) {
+      ToastMake("Please enter a valid email address!", "error");
+      return;
+    }
+
+    if (!validatePassword(password)) {
+      ToastMake(
+        "Password must contain at least one lowercase letter, one uppercase letter, one number, one special character, and be at least 8 characters long!",
+        "error"
+      );
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      ToastMake("Passwords do not match!", "error");
+      return;
+    }
+
+    // Check if the reCAPTCHA token is available
+    if (!captchaToken) {
+      ToastMake("Please verify that you're not a robot!", "error");
+      return;
+    }
+
     createUserWithEmailAndPassword(auth, email, password)
       .then(async (res) => {
         const user = res.user;
@@ -71,11 +101,28 @@ const Signup = () => {
         setSubmitDisabled(false);
       });
   };
+
+  function onChange(value) {
+    console.log("Captcha value:", value);
+    setCaptchaToken(value); // Update reCAPTCHA token when user interacts with reCAPTCHA
+  }
+
+  const validateEmail = (email) => {
+    // Email validation regex pattern
+    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailPattern.test(email);
+  };
+
+  const validatePassword = (password) => {
+    // Password validation regex pattern
+    const passwordPattern = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&*]).{8,}$/;
+    return passwordPattern.test(password);
+  };
+
   return (
     <section className="loginSec min-h-screen flex items-center justify-center">
       <div className="loginDiv shape flex rounded-[10px] shadow-lg items-center max-sm:p-10 p-10">
         {/* image container */}
-
         <div className="max-sm:w-[200px] max-sm:-10 max-sm:h-[] w-[500px]">
           <h2 className="text-3xl max-sm:text-2xl text-[#cadfff]">
             Welcome to
@@ -85,8 +132,7 @@ const Signup = () => {
             Where creativity meets your wardrobe
           </p>
 
-          {/* form inputs */}
-
+          {/* Form inputs */}
           <form
             action=""
             className="flex flex-col gap-4 "
@@ -115,6 +161,18 @@ const Signup = () => {
               onChange={(e) => setPassword(e.target.value)}
               name="password"
               placeholder="Password"
+            />
+            <input
+              className="p-2 max-sm:h-8 rounded-[5px] border w-full"
+              type="password"
+              value={confirmPassword}
+              onChange={(e) => setConfirmPassword(e.target.value)}
+              name="confirmPassword"
+              placeholder="Confirm Password"
+            />
+            <ReCAPTCHA
+              sitekey="6LfTrjcnAAAAAFmUQ6swpJDy55CYtU7JsbjaS5bA"
+              onChange={onChange}
             />
             <button
               className={`bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-xl text-white p-3 hover:scale-105 duration-300 max-w-full ${

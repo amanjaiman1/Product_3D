@@ -45,7 +45,8 @@ function CustomizerTopbar() {
           Logout
         </Button>
         <span className="ml-2">
-          Welcome, {userInfo?.data?.fullName ? userInfo?.data?.fullName : "XXXX"}
+          Welcome,{" "}
+          {userInfo?.data?.fullName ? userInfo?.data?.fullName : "Guest User"}
         </span>
         <Avatar
           user={userInfo?.data}
