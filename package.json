@@ -37,6 +37,7 @@
     "react-dom": "^18.2.0",
     "react-fontawesome": "^1.7.1",
     "react-google-recaptcha": "^3.1.0",
+    "react-icons":"^4.10.1",
     "react-loader-spinner": "^5.3.4",
     "react-parallax-tilt": "^1.7.151",
     "react-redux": "^8.0.5",
