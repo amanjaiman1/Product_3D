@@ -356,7 +356,7 @@ nav.sticky {
 }
 
 .loginDiv {
-  backdrop-filter: blur(20px);
+  backdrop-filter: blur(3px);
   box-shadow: rgba(31, 31, 31, 0.896) 0px 30px 60px -12px,
     rgba(47, 47, 47, 0.797) 0px 18px 36px -18px;
 }
