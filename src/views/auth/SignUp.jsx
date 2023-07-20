@@ -123,66 +123,33 @@ const Signup = () => {
 
   return (
     <section className="loginSec min-h-screen flex items-center justify-center">
-      <div className="loginDiv shape flex rounded-[10px] shadow-lg items-center max-sm:p-10 p-10">
-        {/* image container */}
-        <div className="max-sm:w-[200px] max-sm:-10 max-sm:h-[] w-[500px]">
-          <h2 className="text-3xl max-sm:text-2xl text-[#cadfff]">
-            Welcome to
-            <span className="font-semibold"> Fashion Froze </span>
-          </h2>
-          <p className="text-sm max-sm:text-[10px] mt-2 text-[#3cdcf5]">
-            Where creativity meets your wardrobe
-          </p>
+      <div className="flex w-full">
+        <div className="w-1/2">
+          <div className="flex flex-col items-center justify-center h-screen w-full ml-5">
+            <h1 className="text-7xl text-white leading-tight font-semibold animate-[lights_5s_750ms_linear_infinite]">
+              Welcome ! <br /> to Fashion Froze
+            </h1>
+            <p className="text-xl max-sm:text-[10px] mt-2 text-white ">
+              Where creativity meets your wardrobe
+            </p>
+          </div>
+        </div>
+        <div className="p-5 shape flex ml-10 justify-center items-center max-sm:p-10 p-10 w-1/2">
+          {/* image container */}
+          <div className="loginDiv p-10 rounded-[10px] shadow-lg border max-sm:w-[200px] max-sm:-10 max-sm:h-[] w-[600px]">
+            <h2 className="text-3xl max-sm:text-2xl text-[#cadfff]">Sign up</h2>
+            <p className="text-sm max-sm:text-[10px] mt-2 text-white">
+              Just some details to get you in.!
+            </p>
 
-          {/* Form inputs */}
-          <form
-            action=""
-            className="flex flex-col gap-4 "
-            onSubmit={handleRegistration}
-          >
-            <input
-              className="p-2 mt-8 max-sm:mt-4 max-sm:h-8 rounded-[5px] border font-normal"
-              type="UserName"
-              name="UserName"
-              placeholder="UserName"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-            />
-            <input
-              className="p-2 max-sm:h-8 rounded-[5px] border font-normal"
-              type="email"
-              name="email"
-              placeholder="Email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-            />
-            <input
-              className="p-2 max-sm:h-8 rounded-[5px] border w-full"
-              type="password"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              name="password"
-              placeholder="Password"
-            />
-            <input
-              className="p-2 max-sm:h-8 rounded-[5px] border w-full"
-              type="password"
-              value={confirmPassword}
-              onChange={(e) => setConfirmPassword(e.target.value)}
-              name="confirmPassword"
-              placeholder="Confirm Password"
-            />
-            <ReCAPTCHA
-              sitekey="6LfTrjcnAAAAAFmUQ6swpJDy55CYtU7JsbjaS5bA"
-              onChange={onChange}
-            />
-            <button
-              className={`bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-xl text-white p-3 hover:scale-105 duration-300 max-w-full ${
-                submitDisabled ? "cursor-not-allowed pointer-events-none" : ""
-              }`}
+            {/* Form inputs */}
+            <form
+              action=""
+              className="flex flex-col gap-4 "
+              onSubmit={handleRegistration}
             >
               <input
-                className="bg-transparent outline-0 text-white p-2 mt-8 max-sm:mt-4 max-sm:h-8 border-2 placeholder-white rounded-[5px] font-normal"
+                className="bg-transparent mt-5 outline-0 text-white p-1.5 max-sm:h-8 placeholder-white rounded-[5px] border-2 font-normal "
                 type="UserName"
                 name="UserName"
                 placeholder="UserName"
@@ -190,27 +157,33 @@ const Signup = () => {
                 onChange={(e) => setName(e.target.value)}
               />
               <input
-                className="bg-transparent outline-0 text-white p-2 max-sm:h-8 placeholder-white rounded-[5px] border-2 font-normal"
+                className="bg-transparent outline-0 text-white p-1.5 max-sm:h-8 placeholder-white rounded-[5px] border-2 font-normal"
                 type="email"
                 name="email"
                 placeholder="Email"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
               />
-              <div className="flex border-2 rounded-[5px]">
-                <input
-                  className="bg-transparent outline-0 text-white p-2 max-sm:h-8 placeholder-white   w-full"
-                  type="password"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  name="password"
-                  placeholder="Password"
-                />
-                <div className=" bg-transparent text-white mr-2">
-                  <AiFillEye className="h-full text-white bg-transparent cursor-pointer " />
-                </div>
-              </div>
-
+              <input
+                className="bg-transparent outline-0 text-white p-1.5 max-sm:h-8 placeholder-white rounded-[5px] border-2 font-normal"
+                type="password"
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                name="password"
+                placeholder="Password"
+              />
+              <input
+                className="bg-transparent outline-0 text-white p-1.5 max-sm:h-8 placeholder-white rounded-[5px] border-2 font-normal"
+                type="password"
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                name="confirmPassword"
+                placeholder="Confirm Password"
+              />
+              <ReCAPTCHA
+                sitekey="6LfTrjcnAAAAAFmUQ6swpJDy55CYtU7JsbjaS5bA"
+                onChange={onChange}
+              />
               <button
                 className={`bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 rounded-xl text-white p-3 hover:scale-105 duration-300 max-w-full ${
                   submitDisabled ? "cursor-not-allowed pointer-events-none" : ""
@@ -233,7 +206,7 @@ const Signup = () => {
               SignUp with Google
             </button>
 
-            <div className="mt-5 text-sm text-white flex justify-center items-center text-[#002D74] mb-2">
+            <div className="mt-5 text-sm text-white flex justify-center items-center text-[#002D74]">
               <p className="mr-5">Already have an account ?</p>
               <button
                 className="py-2 px-5 bg-white border rounded-xl hover:scale-110 duration-300"
