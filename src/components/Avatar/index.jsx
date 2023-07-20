@@ -2,6 +2,8 @@ import React from "react";
 import { cn } from "../../utils/utils";
 
 function Avatar({ title, user, className, ...rest }) {
+  const defaultProfilePic =
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTpPsDc4aXHKSmc9M7sBCaUJnwFs7xww7vlgq2Ix_XGgA&s";
   return (
     <div
       {...rest}
@@ -11,8 +13,8 @@ function Avatar({ title, user, className, ...rest }) {
       )}
     >
       <img
-        referrerpolicy="no-referrer"
-        src={`${user?.profilePic}`}
+        referrerPolicy="no-referrer"
+        src={`${user?.profilePic ? user?.profilePic : defaultProfilePic}`}
         alt="User Profile"
         className="rounded-full h-full w-full cursor-pointer hover:scale-110 transform transition-transform"
       />

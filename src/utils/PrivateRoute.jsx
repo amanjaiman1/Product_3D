@@ -25,7 +25,14 @@ function PrivateRoute({ children }) {
       }
       setloading(false);
     }
+    window.addEventListener("storage", async () => {
+      window.location.reload();
+    });
+
     getVerify();
+    return () => {
+      window.removeEventListener("storage", () => {});
+    };
   }, []);
   return loading ? (
     <h1>Loading...</h1>
