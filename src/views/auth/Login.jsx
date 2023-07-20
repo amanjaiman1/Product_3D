@@ -58,7 +58,7 @@ const Login = () => {
         return;
       }
       let userInfo = { ...user.data(), uid: user.id };
-      console.log(data);
+      // console.log(data);
       Cookies.set("access_token", data.user.accessToken, { expires: 3600 });
       localStorage.setItem("userInfo", JSON.stringify(userInfo));
       navigate("/app/customizer");
@@ -73,14 +73,14 @@ const Login = () => {
     }
     try {
       const userInfo = await signInWithEmailAndPassword(auth, email, password);
-      console.log(userInfo);
+      // console.log(userInfo);
       const user = await getDoc(doc(db, "users", userInfo.user.uid));
 
       if (!user.exists()) {
         toast.error("User Not Found");
         return;
       }
-      console.log(user.data());
+      // console.log(user.data());
 
       let userfb = { ...user.data(), uid: user.id };
       Cookies.set("access_token", userInfo.user.accessToken, { expires: 3600 });

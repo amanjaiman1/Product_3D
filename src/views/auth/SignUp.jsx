@@ -42,7 +42,7 @@ const Signup = () => {
         profilePic: data.user.photoURL,
       }).catch((err) => console.log(err));
       let userInfo = { ...user, uid: data.user.uid };
-      console.log(data);
+      // console.log(data);
       Cookies.set("access_token", data.user.accessToken, { expires: 3600 });
       localStorage.setItem("userInfo", JSON.stringify(userInfo));
       navigate("/app/customizer");
