@@ -99,7 +99,7 @@ const Login = () => {
       let access_token = await Cookies.get("access_token");
       if (access_token && userInfo) {
         const response = await axios
-          .post(import.meta.env.VITE_APP_BASE_URL, {
+          .post(import.meta.env.VITE_APP_BASEURL, {
             access_token: access_token,
             ...userInfo,
           })

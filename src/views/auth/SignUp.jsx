@@ -38,6 +38,7 @@ const Signup = () => {
 
   const handleSignUpWithGoogle = (e) => {
     signInWithPopup(auth, googleProvider).then(async (data) => {
+      console.log(data);
       const user = await setDoc(doc(db, "users", data.user.uid), {
         fullName: data.user.displayName,
         email: data.user.email,
