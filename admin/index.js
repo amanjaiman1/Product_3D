@@ -14,6 +14,9 @@ const limiter = rateLimit({
   message: "Too many request from this IP",
 });
 app.use(limiter);
+app.get("/", (req, res) => {
+  res.send("Welcome to T-Shirt Design API 🪅");
+});
 app.post("/v1/verify", async (req, res) => {
   const { access_token, uid } = req.body;
   console.log(req.body);
