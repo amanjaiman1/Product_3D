@@ -53,8 +53,11 @@ function NewsLetter() {
         </motion.div>
 
         <form className="flex flex-col md:flex-row pt-3 md:pt-5 ml:w-full md:w-full lg:w-[600px]">
+          <label for="email" class="sr-only-label">Please provide your email address to subscribe to our newsletter</label>
           <input
             type="email"
+            name="email"
+            id="email"
             placeholder="Enter your email address"
             required
             className="px-4 py-2 border border-gray-300 rounded-l-[40px] focus:outline-none focus:ring-blue-500 focus:border-blue-500 w-full md:max-w-[600px] h-[67px] md:h-[50px] max-sm:w-[300px] rounded-r-[50px] transition-shadow duration-300 hover:shadow-lg mb-4 md:mb-0 md:mr-2"
