@@ -6,7 +6,16 @@
 
 ## To run the project locally, follow these steps:
 
-1. Clone the project repository:
+1. Fork the project repository:
+
+   - Go to the project repository on GitHub.
+   - Click on the "Fork" button in the top-right corner of the page.
+
+   ![image](https://github.com/Ayush-Tibrewal/Product_3D/assets/96817905/789dda31-5f38-4102-aca8-731d7f2f5f2f)
+
+   - This will create a copy of the repository under your GitHub account.
+
+2. Clone the forked repository to your local machine:
 
 ```
 git clone https://github.com/amanjaiman1/Product_3D.git
@@ -14,19 +23,19 @@ git clone https://github.com/amanjaiman1/Product_3D.git
 
 This command will create a local copy of the project on your machine.
 
-2.  Navigate to the project folder
+3.  Navigate to the project folder
 
 ```
-cd ProjectsHut
+cd Product_3D
 ```
 
-3. Install dependencies
+4. Install dependencies
 
 ```
 npm install
 ```
 
-### :warning: 4. Steps for setting up the environment (Vite + React) :hammer_and_wrench:
+### :warning: 5. Steps for setting up the environment (Vite + React) :hammer_and_wrench:
 
 Please follow the instructions below carefully:
 
@@ -102,13 +111,27 @@ git checkout -b fix-issue-<ISSUE-NUMBER>
 
 - Wait for your pull request to be reviewed and merged.
 
-# Code Formatting and Style Guidelines
+# Guideline for issues
 
-Consistent code formatting and style are important for maintaining a clean and readable codebase. Please adhere to the following guidelines when submitting code changes:
+### Search for Existing Issues:
 
-- Use spaces for indentation (4 spaces per level).
-- Follow the established naming conventions for variables, functions, and classes.
-- Write clear and concise comments to explain complex code sections.
+- Before creating a new issue, search the issue tracker to see if a similar problem or feature request has already been reported. Duplicates can clutter the tracker and make it harder to manage.
+
+### Clear and Descriptive Titles:
+
+- Use a clear and concise title that summarizes the problem or feature. Avoid ambiguous titles and be specific to help others understand the issue's content quickly.
+
+### Detailed Description:
+
+- Provide a detailed description of the issue, including steps to reproduce bugs, expected behavior, and any relevant information about the environment. For feature requests, explain the rationale and use cases.
+
+### Code Samples and Images:
+
+- When applicable, provide code samples, screenshots, or links to relevant sections of the codebase to better illustrate the problem.
+
+### Formatting:
+
+- Use Markdown or any supported formatting language to structure the issue description clearly. Bullet points, lists, and code blocks enhance readability.
 
 # Communication
 

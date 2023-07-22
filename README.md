@@ -1,5 +1,5 @@
  <div align="center">
- <img src="https://github.com/amanjaiman1/Product_3D/blob/main/public/icons8-shirt-58.png?raw=true" alt="logo"/>
+ <img src="https://res.cloudinary.com/dxxeks4o5/image/upload/v1690038166/icons8-shirt-58_telfkv.png" alt="logo"/>
 <h1>Product_3D</h1>
 
 ![](https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&color=blue)
@@ -35,8 +35,6 @@ This application boasts an array of impressive features to enhance your t-shirt 
 **Color Selection**: Choose from a delightful range of t-shirt colors to suit your style and mood.
 
 **Image/Logo Upload**: Personalize your t-shirt by uploading your own logos or images to be applied seamlessly.
-
-**DalleAI Integration**: Unlock the power of DalleAI technology, generating unique custom images to adorn your t-shirt as logos or full designs.
 
 **Remove Functionality**: Enjoy the freedom to remove any applied logos or images with a simple click of the "remove" button.
 
