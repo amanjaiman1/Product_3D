@@ -3,10 +3,10 @@ import { lazy, Suspense } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./index.css";
 import { favicon } from "./assets";
-import UserTest from "./test/user.test";
 import AutoScroll from "./utils/AutoScroll";
 import ScrollToTop from "react-scroll-to-top";
 import { HashLoader } from "react-spinners";
+import PrivateRoute from "./utils/PrivateRoute";
 
 const Login = lazy(() => import("./views/auth/Login"));
 const SignUp = lazy(() => import("./views/auth/SignUp"));
@@ -24,8 +24,8 @@ function App() {
 
   return (
     <div>
-        <BrowserRouter>
-          <AutoScroll />
+      <BrowserRouter>
+        <AutoScroll />
           <Suspense
           fallback={
             <div className="flex h-screen items-center justify-center bg-blue-100">
@@ -37,22 +37,42 @@ function App() {
               <img src={favicon} className="h-14 w-12 -ml-16"></img>
             </div>
           }
-        ></Suspense>
-          <Routes>
-            <Route Component={Home} path="/" />
-            <Route Component={Faq} path="/faq" />
-            <Route Component={ContributorPage} path="/contact" />
-            <Route Component={ErrorPage} path="/*" />
-            <Route Component={Login} path="/login" />
-            <Route Component={SignUp} path="/signup" />
-            <Route Component={BlogPage} path="/blog" />
-            <Route Component={ErrorPage} path="/*" />
-            <Route Component={Customizer} path="/app/customizer/editor" />
-            <Route Component={Profile} path="/app/customizer/profile" />
-            <Route Component={EditorHome} path="/app/customizer" />
-            <Route Component={Guide} path="/guidebook" />
-          </Routes>
-
+        >
+        <Routes>
+          <Route Component={Home} path="/" />
+          <Route Component={Faq} path="/faq" />
+          <Route Component={ContributorPage} path="/contact" />
+          <Route Component={ErrorPage} path="/*" />
+          <Route Component={Login} path="/login" />
+          <Route Component={SignUp} path="/signup" />
+          <Route Component={BlogPage} path="/blog" />
+          <Route Component={ErrorPage} path="/*" />
+          <Route Component={Guide} path="/guidebook" />
+          <Route
+            element={
+              <PrivateRoute>
+                <Customizer />
+              </PrivateRoute>
+            }
+            path="/app/customizer/editor"
+          />
+          <Route
+            element={
+              <PrivateRoute>
+                <Profile />
+              </PrivateRoute>
+            }
+            path="/app/customizer/profile"
+          />
+          <Route
+            element={
+              <PrivateRoute>
+                <EditorHome />
+              </PrivateRoute>
+            }
+            path="/app/customizer"
+          />
+        </Routes>
           <div>
             <ScrollToTop
               smooth
