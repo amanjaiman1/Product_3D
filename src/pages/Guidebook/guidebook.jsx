@@ -139,12 +139,8 @@ function GuideBook() {
         <p className="lg:text-6xl md:text-4xl text-2xl text-white font-semibold text-center p-6 mt-6 mb-8">
           Enjoy Creating
         </p>
-        <div className="flex justify-center items-center mt-20">
-          <img
-            src={EC}
-            alt="Guide 6"
-            className="lg:-mt-8 max-w-full max-h-[250px]"
-          />
+        <div className="flex justify-center p-4 -mt-14">
+          <img className="pt-4 w-[80%]" src={EC} />
         </div>
       </section>
     </div>

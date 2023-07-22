@@ -23,9 +23,9 @@ function App() {
 
   return (
     <div>
-      <BrowserRouter>
-        <AutoScroll />
-        <Suspense
+        <BrowserRouter>
+          <AutoScroll />
+          <Suspense
           fallback={
             <div className="flex h-screen items-center justify-center bg-blue-100">
               <HashLoader
@@ -72,7 +72,6 @@ function App() {
           <Route Component={ErrorPage} path="/*" />
 
         </Routes>
-
           <div>
             <ScrollToTop
               smooth
