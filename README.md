@@ -12,14 +12,14 @@
 
 ## Table of Contents 📒
 
-- [Introduction 👋](#intro-)
+- [Introduction 👋](#introduction-)
 - [Features 🌟](#features-)
 - [Quick Start 🚀](#quickstart-)
-- [🤝 Our Contributors](#contributors-)
+- [Our Contributors🤝](#contributors-)
 
-# Introduction <a name="intro"></a>
+# Introduction <a name="introduction"></a>
 
-Welcome 👋
+Welcome👋
 
 <p> 
 Welcome to the 3D Product Customization Website! 🌟 This innovative web application empowers users to personalize their very own t-shirts with ease. With a wide range of customization options at their fingertips, users can unleash their creativity and design unique garments that reflect their individuality. Get ready to embark on a journey of self-expression and style! 🎉
@@ -28,7 +28,7 @@ Welcome to the 3D Product Customization Website! 🌟 This innovative web applic
 <center><img src="https://imgur.com/B1yHPt2.png" /></center>
 <br/>
 
-# Features 🌟 <a name="features"></a>
+# Features🌟 <a name="features"></a>
 
 This application boasts an array of impressive features to enhance your t-shirt customization experience:
 
@@ -42,7 +42,7 @@ This application boasts an array of impressive features to enhance your t-shirt 
 
 **Download Option**: Capture your masterpiece by downloading your completed t-shirt design as an image file.
 
-# Quick Start 🚀 <a name="quickstart"></a>
+# Quick Start🚀 <a name="quickstart"></a>
 
 Contributions are welcome! If you have any ideas, suggestions, or bug fixes, please open an
 [issue](https://github.com/amanjaiman1/Product_3D/issues/new/choose) or submit a pull request. Make sure to follow the project's code of conduct.
@@ -67,6 +67,8 @@ Contributions are welcome! If you have any ideas, suggestions, or bug fixes, ple
 Thank you for your interest in contributing to our project! We appreciate any contributions, whether it's bug fixes, new features, or documentation improvements.
 
 We value the time and effort you put into contributing, and we look forward to reviewing and merging your contributions. Join us on this exciting journey of creativity and collaboration, and let your projects shine on Product_3D!
+<br/>
+
 <a href="https://github.com/amanjaiman1/Product_3D/graphs/contributors">
 <img src="https://contrib.rocks/image?repo=amanjaiman1/Product_3D" />
 </a>

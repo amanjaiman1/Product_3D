@@ -1,49 +1,114 @@
 # Contributing Guidelines to informatician
 
-Thank you for your interest in contributing to informatician! This project aims to provide useful resources i.e., Books for information and research purposes to its users. You can learn more about the purpose and features of this project by reading the [README.md](README.md) file. We welcome all types of contributions, such as bug reports, feature requests, documentation improvements, code enhancements, and more. Please read this guide carefully before making your contribution.
+- We welcome all types of contributions, such as bug reports, feature requests, documentation improvements, code enhancements, and more.
 
-# Reporting Bugs and Issues
+# Installation
 
-If you encounter a bug or issue while using this project, we encourage you to report it. When reporting bugs, please provide as much information as possible, including:
+## To run the project locally, follow these steps:
 
-• Steps to reproduce the issue
-Expected behavior
-• Actual behavior
-• Any relevant error messages or screenshots
+1. Clone the project repository:
 
-To report a bug or issue, please follow these steps:
+```
+git clone https://github.com/amanjaiman1/Product_3D.git
+```
 
-1. Go to the Issues section of the repository.
-2. Click on the "New Issue" button.
-3. Fill in the necessary details, following the provided template.
+This command will create a local copy of the project on your machine.
 
-# Suggesting New Features or Improvements
+2.  Navigate to the project folder
 
-If you have an idea for a new feature or an improvement to an existing one, please open an [issue](https://github.com/amanjaiman1/Product_3D/issues/new).
-To suggest a new feature, please follow these steps:
+```
+cd ProjectsHut
+```
 
-1. Go to the Issues section of the repository.
-2. Click on the "New Issue" button.
-3. Fill in the necessary details, following the provided template.
+3. Install dependencies
 
-## Code Formatting and Style Guidelines
+```
+npm install
+```
+
+### :warning: 4. Steps for setting up the environment (Vite + React) :hammer_and_wrench:
+
+Please follow the instructions below carefully:
+
+1️⃣ Environment Setup :
+
+Find a file named ` .example.env`. This file serves as a template for the environment variables required to run the application. Make a copy of this file and rename it to `.env`in the same directory.
+
+2️⃣ Adding Environment Variables :
+
+Open the newly created `.env` file and update the values of the environment variables according to the platform we're working on (Vite + React). For example, you might need to set environment variables related to Firebase, API keys, or other configurations specific to our project.
+
+Make sure to keep sensitive information, such as API keys and credentials, confidential and avoid committing them to the version control system.
+
+3️⃣ Building the Project :
+
+Once you've added the necessary environment variables, navigate to the `./client` directory in your terminal and run the following command to build the project:
+
+`npm run build`
+
+This command will generate the production-ready optimized build of our application.
+
+4️⃣ Running the Project :
+
+To start the development server and run the application locally, use the following command:
+
+`npm run dev`
+
+### Now go ahead and create a new branch and move to the branch
+
+```
+git checkout -b fix-issue-<ISSUE-NUMBER>
+```
+
+> **Note**: Replace `<ISSUE-NUMBER>` with the issue number you are working on
+
+> Add new features or fix bugs according to your issue number
+
+# To Push your changes
+
+- `git status -s` (Shows the changed files)
+- `git add --all` (Will add all the files to staging area)
+- `git commit -m "feat/docs/fix: <EXPLAIN-YOUR_CHANGES>"`
+- `git remote add upstream https://github.com/amanjaiman1/Product_3D`
+- `git push origin fix-issue-<ISSUE-NUMBER>`
+
+### Commit Message Format
+
+- We follow the conventional commit message format to provide a clear and standardized history of our project's changes. Each commit message should consist of a type and a descriptive message.
+  | Type | Heading | Rule | Description |
+  | --------- | -------- | ----------------------------------------- | -------------------------------------------- |
+  | ci | CI | Continuous Integration | Changes related to continuous integration. |
+  | chore | Chore | Maintenance tasks | Other changes that don't affect production. |
+  | docs | Docs | Documentation | Changes related to documentation. |
+  | feat | Feature | New Feature | New feature implementations or additions. |
+  | fix | Fix | Bug Fixes | Bug fixes or corrections. |
+  | perf | Perf | Performance Improvements | Performance-related improvements. |
+  | refactor | Refactor | Code Refactoring | Code changes that don't fix bugs or add features, but improve the code structure. |
+  | revert | Revert | Revert Previous Commits | Reverting previous commits. |
+  | style | Style | Code Formatting or Style | Changes related to code formatting or style. |
+  | assets | Assets | Add or Update Assets (e.g., images, files) | Changes related to adding or updating assets, such as images or other files. |
+
+> Please adhere to this format when making commits. This will help us maintain a clean and organized commit history.
+
+# Submitting Pull Requests
+
+- After this go to your forked GitHub repository and go to `Pull Request` section. Now you might be able to see a pop up saying **Pull Request**. Click on the popup and you will be redirected to pull request page
+
+- Now fill in the form template of the pull request and give the necessary description.
+
+- Click on **Submit**
+
+- Hurray! You just made your first contribution to this project 🎉
+
+- Wait for your pull request to be reviewed and merged.
+
+# Code Formatting and Style Guidelines
 
 Consistent code formatting and style are important for maintaining a clean and readable codebase. Please adhere to the following guidelines when submitting code changes:
 
 - Use spaces for indentation (4 spaces per level).
 - Follow the established naming conventions for variables, functions, and classes.
 - Write clear and concise comments to explain complex code sections.
-
-# Submitting Pull Requests
-
-We welcome contributions through pull requests (PRs). To submit a PR, please follow these steps:
-
-1. Fork the repository to your GitHub account.
-2. Create a new branch for your changes.
-3. Make the necessary code changes in your branch.
-4. Test your changes thoroughly.
-5. Submit a pull request, explaining the purpose and details of your changes.
-6. Be open to feedback and actively participate in the review process.
 
 # Communication
 
