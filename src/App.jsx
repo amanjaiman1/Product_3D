@@ -53,7 +53,7 @@ function App() {
                 <Customizer />
               </PrivateRoute>
             }
-            path="/app/customizer/editor"
+            path="/app/customizer/editor/:designId"
           />
           <Route
             element={
