@@ -1,28 +1,30 @@
 import React, { useState } from "react";
 import state from "../CustomizerViewer/valito";
-
+import { IoMdColorFill } from "react-icons/io";
+import { colorPicker } from "../../assets";
+import Button from "../Button";
 function CustomizerColor() {
-  const basicColors = [
-    "#000000",
-    "#FFFFFF",
-    "#FF0000",
-    "#00FF00",
-    "#0000FF",
-    "#FFFF00",
-    "#00FFFF",
-    "#FF00FF",
-    "#808080",
-    "#D3D3D3",
-    "#A9A9A9",
-    "#A52A2A",
-    "#FFA500",
-    "#800080",
-    "#FFC0CB",
-    "#000080",
-    "#008080",
-    "#808000",
-    "#800000",
-    "#90EE90",
+  var colorArray = [
+    "#FF6633",
+    "#FFB399",
+    "#FF33FF",
+    "#FFFF99",
+    "#00B3E6",
+    "#E6B333",
+    "#3366E6",
+    "#999966",
+    "#99FF99",
+    "#B34D4D",
+    "#80B300",
+    "#809900",
+    "#E6B3B3",
+    "#6680B3",
+    "#66991A",
+    "#E64D66",
+    "#4DB380",
+    "#FF4D4D",
+    "#99E6E6",
+    "#6666FF",
   ];
 
   const [selectedColor, setSelectedColor] = useState(null);
@@ -41,12 +43,26 @@ function CustomizerColor() {
   };
 
   return (
-    <div className="flex flex-col items-center">
+    <div className="flex flex-col items-center relative">
+      <div className="absolute right-10 top-[-50px]">
+        <Button>
+          <label htmlFor="inputColor">Custom Color</label>
+        </Button>
+        <input
+          name="inputColor"
+          id="inputColor"
+          hidden
+          type="color"
+          value={selectedColor}
+          onChange={handleColorChange}
+          className="my-4 absolute rounded right-0"
+        />
+      </div>
       <div className="flex flex-wrap justify-center">
-        {basicColors.map((color, index) => (
+        {colorArray?.map((color, index) => (
           <div
             key={index}
-            className={`w-6 h-6 rounded-full m-1 cursor-pointer ${
+            className={`w-[100px] h-[100px]  m-1 cursor-pointer ${
               selectedColorIndex === index ? "ring-2 ring-black" : ""
             }`}
             style={{ backgroundColor: color }}
@@ -54,12 +70,6 @@ function CustomizerColor() {
           ></div>
         ))}
       </div>
-      <input
-        type="color"
-        value={selectedColor}
-        onChange={handleColorChange}
-        className="my-4 rounded border-gray-300 shadow border-2"
-      />
     </div>
   );
 }
