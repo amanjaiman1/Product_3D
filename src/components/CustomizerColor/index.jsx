@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import state from "../CustomizerViewer/valito";
-import { IoMdColorFill } from "react-icons/io";
-import { colorPicker } from "../../assets";
 import Button from "../Button";
 function CustomizerColor() {
   var colorArray = [
