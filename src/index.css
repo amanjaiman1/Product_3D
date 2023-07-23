@@ -381,3 +381,14 @@ nav.sticky {
   stroke-dashoffset: 0;
   stroke-dasharray: 760;
 }
+
+input[type="color"] {
+  opacity: 0;
+  display: block;
+  width: 32px;
+  height: 32px;
+  border: none;
+}
+#inputColor {
+  float: left;
+}
