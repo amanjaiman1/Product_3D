@@ -1,8 +1,14 @@
 import React, { useEffect, useState } from "react";
 import RecentDesignCard from "../../components/RecentDesignCard";
 import { db } from "../../firebase/firebase";
-import { collection, doc, getDocs, query, where } from "firebase/firestore";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import ContextMenu from "../../components/ContextMenu";
 function RecentDesigns() {
+  const [contextItem, setcontextItem] = useState(null);
+  const handleConextMenu = (event, item) => {
+    event.preventDefault();
+    setcontextItem({ x: event.clientX, y: event.clientY, data: item });
+  };
   const [recentDesign, setrecentDesign] = useState({
     loading: true,
     data: [],
@@ -40,10 +46,22 @@ function RecentDesigns() {
         <h1>Loading...</h1>
       ) : recentDesign.data.length != 0 ? (
         recentDesign?.data?.map((item, index) => (
-          <RecentDesignCard key={index} data={item} />
+          <RecentDesignCard
+            onContextMenu={(event) => handleConextMenu(event, item)}
+            key={index}
+            data={item}
+          />
         ))
       ) : (
         <h1>No designs found</h1>
+      )}
+      {contextItem && (
+        <ContextMenu
+          onClose={setcontextItem}
+          x={contextItem?.x}
+          y={contextItem?.y}
+          data={contextItem?.data}
+        />
       )}
     </div>
   );
