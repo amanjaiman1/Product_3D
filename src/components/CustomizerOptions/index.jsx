@@ -32,7 +32,7 @@ function CustomizerOptions({ cameraRef, cameraState }) {
   };
 
   return (
-    <div className="fixed flex justify-between items-center h-16 border-2 border-solid border-black-500 bottom-10 left-[150px] bg-white rounded-full shadow p-4">
+    <div className=" absolute flex justify-between items-center h-16 border-2 border-solid border-black-500 bottom- right-0 bg-white rounded-full shadow p-4">
       <div
         onClick={handleZoomIn}
         className="hover:bg-slate-200 cursor-pointer w-16 h-10 border-r-2 border-r-solid border-r-gray-400 relative"

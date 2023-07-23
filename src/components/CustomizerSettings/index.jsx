@@ -3,7 +3,7 @@ import CustomizerTabs from "../CustomizerTabs";
 
 function CustomizerSettings() {
   return (
-    <div className="ml-4 sm:ml-0 sm:w-full sm:rounded sm:border-gray-300 sm:shadow sm:border-2">
+    <div className=" border-2 rounded shadow-lg h-[500px] p-5 bg-white relative">
       <CustomizerTabs />
     </div>
   );
