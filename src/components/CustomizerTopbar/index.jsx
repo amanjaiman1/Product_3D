@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Button from "../Button";
 import { useNavigate } from "react-router-dom";
 import Avatar from "./../Avatar";
+import { generateUUID } from "three/src/math/MathUtils";
 
 function CustomizerTopbar() {
   const [userInfo, setuserInfo] = useState({
@@ -35,7 +36,8 @@ function CustomizerTopbar() {
       <div className="flex space-x-2 items-center">
         <Button
           onClick={() => {
-            navigate("/app/customizer/editor");
+            let uuid = generateUUID();
+            navigate("/app/customizer/editor/" + uuid);
           }}
         >
           Design New T-shirt
