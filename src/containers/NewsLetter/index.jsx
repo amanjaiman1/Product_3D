@@ -53,7 +53,7 @@ function NewsLetter() {
         </motion.div>
 
         <form className="flex flex-col md:flex-row pt-3 md:pt-5 ml:w-full md:w-full lg:w-[600px]">
-          <label htmlFor="email" className="sr-only-label">Please provide your email address to subscribe to our newsletter</label>
+          <label htmlFor="email" className="sr-only">Please provide your email address to subscribe to our newsletter</label>
           <input
             type="email"
             name="email"
