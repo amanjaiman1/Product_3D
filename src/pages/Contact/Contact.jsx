@@ -98,7 +98,7 @@ function Contact() {
         <div className="flex flex-wrap justify-center p-6 gap-4 rounded-xl sm:p-12 dark:text-gray-100 ml-2">
           {filteredUsers.map((contributor) => (
             <div key={contributor.id} className="card">
-              <div className="content">
+              <div className="contributor-content">
                 <div className="back">
                   <div className="back-content">
                     <div className="front-content">
