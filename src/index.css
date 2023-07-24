@@ -43,21 +43,6 @@ body {
   display: none;
 }
 
-/*
- Screen reader only label, hidden for normal users
-*/
-
-.sr-only-label {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
-
 /* Dark Mode Functionality  */
 
 /* .dark-mode {
