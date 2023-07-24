@@ -91,7 +91,9 @@ Thank you for using our 3D Product Customization Website!
 <img src="https://imgur.com/wuiJXqr.png"/>
 
 # License
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-The project is licensed under the [MIT License](./LICENSE).
+Terms and conditions for use, reproduction and distribution are under the [MIT License](https://opensource.org/license/mit/). Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files to deal in the Software without restrictions.
+
 
 <p align="right">(<a href="#top">Back to top</a>)</p>
