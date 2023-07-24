@@ -57,7 +57,7 @@ function Footer() {
 
   return (
     <footer
-      className={`${styles.flexCenter} ${styles.paddingY} flex-col pb-25 pt-0`}
+      className={`${styles.flexCenter} ${styles.paddingY} flex-col pb-25 pt-0  border border-[4px] shadow-2xl bg-[#F8F9FF]`}
     >
       <div className="container mx-auto mb-5">
         <div
