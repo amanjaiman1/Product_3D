@@ -35,10 +35,13 @@ function ProfileContainer() {
           <h1 className="text-secondary">{userInfo?.data?.fullName}</h1>
         </FormGroup>
         <FormGroup title={"Job"}>
-          <h1 className="text-secondary">Desinger</h1>
+          <h1 className="text-secondary">{userInfo?.data?.job}</h1>
         </FormGroup>
         <FormGroup title={"Email"}>
           <h1 className="text-secondary">{userInfo?.data?.email}</h1>
+        </FormGroup>
+        <FormGroup title={"Mobile"}>
+          <h1 className="text-secondary">{userInfo?.data?.mobile}</h1>
         </FormGroup>
       </div>
       <div className="mt-5">
