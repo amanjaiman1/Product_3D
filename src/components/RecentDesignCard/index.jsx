@@ -1,9 +1,9 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import { truncate } from "../../utils/utils";
 import state from "../CustomizerViewer/valito";
 import { useNavigate } from "react-router";
 
-function RecentDesignCard({ data }) {
+function RecentDesignCard({ data, onContextMenu }) {
   const navigate = useNavigate();
   let { title, lastUpdate } = data;
   if (title == undefined) {
@@ -19,8 +19,9 @@ function RecentDesignCard({ data }) {
   };
   return (
     <div
+      onContextMenu={onContextMenu}
       onClick={handleClick}
-      className="w-[200px] h-[200px] cursor-pointer  my-3 p-2 rounded"
+      className="w-[200px] h-[200px] cursor-pointer  my-3 p-2 rounded relative"
     >
       <div className="text-5xl bg-pink-600 h-[150px] rounded-lg hover:bg-pink-500 flex justify-center items-center text-white">
         {title.slice(0, 1).toUpperCase()}

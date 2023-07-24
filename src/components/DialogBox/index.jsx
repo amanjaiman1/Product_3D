@@ -1,6 +1,6 @@
 import React, { Children } from "react";
 
-function DialogBox({ visible, setVisible, children }) {
+function DialogBox({ visible, children }) {
   return (
     <div
       className={`${
