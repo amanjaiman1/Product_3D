@@ -29,7 +29,7 @@ function Blog() {
       </div>
       <div className="sm:grid justify-center hidden">
         <div className="inline-flex font-normal text-sm">
-          <div className="w-auto h-auto border border-spacing-2 border-slate-300 shadow-lg rounded-3xl p-2 text-slate-600 m-4">
+          <div className="w-auto h-auto  border border-spacing-2 border-slate-300 shadow-lg rounded-3xl p-2 text-slate-600 m-4">
             ALL POSTS
           </div>
           <div className="w-auto h-auto border border-spacing-2 border-slate-300 shadow-lg rounded-3xl p-2 text-slate-600 m-4">
