@@ -11,7 +11,7 @@ function PrivateRoute({ children }) {
       let userInfo = await JSON.parse(localStorage.getItem("userInfo"));
       if (access_token) {
         const response = await axios
-          .post(import.meta.env.VITE_APP_BASEURL, {
+          .post(`${import.meta.env.VITE_APP_BASEURL}/v1/verify`, {
             access_token: access_token,
             ...userInfo,
           })
