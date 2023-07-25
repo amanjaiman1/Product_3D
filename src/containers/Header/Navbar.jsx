@@ -17,9 +17,9 @@ const Navbar = () => {
 
   return (
     <nav
-      className={`navbar h-16 pt-[20px] pb-[60px] p-[8%] max-sm:px-0 max-sm:py-5 flex`}
+      className={` bg-[] text-white h-16 pt-[20px] pb-[60px] p-[8%] max-sm:px-0 max-sm:py-5 flex`}
     >
-      <div className="pl-5">
+      <div className="pl-5 ">
         <Link to="/">
           <div className="mt-9 lg:hidden align-center items-center">
             <img
@@ -30,7 +30,7 @@ const Navbar = () => {
           </div>
         </Link>
       </div>
-      <header class="bg-white bg-opacity-50 w-[120%] h-[60px] max-lg:hidden shadow-lg rounded-xl flex justify-between items-center">
+      <header class=" bg-[#12010166] navbar bg-opacity-50 w-[120%] h-[60px] max-lg:hidden shadow-lg rounded-xl flex justify-between items-center">
         <div href="" class="flex-shrink-0 align-items items-center mt-1">
           <img
             class=""

@@ -147,6 +147,11 @@ label .fa-moon {
 } */
 
 /* Sticky navbar */
+.navbar {
+  box-shadow: rgba(179, 179, 255, 0.938) 0px 50px 100px -20px,
+    rgba(199, 199, 199, 0.911) 0px 30px 60px -30px;
+}
+
 nav {
   background-color: transparent;
   position: sticky;
@@ -391,4 +396,7 @@ input[type="color"] {
 }
 #inputColor {
   float: left;
+}
+
+.newHero {
 }

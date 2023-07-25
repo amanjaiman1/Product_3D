@@ -5,7 +5,7 @@ import styles from "../style";
 
 function HomeLayout({ children }) {
   return (
-    <div className="bg-gradient-to-t from-slate-50 to-blue-100">
+    <div className="bg-[#000000]">
       <Header />
       <main className="min-[400px]:px-10 mt-8">
         <section className="container mx-auto">{children}</section>
