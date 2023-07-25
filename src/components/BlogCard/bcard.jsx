@@ -1,10 +1,12 @@
 import React from "react";
 export default function Card(props) {
   return (
-    <div className="card h-[395px] mb-4">
-      <img src={props.image} className="w-auto p-3" />
-      <p className="text-slate-500 text-sm lg:text-lg m-2">T-SHIRT DESIGN TIPS</p>
-      <p className="text-blue-900 font-extrabold text-lg lg:text-lg m-4 w-9/12">
+    <div className="m-4 rounded-lg flex flex-col justify-center">
+      <img src={props.image} className="mb-4" />
+      <p className="text-slate-400 text-sm lg:text-lg m-2 text-left">
+        T-SHIRT DESIGN TIPS
+      </p>
+      <p className="text-slate-300 font-medium text-base lg:text-lg m-2 overflow-hidden text-left">
         {props.title}
       </p>
     </div>
