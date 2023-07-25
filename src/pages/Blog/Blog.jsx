@@ -15,7 +15,9 @@ function Blog() {
     <div style={{ fontFamily: "Poppins, sans-serif" }} className="bg-slate-900">
       <div className="grid justify-center text-white p-6 text-center pt-[10%]">
         {/* <img src={blogbar} alt="blog bar" className="w-[96vw]" /> */}
-        <p className="text-lg md:text-xl lg:text-2xl">Our Blog</p>
+        <p className="text-lg md:text-xl lg:text-2xl text-purple-400 m-4">
+          Our Blog
+        </p>
         <p className="text-4xl md:text-5xl lg:text-7xl font-semibold">
           RESOURCES AND INSIGHTS
         </p>
@@ -34,7 +36,7 @@ function Blog() {
           />
         </div>
       </div>
-      <div className="grid justify-center p-4 ">
+      <div className="grid justify-center p-4">
         <div className="inline-flex font-normal md:text-sm text-xs">
           <div className="w-auto h-auto text-slate-300 p-2 hover:bg-purple-300 hover:font-semibold hover:text-slate-800 border rounded-2xl border-slate-500 m-2">
             All posts
@@ -50,9 +52,9 @@ function Blog() {
           </div>
         </div>
       </div>
-      <div className="flex flex-col justify-center lg:m-6">
-        <img src={blogImage1} alt="blogImage 1" className="md:m-2 m-4" />
-        <div className="flex flex-col md:-mt-[15rem] lg:-mt-[18rem] p-4 m-2 rounded-md md:backdrop-blur-md text-white font-medium">
+      <div className="flex flex-col justify-center lg:m-6 items-center">
+        <img src={blogImage1} alt="blogImage 1" className="md:m-2 m-4 w-9/12" />
+        <div className="flex flex-col md:-mt-[15rem] lg:-mt-[18rem]p-4 m-2 w-9/12 rounded-md md:backdrop-blur-md text-white font-medium">
           <p className="text-sm lg:text-lg m-2">T-SHIRT DESIGN TIPS</p>
           <p className="text-lg md:text-xl lg:text-4xl m-2 font-semibold">
             Essential Tips for Creating Eye-Catching T-shirts
@@ -70,12 +72,14 @@ function Blog() {
           </div>
         </div>
       </div>
-      <div>
+      <div className="items-center">
         <p className="text-slate-100 font-semibold text-2xl lg:text-4xl m-4 mb-14 grid justify-center items-center">
           Our Articles
         </p>
-        <div className="grid lg:grid-cols-3 md:grid-cols-2 justify-items-center content-center">
-          {blogCard}
+        <div className="flex justify-center">
+          <div className="grid lg:grid-cols-3 md:grid-cols-2  w-9/12">
+            {blogCard}
+          </div>
         </div>
       </div>
       <NewsLetter />
