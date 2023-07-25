@@ -1,7 +1,7 @@
 const questionsAnswers = [
   {
     id: 1,
-    icon: "./src/assets/faq Icons/1.webp",
+    icon: "./src/assets/faq Icons/color.webp",
     question:
       "How many t-shirt colours are available for selection in this customisation application?",
     answer:
@@ -9,7 +9,7 @@ const questionsAnswers = [
   },
   {
     id: 2,
-    icon: "./src/assets/faq Icons/2.webp",
+    icon: "./src/assets/faq Icons/logo.webp",
     question:
       "Can I personalise my t-shirt design by uploading my own logos or images",
     answer:
@@ -17,7 +17,7 @@ const questionsAnswers = [
   },
   {
     id: 3,
-    icon: "./src/assets/faq Icons/4.webp",
+    icon: "./src/assets/faq Icons/feature.webp",
     question:
       "What does the Unsplash integration feature entail and how does it elevate the t-shirt customisation experience?",
 
@@ -25,7 +25,7 @@ const questionsAnswers = [
   },
   {
     id: 4,
-    icon: "./src/assets/faq Icons/8.webp",
+    icon: "./src/assets/faq Icons/remove.webp",
     question:
       " Is there a functionality to remove logos or images that have been applied to the t-shirt ",
 
@@ -34,7 +34,7 @@ const questionsAnswers = [
   },
   {
     id: 5,
-    icon: "./src/assets/faq Icons/7.webp",
+    icon: "./src/assets/faq Icons/download.webp",
     question: " Can I download the final t-shirt design as an image file ",
 
     answer:
@@ -43,7 +43,7 @@ const questionsAnswers = [
 
   {
     id: 6,
-    icon: "./src/assets/faq Icons/6.webp",
+    icon: "./src/assets/faq Icons/maximum.webp",
     question:
       " Is there a maximum limit on the number of logos or images that can be uploaded to personalise the t-shirt",
 
@@ -53,7 +53,7 @@ const questionsAnswers = [
 
   {
     id: 7,
-    icon: "./src/assets/faq Icons/11.webp",
+    icon: "./src/assets/faq Icons/preview.webp",
     question:
       " Can I preview the t-shirt design before finalising and downloading it?",
 
@@ -63,7 +63,7 @@ const questionsAnswers = [
 
   {
     id: 8,
-    icon: "./src/assets/faq Icons/10.webp",
+    icon: "./src/assets/faq Icons/restriction.webp",
     question:
       " Are there any restrictions on the file format or size when uploading logos or images",
 
@@ -72,7 +72,7 @@ const questionsAnswers = [
   },
   {
     id: 9,
-    icon: "./src/assets/faq Icons/12.webp",
+    icon: "./src/assets/faq Icons/additional.webp",
     question:
       " Does the application offer additional customisation options beyond colour selection and  logo/image upload? ",
 
