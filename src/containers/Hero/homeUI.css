@@ -7,15 +7,15 @@
   padding: 4rem 2rem 5rem 2rem;
 }
 .title {
-  font-size: 3rem !important;
-  font-weight: 700 !important;
+  font-size: 3rem;
 }
+
 @media screen and (min-width: 850px) and (max-width: 1000px) {
   .heroUI {
     padding: 4rem 1rem 4rem 1rem;
   }
   .title {
-    font-size: 2.2rem !important;
+    font-size: 2.2rem;
     width: 105%;
   }
 }
@@ -31,13 +31,10 @@
   .heroUI {
     margin: auto;
     width: 90%;
-    padding: 3rem 0.7rem 3rem 0.7rem;
+    padding: 3rem 1rem 3rem 1rem;
   }
   .heroimg {
     transform: scale(1);
-  }
-  .f-btn {
-    width: max-content !important;
   }
 }
 @media only screen and (max-width: 850px) {
@@ -50,7 +47,7 @@
     margin-top: -50px !important;
   }
   .title {
-    font-size: 2rem !important;
+    font-size: 2rem;
   }
 }
 @media only screen and (max-width: 600px) {
