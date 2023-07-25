@@ -6,7 +6,7 @@ import EC from "../../assets/guideImage/EC.png";
 
 function GuideBook() {
   return (
-    <div className="bg-slate-900  text-white">
+    <div className="bg-black  text-white">
       {/*----------------------- Title of page------------------------------- */}
       <section className="w-[100%] sm:mt-4 p-4">
         <p className="lg:text-8xl md:text-6xl text-4xl text-white font-bold text-center p-4">
