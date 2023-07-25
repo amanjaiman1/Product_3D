@@ -12,7 +12,7 @@ function Blog() {
     return <Card key={item.id} {...item} />;
   });
   return (
-    <div style={{ fontFamily: "Poppins, sans-serif" }} className="bg-slate-900">
+    <div style={{ fontFamily: "Poppins, sans-serif" }} className="bg-black">
       <div className="grid justify-center text-white p-6 text-center pt-[10%]">
         {/* <img src={blogbar} alt="blog bar" className="w-[96vw]" /> */}
         <p className="text-lg md:text-xl lg:text-2xl text-purple-400 m-4">
