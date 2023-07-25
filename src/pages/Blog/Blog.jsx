@@ -12,12 +12,19 @@ function Blog() {
     return <Card key={item.id} {...item} />;
   });
   return (
-    <div style={{ fontFamily: "Poppins, sans-serif" }}>
-      <div className="grid justify-center">
-        <img src={blogbar} alt="blog bar" className="w-[96vw]" />
+    <div style={{ fontFamily: "Poppins, sans-serif" }} className="bg-slate-900">
+      <div className="grid justify-center text-white p-6 text-center pt-[10%]">
+        {/* <img src={blogbar} alt="blog bar" className="w-[96vw]" /> */}
+        <p className="text-lg md:text-xl lg:text-2xl">Our Blog</p>
+        <p className="text-4xl md:text-5xl lg:text-7xl font-semibold">
+          RESOURCES AND INSIGHTS
+        </p>
+        <p className="text-sm md:text-lg lg:text-xl mt-4 font-thin">
+          The latest industry news, interviews, technologies, and resources.
+        </p>
       </div>
-      <div className="grid justify-center md:mt-[-25px] mt-[-15px]">
-        <div className="inline-flex bg-white shadow-lg rounded-xl">
+      <div className="grid justify-center">
+        <div className="inline-flex bg-white shadow-md shadow-slate-600 rounded-xl">
           <img src={searchIcon} alt="search icon" className="p-3 w-12 lg:w-16" />
           <input
             className="w-[50vw] lg:w-[40vw] lg:h-16 rounded-xl p-2"
@@ -27,49 +34,44 @@ function Blog() {
           />
         </div>
       </div>
-      <div className="sm:grid justify-center hidden">
-        <div className="inline-flex font-normal text-sm">
-          <div className="w-auto h-auto  border border-spacing-2 border-slate-300 shadow-lg rounded-3xl p-2 text-slate-600 m-4">
-            ALL POSTS
+      <div className="grid justify-center p-4 ">
+        <div className="inline-flex font-normal md:text-sm text-xs">
+          <div className="w-auto h-auto text-slate-300 p-2 hover:bg-purple-300 hover:font-semibold hover:text-slate-800 border rounded-2xl border-slate-500 m-2">
+            All posts
           </div>
-          <div className="w-auto h-auto border border-spacing-2 border-slate-300 shadow-lg rounded-3xl p-2 text-slate-600 m-4">
-            T-SHIRT DESIGN TIPS
+          <div className="w-auto h-auto text-slate-300 p-2 hover:bg-purple-300 hover:font-semibold hover:text-slate-800 border rounded-2xl border-slate-500 m-2">
+            T-shirt design tips
           </div>
-          <div className="w-auto h-auto border border-spacing-2 border-slate-300 shadow-lg rounded-3xl p-2 text-slate-600 m-4">
-            PRINTING TECHNIQUES
+          <div className="w-auto h-auto text-slate-300 p-2 hover:bg-purple-300 hover:font-semibold hover:text-slate-800 border rounded-2xl border-slate-500 m-2">
+            Printing Techniques
           </div>
-          <div className="w-auto h-auto border border-spacing-2 border-slate-300 shadow-lg rounded-3xl p-2 text-slate-600 m-4">
-            FASHION TRENDS
+          <div className="w-auto h-auto text-slate-300 p-2 hover:bg-purple-300 hover:font-semibold hover:text-slate-800 border rounded-2xl border-slate-500 m-2">
+            Fashion Trends
           </div>
         </div>
       </div>
-      <div className="md:inline-flex justify-center lg:m-6">
-        <img src={blogImage1} alt="blogImage 1" className="md:w-2/4 md:m-4 m-2" />
-        <div className="flex flex-col md:w-2/4">
-          <p className="text-slate-500 text-sm lg:text-lg m-4">
-            T-SHIRT DESIGN TIPS
+      <div className="flex flex-col justify-center lg:m-6">
+        <img src={blogImage1} alt="blogImage 1" className="md:m-2 m-4" />
+        <div className="flex flex-col md:-mt-[15rem] lg:-mt-[18rem] p-4 m-2 rounded-md md:backdrop-blur-md text-white font-medium">
+          <p className="text-sm lg:text-lg m-2">T-SHIRT DESIGN TIPS</p>
+          <p className="text-lg md:text-xl lg:text-4xl m-2 font-semibold">
+            Essential Tips for Creating Eye-Catching T-shirts
           </p>
-          <p className="text-blue-900 font-extrabold text-lg md:text-2xl lg:text-4xl m-4">
-            Mastering the Art: Essential Tips for Creating Eye-Catching T-shirt
-            Designs
-          </p>
-          <p className="text-slate-800 font-light text-xs lg:text-lg m-4">
+          <p className="font-light text-xs lg:text-lg m-2">
             Discover the essential tips and techniques you need to master the art of
-            creating eye-catching T-shirt designs. From color selection to
-            typography, this article provides expert guidance to help you craft
-            stunning designs that make a lasting impression.
+            creating eye-catching T-shirt designs.
           </p>
-          <div className="inline-flex md:mb-6">
+          <div className="inline-flex md:mb-6 mt-4 ">
             <img src={ceo} alt="ceo image" className="w-auto ml-4" />
             <div className="flex flex-col m-6">
-              <p className="font-bold">AMAN JAIMAN</p>
-              <p className="font-light text-slate-600">Founder & CEO</p>
+              <p className="font-bold text-white">AMAN JAIMAN</p>
+              <p className="font-light text-slate-100">Founder & CEO</p>
             </div>
           </div>
         </div>
       </div>
       <div>
-        <p className="text-blue-900 font-extrabold text-lg lg:text-4xl m-4 mb-14 grid justify-center items-center">
+        <p className="text-slate-100 font-semibold text-2xl lg:text-4xl m-4 mb-14 grid justify-center items-center">
           Our Articles
         </p>
         <div className="grid lg:grid-cols-3 md:grid-cols-2 justify-items-center content-center">
