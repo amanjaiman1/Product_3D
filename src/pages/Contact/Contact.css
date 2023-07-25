@@ -56,7 +56,12 @@
   position: absolute;
   width: 99%;
   height: 99%;
-  background-color: paleturquoise;
+  /* background-color: paleturquoise; */
+  background: radial-gradient(
+    circle at 50% 20%,
+    rgb(59, 149, 237) 0%,
+    rgb(7, 90, 173) 90%
+  );
   border-radius: 5px;
   color: white;
   display: flex;
@@ -64,6 +69,11 @@
   justify-content: center;
   align-items: center;
   gap: 30px;
+}
+
+.font-p {
+  font-weight: 600;
+  word-break: break-word;
 }
 
 .card:hover .content {
@@ -109,7 +119,6 @@
 }
 
 .title {
-  font-size: 11px;
   max-width: 100%;
   display: flex;
   justify-content: space-between;
@@ -120,10 +129,8 @@
 }
 
 .card-footer {
-  color: black;
-  /* margin-top: 5px; */
-  font-size: 10px;
-  /* content: flex-end; */
+  color: rgb(235, 235, 235);
+  font-size: 13px;
 }
 
 .front .img {
