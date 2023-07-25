@@ -2,7 +2,8 @@ import React, { useState, useRef } from "react";
 import { useSnapshot } from "valtio";
 import state from "../CustomizerViewer/valito";
 import { ChromePicker } from "react-color";
-
+import TextField from "../../components/TextField";
+import Button from "../Button";
 function CustomizerText() {
   const [text, setText] = useState("");
   const [image, setImage] = useState(null);
@@ -65,45 +66,48 @@ function CustomizerText() {
 
   return (
     <div className="container mx-auto px-4">
-      <h1 className="text-3xl font-bold mb-4">CustomizerText</h1>
       <div className="mb-4">
-        <input
+        <TextField
           type="text"
           value={text}
           onChange={handleTextChange}
           placeholder="Enter text"
-          className="border border-gray-400 rounded-md p-2 w-full sm:w-auto"
           ref={inputRef}
         />
+        <div className="space-x-3">
+          <Button className={"mt-3"} onClick={handleAddText}>
+            Add Text
+          </Button>
+          <Button onClick={handleColorButtonClick}>Color</Button>
+        </div>
       </div>
       <div className="flex flex-col sm:flex-row items-center mb-4">
-        <button
-          onClick={handleAddText}
-          className="bg-blue-500 hover:bg-yellow-500 text-white font-bold py-2 px-4 rounded-md mb-2 sm:mb-0 sm:mr-2"
-        >
-          Add Text
-        </button>
-        <div className="flex items-center">
+        <div className="flex flex-col items-center w-full">
+          <label
+            className="bg-gray-600 border-dashed border-2 cursor-pointer w-full h-[100px]  text-white rounded flex justify-center items-center"
+            htmlFor="imageid"
+          >
+            Upload Image
+          </label>
           <input
+            hidden
+            id="imageid"
             type="file"
             accept="image/*"
             onChange={handleImageUpload}
             ref={inputRef}
           />
-          <button
-            onClick={handleFullDecalUpdate}
-            className="bg-gray-300 hover:bg-yellow-300 text-gray-800 font-bold py-2 px-4 rounded-md ml-2"
-          >
-            {state.isFullTexture ? "Full On" : "Full Off"}
-          </button>
+          <div className="mt-2 space-x-2">
+            <button
+              onClick={handleFullDecalUpdate}
+              className="bg-gray-300 hover:bg-blue-700 hover:text-white text-gray-800 font-bold py-2 px-4 rounded-md ml-2 "
+            >
+              {state.isFullTexture ? "Full On" : "Full Off"}
+            </button>
+          </div>
         </div>
       </div>
-      <button
-        onClick={handleColorButtonClick}
-        className="bg-gray-300 hover:bg-yellow-300 text-gray-800 font-bold py-2 px-4 rounded-md mr-2"
-      >
-        Color
-      </button>
+
       {showColorPicker && (
         <div className="mt-2">
           <ChromePicker
@@ -114,18 +118,18 @@ function CustomizerText() {
         </div>
       )}
 
-      <div className="mt-4">
+      <div className="mt-4 ">
         <label className="mr-2 font-bold">Font Size:</label>
         <div className="flex">
           <button
             onClick={() => handleFontSizeUpdate(1)}
-            className="border border-gray-400 rounded-full px-3 py-1 mr-2 hover:bg-yellow-300"
+            className="border border-gray-400 rounded-full px-3 py-1 mr-2 hover:bg-blue-700 hover:text-white"
           >
             ↑
           </button>
           <button
             onClick={() => handleFontSizeUpdate(-1)}
-            className="border border-gray-400 rounded-full px-3 py-1 hover:bg-yellow-300"
+            className="border border-gray-400 rounded-full px-3 py-1 hover:bg-blue-700 hover:text-white"
           >
             ↓
           </button>
@@ -136,25 +140,25 @@ function CustomizerText() {
         <div className="flex">
           <button
             onClick={() => handlePositionUpdate(0, -0.1)}
-            className="border border-gray-400 rounded-full px-3 py-1 mr-2 hover:bg-yellow-300"
+            className="border border-gray-400 rounded-full px-3 py-1 mr-2 hover:bg-blue-700 hover:text-white"
           >
             →
           </button>
           <button
             onClick={() => handlePositionUpdate(0, 0.1)}
-            className="border border-gray-400 rounded-full px-3 py-1 mr-2 hover:bg-yellow-300"
+            className="border border-gray-400 rounded-full px-3 py-1 mr-2 hover:bg-blue-700 hover:text-white"
           >
             ←
           </button>
           <button
             onClick={() => handlePositionUpdate(1, 0.1)}
-            className="border border-gray-400 rounded-full px-3 py-1 mr-2 hover:bg-yellow-300"
+            className="border border-gray-400 rounded-full px-3 py-1 mr-2 hover:bg-blue-700 hover:text-white"
           >
             ↑
           </button>
           <button
             onClick={() => handlePositionUpdate(1, -0.1)}
-            className="border border-gray-400 rounded-full px-3 py-1 hover:bg-yellow-300"
+            className="border border-gray-400 rounded-full px-3 py-1 hover:bg-blue-700 hover:text-white"
           >
             ↓
           </button>

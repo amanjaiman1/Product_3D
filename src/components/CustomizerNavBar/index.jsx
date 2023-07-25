@@ -1,10 +1,19 @@
 import React, { useState } from "react";
 import Avatar from "../Avatar";
 import { downloadCanvasToImage } from "../../utils/customizer.help";
-import { useNavigate, useNavigation } from "react-router-dom";
+import { useNavigate, useNavigation, useParams } from "react-router-dom";
+import DialogBox from "../DialogBox";
+import Button from "../Button";
+import { collection, doc, getDoc, setDoc, updateDoc } from "firebase/firestore";
+import { async } from "regenerator-runtime";
+import { snapshot, useSnapshot } from "valtio";
+import state from "../CustomizerViewer/valito";
+import { db } from "./../../firebase/firebase";
 
 function CustomizerNavBar() {
+  const { designId } = useParams();
   const [isLoading, setIsLoading] = useState(false);
+  const [showDialog, setshowDialog] = useState(false);
   const onShare = () => {
     if (isLoading) return;
     setIsLoading(true);
@@ -45,8 +54,9 @@ function CustomizerNavBar() {
         setIsLoading(false);
       });
   };
-  const onSave = () => {
-    alert("onSaved");
+  const onSave = (e) => {
+    e.preventDefault();
+    setshowDialog(true);
   };
   const navigate = useNavigate();
   const onProfile = () => {
@@ -54,6 +64,32 @@ function CustomizerNavBar() {
   };
   const onDownload = () => {
     downloadCanvasToImage();
+  };
+  const onHandleSave = async () => {
+    try {
+      const { uid } = JSON.parse(await localStorage.getItem("userInfo"));
+      const designTitle = await localStorage.getItem("designName");
+      const designRef = doc(db, "designs", designId);
+      const designSnap = await getDoc(designRef);
+      if (!designSnap.exists()) {
+        await setDoc(designRef, {
+          uid: uid,
+          title: designTitle,
+          lastUpdate: new Date().toUTCString(),
+          ...snapshot(state),
+        });
+      } else {
+        console.log("false");
+        await updateDoc(designRef, {
+          ...snapshot(state),
+          title: designTitle,
+          lastUpdate: new Date().toUTCString(),
+        });
+      }
+      setshowDialog(false);
+    } catch (error) {
+      console.log(error);
+    }
   };
   return (
     <div className="bg-white p-2 px-5 shadow-lg rounded-full">
@@ -69,6 +105,22 @@ function CustomizerNavBar() {
         </div>
         <Avatar className={"w-10 h-10"} onClick={onProfile} />
       </div>
+      <DialogBox setVisible={setshowDialog} visible={showDialog}>
+        <div className="flex justify-center flex-col items-center h-full">
+          <div>Do you want to save the design?</div>
+          <div className="space-x-3 space-y-2">
+            <Button onClick={onHandleSave}>Save</Button>
+            <Button
+              onClick={() => {
+                setshowDialog(false);
+              }}
+              className={"bg-red-700"}
+            >
+              Cancel
+            </Button>
+          </div>
+        </div>
+      </DialogBox>
     </div>
   );
 }

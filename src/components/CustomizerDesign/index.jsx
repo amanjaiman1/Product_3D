@@ -32,7 +32,7 @@ function CustomizerDesign() {
           );
         })}
       </div>
-      <div className="flex flex-row ">
+      <div className="flex flex-row absolute bottom-10">
         <DotPagination
           data={dummyDesign}
           paginate={paginate}

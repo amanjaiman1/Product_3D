@@ -3,13 +3,14 @@ import RecentDesignCard from "../../components/RecentDesignCard";
 import { db } from "../../firebase/firebase";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import ContextMenu from "../../components/ContextMenu";
-function RecentDesigns() {
+
+function Favourite() {
   const [contextItem, setcontextItem] = useState(null);
   const handleConextMenu = (event, item) => {
     event.preventDefault();
     setcontextItem({ x: event.clientX, y: event.clientY, data: item });
   };
-  const [recentDesign, setrecentDesign] = useState({
+  const [favDesign, setFavDesign] = useState({
     loading: true,
     data: [],
   });
@@ -22,15 +23,17 @@ function RecentDesigns() {
         const q = query(designRef, where("uid", "==", userInfo.uid));
         const data = await getDocs(q);
         if (data.empty) {
-          setrecentDesign((prev) => {
+          setFavDesign((prev) => {
             return { ...prev, loading: false };
           });
           return;
         }
         data.forEach((snap) => {
-          result.push({ id: snap.id, ...snap.data() });
+          if (snap?.data()?.isFavourite) {
+            result.push({ id: snap.id, ...snap.data() });
+          }
         });
-        setrecentDesign({
+        setFavDesign({
           loading: false,
           data: result,
         });
@@ -42,10 +45,10 @@ function RecentDesigns() {
   }, []);
   return (
     <div className="flex space-x-1 flex-wrap p-4 items-center">
-      {recentDesign?.loading ? (
+      {favDesign?.loading ? (
         <h1>Loading...</h1>
-      ) : recentDesign.data.length != 0 ? (
-        recentDesign?.data?.map((item, index) => (
+      ) : favDesign.data.length != 0 ? (
+        favDesign?.data?.map((item, index) => (
           <RecentDesignCard
             onContextMenu={(event) => handleConextMenu(event, item)}
             key={index}
@@ -67,4 +70,4 @@ function RecentDesigns() {
   );
 }
 
-export default RecentDesigns;
+export default Favourite;

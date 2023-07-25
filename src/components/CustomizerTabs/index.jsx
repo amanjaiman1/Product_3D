@@ -20,18 +20,18 @@ function CustomizerTabs() {
     },
     {
       tabId: 3,
-      tabName: "Text",
+      tabName: "Text & Images",
       tabPanel: <CustomizerText />,
     },
     {
       tabId: 3,
-      tabName: "Logos",
+      tabName: "Online Image",
       tabPanel: <CustomizerLogo />,
     },
   ];
   return (
     <div>
-      <div className="flex justify-center items-center mt-10">
+      <div className="flex justify-center items-center">
         {data &&
           data?.map((item, index) => {
             return (

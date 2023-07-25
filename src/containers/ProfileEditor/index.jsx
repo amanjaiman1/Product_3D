@@ -1,45 +1,55 @@
 import { Formik } from "formik";
-import React from "react";
+import React, { useEffect, useState } from "react";
 import FormGroup from "../../components/FormGroup";
 import TextField from "../../components/TextField";
 import Button from "../../components/Button";
-
+import { doc, updateDoc } from "firebase/firestore";
+import { db } from "./../../firebase/firebase";
 function ProfileEditor() {
-  return (
+  const [userInfo, setuserInfo] = useState({
+    loading: true,
+    data: null,
+  });
+  useEffect(() => {
+    const getUserInfo = async () => {
+      const userInfo = await JSON.parse(localStorage.getItem("userInfo"));
+      setuserInfo({ data: userInfo, loading: false });
+    };
+    getUserInfo();
+    console.log(userInfo);
+  }, []);
+
+  return userInfo.loading ? (
+    <h1>Loading..</h1>
+  ) : (
     <div className="p-10">
       <Formik
         initialValues={{
-          name: "",
-          userName: "",
-          job: "",
-          email: "",
-          mobile: "",
+          ...userInfo.data,
         }}
-        onSubmit={(values) => {
-          console.log(values);
+        onSubmit={async (values) => {
+          try {
+            console.log(values);
+            const docRef = doc(db, "users", values.uid);
+            await updateDoc(docRef, { ...values });
+            localStorage.setItem("userInfo", JSON.stringify(values));
+            alert("Success Fully Updated");
+          } catch (error) {
+            console.log(error);
+          }
         }}
       >
         {({ values, errors, touched, handleChange, handleBlur, handleSubmit }) => (
           <form className="" onSubmit={handleSubmit}>
-            <FormGroup title={"Name"}>
-              <TextField
-                type="text"
-                name="name"
-                onChange={handleChange}
-                onBlur={handleBlur}
-                value={values.name}
-              />
-              {errors.name && touched.name && errors.name}
-            </FormGroup>
             <FormGroup title={"User Name"}>
               <TextField
                 type="text"
                 name="userName"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values.userName}
+                value={values.fullName}
               />
-              {errors.userName && touched.userName && errors.userName}
+              {errors.fullName && touched.fullName && errors.fullName}
             </FormGroup>
             <FormGroup title={"Job"}>
               <TextField
@@ -47,9 +57,9 @@ function ProfileEditor() {
                 name="job"
                 onChange={handleChange}
                 onBlur={handleBlur}
-                value={values.job}
+                value={values?.job}
               />
-              {errors.job && touched.job && errors.job}
+              {errors?.job && touched?.job && errors?.job}
             </FormGroup>
             <FormGroup title={"Email"}>
               <TextField

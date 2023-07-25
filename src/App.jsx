@@ -19,10 +19,14 @@ import { HashLoader } from "react-spinners";
 import EditorHome from "./views/app/EditorHome";
 import Profile from "./views/app/Profile";
 import PrivateRoute from "./utils/PrivateRoute";
+import Favourite from "./views/app/Favourite";
 
 function App() {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
+    window.addEventListener("contextmenu", (event) => {
+      event.preventDefault();
+    });
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
@@ -53,7 +57,7 @@ function App() {
                 <Customizer />
               </PrivateRoute>
             }
-            path="/app/customizer/editor"
+            path="/app/customizer/editor/:designId"
           />
           <Route
             element={
@@ -70,6 +74,14 @@ function App() {
               </PrivateRoute>
             }
             path="/app/customizer"
+          />
+          <Route
+            element={
+              <PrivateRoute>
+                <Favourite />
+              </PrivateRoute>
+            }
+            path="/app/customizer/favourite"
           />
         </Routes>
 
