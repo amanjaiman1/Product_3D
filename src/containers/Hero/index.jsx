@@ -62,10 +62,10 @@ function Hero() {
           <button
             onClick={navigateToCustomisation}
             className="bg-gradient-to-r from-purple-500 to-blue-500 hover:from-pink-500 hover:to-purple-500
-            text-white font-semibold py-4 px-6 rounded-[10px] shadow-lg 
+            text-white font-semibold py-4 px-6 rounded-[10px] shadow-lg
              transform transition-transform ease-in-out focus:outline-none focus:ring-2 focus:ring-purple-600"
           >
-            <span className="flex items-center f-btn">
+            <span className="flex items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 className="h-5 w-5 mr-2"

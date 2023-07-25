@@ -109,35 +109,22 @@ function Contact() {
                           window.open(`https://github.com/${contributor.login}`)
                         }
                       >
-                        <div className="">
-                          <p
-                            className="text-black font-p"
-                            style={{ marginBottom: "0.4rem" }}
-                          >
+                        <div className="title">
+                          <p className="title">
                             <strong>{contributor.login}</strong>
                           </p>
                         </div>
                         {contributor.bio === null ? (
-                          <p className="card-footer mx-4">
-                            <span className="font-p">Bio:</span>
-                            <br /> Not Available
-                          </p>
+                          <p className="card-footer mx-10">Bio: Not Available</p>
                         ) : (
-                          <p className="card-footer mx-4">
-                            <span className="font-p">Bio:</span>
-                            <br /> {contributor.bio}
-                          </p>
+                          <p className="card-footer mx-10">Bio: {contributor.bio}</p>
                         )}
 
                         {contributor.location === null ? (
-                          <p className="card-footer">
-                            <span className="font-p">Location:</span>
-                            <br /> Not Available
-                          </p>
+                          <p className="card-footer">Location: Not Available</p>
                         ) : (
                           <p className="card-footer">
-                            <span className="font-p">Location:</span>
-                            <br /> {contributor.location}
+                            Location: {contributor.location}
                           </p>
                         )}
                       </div>
@@ -162,7 +149,7 @@ function Contact() {
                   </strong>
 
                   <div className="text-black text-xs">
-                    {/* <h4>{contributor.location}</h4> */}
+                    <h4>{contributor.location}</h4>
                     <h4>Contributions : {contributor.contributions}</h4>
                   </div>
                 </div>
