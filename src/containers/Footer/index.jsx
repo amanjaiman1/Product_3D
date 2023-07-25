@@ -12,12 +12,12 @@ const Button = ({ styles }) => {
     <button
       type="button"
       className={`
-        py-4 px-6 bg-gradient-to-r from-[#5867DD] to-[#b379ff] font-poppins font-medium
+        py-2 px-4 bg-gradient-to-r from-[#5867DD] to-[#b379ff] font-poppins font-medium
          text-[18px] text-white outline-none ${styles} rounded-[5px] w-full md:w-auto h-[49px]
-          md:ml-0 max-sm:w-auto max-sm:h-[67px]
+          md:ml-0 max-sm:w-auto f-btn 
       `}
       style={{
-        boxShadow: " rgb(38, 57, 77) 0px 20px 30px -10px ",
+        boxShadow: " rgb(38, 57, 77) 0px 20px 25px -15px ",
         letterSpacing: "1px",
       }}
     >
