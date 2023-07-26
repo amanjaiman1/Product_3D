@@ -1,7 +1,17 @@
+import color from "./../assets/faq Icons/color.webp";
+import logo from "./../assets/faq Icons/logo.webp";
+import feature from "./../assets/faq Icons/feature.webp";
+import additional from "./../assets/faq Icons/additional.webp";
+import cost from "./../assets/faq Icons/cost.webp";
+import download from "./../assets/faq Icons/download.webp";
+import maximum from "./../assets/faq Icons/maximum.webp";
+import preview from "./../assets/faq Icons/preview.webp";
+import remove from "./../assets/faq Icons/remove.webp";
+import restriction from "./../assets/faq Icons/restriction.webp";
 const questionsAnswers = [
   {
     id: 1,
-    icon: "/faq Icons/color.webp",
+    icon: color,
     question:
       "How many t-shirt colours are available for selection in this customisation application?",
     answer:
@@ -9,7 +19,7 @@ const questionsAnswers = [
   },
   {
     id: 2,
-    icon: "/faq Icons/logo.webp",
+    icon: logo,
     question:
       "Can I personalise my t-shirt design by uploading my own logos or images",
     answer:
@@ -17,7 +27,7 @@ const questionsAnswers = [
   },
   {
     id: 3,
-    icon: "/faq Icons/feature.webp",
+    icon: feature,
     question:
       "What does the Unsplash integration feature entail and how does it elevate the t-shirt customisation experience?",
 
@@ -25,7 +35,7 @@ const questionsAnswers = [
   },
   {
     id: 4,
-    icon: "/faq Icons/remove.webp",
+    icon: remove,
     question:
       " Is there a functionality to remove logos or images that have been applied to the t-shirt ",
 
@@ -34,7 +44,7 @@ const questionsAnswers = [
   },
   {
     id: 5,
-    icon: "/faq Icons/download.webp",
+    icon: download,
     question: " Can I download the final t-shirt design as an image file ",
 
     answer:
@@ -43,7 +53,7 @@ const questionsAnswers = [
 
   {
     id: 6,
-    icon: "/faq Icons/maximum.webp",
+    icon: maximum,
     question:
       " Is there a maximum limit on the number of logos or images that can be uploaded to personalise the t-shirt",
 
@@ -53,7 +63,7 @@ const questionsAnswers = [
 
   {
     id: 7,
-    icon: "/faq Icons/preview.webp",
+    icon: preview,
     question:
       " Can I preview the t-shirt design before finalising and downloading it?",
 
@@ -63,7 +73,7 @@ const questionsAnswers = [
 
   {
     id: 8,
-    icon: "/faq Icons/restriction.webp",
+    icon: restriction,
     question:
       " Are there any restrictions on the file format or size when uploading logos or images",
 
@@ -72,7 +82,7 @@ const questionsAnswers = [
   },
   {
     id: 9,
-    icon: "/faq Icons/additional.webp",
+    icon: additional,
     question:
       " Does the application offer additional customisation options beyond colour selection and  logo/image upload? ",
 
@@ -82,7 +92,7 @@ const questionsAnswers = [
 
   {
     id: 10,
-    icon: "/faq Icons/cost.webp",
+    icon: cost,
     question:
       "Is there a cost associated with using this t-shirt customisation application ",
 
