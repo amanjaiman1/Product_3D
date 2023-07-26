@@ -18,7 +18,7 @@ function Faq() {
           Have questions? We are here to help.
         </p>
       </div>
-      <div className="grid justify-center">
+      <div className="flex justify-center">
         <div className="inline-flex bg-white shadow-md shadow-slate-600 rounded-xl">
           <img src={searchIcon} alt="search icon" className="p-3 w-12 lg:w-16" />
           <input

@@ -14,7 +14,7 @@ const questionsAnswers = [
     icon: color,
     question: "How many colors available?",
     answer:
-      "This customisation application offers a diverse range of t-shirt colours to cater to various styles and moods",
+      "This customisation application offers a diverse range of t-shirt colours to cater to various styles and the depending moods of the user",
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ const questionsAnswers = [
     icon: feature,
     question: "What is need for Unsplash integration ?",
 
-    answer: `The Unsplash integration feature harnesses the power of Unsplash technology, empowering users to generate unique custom images that adorn the t-shirt as logos or complete designs`,
+    answer: `The Unsplash integration feature harnesses the power of Unsplash technology, generating unique images that for t-shirt as logos or designs`,
   },
   {
     id: 4,
@@ -36,7 +36,7 @@ const questionsAnswers = [
     question: "Can I remove applied logos?",
 
     answer:
-      "Yes, users have the freedom to effortlessly remove any logos or images that have been applied to the t-shirt by simply clicking the designated remove button.",
+      "Yes, users have the freedom to remove any logos or images that have been applied to the t-shirt by simply clicking the remove button.",
   },
   {
     id: 5,
@@ -44,7 +44,7 @@ const questionsAnswers = [
     question: " Can I download my designs?",
 
     answer:
-      "Absolutely, users can preserve their masterpiece by downloading the completed t-shirt design as an image file.",
+      "Absolutely, users can preserve their masterpiece by downloading the completed t-shirt design as an image file, or you can share it.",
   },
 
   {
@@ -53,7 +53,7 @@ const questionsAnswers = [
     question: "Any limit to logos or images?",
 
     answer:
-      " No specific limit is mentioned regarding the number of logos or images that can be uploaded, thus allowing users to personalise their t-shirt with as many as desired.",
+      "No specific limit is mentioned regarding the number of logos or images that can be uploaded, thus allowing users to personalise their t-shirts freely",
   },
 
   {
@@ -68,10 +68,10 @@ const questionsAnswers = [
   {
     id: 8,
     icon: restriction,
-    question: " Any restrictions on the file format?",
+    question: "Any restrictions on the file format?",
 
     answer:
-      "The information does not mention any restrictions on file format or size. Users can likely upload logos or images in common formats such as JPEG, PNG, or GIF.",
+      "The information does not mention any restrictions on file format or size. Users can likely upload logos or images in common formats such as JPEG or PNG",
   },
   {
     id: 9,
@@ -79,16 +79,7 @@ const questionsAnswers = [
     question: "Any additional customisation options ?",
 
     answer:
-      "Aside from colour selection, logo/image upload, Unsplash integration, removal functionality,and downloading options, no other specific customisation options are mentioned. ",
-  },
-
-  {
-    id: 10,
-    icon: cost,
-    question: "What is the associated cost ?",
-
-    answer:
-      " The pricing details of the application are not specified. It is recommended to visit the application's website or contact their support for information regarding any associated costs ",
+      "Aside from color selection, image upload, Unsplash integration, removal and downloading options, no other specific options are mentioned. ",
   },
 ];
 
