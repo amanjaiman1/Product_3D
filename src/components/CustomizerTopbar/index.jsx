@@ -2,7 +2,10 @@ import React, { useEffect, useState } from "react";
 import Button from "../Button";
 import { useNavigate } from "react-router-dom";
 import Avatar from "./../Avatar";
-
+import { generateUUID } from "three/src/math/MathUtils";
+import { deserializeFromP3D } from "../../utils/utils";
+import { db } from "../../firebase/firebase";
+import { doc, setDoc } from "firebase/firestore";
 function CustomizerTopbar() {
   const [userInfo, setuserInfo] = useState({
     loading: true,
@@ -13,8 +16,27 @@ function CustomizerTopbar() {
     localStorage.clear();
     navigate("/login");
   };
-  const imageRedirect = () => {
-    navigate("/app/customizer/profile");
+  const handleImport = (event) => {
+    try {
+      const file = event.target.files[0];
+      const reader = new FileReader();
+      reader.onload = async (e) => {
+        var deserializedData = await deserializeFromP3D(e.target.result);
+        delete deserializedData.id;
+        delete deserializedData.uid;
+
+        const { uid } = JSON.parse(await localStorage.getItem("userInfo"));
+        console.log(uid);
+        const docRef = doc(db, "designs", generateUUID());
+        await setDoc(docRef, {
+          uid: uid,
+          ...deserializedData,
+          lastUpdate: new Date().toUTCString(),
+        });
+        window.location.reload();
+      };
+      reader.readAsText(file);
+    } catch (error) {}
   };
   useEffect(() => {
     async function getUserInfo() {
@@ -35,12 +57,25 @@ function CustomizerTopbar() {
       <div className="flex space-x-2 items-center">
         <Button
           onClick={() => {
-            navigate("/app/customizer/editor");
+            let uuid = generateUUID();
+            navigate("/app/customizer/editor/" + uuid);
           }}
         >
           Design New T-shirt
         </Button>
-        <Button className={"bg-pink-600 hover:bg-pink-500"}>Import</Button>
+        <label
+          htmlFor="importfile"
+          className="bg-pink-500 hover:bg-pink-400 p-2 cursor-pointer text-white rounded-lg"
+        >
+          Import
+          <input
+            id="importfile"
+            onChange={handleImport}
+            hidden
+            type="file"
+            className={"bg-pink-600 hover:bg-pink-500 "}
+          />
+        </label>
         <Button className={"bg-violet-600 hover:bg-violet-500"} onClick={Logout}>
           Logout
         </Button>

@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import { useSnapshot } from "valtio";
 import state from "../CustomizerViewer/valito";
 import Confetti from "react-confetti";
+import Button from "../Button";
 
 const CustomizerLogo = () => {
   const [prompt, setPrompt] = useState("");
@@ -82,37 +83,37 @@ const CustomizerLogo = () => {
   }, [showConfetti]);
 
   return (
-    <div className="flex flex-col items-center justify-center">
-      <input
-        type="text"
-        value={prompt}
-        onChange={(e) => setPrompt(e.target.value)}
-        className="w-80 h-12 px-4 py-2 rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white border border-gray-300 text-gray-700 placeholder-gray-400 text-sm"
-        placeholder="Search for images..."
-      />
-      <button
-        onClick={handleSubmit}
-        className="mt-4 py-2 px-4 rounded-lg bg-purple-500 hover:bg-yellow-500 text-white focus:outline-none focus:ring-2 focus:ring-purple-400"
-      >
-        Fetch Image
-      </button>
+    <div className="flex flex-col justify-center h-[300px]">
+      <div className="flex items-center space-x-3">
+        <input
+          type="text"
+          value={prompt}
+          onChange={(e) => setPrompt(e.target.value)}
+          className="w-80 h-12 px-4 py-2 rounded-full shadow-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-white border border-gray-300 text-gray-700 placeholder-gray-400 text-sm"
+          placeholder="Search for images..."
+        />
+        <Button
+          onClick={handleSubmit}
+          className="h-12 p-4 w-50 rounded-full text-white focus:outline-none focus:ring-2"
+        >
+          Fetch Image
+        </Button>
+      </div>
       {showConfetti && <Confetti />}
 
-      <div className="flex mt-4">
-        <button
-          onClick={handleNextImage}
-          className="py-2 px-4 rounded-lg bg-purple-500 hover:bg-yellow-500 text-white focus:outline-none focus:ring-2 focus:ring-purple-400"
-        >
-          <span>&#8592;</span>
-          <span className="mx-2"></span>
-          <span>&#8594;</span>
-        </button>
-        <button
+      <div className="flex mt-4 space-x-2">
+        <Button onClick={() => {}} className={"w-20 rounded-full"}>
+          &#8592;
+        </Button>
+        <Button onClick={() => {}} className={"w-20 rounded-full"}>
+          &#8594;
+        </Button>
+        <Button
           onClick={handleFullTexture}
-          className="py-2 px-4 rounded-lg mx-3 bg-purple-500 hover:bg-yellow-500 text-white focus:outline-none focus:ring-2 focus:ring-purple-400"
+          className="py-2 h-12 px-4 rounded-full mx-3"
         >
           AI Full {state.isFullTexture ? "On" : "Off"}
-        </button>
+        </Button>
       </div>
     </div>
   );

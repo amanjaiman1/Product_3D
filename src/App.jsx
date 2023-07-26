@@ -19,10 +19,14 @@ import { HashLoader } from "react-spinners";
 import EditorHome from "./views/app/EditorHome";
 import Profile from "./views/app/Profile";
 import PrivateRoute from "./utils/PrivateRoute";
+import Favourite from "./views/app/Favourite";
 
 function App() {
   const [loading, setLoading] = useState(false);
   useEffect(() => {
+    window.addEventListener("contextmenu", (event) => {
+      event.preventDefault();
+    });
     setLoading(true);
     setTimeout(() => {
       setLoading(false);
@@ -39,21 +43,20 @@ function App() {
         <AutoScroll />
         <Routes>
           <Route Component={Home} path="/" />
-          <Route Component={Faq} path="/faq" />
+          {/* <Route Component={Faq} path="/faq" />
           <Route Component={ContributorPage} path="/contact" />
-          <Route Component={ErrorPage} path="/*" />
-          <Route Component={Login} path="/login" />
-          <Route Component={SignUp} path="/signup" />
           <Route Component={BlogPage} path="/blog" />
+          <Route Component={Guide} path="/guidebook" /> */}
           <Route Component={ErrorPage} path="/*" />
-          <Route Component={Guide} path="/guidebook" />
+          <Route Component={SignUp} path="/signup" />
+          <Route Component={Login} path="/login" />
           <Route
             element={
               <PrivateRoute>
                 <Customizer />
               </PrivateRoute>
             }
-            path="/app/customizer/editor"
+            path="/app/customizer/editor/:designId"
           />
           <Route
             element={
@@ -70,6 +73,14 @@ function App() {
               </PrivateRoute>
             }
             path="/app/customizer"
+          />
+          <Route
+            element={
+              <PrivateRoute>
+                <Favourite />
+              </PrivateRoute>
+            }
+            path="/app/customizer/favourite"
           />
         </Routes>
 

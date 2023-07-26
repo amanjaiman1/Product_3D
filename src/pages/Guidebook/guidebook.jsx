@@ -6,7 +6,7 @@ import EC from "../../assets/guideImage/EC.png";
 
 function GuideBook() {
   return (
-    <div className="bg-slate-900  text-white">
+    <div className="bg-black  text-white">
       {/*----------------------- Title of page------------------------------- */}
       <section className="w-[100%] sm:mt-4 p-4">
         <p className="lg:text-8xl md:text-6xl text-4xl text-white font-bold text-center p-4">
@@ -47,7 +47,7 @@ function GuideBook() {
         <p className="lg:text-6xl md:text-4xl text-2xl text-white font-semibold text-center p-4 mb-4">
           Design your style
         </p>
-        <div className="grid grid-flow-col overflow-y-auto justify-start lg:justify-center scrollbar-none ease-linear">
+        <div className=" overflow-y-auto scrollbar-none ease-linear flex flex-wrap justify-center">
           <div className="">
             <div className="w-[15rem] h-[20rem] bg-green-200 m-4 rounded-2xl">
               <p className="p-2 text-center pt-10 opacity-60 text-black">

@@ -4,16 +4,39 @@ import ReactiveButton from "reactive-button";
 import sendImage from "../../assets/image/send2.gif";
 import { motion } from "framer-motion";
 import { fadeIn } from "../../animation/motion";
+import axios from "axios";
+import { doc, getDoc, setDoc } from "firebase/firestore";
+import { db } from "../../firebase/firebase";
 function NewsLetter() {
   const [buttonState, setButtonState] = useState("idle");
-
-  const onClickHandler = () => {
+  const [email, setemail] = useState("");
+  const onClickHandler = async () => {
+    if (email == "") {
+      alert("Email should not be empty");
+      setButtonState("idle");
+      return;
+    }
     setButtonState("loading");
-
-    // send an HTTP request
-    setTimeout(() => {
-      setButtonState("success");
-    }, 5000);
+    const docRef = doc(db, "subscriber", email);
+    const data = await getDoc(docRef);
+    if (data.exists()) {
+      alert("Already subscribed!");
+      setButtonState("idle");
+      return;
+    }
+    const response = await axios
+      .post(`${import.meta.env.VITE_APP_BASEURL}/v1/mail/newsletter`, {
+        email: email,
+      })
+      .catch((err) => console.log(err));
+    console.log(response);
+    if (response.status == "200") {
+      alert("newsletter sent");
+      await setDoc(docRef, { date: new Date().toUTCString() });
+    } else {
+      alert("News Letter not sent");
+    }
+    setButtonState("idle");
   };
 
   return (
@@ -52,8 +75,10 @@ function NewsLetter() {
           every week
         </motion.div>
 
-        <form className="flex flex-col md:flex-row pt-3 md:pt-5 ml:w-full md:w-full lg:w-[600px]">
+        <div className="flex flex-col md:flex-row pt-3 md:pt-5 ml:w-full md:w-full lg:w-[600px]">
           <input
+            value={email}
+            onChange={(e) => setemail(e.target.value)}
             type="email"
             placeholder="Enter your email address"
             required
@@ -91,7 +116,7 @@ function NewsLetter() {
             style={{ fontFamily: "Poppins, sans-serif" }}
             className="w-full md:w-auto h-[49px] md:ml-0 max-sm:w-[49px] max-sm:h-[67px]  hover:shadow-lg transition-shadow duration-300"
           />
-        </form>
+        </div>
       </div>
     </div>
   );
