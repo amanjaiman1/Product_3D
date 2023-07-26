@@ -6,6 +6,7 @@ import ceo from "../../assets/image/ceo.webp";
 import Card from "../../components/BlogCard/bcard";
 import blogData from "../../store/blogData";
 import NewsLetter from "../../containers/NewsLetter";
+import { Link } from "react-router-dom";
 
 function Blog() {
   const blogCard = blogData.map((item) => {
@@ -14,8 +15,7 @@ function Blog() {
   return (
     <div style={{ fontFamily: "Poppins, sans-serif" }} className="bg-black">
       <div className="grid justify-center text-white p-6 text-center pt-[10%]">
-        {/* <img src={blogbar} alt="blog bar" className="w-[96vw]" /> */}
-        <p className="text-lg md:text-xl lg:text-2xl text-purple-400 m-4">
+        <p className="text-lg md:text-xl lg:text-3xl text-purple-400 m-4">
           Our Blog
         </p>
         <p className="text-3xl md:text-4xl lg:text-5xl font-semibold">
