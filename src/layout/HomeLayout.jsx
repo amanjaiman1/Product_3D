@@ -4,7 +4,7 @@ import Footer from "../containers/Footer/index.jsx";
 import styles from "../style";
 import Button from "../components/Button";
 import { useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 function HomeLayout({ children }) {
   const navigate = useNavigate();
   return (
@@ -13,6 +13,14 @@ function HomeLayout({ children }) {
       <Button onClick={() => navigate("/login")} className={"mt-5"}>
         Go to Design{" "}
       </Button>
+
+      <Link
+        className="mt-5 underline"
+        target="_blank"
+        to={"https://discord.gg/JW9K58FBfs"}
+      >
+        Contact Team{" "}
+      </Link>
       {/* <Header />
        <main className="min-[400px]:px-10 mt-8">
         <section className="container mx-auto">{children}</section>
