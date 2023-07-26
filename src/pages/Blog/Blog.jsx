@@ -15,6 +15,8 @@ function Blog() {
   return (
     <div style={{ fontFamily: "Poppins, sans-serif" }} className="bg-slate-900">
       <div className="grid justify-center text-white p-6 text-center">
+    <div style={{ fontFamily: "Poppins, sans-serif" }} className="bg-black">
+      <div className="grid justify-center text-white p-6 text-center pt-[10%]">
         {/* <img src={blogbar} alt="blog bar" className="w-[96vw]" /> */}
         <Link to="/create-post">
           <span className="group bg-gray-300 hover:bg-gray-700 text-gray-800 font-bold py-2 px-4 rounded-md w-40 ml-[140vh]">
