@@ -11,7 +11,7 @@ function Faq() {
     <>
       <div className="grid justify-center text-white p-6 text-center pt-[8%]">
         <p className="text-lg md:text-xl lg:text-2xl text-purple-400 m-4">FAQs</p>
-        <p className="text-4xl md:text-5xl lg:text-7xl font-semibold">
+        <p className="text-3xl md:text-4xl lg:text-5xl font-semibold">
           FREQUENTLY ASKED QUESTIONS
         </p>
         <p className="text-sm md:text-lg lg:text-xl mt-4 font-thin">
