@@ -54,7 +54,7 @@ Contributions are welcome! If you have any ideas, suggestions, or bug fixes, ple
 
 ### Do join our discord :
 
-<a href="https://discord.gg/V48uzUSW">
+<a href="https://discord.gg/JW9K58FBfs">
   <img src="https://img.icons8.com/color/2x/discord--v2.png" height="50px"></img>
 </a>
 
