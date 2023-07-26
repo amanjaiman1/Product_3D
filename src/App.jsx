@@ -52,7 +52,14 @@ function App() {
           <Route Component={BlogPage} path="/blog" />
           <Route Component={ErrorPage} path="/*" />
           <Route Component={Guide} path="/guidebook" />
-          <Route Component={CreatePost} path="/create-post" />
+          <Route
+            element={
+              <PrivateRoute>
+                <CreatePost />
+              </PrivateRoute>
+            }
+            path="/app/customizer/create-post"
+          />
           <Route
             element={
               <PrivateRoute>

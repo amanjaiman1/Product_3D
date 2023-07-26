@@ -1,5 +1,7 @@
 import React, { useState, useRef, useEffect, useMemo } from "react";
 import JoditEditor from "jodit-react";
+import EditorHomeLayout from "../../layout/EditorHomeLayout";
+import TextField from "../../components/TextField";
 
 function CreatePost({ placeholder }) {
   const editor = useRef(null);
@@ -60,75 +62,69 @@ function CreatePost({ placeholder }) {
       readonly: false,
       height: "420px",
       width: "100%",
-      theme: "dark",
       toolbar: true,
-      style: {
-        background: "#27272E",
-      },
     }),
     []
   );
 
   return (
-    <div
-      style={{ fontFamily: "Poppins, sans-serif" }}
-      className="bg-slate-900 max-h-screen"
-    >
-      <div className="bg-dark p-8 rounded-lg shadow-slate-700 w-full h-screen">
-        <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold mb-4 text-white text-center">
-          Create Post
-        </h1>
-        <form className="grid gap-4" onSubmit={handleFormSubmit}>
-          <input
-            className="w-full  p-3 rounded-md shadow-md bg-slate-700 text-white"
-            type="text"
-            placeholder="Title"
-            value={title}
-            onChange={handleTitleChange}
-            tabIndex={1}
-          />
-          <JoditEditor
-            ref={editor}
-            value={postText}
-            config={editorConfig}
-            tabIndex={2}
-            onBlur={handleEditorChange}
-          />
+    <EditorHomeLayout>
+      <div className="max-h-screen">
+        <div className="bg-dark p-8 rounded-lg w-full h-screen">
+          <form className="grid gap-y-2" onSubmit={handleFormSubmit}>
+            <TextField
+              className="w-full  p-3 rounded-md shadow-md "
+              type="text"
+              placeholder="Title"
+              value={title}
+              onChange={handleTitleChange}
+              tabIndex={1}
+            ></TextField>
 
-          <div className="flex flex-wrap gap-2">
-            {tags.map((tag, index) => (
-              <div key={index} className="flex items-center">
-                <span className="border border-blue-600 text-white px-2 py-1 rounded-md shadow-2xl bg-blue-600">
-                  {tag}
-                </span>
-                <button
-                  type="button"
-                  onClick={() => handleTagRemove(tag)}
-                  className="ml-2 text-white"
-                >
-                  &#10005; {/* Close (X) symbol */}
-                </button>
-              </div>
-            ))}
-          </div>
+            <div className="flex flex-wrap gap-2">
+              {tags.map((tag, index) => (
+                <div key={index} className="flex items-center">
+                  <span className="border border-blue-600  px-2 py-1 rounded-md shadow-2xl bg-blue-600 text-white">
+                    {tag}
+                  </span>
+                  <button
+                    type="button"
+                    onClick={() => handleTagRemove(tag)}
+                    className="ml-2 "
+                  >
+                    &#10005; {/* Close (X) symbol */}
+                  </button>
+                </div>
+              ))}
+            </div>
+            <TextField
+              className="w-full  p-3 rounded-md shadow-md"
+              type="text"
+              placeholder="Tags (Press Enter to add a tag)"
+              value={currentTag}
+              onChange={handleTagsChange}
+              onKeyDown={handleKeyDown}
+            ></TextField>
 
-          <input
-            className="w-full text-white p-3 rounded-md shadow-md bg-slate-700"
-            type="text"
-            placeholder="Tags (Press Enter to add a tag)"
-            value={currentTag}
-            onChange={handleTagsChange}
-            onKeyDown={handleKeyDown}
-          />
-          <button
-            className="bg-purple-600 hover:bg-purple-700 text-white font-bold py-3 px-6 rounded-md w-1/12 mx-auto"
-            type="submit"
-          >
-            Submit
-          </button>
-        </form>
+            <JoditEditor
+              className="mt-2"
+              ref={editor}
+              value={postText}
+              config={editorConfig}
+              tabIndex={2}
+              onBlur={handleEditorChange}
+            />
+
+            <button
+              className="bg-blue-600 hover:bg-primary font-bold py-3 px-6 rounded-md w-1/12  text-white"
+              type="submit"
+            >
+              Submit
+            </button>
+          </form>
+        </div>
       </div>
-    </div>
+    </EditorHomeLayout>
   );
 }
 

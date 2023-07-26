@@ -13,20 +13,9 @@ function Blog() {
     return <Card key={item.id} {...item} />;
   });
   return (
-    <div style={{ fontFamily: "Poppins, sans-serif" }} className="bg-slate-900">
-      <div className="grid justify-center text-white p-6 text-center">
     <div style={{ fontFamily: "Poppins, sans-serif" }} className="bg-black">
       <div className="grid justify-center text-white p-6 text-center pt-[10%]">
-        {/* <img src={blogbar} alt="blog bar" className="w-[96vw]" /> */}
-        <Link to="/create-post">
-          <span className="group bg-gray-300 hover:bg-gray-700 text-gray-800 font-bold py-2 px-4 rounded-md w-40 ml-[140vh]">
-            <button className="group-hover:text-white transition-transform">
-              Create Post
-            </button>
-          </span>
-        </Link>
         <p className="text-lg md:text-xl lg:text-3xl text-purple-400 m-4">
-         
           Our Blog
         </p>
         <p className="text-4xl md:text-5xl lg:text-5xl font-semibold">
@@ -35,7 +24,6 @@ function Blog() {
         <p className="text-sm md:text-lg lg:text-xl mt-4 font-thin">
           The latest industry news, interviews, technologies, and resources.
         </p>
-        
       </div>
       <div className="grid justify-center">
         <div className="inline-flex bg-white shadow-md shadow-slate-600 rounded-xl">
