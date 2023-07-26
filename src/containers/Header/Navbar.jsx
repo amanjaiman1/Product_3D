@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { logo } from "../../assets";
+import { newLogo } from "../../assets";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -23,8 +23,8 @@ const Navbar = () => {
         <Link to="/">
           <div className="mt-9 lg:hidden align-center items-center">
             <img
-              className="w-50 h-40 max-sm:ml-[-5px] max-sm:h-32 max-sm:mt-[-30px] "
-              src={logo}
+              className="w-[120px] h-[120px] max-sm:ml-[-5px] max-sm:h-32 max-sm:mt-[-30px] "
+              src={newLogo}
               alt="ProductLogo"
             />
           </div>
@@ -34,9 +34,9 @@ const Navbar = () => {
         <div href="" class="flex-shrink-0 align-items items-center mt-1">
           <img
             class=""
-            src={logo}
+            src={newLogo}
             alt=""
-            className="w-[120px] h-[120px] max-sm:ml-[-5px] max-sm:h-32 max-sm:mt-[-30px] mr-5"
+            className="w-[120px] h-[10px] max-sm:ml-[-5px] max-sm:h-32 max-sm:mt-[-30px] mr-5 mb-5"
           />
         </div>
         <div class="font-medium lg:text-sm flex">
