@@ -55,16 +55,19 @@ function CreatePost({ placeholder }) {
     console.log(postData); // Replace this with your actual logic for submitting the post.
   };
 
-  const editorConfig = useMemo(() => ({
-    readonly: false,
-    height: '420px',
-    width: '100%',
-    theme: 'dark',
-    toolbar: true,
-    style: {
-      background: '#27272E',    
-    },
-  }), []);
+  const editorConfig = useMemo(
+    () => ({
+      readonly: false,
+      height: "420px",
+      width: "100%",
+      theme: "dark",
+      toolbar: true,
+      style: {
+        background: "#27272E",
+      },
+    }),
+    []
+  );
 
   return (
     <div
