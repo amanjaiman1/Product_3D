@@ -43,10 +43,13 @@ function App() {
         <AutoScroll />
         <Routes>
           <Route Component={Home} path="/" />
-          {/* <Route Component={Faq} path="/faq" />
+          <Route Component={Faq} path="/faq" />
           <Route Component={ContributorPage} path="/contact" />
+          <Route Component={ErrorPage} path="/*" />
+          <Route Component={Login} path="/login" />
+          <Route Component={SignUp} path="/signup" />
           <Route Component={BlogPage} path="/blog" />
-          <Route Component={Guide} path="/guidebook" /> */}
+          <Route Component={Guide} path="/guidebook" />
           <Route Component={ErrorPage} path="/*" />
           <Route Component={SignUp} path="/signup" />
           <Route Component={Login} path="/login" />
