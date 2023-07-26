@@ -12,7 +12,7 @@ function Faq() {
       <div className="grid justify-center text-white p-6 text-center pt-[8%]">
         <p className="text-lg md:text-xl lg:text-2xl text-purple-400 m-4">FAQs</p>
         <p className="text-3xl md:text-4xl lg:text-5xl font-semibold">
-          FREQUENTLY ASKED QUESTIONS
+          Frequently Asked Questions
         </p>
         <p className="text-sm md:text-lg lg:text-xl mt-4 font-thin">
           Have questions? We are here to help.
@@ -22,7 +22,7 @@ function Faq() {
         <div className="inline-flex bg-white shadow-md shadow-slate-600 rounded-xl">
           <img src={searchIcon} alt="search icon" className="p-3 w-12 lg:w-16" />
           <input
-            className="w-[50vw] lg:w-[40vw] lg:h-16 rounded-xl p-2"
+            className="w-[50vw] lg:w-[35vw] lg:h-16 rounded-xl p-2 outline-none"
             label="Search"
             placeholder="Search"
             type="search"
