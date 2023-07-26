@@ -4,6 +4,8 @@ import Button from "../Button";
 import { db } from "../../firebase/firebase";
 import { deleteDoc, doc, getDoc, updateDoc } from "firebase/firestore";
 import DialogBox from "./../DialogBox";
+import { serializeToP3D } from "../../utils/utils";
+import FileSaver from "file-saver";
 function ContextMenu({ x, y, data, onClose }) {
   const [visible, setvisible] = useState(false);
   const navigate = useNavigate();
@@ -20,6 +22,15 @@ function ContextMenu({ x, y, data, onClose }) {
       onClose(null);
     } catch (err) {
       console.log(err);
+    }
+  };
+  const handleExport = async (event) => {
+    try {
+      const serializedData = serializeToP3D(data);
+      const blob = new Blob([serializedData], { type: "text/plain;charset=utf-8" });
+      FileSaver.saveAs(blob, data?.uid + ".p3d");
+    } catch (error) {
+      console.log(error);
     }
   };
   const handleRename = (event) => {
@@ -64,6 +75,12 @@ function ContextMenu({ x, y, data, onClose }) {
           onClick={handleRename}
         >
           Rename
+        </li>
+        <li
+          className="cursor-pointer border-b-2 hover:bg-slate-200 p-2"
+          onClick={handleExport}
+        >
+          Export
         </li>
         <li
           className="cursor-pointer  hover:bg-slate-200 p-2"

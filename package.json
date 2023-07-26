@@ -25,6 +25,7 @@
     "clsx": "^1.2.1",
     "core-js": "^3.30.2",
     "cors": "^2.8.5",
+    "file-saver": "^2.0.5",
     "firebase": "^9.22.1",
     "formik": "^2.4.2",
     "framer-motion": "^10.12.16",
