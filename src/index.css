@@ -15,21 +15,33 @@
   .scrollbar::-webkit-scrollbar {
     width: 15px;
     height: 20px;
+    background-color: black;
   }
 
   .scrollbar::-webkit-scrollbar-track {
     border-radius: 100vh;
-    background: #f7f4ed;
+    background-color: black;
   }
 
   .scrollbar::-webkit-scrollbar-thumb {
-    background: #293fce;
-    border-radius: 100vh;
-    border: 3px solid #f6f7ed;
+    border-radius: 40px;
+    background-image: -webkit-gradient(
+      linear,
+      left bottom,
+      left top,
+      color-stop(0.44, rgb(119, 72, 248)),
+      color-stop(0.72, rgb(131, 103, 244)),
+      color-stop(0.34, rgb(110, 82, 234)),
+      color-stop(0.86, rgb(0, 0, 0))
+    );
+    border-radius: 10px;
+    border: 2px solid transparent;
+    background-clip: content-box;
   }
 
   .scrollbar::-webkit-scrollbar-thumb:hover {
-    background: #608ad8;
+    border-radius: 5px;
+    border: 1px solid black;
   }
 }
 

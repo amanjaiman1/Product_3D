@@ -18,18 +18,18 @@ function Blog() {
         <p className="text-lg md:text-xl lg:text-2xl text-purple-400 m-4">
           Our Blog
         </p>
-        <p className="text-4xl md:text-5xl lg:text-7xl font-semibold">
-          RESOURCES AND INSIGHTS
+        <p className="text-3xl md:text-4xl lg:text-5xl font-semibold">
+          Resouces and Insights
         </p>
         <p className="text-sm md:text-lg lg:text-xl mt-4 font-thin">
           The latest industry news, interviews, technologies, and resources.
         </p>
       </div>
-      <div className="grid justify-center">
-        <div className="inline-flex bg-white shadow-md shadow-slate-600 rounded-xl">
+      <div className="flex justify-center">
+        <div className="inline-flex bg-white shadow-md shadow-slate-600 rounded-xl w-[70%]">
           <img src={searchIcon} alt="search icon" className="p-3 w-12 lg:w-16" />
           <input
-            className="w-[50vw] lg:w-[40vw] lg:h-16 rounded-xl p-2"
+            className="w-[50vw] lg:w-[40vw] lg:h-16 rounded-xl p-2 outline-none"
             label="Search"
             placeholder="Search for articles"
             type="search"

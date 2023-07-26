@@ -49,8 +49,10 @@ function App() {
           <Route Component={Login} path="/login" />
           <Route Component={SignUp} path="/signup" />
           <Route Component={BlogPage} path="/blog" />
-          <Route Component={ErrorPage} path="/*" />
           <Route Component={Guide} path="/guidebook" />
+          <Route Component={ErrorPage} path="/*" />
+          <Route Component={SignUp} path="/signup" />
+          <Route Component={Login} path="/login" />
           <Route
             element={
               <PrivateRoute>
