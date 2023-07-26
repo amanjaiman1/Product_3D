@@ -9,12 +9,17 @@ function GuideBook() {
     <div className="bg-black  text-white">
       {/*----------------------- Title of page------------------------------- */}
       <section className="w-[100%] sm:mt-4 p-4">
-        <p className="lg:text-8xl md:text-6xl text-4xl text-white font-bold text-center p-4">
-          GUIDEBOOK
-        </p>
-        <p className="text-white text-center md:text-2xl lg:text-4xl mb-2 ">
-          3D T-shirt Mastery
-        </p>
+        <div className="grid justify-center text-white p-6 text-center pt-[8%]">
+          <p className="text-lg md:text-xl lg:text-2xl text-purple-400 m-4">
+            Guidebook
+          </p>
+          <p className="text-3xl md:text-4xl lg:text-5xl font-semibold">
+            3D T-shirt Mastery
+          </p>
+          <p className="text-sm md:text-lg lg:text-xl mt-4 font-thin">
+            Here is a whole guide to style your T-shirts as per your designs.
+          </p>
+        </div>
 
         {/* ------------------------Introduction------------------------------- */}
 
@@ -25,7 +30,7 @@ function GuideBook() {
           <div className="grid p-6 text-justify align-text-bottom w-[90%] lg:w-[80%] md:p-2 lg:mt-[5rem] md:mt-[0rem] md:w-[90%] lg:text-2xl">
             <p>
               <div className="flex justify-center">
-                <span className="font-normal text-l md:text-xl lg:text-4xl p-2">
+                <span className="font-normal text-normal md:text-xl lg:text-4xl p-2">
                   What is T-shirt Designing?
                 </span>
                 <br />
@@ -44,7 +49,7 @@ function GuideBook() {
       </section>
       {/* ---------------------Design your style------------------------------ */}
       <section className="w-[100%]">
-        <p className="lg:text-6xl md:text-4xl text-2xl text-white font-semibold text-center p-4 mb-4">
+        <p className="lg:text-5xl md:text-4xl text-3xl text-white font-semibold text-center p-4 mb-4">
           Design your style
         </p>
         <div className=" overflow-y-auto scrollbar-none ease-linear flex flex-wrap justify-center">
@@ -110,7 +115,7 @@ function GuideBook() {
       </section>
       {/* --------------Flaunt your designs------------------ */}
       <section>
-        <p className="lg:text-6xl md:text-4xl text-2xl text-white font-semibold text-center p-4 mt-8">
+        <p className="lg:text-5xl md:text-4xl text-3xl text-white font-semibold text-center p-4 mt-8">
           Flaunt your Designs
         </p>
         <div className="grid md:grid-flow-col justify-items-center">
@@ -128,7 +133,7 @@ function GuideBook() {
       </section>
       {/* -------------------Additional Tips------------------- */}
       <section>
-        <p className="lg:text-6xl md:text-4xl text-2xl text-white font-semibold text-center p-4 mb-8">
+        <p className="lg:text-5xl md:text-4xl text-3xl text-white font-semibold text-center p-4 mb-8">
           Additional Tips
         </p>
         <div className="flex justify-center">
@@ -136,7 +141,7 @@ function GuideBook() {
         </div>
       </section>
       <section className="">
-        <p className="lg:text-6xl md:text-4xl text-2xl text-white font-semibold text-center p-6 mt-6 mb-8">
+        <p className="lg:text-5xl md:text-4xl text-3xl text-white font-semibold text-center p-6 mt-6 mb-8">
           Enjoy Creating
         </p>
         <div className="flex justify-center p-4 -mt-14">
