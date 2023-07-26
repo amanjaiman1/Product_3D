@@ -20,6 +20,7 @@ import EditorHome from "./views/app/EditorHome";
 import Profile from "./views/app/Profile";
 import PrivateRoute from "./utils/PrivateRoute";
 import Favourite from "./views/app/Favourite";
+import CreatePost from "./pages/Blog/CreatePost";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -51,6 +52,7 @@ function App() {
           <Route Component={BlogPage} path="/blog" />
           <Route Component={ErrorPage} path="/*" />
           <Route Component={Guide} path="/guidebook" />
+          <Route Component={CreatePost} path="/create-post" />
           <Route
             element={
               <PrivateRoute>
