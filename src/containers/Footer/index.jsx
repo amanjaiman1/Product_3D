@@ -45,7 +45,7 @@ function Footer() {
                 index !== footerLink.links.length - 1 ? "mb-4" : "mb-0"
               }`}
             >
-              <Link to={link.link} target="_blank">
+              <Link to={link.link} target="">
                 {link.name}
               </Link>
             </li>
