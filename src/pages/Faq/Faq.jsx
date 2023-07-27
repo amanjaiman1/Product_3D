@@ -19,10 +19,10 @@ function Faq() {
         </p>
       </div>
       <div className="flex justify-center">
-        <div className="inline-flex bg-white shadow-md shadow-slate-600 rounded-xl">
+        <div className="inline-flex backdrop-blur-md shadow-md shadow-slate-800 rounded-full border-2 border-purple-300">
           <img src={searchIcon} alt="search icon" className="p-3 w-12 lg:w-16" />
           <input
-            className="w-[50vw] lg:w-[35vw] lg:h-16 rounded-xl p-2 outline-none"
+            className="w-[50vw] lg:w-[35vw] lg:h-16 rounded-full p-2 outline-none bg-transparent  text-white"
             label="Search"
             placeholder="Search"
             type="search"
@@ -44,12 +44,8 @@ function Faq() {
           <button
             type="button"
             className="
-        px-4 py-4 pt-2 pb-2 bg-gradient-to-r from-[#5867DD] to-[#b379ff] font-poppins font-medium
-         text-sm md:text-base text-white outline-none ${styles} rounded-[5px] w-full "
-            style={{
-              boxShadow: " rgb(38, 57, 77) 0px 20px 30px -10px ",
-              letterSpacing: "1px",
-            }}
+        px-4 py-4 pt-2 pb-2  border-2 font-poppins font-medium
+         text-sm md:text-base text-white outline-none border-purple-400 rounded-full w-full hover:bg-purple-400 hover:text-black "
           >
             <a href="/contact">Get in Touch</a>
           </button>
