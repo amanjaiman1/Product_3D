@@ -9,7 +9,7 @@ function Faq() {
   });
   return (
     <>
-      <div className="grid justify-center text-white p-6 text-center pt-[8%]">
+      <div className="grid justify-center text-white p-6 text-center pt-[6%]">
         <p className="text-lg md:text-xl lg:text-2xl text-purple-400 m-4">FAQs</p>
         <p className="text-3xl md:text-4xl lg:text-5xl font-semibold">
           Frequently Asked Questions
@@ -29,7 +29,7 @@ function Faq() {
           />
         </div>
       </div>
-      <div className="flex justify-center bg-black ">
+      <div className="flex justify-center pt-[6%]">
         <div className="grid lg:grid-cols-3 md:grid-cols-2">{faqCard}</div>
       </div>
       <div className="items-center p-[5%]">
