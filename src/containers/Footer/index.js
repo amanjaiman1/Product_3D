@@ -4,15 +4,15 @@ export const footerLinks = [
     links: [
       {
         name: "How it Works",
-        link: "/",
+        link: "/how-it-works",
       },
       {
         name: "Create",
-        link: "/",
+        link: "/create",
       },
       {
         name: "Explore",
-        link: "/",
+        link: "/explore",
       },
       {
         name: "Discord",
@@ -25,11 +25,11 @@ export const footerLinks = [
     links: [
       {
         name: "Help Center",
-        link: "/",
+        link: "/helpcenter",
       },
       {
         name: "Suggestions",
-        link: "/",
+        link: "/suggestions",
       },
       {
         name: "Blog",
@@ -37,7 +37,7 @@ export const footerLinks = [
       },
       {
         name: "Newsletters",
-        link: "/",
+        link: "/newsletters",
       },
     ],
   },
