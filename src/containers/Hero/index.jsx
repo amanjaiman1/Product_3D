@@ -23,8 +23,13 @@ function Hero() {
           Design Now
         </button>
       </div>
-      <div className="flex-1 flex-col justify-center">
-        <img width={"100%"} height={"100%"} src={male} alt="" />
+      <div className="flex-1 flex-col justify-center h-screen object-contain">
+        <img
+          width={"100%"}
+          height={"100%"}
+          src={male}
+          className="object-contain max-h-full max-w-full"
+        />
       </div>
     </div>
   );

@@ -118,6 +118,7 @@ function App() {
         <div>
           <ScrollToTop
             smooth
+            style={{ backgroundColor: "indigo" }}
             className="scrlltop"
             viewBox="-60 5 270 160"
             top="100"
