@@ -56,6 +56,7 @@ function CustomizerTopbar() {
       <div>Recents</div>
       <div className="flex space-x-2 items-center">
         <Button
+          className={"bg-primary text-white"}
           onClick={() => {
             let uuid = generateUUID();
             navigate("/app/customizer/editor/" + uuid);
@@ -73,10 +74,13 @@ function CustomizerTopbar() {
             onChange={handleImport}
             hidden
             type="file"
-            className={"bg-pink-600 hover:bg-pink-500 "}
+            className={"bg-pink-600 hover:bg-pink-500"}
           />
         </label>
-        <Button className={"bg-violet-600 hover:bg-violet-500"} onClick={Logout}>
+        <Button
+          className={"bg-violet-600 hover:bg-violet-500 text-white"}
+          onClick={Logout}
+        >
           Logout
         </Button>
         <span className="ml-2">

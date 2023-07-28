@@ -75,10 +75,15 @@ function CustomizerText() {
           ref={inputRef}
         />
         <div className="space-x-3">
-          <Button className={"mt-3"} onClick={handleAddText}>
+          <Button className={"mt-3 bg-primary text-white"} onClick={handleAddText}>
             Add Text
           </Button>
-          <Button onClick={handleColorButtonClick}>Color</Button>
+          <Button
+            className={"bg-primary text-white"}
+            onClick={handleColorButtonClick}
+          >
+            Color
+          </Button>
         </div>
       </div>
       <div className="flex flex-col sm:flex-row items-center mb-4">

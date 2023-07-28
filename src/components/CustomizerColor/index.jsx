@@ -41,9 +41,9 @@ function CustomizerColor() {
   };
 
   return (
-    <div className="flex flex-col items-center relative">
+    <div className="flex flex-col items-center relative mt-10">
       <div className="absolute right-10 top-[-50px]">
-        <Button>
+        <Button className={"bg-primary text-white"}>
           <label htmlFor="inputColor">Custom Color</label>
         </Button>
         <input
