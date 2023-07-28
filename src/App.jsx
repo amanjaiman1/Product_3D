@@ -118,8 +118,12 @@ function App() {
         <div>
           <ScrollToTop
             smooth
-            style={{ backgroundColor: "indigo" }}
-            className="scrlltop"
+            style={{
+              backgroundColor: "transparent",
+              border: "2px solid #7E57C2",
+              borderRadius: "50%",
+            }}
+            className="scrlltop items-center pb-1 w-10 h-10"
             viewBox="-60 5 270 160"
             top="100"
             color="white"
