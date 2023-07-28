@@ -14,8 +14,9 @@ function Home() {
       <Hero />
       {/* <HightLights />
       <Contributor />
-      <TeamPost />
-      <NewsLetter /> */}
+      <TeamPost />*/}
+      <NewsLetter />
+      <br />
     </HomeLayout>
   );
 }
