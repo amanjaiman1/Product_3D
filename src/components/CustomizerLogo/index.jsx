@@ -94,7 +94,7 @@ const CustomizerLogo = () => {
         />
         <Button
           onClick={handleSubmit}
-          className="h-12 p-4 w-50 rounded-full text-white focus:outline-none focus:ring-2"
+          className="h-12 w-50 rounded-full bg-primary text-white focus:outline-none focus:ring-2"
         >
           Fetch Image
         </Button>
@@ -102,15 +102,21 @@ const CustomizerLogo = () => {
       {showConfetti && <Confetti />}
 
       <div className="flex mt-4 space-x-2">
-        <Button onClick={() => {}} className={"w-20 rounded-full"}>
+        <Button
+          onClick={() => {}}
+          className={"w-20 rounded-full bg-primary text-white"}
+        >
           &#8592;
         </Button>
-        <Button onClick={() => {}} className={"w-20 rounded-full"}>
+        <Button
+          onClick={() => {}}
+          className={"w-20 rounded-full bg-primary text-white"}
+        >
           &#8594;
         </Button>
         <Button
           onClick={handleFullTexture}
-          className="py-2 h-12 px-4 rounded-full mx-3"
+          className="py-2 h-12 px-4 rounded-full mx-3 bg-primary text-white"
         >
           AI Full {state.isFullTexture ? "On" : "Off"}
         </Button>

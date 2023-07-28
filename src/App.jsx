@@ -32,6 +32,7 @@ import HelpCenterPage from "./views/app/Helpcentre";
 import HowitWorksPage from "./views/app/How-it-works";
 import NewslettersPage from "./views/app/Newsletters";
 import SuggestionPage from "./views/app/Suggestions";
+import Settings from "./views/app/Settings";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -112,6 +113,14 @@ function App() {
               </PrivateRoute>
             }
             path="/app/customizer/favourite"
+          />
+          <Route
+            element={
+              <PrivateRoute>
+                <Settings />
+              </PrivateRoute>
+            }
+            path="/app/customizer/settings"
           />
         </Routes>
 
