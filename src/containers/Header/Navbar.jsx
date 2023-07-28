@@ -19,37 +19,37 @@ const Navbar = () => {
   // shadow-lg bg-[#0f0f0fb4]
   return (
     <nav
-      className={`flex justify-center items-center bg-gradient-to-r from-violet-200 to-black  h-[90px] rounded-[35px] sticky top-3 max-w-[85%] mx-auto `}
+      className={`flex justify-center items-center bg-gradient-to-r from-violet-50 to-black  h-[90px] sticky top-0  mx-auto `}
     >
       <div>
         <img width={"22%"} height={"10%"} src={newLogo} alt="Fashion Forge logo" />
       </div>
-      <ul className="flex space-x-10 justify-center items-center">
+      <ul className="flex space-x-12 text-[19px] justify-center items-center">
         <li>
-          <a href="#" class="group text-white transition duration-100">
+          <a href="#" class="group text-sky-200 transition duration-100">
             Home
             <span class="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-black"></span>
           </a>
         </li>
         <li>
-          <a href="#" class="group text-white transition duration-100">
+          <a href="#" class="group text-sky-200 transition duration-100">
             Contributor
             <span class="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-black"></span>
           </a>
         </li>
         <li>
-          <a href="#" class="group text-white transition duration-100">
+          <a href="#" class="group text-sky-200 transition duration-100">
             Guidebook
             <span class="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-black"></span>
           </a>
         </li>
         <li>
-          <a href="#" class="group text-white transition duration-100">
+          <a href="#" class="group text-sky-200 transition duration-100">
             Blog
             <span class="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-black"></span>
           </a>
         </li>
-        <li>
+        <li className="text-sky-200">
           <Button>Try Now</Button>
         </li>
       </ul>
