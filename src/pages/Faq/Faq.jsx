@@ -1,7 +1,8 @@
 import React from "react";
 import faqData from "../../store/faqData";
 import Card from "../../components/FAQCard/faqCard";
-import searchIcon from "../../assets/image/searchIcon.webp";
+import { BsSearch } from "react-icons/bs";
+// import searchIcon from "../../assets/image/searchIcon.webp";
 
 function Faq() {
   const faqCard = faqData.map((item) => {
@@ -19,10 +20,13 @@ function Faq() {
         </p>
       </div>
       <div className="flex justify-center">
-        <div className="inline-flex backdrop-blur-md shadow-md shadow-slate-800 rounded-full border-2 border-purple-300">
-          <img src={searchIcon} alt="search icon" className="p-3 w-12 lg:w-16" />
+        <div className="inline-flex backdrop-blur-md shadow-md shadow-slate-800 rounded-full border-2 border-purple-300 lg:w-[40%]">
+          {/* <img src={searchIcon} alt="search icon" className="p-3 w-12 lg:w-16" /> */}
+          <div className="p-2">
+            <BsSearch className="w-auto h-8" />
+          </div>
           <input
-            className="w-[50vw] lg:w-[35vw] lg:h-16 rounded-full p-2 outline-none bg-transparent  text-white"
+            className="w-[50vw] rounded-full p-2 outline-none bg-transparent  text-white placeholder-white"
             label="Search"
             placeholder="Search"
             type="search"
@@ -45,7 +49,7 @@ function Faq() {
             type="button"
             className="
         px-4 py-4 pt-2 pb-2  border-2 font-poppins font-medium
-         text-sm md:text-base text-white outline-none border-purple-400 rounded-full w-full hover:bg-purple-400 hover:text-black "
+         text-sm md:text-base text-white outline-none border-purple-400 rounded-full w-full hover:bg-purple-400 hover:text-black hover:shadow-sm hover:shadow-white"
           >
             <a href="/contact">Get in Touch</a>
           </button>
