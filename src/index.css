@@ -91,3 +91,18 @@ body {
   color: rgba(255, 255, 255, 0.5);
   box-shadow: inset 300px 0 50px rgba(0, 0, 0, 0.5), 0 20px 100px rgba(0, 0, 0, 0.5);
 }
+
+.create-text {
+  background: linear-gradient(
+    45deg,
+    rgb(167, 85, 255),
+    rgb(255, 132, 153),
+    rgb(92, 92, 255),
+    rgb(255, 255, 105)
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  border-top: 2px solid rgb(204, 136, 241);
+  border-bottom: 2px solid rgb(64, 50, 255);
+}
