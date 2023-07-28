@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import background from "../../assets/image/background.webp";
+import background from "../../assets/image/banner.webp";
 import ReactiveButton from "reactive-button";
 import sendImage from "../../assets/image/send2.gif";
 import { motion } from "framer-motion";
@@ -44,7 +44,7 @@ function NewsLetter() {
       className="pt-10 pb-10 md:pt-50 mx-auto max-w-1200 bg-cover bg-center"
       style={{ backgroundImage: `url(${background})`, borderRadius: "25px" }}
     >
-      <div className="r-50 rounded-2xl flex flex-col items-center leading-8 p-5">
+      <div className="r-50 rounded-2xl flex flex-col items-center leading-8 p-5 ">
         <motion.div
           variants={fadeIn}
           initial="hidden"
@@ -54,7 +54,7 @@ function NewsLetter() {
           className="rounded-2xl flex flex-col items-center leading-14 text-center"
         >
           <h2
-            className="text-2xl font-bold text-[#090F4E] text-[2rem]"
+            className="text-2xl font-bold text-[#404ee2] text-[2rem]"
             style={{ fontFamily: "Poppins, sans-serif" }}
           >
             Sign up for our newsletter
@@ -66,7 +66,7 @@ function NewsLetter() {
           initial="hidden"
           transition={{ duration: 0.2, delay: 0.45 }}
           viewport={{ amount: 0.25, once: true }}
-          className="text-custom2 text-secondary font-normal pt-3 leading-loose text-center"
+          className="text-custom2  font-normal pt-3 leading-loose text-center text-[#7340e2]"
           style={{ fontFamily: "Poppins, sans-serif" }}
         >
           <br />

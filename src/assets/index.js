@@ -19,7 +19,9 @@ import logo from "./image/logo.webp";
 import loginImgGif from "./image/loginImg.png";
 import googleImg from "./image/google-48.webp";
 import gssoc from "./../assets/image/gssoc.webp";
+import newLogo from "../assets/image/newLogo.png";
 export {
+  newLogo,
   hero,
   ai,
   fileIcon,
