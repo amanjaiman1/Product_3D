@@ -19,6 +19,18 @@ function CustomizerSidebar() {
       </div>
       <div
         onClick={() => {
+          navigate("/app/customizer/favourite");
+        }}
+        className={`cursor-pointer  mt-4 p-3 text-white  ${
+          "/app/customizer/favourite" === pathname
+            ? selectedvalue
+            : "hover:bg-blue-700"
+        }`}
+      >
+        Favourite
+      </div>
+      <div
+        onClick={() => {
           navigate("/app/customizer/create-post");
         }}
         className={`cursor-pointer  mt-4 p-3 text-white  ${
@@ -32,15 +44,15 @@ function CustomizerSidebar() {
 
       <div
         onClick={() => {
-          navigate("/app/customizer/favourite");
+          navigate("/app/customizer/settings");
         }}
         className={`cursor-pointer  mt-4 p-3 text-white  ${
-          "/app/customizer/favourite" === pathname
+          "/app/customizer/settings" === pathname
             ? selectedvalue
             : "hover:bg-blue-700"
         }`}
       >
-        Favourite
+        Settings
       </div>
     </div>
   );
