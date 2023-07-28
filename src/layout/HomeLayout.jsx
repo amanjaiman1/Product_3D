@@ -8,8 +8,8 @@ function HomeLayout({ children }) {
     <div className="bg-[#110F0F] text-white">
       <div className=" bg-[url(/frame.png)] bg-cover bg-no-repeat">
         <Header />
-        <main className="min-[400px]:px-10 mt-8">
-          <section className="container mx-auto">{children}</section>
+        <main className="">
+          <section className="">{children}</section>
         </main>
       </div>
       <div className={`${styles.paddingX} ${styles.flexStart}`}>
