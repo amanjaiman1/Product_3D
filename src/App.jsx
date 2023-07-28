@@ -32,6 +32,7 @@ import HelpCenterPage from "./views/app/Helpcentre";
 import HowitWorksPage from "./views/app/How-it-works";
 import NewslettersPage from "./views/app/Newsletters";
 import SuggestionPage from "./views/app/Suggestions";
+import Settings from "./views/app/Settings";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -113,12 +114,25 @@ function App() {
             }
             path="/app/customizer/favourite"
           />
+          <Route
+            element={
+              <PrivateRoute>
+                <Settings />
+              </PrivateRoute>
+            }
+            path="/app/customizer/settings"
+          />
         </Routes>
 
         <div>
           <ScrollToTop
             smooth
-            className="scrlltop"
+            style={{
+              backgroundColor: "transparent",
+              border: "2px solid #7E57C2",
+              borderRadius: "50%",
+            }}
+            className="scrlltop items-center pb-1 w-10 h-10"
             viewBox="-60 5 270 160"
             top="100"
             color="white"

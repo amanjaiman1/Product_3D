@@ -16,15 +16,32 @@ function Hero() {
   return (
     <div className="flex justify-center items-center h-screen">
       <div className="flex-1 space-y-10 flex-col justify-center p-10">
-        <h1 className="text-8xl">
-          Elevate Your Style with Custom 3D Shirt Designs!
+        <span className="text-[#D8BFD8] rounded-full border-2 w-28 font-semibold p-2 rounded max-[300px]:flex max-[600px]:justify-center">
+          ✨ AI-Powered 3D T-Shirts
+        </span>
+        <h1 className="mt-5 text-heading  font-semibold min-[600px]:text-5xl max-[600px]:text-4xl min-[600px]:leading-normal max-[600px]:leading-tight max-[600px]:text-center ">
+          <span className="font-semibold text-7xl ss:text-[72px] leading-[100px] text-transparent bg-clip-text text-[#D8BFD8] bg-gradient-to-r from-violet-600 to-pink-200">
+            Elevate Your Style
+          </span>{" "}
+          <br className="sm:block hidden" />
+          <h1 className="font-semibold text-7xl ss:text-[72px] leading-[100px] ss:leading-[100.8px] text-[#D8BFD8] ">
+            with Intelligent
+          </h1>
+          <span className="font-semibold text-7xl ss:text-[72px] leading-[75px] text-transparent bg-clip-text text-[#D8BFD8] bg-gradient-to-r from-violet-600 to-pink-200">
+            Fashion
+          </span>
         </h1>
         <button className="rounded-full border-2 w-48 p-3 bg-[#110F0F] hover:text-black hover:bg-white">
           Design Now
         </button>
       </div>
-      <div className="flex-1 flex-col justify-center">
-        <img width={"100%"} height={"100%"} src={male} alt="" />
+      <div className="flex-1 flex-col justify-center h-screen object-contain">
+        <img
+          width={"100%"}
+          height={"100%"}
+          src={male}
+          className="object-contain max-h-full max-w-full"
+        />
       </div>
     </div>
   );
