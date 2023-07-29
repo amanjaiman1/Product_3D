@@ -8,7 +8,7 @@ const About = () => {
       <div className="p-4 m-4 w-[80%] backdrop-blur-lg ">
         {/* ---------------About us -------------------- */}
         <div className=" grid lg:grid-flow-col items-center grid-flow-row about">
-          <div>
+          <div className="backdrop-blur-md">
             <p className="p-4 text-2xl font-thin text-purple-300 mt-[5%]">
               Who are we?
             </p>
@@ -27,8 +27,8 @@ const About = () => {
         </div>
         {/*--------------- Our Mission ---------------*/}
         <div className="mt-[5%] text-center place-content-center  about">
-          <p className="text-5xl p-4 m-4 font-medium opacity-80">Our Mission</p>
-          <div className="flex justify-center text-justify">
+          <p className="text-5xl p-4 m-4 font-medium opacity-80 ">Our Mission</p>
+          <div className="flex justify-center text-justify backdrop-blur-lg p-4">
             <p className="lg:w-[90%] opacity-70">
               Our mission is to empower everyone to become a fashion designer and
               unlock their imagination through cutting-edge 3D T-shirt designing. We
@@ -43,7 +43,7 @@ const About = () => {
           <p className="p-4 m-4 text-5xl mt-[5%] font-medium opacity-80 text-center">
             What Sets Us Apart?
           </p>
-          <ul className="opacity-70 w-[70%]">
+          <ul className="opacity-70 w-[70%] backdrop-blur-md">
             <li className="p-4 m-4 border-2 border-gray-600 rounded-lg bg-black">
               Seamless 3D Designing Experience: Unlike traditional design platforms,
               we take it a step further by offering a dynamic 3D interface that
@@ -77,7 +77,7 @@ const About = () => {
           <p className="text-5xl p-4 m-4 mt-[5%] font-medium opacity-80 text-center">
             Our Vision
           </p>
-          <p className="p-4 m-4 opacity-70">
+          <p className="p-4 m-4 opacity-70 backdrop-blur-md">
             As a team of passionate creatives, we envision a world where fashion
             knows no bounds. Through [Website Name], we aspire to inspire a community
             of designers who embrace their uniqueness, celebrate diversity, and
@@ -92,17 +92,19 @@ const About = () => {
             <p className="p-4 m-4 mt-[5%] text-center font-medium opacity-80 text-5xl">
               Join Us Today
             </p>
-            <p className="p-4 m-4 opacity-70">
-              Whether you're an artist seeking a new canvas or an individual who
-              wants to wear their imagination proudly, [Website Name] welcomes you
-              with open arms. Create, design, and share your 3D T-shirt masterpieces
-              with the world, and let your creativity shine.
-            </p>
-            <p className="p-4 m-4 opacity-70 text-center">
-              Thank you for being a part of our vibrant community. Together, let's
-              make the world a more colorful and expressive place, one T-shirt design
-              at a time.
-            </p>
+            <div className="backdrop-blur-md p-4">
+              <p className="p-4 m-4 opacity-70 ">
+                Whether you're an artist seeking a new canvas or an individual who
+                wants to wear their imagination proudly, [Website Name] welcomes you
+                with open arms. Create, design, and share your 3D T-shirt
+                masterpieces with the world, and let your creativity shine.
+              </p>
+              <p className="p-4 m-4 opacity-70 text-center">
+                Thank you for being a part of our vibrant community. Together, let's
+                make the world a more colorful and expressive place, one T-shirt
+                design at a time.
+              </p>
+            </div>
           </div>
         </div>
       </div>
