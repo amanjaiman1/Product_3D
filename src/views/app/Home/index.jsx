@@ -12,10 +12,14 @@ function Home() {
     <HomeLayout>
       {/* Hero Section */}
       <Hero />
-      {/* <HightLights />
-      <Contributor />
+      <HightLights />
+      {/* <Contributor />
       <TeamPost />
       <NewsLetter /> */}
+      {/* <Contributor />
+      <TeamPost />*/}
+      <NewsLetter />
+      <br />
     </HomeLayout>
   );
 }
