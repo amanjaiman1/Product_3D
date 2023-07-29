@@ -1,4 +1,4 @@
-import { ContactShadows, Environment, OrbitControls, Sky } from "@react-three/drei";
+import { ContactShadows, OrbitControls } from "@react-three/drei";
 import { useControls } from "leva";
 import { Avatar } from "./Avatar";
 
@@ -37,7 +37,6 @@ export const Experience = () => {
       />
       <ambientLight intensity={0.8} />
       {/* <Sky /> */}
-      <Environment preset="sunset" />
       <group>
         <ContactShadows
           opacity={0.42}
