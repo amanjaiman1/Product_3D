@@ -17,15 +17,15 @@ const Navbar = () => {
   });
 
   return (
-    <nav className={`flex justify-around items-center p-4 shadow-lg bg-[#0f0f0fb4]`}>
-      <div>Fashion Forge</div>
-      <ul className="flex space-x-10 justify-center items-center">
+    <nav className={`flex justify-around items-center p-5 bg-transparent`}>
+      <div className="">Fashion Forge</div>
+      <ul className="navLinks flex space-x-10 justify-center items-center ">
         <li>Home</li>
         <li>Contributors</li>
         <li>GuideBook</li>
         <li>Blog</li>
         <li>
-          <Button>Try Now</Button>
+          <Button className={"rounded-md"}>Try Now</Button>
         </li>
       </ul>
     </nav>

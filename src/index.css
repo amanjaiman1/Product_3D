@@ -106,3 +106,33 @@ body {
   border-top: 2px solid rgb(204, 136, 241);
   border-bottom: 2px solid rgb(64, 50, 255);
 }
+
+.bghomelayout {
+  background: linear-gradient(135deg, #2e285e, #170f49, #000000);
+  margin: 0;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.jesus {
+  background: linear-gradient(135deg, #2a0069, #15052f, #18083cdf, #252200);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 0 20px rgba(106, 0, 255, 0.5), 0 0 40px rgba(106, 0, 255, 0.3),
+    0 0 80px rgba(106, 0, 255, 0.2);
+}
+
+.navLinks {
+  font-family: Poppins;
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.pointer {
+  border-radius: 15px 15px 0 0;
+}
+
+.pointer1 {
+  border-radius: 0 20px 20px 20px;
+  backdrop-filter: blur(10px);
+}
