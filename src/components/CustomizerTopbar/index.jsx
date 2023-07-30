@@ -56,7 +56,7 @@ function CustomizerTopbar() {
       <div>Recents</div>
       <div className="flex space-x-2 items-center">
         <Button
-          className={"bg-primary text-white"}
+          className={"bg-primary hover:bg-blue-600 text-white hover:text-white"}
           onClick={() => {
             let uuid = generateUUID();
             navigate("/app/customizer/editor/" + uuid);
@@ -66,7 +66,7 @@ function CustomizerTopbar() {
         </Button>
         <label
           htmlFor="importfile"
-          className="bg-pink-500 hover:bg-pink-400 p-2 cursor-pointer text-white rounded-lg"
+          className="bg-pink-500 hover:bg-pink-400 p-3 cursor-pointer text-white rounded-full"
         >
           Import
           <input
@@ -78,7 +78,7 @@ function CustomizerTopbar() {
           />
         </label>
         <Button
-          className={"bg-violet-600 hover:bg-violet-500 text-white"}
+          className={"bg-violet-600 hover:text-white hover:bg-violet-500 text-white"}
           onClick={Logout}
         >
           Logout
