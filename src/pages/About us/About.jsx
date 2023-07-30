@@ -1,5 +1,5 @@
 import React from "react";
-import Character from "../../assets/about/Character.webp";
+import Character from "../../assets/about/character.webp";
 import join from "../../assets/about/join.webp";
 
 const About = () => {
