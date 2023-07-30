@@ -16,8 +16,9 @@ function Home() {
       {/* <Contributor />
       <TeamPost />
       <NewsLetter /> */}
-      {/* <Contributor />
-      <TeamPost />*/}
+      {/* */}
+      <Contributor />
+      <TeamPost />
       <NewsLetter />
       <br />
     </HomeLayout>

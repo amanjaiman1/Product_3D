@@ -38,6 +38,7 @@
     "react-color": "^2.19.3",
     "react-confetti": "^6.1.0",
     "react-dom": "^18.2.0",
+    "react-fast-marquee": "^1.6.0",
     "react-fontawesome": "^1.7.1",
     "react-google-recaptcha": "^3.1.0",
     "react-icons": "^4.10.1",
