@@ -17,10 +17,10 @@ function TeamPost() {
             opacity: 1,
           }}
           transition={{ duration: 0.84, delay: 0.1 }}
-          className="mt-5 mb-5 bg-primary bg-opacity-10 font-semibold rounded-lg pl-5 pr-5 py-2"
+          className="mt-5 mb-5 bg-[#7340E2] bg-opacity-10 font-semibold rounded-lg pl-5 pr-5 py-2"
           style={{ width: "max-content" }}
         >
-          <h1 className="text-center text-primary">REVIEWS</h1>
+          <h1 className="text-center text-[#7340E2]">REVIEWS</h1>
         </motion.div>
 
         <motion.h1
@@ -29,7 +29,7 @@ function TeamPost() {
           whileInView="visible"
           viewport={{ amount: 0.25, once: true }}
           transition={{ delay: 0.1, duration: 0.4 }}
-          className="font-semibold text-3xl"
+          className="font-semibold text-3xl text-[#D8BFD8]"
         >
           Go Through Reviews Of Previews Students To
         </motion.h1>
