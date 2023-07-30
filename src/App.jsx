@@ -34,6 +34,7 @@ import HowitWorksPage from "./views/app/How-it-works";
 import NewslettersPage from "./views/app/Newsletters";
 import SuggestionPage from "./views/app/Suggestions";
 import Settings from "./views/app/Settings";
+import Community from "./views/app/Community";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -75,7 +76,14 @@ function App() {
           <Route Component={HowitWorksPage} path="/how-it-works" />
           <Route Component={NewslettersPage} path="/newsletters" />
           <Route Component={SuggestionPage} path="/suggestions" />
-
+          <Route
+            element={
+              <PrivateRoute>
+                <Community />
+              </PrivateRoute>
+            }
+            path="/app/customizer/community"
+          />
           <Route
             element={
               <PrivateRoute>
