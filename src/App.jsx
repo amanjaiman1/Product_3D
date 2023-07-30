@@ -25,6 +25,7 @@ import CreatePost from "./pages/Blog/CreatePost";
 import ContributorPage from "./views/app/ContributorPage";
 import Guide from "./views/app/Guide";
 import BlogPage from "./views/app/Blog";
+import AboutUs from "./views/app/About us";
 import Faq from "./views/app/Faq";
 import CreatePage from "./views/app/Create";
 import ExplorePage from "./views/app/Explore";
@@ -65,6 +66,7 @@ function App() {
           <Route Component={ErrorPage} path="/*" />
 
           {/* Pages Routing  */}
+          <Route Component={AboutUs} path="/about" />
           <Route Component={BlogPage} path="/blog" />
           <Route Component={Guide} path="/guidebook" />
           <Route Component={CreatePage} path="/create" />
