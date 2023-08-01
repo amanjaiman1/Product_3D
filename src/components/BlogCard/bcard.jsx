@@ -1,14 +1,109 @@
-import React from "react";
+import React, { useState } from "react";
+import { MdEdit, MdDelete } from "react-icons/md";
+import { collection, deleteDoc, updateDoc, doc, setDoc } from "firebase/firestore";
+import { db } from "../../firebase/firebase";
+import EditPostForm from "../../pages/Blog/EditPost"; // Create a component for editing the post
+
 export default function Card(props) {
+  const [showFullContent, setShowFullContent] = useState(false);
+  const [editMode, setEditMode] = useState(false); // State to control edit mode
+  const maxCharLimit = 1;
+
+  const toggleContent = () => {
+    setShowFullContent(!showFullContent);
+  };
+
+  const handleDelete = async () => {
+    try {
+      console.log(props?.data?.id);
+
+      await updateDoc(doc(db, "blogPost", props?.data?.id), { isDelete: true });
+
+      props?.setBlog((prev) => {
+        return prev.filter((item) => item.id != props?.data?.id);
+      });
+      console.log("Post deleted successfully!");
+    } catch (error) {
+      console.error("Error deleting post:", error);
+    }
+  };
+
+  const handleEdit = async (updatedPost) => {
+    try {
+      // Update the document in Firestore collection based on the document ID (props?.data?.id)
+
+      console.log("props", updatedPost);
+      console.log("propsid", props?.data?.id);
+
+      await updateDoc(doc(db, "blogPost", props?.data.id), updatedPost);
+
+      // You can also trigger a success message or perform additional actions here
+      console.log("Post updated successfully!");
+      setEditMode(false); // Exit edit mode after successful update
+    } catch (error) {
+      console.error("Error updating post:", error);
+    }
+  };
+
+  const renderContent = () => {
+    if (showFullContent || props?.data?.content.length <= maxCharLimit) {
+      return <p dangerouslySetInnerHTML={{ __html: props?.data?.content }} />;
+    } else {
+      const truncatedContent = `${props?.data?.content.slice(0, maxCharLimit)}...`;
+      return <p dangerouslySetInnerHTML={{ __html: truncatedContent }} />;
+    }
+  };
+
   return (
-    <div className="m-4 rounded-lg flex flex-col justify-center">
-      <img src={props.image} className="mb-4" />
-      <p className="text-slate-400 text-sm lg:text-lg m-2 text-left">
-        T-SHIRT DESIGN TIPS
-      </p>
-      <p className="text-slate-300 font-medium text-base lg:text-lg m-2 overflow-hidden text-left">
-        {props.title}
-      </p>
-    </div>
+    <section className="text-gray-600 body-font">
+      <div className="container px-5 py-20">
+        <div className="flex flex-wrap -m-4">
+          <div className="p-4 md:w-full">
+            <div className="h-full rounded-xl shadow-cla-blue bg-gradient-to-r from-blue-300 to-pink-300 overflow-hidden">
+              <img
+                className="lg:h-48 md:h-36 w-full object-cover object-center scale-110 transition-all duration-400 hover:scale-100"
+                src={props?.data?.imageUrl}
+                alt="blog"
+              />
+              <div className="p-6">
+                <h2 className="tracking-widest text-xs title-font font-medium text-gray-600 mb-1">
+                  <span className="mr-2">{props?.data?.date}</span>
+                  {/* {"Tags: " + props?.tags[0]} */}
+                  <MdEdit
+                    className="text-violet-600 inline-block mr-2 cursor-pointer ml-[28%] text-base"
+                    onClick={() => setEditMode(true)} // Enter edit mode when edit button is clicked
+                  />
+                  <MdDelete
+                    className="text-red-500 inline-block cursor-pointer text-base"
+                    onClick={handleDelete}
+                  />
+                </h2>
+                <h1 className="title-font text-xl font-medium text-gray-600 mb-2 ">
+                  <strong>{props?.data?.title}</strong>
+                </h1>
+                <div className="leading-relaxed">
+                  {renderContent()}
+                  {props?.data?.content.length > maxCharLimit && (
+                    <button
+                      className=" mt-4 bg-gradient-to-r from-cyan-400 to-blue-400 hover:scale-105 drop-shadow-md shadow-cla-blue px-4 py-1 rounded-lg"
+                      onClick={toggleContent}
+                    >
+                      {showFullContent ? "Read Less" : "Read More"}
+                    </button>
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      {editMode && (
+        <EditPostForm
+          post={props.data} // Pass the post data to the EditPostForm component for editing
+          handleEdit={handleEdit} // Pass the handleEdit function to handle the update
+          onCancel={() => setEditMode(false)} // Exit edit mode when cancel button is clicked
+        />
+      )}
+    </section>
   );
 }
