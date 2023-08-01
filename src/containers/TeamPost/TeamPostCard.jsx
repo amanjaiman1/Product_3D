@@ -1,52 +1,50 @@
 import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import "swiper/css";
-import "swiper/css/pagination";
-import "swiper/css/navigation";
-import img from "./wolf.webp";
-import { Autoplay, Pagination, Navigation } from "swiper";
+import Marquee from "react-fast-marquee";
 import "./Card.css";
 import cardData from "./CardData";
 
 const Testimonials = () => {
   return (
     <div className="px-6 py-6 md:py-0 md:p-10 mb-10 md:mb-16 lg:pl-44 lg:pr-44 md:items-center">
-      <div className="h-[25rem] md:h-96">
-        <Swiper
-          spaceBetween={30}
-          centeredSlides={true}
-          autoplay={{
-            delay: 5000,
-            // disableOnInteraction: false,
-          }}
-          pagination={{
-            clickable: true,
-          }}
-          navigation={false}
-          modules={[Autoplay, Pagination, Navigation]}
-          className="mySwiper"
+      <div className="h-[25rem] md:h-96 mb-[40vh] mt-[-15%] ">
+        <Marquee
+          direction="left"
+          speed={50}
+          gradient={false}
+          gradientWidth={2}
+          className="myMarquee"
         >
           {cardData.map((card, index) => (
-            <SwiperSlide key={index}>
-              <div className="te bg-[#F8F9FF] h-60 md:h-48 w-[90%] md:w-[50%] p-7 rounded-[1.5rem]">
-                <figure className="flex flex-row gap-x-4 pt-4 justify-center items-center">
-                  <div>
-                    <img src={img} alt={card.name} className="max-w-[60px]" />
+            <div
+              key={index}
+              className="flex items-center h-screen w-full justify-center"
+            >
+              <div className="max-w-xs mx-4">
+                <div className="bg-black shadow-xl rounded-lg py-3">
+                  <div className="photo-wrapper p-2">
+                    <img
+                      className="w-32 h-32 rounded-full mx-auto"
+                      src={card.imageUrl}
+                      alt={card.name}
+                    />
                   </div>
-                  <figcaption className="flex items-start flex-col">
-                    <h1 className="font-semibold text-xl h-full">{card.name}</h1>
-                    <p className="font-normal">{card.role}</p>
-                  </figcaption>
-                </figure>
-                <div className="mt-6 items-center">
-                  <blockquote className="text-slate-500">
-                    {card.testimonial}
-                  </blockquote>
+                  <div className="p-2">
+                    <h3 className="text-center text-xl text-white font-medium leading-8">
+                      {card.name}
+                    </h3>
+                    <div className="text-center text-[#D8B7B7] text-xs font-semibold">
+                      <p>{card.role}</p>
+                    </div>
+                    <div className="text-center my-3"></div>
+                    <div className="text-center">
+                      <p className="text-[#aea3d0]">{card.testimonial}</p>
+                    </div>
+                  </div>
                 </div>
               </div>
-            </SwiperSlide>
+            </div>
           ))}
-        </Swiper>
+        </Marquee>
       </div>
     </div>
   );
