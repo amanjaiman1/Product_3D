@@ -4,13 +4,48 @@ import searchIcon from "../../assets/image/searchIcon.webp";
 import blogImage1 from "../../assets/image/blogImage1.webp";
 import ceo from "../../assets/image/ceo.webp";
 import Card from "../../components/BlogCard/bcard";
-import blogData from "../../store/blogData";
 import NewsLetter from "../../containers/NewsLetter";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { collection, getDocs, query, where } from "firebase/firestore";
+import {
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from "firebase/storage";
+import { db } from "../../firebase/firebase";
+import { ToastContainer, toast } from "react-toastify";
 
 function Blog() {
+  const [blogData, setBlogData] = useState([]);
+
+  // Fetch blog data from Firestore
+
+  useEffect(() => {
+    const fetchBlogData = async () => {
+      try {
+        const blogCollection = collection(db, "blogPost"); // Replace "blogspost" with your actual Firestore collection name
+        const q = query(blogCollection, where("isDelete", "==", false));
+
+        const querySnapshot = await getDocs(q);
+
+        const blogDataList = querySnapshot.docs.map((doc) => ({
+          ...doc.data(),
+          id: doc.id,
+        }));
+        setBlogData(blogDataList);
+        // setBlogData (blogDataList.filter((item) => item.id != id));
+      } catch (error) {
+        console.error("Error fetching blog data:", error);
+      }
+    };
+
+    fetchBlogData();
+  }, []);
+
   const blogCard = blogData.map((item) => {
-    return <Card key={item.id} {...item} />;
+    return <Card key={item.id} setBlog={setBlogData} data={item} />;
   });
   return (
     <div style={{ fontFamily: "Poppins, sans-serif" }} className="bg-black">
