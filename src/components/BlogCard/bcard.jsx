@@ -61,7 +61,7 @@ export default function Card(props) {
           <div className="p-4 md:w-full">
             <div className="h-full rounded-xl shadow-cla-blue bg-gradient-to-r from-blue-300 to-pink-300 overflow-hidden">
               <img
-                className="lg:h-48 md:h-36 w-full object-cover object-center scale-110 transition-all duration-400 hover:scale-100"
+                className="lg:h-60 md:h-36 w-full object-cover object-center scale-110 transition-all duration-400 hover:scale-100"
                 src={props?.data?.imageUrl}
                 alt="blog"
               />
