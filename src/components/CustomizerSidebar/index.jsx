@@ -29,6 +29,20 @@ function CustomizerSidebar() {
       >
         Favourite
       </div>
+
+      <div
+        onClick={() => {
+          navigate("/app/customizer/community");
+        }}
+        className={`cursor-pointer  mt-4 p-3 text-white  ${
+          "/app/customizer/community" === pathname
+            ? selectedvalue
+            : "hover:bg-blue-700"
+        }`}
+      >
+        Community
+      </div>
+
       <div
         onClick={() => {
           navigate("/app/customizer/create-post");

@@ -136,3 +136,7 @@ body {
   border-radius: 0 20px 20px 20px;
   backdrop-filter: blur(10px);
 }
+
+.about {
+  background-image: url(./assets/about/EC.jpg);
+}

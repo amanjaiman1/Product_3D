@@ -25,6 +25,7 @@ import CreatePost from "./pages/Blog/CreatePost";
 import ContributorPage from "./views/app/ContributorPage";
 import Guide from "./views/app/Guide";
 import BlogPage from "./views/app/Blog";
+import AboutUs from "./views/app/About us";
 import Faq from "./views/app/Faq";
 import CreatePage from "./views/app/Create";
 import ExplorePage from "./views/app/Explore";
@@ -33,6 +34,7 @@ import HowitWorksPage from "./views/app/How-it-works";
 import NewslettersPage from "./views/app/Newsletters";
 import SuggestionPage from "./views/app/Suggestions";
 import Settings from "./views/app/Settings";
+import Community from "./views/app/Community";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -65,6 +67,7 @@ function App() {
           <Route Component={ErrorPage} path="/*" />
 
           {/* Pages Routing  */}
+          <Route Component={AboutUs} path="/about" />
           <Route Component={BlogPage} path="/blog" />
           <Route Component={Guide} path="/guidebook" />
           <Route Component={CreatePage} path="/create" />
@@ -73,7 +76,14 @@ function App() {
           <Route Component={HowitWorksPage} path="/how-it-works" />
           <Route Component={NewslettersPage} path="/newsletters" />
           <Route Component={SuggestionPage} path="/suggestions" />
-
+          <Route
+            element={
+              <PrivateRoute>
+                <Community />
+              </PrivateRoute>
+            }
+            path="/app/customizer/community"
+          />
           <Route
             element={
               <PrivateRoute>

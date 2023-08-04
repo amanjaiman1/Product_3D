@@ -2,6 +2,18 @@ import React, { useState, useRef, useEffect, useMemo } from "react";
 import JoditEditor from "jodit-react";
 import EditorHomeLayout from "../../layout/EditorHomeLayout";
 import TextField from "../../components/TextField";
+import { doc, setDoc } from "firebase/firestore";
+import { db } from "../../firebase/firebase";
+import {
+  getStorage,
+  ref,
+  uploadBytesResumable,
+  getDownloadURL,
+} from "firebase/storage";
+import { generateUUID } from "three/src/math/MathUtils";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+import { Link, useNavigate } from "react-router-dom";
 
 function CreatePost({ placeholder }) {
   const editor = useRef(null);
@@ -9,6 +21,8 @@ function CreatePost({ placeholder }) {
   const [title, setTitle] = useState("");
   const [tags, setTags] = useState([]);
   const [currentTag, setCurrentTag] = useState("");
+  const [image, setImage] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   useEffect(() => {
     if (editor.current) {
@@ -18,6 +32,10 @@ function CreatePost({ placeholder }) {
       }, 0);
     }
   }, []);
+
+  useEffect(() => {
+    console.log("tags");
+  }, [tags]);
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
@@ -29,32 +47,87 @@ function CreatePost({ placeholder }) {
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter" && currentTag.trim() !== "") {
-      // Add the currentTag to the list of tags
       setTags([...tags, currentTag.trim()]);
-      // Clear the currentTag input field
       setCurrentTag("");
     }
   };
 
-  const handleTagRemove = (tagToRemove) => {
-    setTags(tags.filter((tag) => tag !== tagToRemove));
+  const handleImageChange = (e) => {
+    const file = e.target.files[0];
+    setImage(file);
+  };
+
+  const handleImageUpload = async () => {
+    try {
+      if (image) {
+        toast.info("Uploading image...");
+        const storageRef = ref(getStorage());
+        const imageRef = ref(storageRef, `images/${generateUUID()}`);
+        const uploadTask = uploadBytesResumable(imageRef, image);
+        await uploadTask;
+
+        const imageUrl = await getDownloadURL(imageRef);
+        toast.success("Image uploaded successfully!");
+        return imageUrl;
+      }
+    } catch (error) {
+      console.error("Error uploading image:", error);
+      toast.error("Error uploading image: Please try again.");
+    }
+    return null;
   };
 
   const handleEditorChange = (value) => {
     setPostText(value);
   };
 
-  const handleFormSubmit = (e) => {
+  const navigate = useNavigate();
+
+  const handleFormSubmit = async (e) => {
     e.preventDefault();
-    // Here, you can submit the post data, including 'title', 'content', and 'tags'.
-    // For example, you can make an API call to send the data to the server.
+
+    if (loading) return;
+
+    setLoading(true);
+
+    if (tags.length === 0) {
+      toast.error("Please add at least one tag before submitting.");
+      setLoading(false);
+      return;
+    }
+
+    const imageUrl = await handleImageUpload();
+
     const postData = {
       title: title,
       content: postText,
       tags: tags,
+      date: new Date().toLocaleDateString("en-GB"),
+      imageUrl: imageUrl,
+      isDelete: false,
     };
 
-    console.log(postData); // Replace this with your actual logic for submitting the post.
+    if (tags.length > 0) {
+      try {
+        await setDoc(doc(db, "blogPost", generateUUID()), postData);
+        toast.success("Blog post created successfully!");
+
+        setTitle("");
+        setTags([]);
+        setPostText("");
+        setCurrentTag("");
+        setImage(null);
+
+        navigate("/blog");
+      } catch (error) {
+        console.error("Error saving post:", error);
+        toast.error("Error saving post: Please try again.");
+      }
+    } else {
+      console.error("Error saving post: Tags cannot be empty.");
+    }
+
+    setLoading(false);
   };
 
   const editorConfig = useMemo(
@@ -66,64 +139,70 @@ function CreatePost({ placeholder }) {
     }),
     []
   );
-
   return (
     <EditorHomeLayout>
       <div className="max-h-screen">
         <div className="bg-dark p-8 rounded-lg w-full h-screen">
-          <form className="grid gap-y-2" onSubmit={handleFormSubmit}>
+          <div className="grid gap-y-2">
             <TextField
-              className="w-full  p-3 rounded-md shadow-md "
+              className="w-full p-3 rounded-md shadow-md"
               type="text"
               placeholder="Title"
               value={title}
               onChange={handleTitleChange}
-              tabIndex={1}
-            ></TextField>
+            />
 
             <div className="flex flex-wrap gap-2">
               {tags.map((tag, index) => (
                 <div key={index} className="flex items-center">
-                  <span className="border border-blue-600  px-2 py-1 rounded-md shadow-2xl bg-blue-600 text-white">
+                  <span className="border border-blue-600 px-2 py-1 rounded-md shadow-2xl bg-blue-600 text-white">
                     {tag}
                   </span>
                   <button
                     type="button"
                     onClick={() => handleTagRemove(tag)}
-                    className="ml-2 "
+                    className="ml-2"
                   >
-                    &#10005; {/* Close (X) symbol */}
+                    &#215; {/* Close (X) symbol */}
                   </button>
                 </div>
               ))}
             </div>
             <TextField
-              className="w-full  p-3 rounded-md shadow-md"
+              className="w-full p-3 rounded-md shadow-md"
               type="text"
               placeholder="Tags (Press Enter to add a tag)"
               value={currentTag}
               onChange={handleTagsChange}
               onKeyDown={handleKeyDown}
-            ></TextField>
+            />
+
+            <input
+              type="file"
+              accept=".png, .jpg, .jpeg"
+              onChange={handleImageChange}
+              className="w-full p-3 rounded-md shadow-md"
+            />
 
             <JoditEditor
               className="mt-2"
               ref={editor}
               value={postText}
               config={editorConfig}
-              tabIndex={2}
               onBlur={handleEditorChange}
             />
 
             <button
-              className="bg-blue-600 hover:bg-primary font-bold py-3 px-6 rounded-md w-1/12  text-white"
+              className="bg-blue-600 hover:bg-primary font-bold py-3 px-6 rounded-md w-1/5 text-white"
               type="submit"
+              onClick={handleFormSubmit}
             >
-              Submit
+              Create Post
             </button>
-          </form>
+          </div>
         </div>
       </div>
+      <ToastContainer />
     </EditorHomeLayout>
   );
 }

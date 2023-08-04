@@ -15,7 +15,6 @@ const Navbar = () => {
     var navbar = document.querySelector("nav");
     navbar.classList.toggle("sticky", this.scrollY > 0);
   });
-
   return (
     <nav className={`flex justify-around items-center p-5 bg-transparent`}>
       <div className="">Fashion Forge</div>

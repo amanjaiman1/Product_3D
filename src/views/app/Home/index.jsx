@@ -13,11 +13,13 @@ function Home() {
       {/* Hero Section */}
       <Hero />
       <HightLights />
-      {/* <Contributor />
+      <Contributor />
+      {/*
       <TeamPost />
       <NewsLetter /> */}
-      {/* <Contributor />
-      <TeamPost />*/}
+      {/* */}
+      <Contributor />
+      <TeamPost />
       <NewsLetter />
       <br />
     </HomeLayout>

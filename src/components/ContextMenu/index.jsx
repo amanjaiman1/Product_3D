@@ -24,6 +24,18 @@ function ContextMenu({ x, y, data, onClose }) {
       console.log(err);
     }
   };
+  const handleShareCommunity = async (event) => {
+    try {
+      const docRef = doc(db, "designs", data?.id);
+      const designData = await getDoc(docRef);
+      if (designData.exists()) {
+        await updateDoc(docRef, { isCommunity: true });
+      }
+      onClose(null);
+    } catch (err) {
+      console.log(err);
+    }
+  };
   const handleExport = async (event) => {
     try {
       const serializedData = serializeToP3D(data);
@@ -55,7 +67,7 @@ function ContextMenu({ x, y, data, onClose }) {
   return (
     <div
       style={{ position: "fixed", top: y, left: x }}
-      className={`shadow border-2 w-[200px] bg-white rounded-lg z-50 p-3`}
+      className={`shadow border-2 w-[250px] bg-white rounded-lg z-50 p-3`}
     >
       <ul>
         <li
@@ -81,6 +93,12 @@ function ContextMenu({ x, y, data, onClose }) {
           onClick={handleExport}
         >
           Export
+        </li>
+        <li
+          className="cursor-pointer  hover:bg-slate-200 p-2"
+          onClick={handleShareCommunity}
+        >
+          Share to Community
         </li>
         <li
           className="cursor-pointer  hover:bg-slate-200 p-2"
