@@ -68,15 +68,24 @@ export default function Card(props) {
               <div className="p-6">
                 <h2 className="tracking-widest text-xs title-font font-medium text-gray-600 mb-1">
                   <span className="mr-2">{props?.data?.date}</span>
-                  {/* {"Tags: " + props?.tags[0]} */}
                   <MdEdit
-                    className="text-violet-600 inline-block mr-2 cursor-pointer ml-[28%] text-base"
+                    className="text-violet-600 inline-block mr-2 cursor-pointer ml-[50%] text-base"
                     onClick={() => setEditMode(true)} // Enter edit mode when edit button is clicked
                   />
                   <MdDelete
                     className="text-red-500 inline-block cursor-pointer text-base"
                     onClick={handleDelete}
                   />
+                  <div className="flex flex-wrap mt-2">
+                    {props?.data?.tags?.map((tag, index) => (
+                      <div
+                        key={index}
+                        className="bg-gradient-to-r from-purple-400 to-cyan-400 text-black text-xs px-2 py-1 rounded-lg m-1"
+                      >
+                        {tag}
+                      </div>
+                    ))}
+                  </div>
                 </h2>
                 <h1 className="title-font text-xl font-medium text-gray-600 mb-2 ">
                   <strong>{props?.data?.title}</strong>
