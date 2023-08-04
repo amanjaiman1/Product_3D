@@ -25,8 +25,7 @@ function Hero() {
           <span className="text-[#D8BFD8] rounded-full border-2 w-28 font-semibold p-2  max-[300px]:flex max-[600px]:justify-center">
             ✨ AI-Powered 3D T-Shirts
           </span>
-    
-        </h1>
+          
         <button className="rounded-full border-2 w-48 p-3 bg-[#110F0F] hover:text-black hover:bg-white">
           Design Now
         </button>
