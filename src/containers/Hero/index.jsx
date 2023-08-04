@@ -44,6 +44,7 @@ function Hero() {
           <Experience />
         </Canvas>
       </div>
+      </div>
     </div>
   );
 }
