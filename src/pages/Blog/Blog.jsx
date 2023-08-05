@@ -1,5 +1,4 @@
-import React from "react";
-import blogbar from "../../assets/image/blogbar.webp";
+import React, { useEffect, useState } from "react";
 import searchIcon from "../../assets/image/searchIcon.webp";
 import blogImage1 from "../../assets/image/blogImage1.webp";
 import ceo from "../../assets/image/ceo.webp";
@@ -7,7 +6,6 @@ import { anime1, anime2, anime3 } from "../../assets";
 import Card from "../../components/BlogCard/bcard";
 import NewsLetter from "../../containers/NewsLetter";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import tips from "../../assets/image/tips.webp";
 import design from "../../assets/image/design.webp";
@@ -19,51 +17,15 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { db } from "../../firebase/firebase";
-import { ToastContainer, toast } from "react-toastify";
-
 function Blog() {
-  const [blogData, setBlogData] = useState([
-    {
-      id: 1,
-      imageUrl: tips,
-      title:
-        "From Concept to Creation: Proven Tips for Crafting Striking T-shirt Designs",
-      avatar: anime1,
-      content:
-        "Unlock the secrets of crafting eye-catching T-shirt designs with this comprehensive guide. Discover proven tips and techniques that take you from concept to creation,.....",
-      author: "Morgan",
-      date: "Jan 30, 2023",
-    },
-    {
-      id: 2,
-      imageUrl: design,
-      title:
-        "A Guide to T-shirt Design Success: Tips and Techniques You Need to Know",
-      avatar: anime2,
-      content:
-        "Embark on a journey to T-shirt design success with this indispensable guide. Learn essential tips and techniques that will elevate your designs to new heights.... ",
-      author: "Henry",
-      date: "May 1, 2023",
-    },
-    {
-      id: 3,
-      imageUrl: pro,
-      title:
-        "Design Like a Pro: 10 Essential Tips for Creating Professional T-shirt Artwork",
-      avatar: anime3,
-      content:
-        "Elevate your T-shirt designs to professional levels with these ten essential tips. Unravel the secrets that seasoned designers use to create stunning T-shirt artwork..... ",
-      author: "Rosy",
-      date: "July 7, 2023",
-    },
-  ]);
+  const [blogData, setBlogData] = useState([]);
 
   // Fetch blog data from Firestore
 
   useEffect(() => {
     const fetchBlogData = async () => {
       try {
-        const blogCollection = collection(db, "blogPost"); // Replace "blogspost" with your actual Firestore collection name
+        const blogCollection = collection(db, "blogPost");
         const q = query(blogCollection, where("isDelete", "==", false));
 
         const querySnapshot = await getDocs(q);
@@ -84,9 +46,16 @@ function Blog() {
     fetchBlogData();
   }, []);
 
-  const blogCard = blogData.map((item) => {
+  const filteredBlogData = blogData.filter(
+    (item) =>
+      item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.tags.some((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+  );
+
+  const blogCard = filteredBlogData.map((item) => {
     return <Card key={item.id} setBlog={setBlogData} data={item} />;
   });
+
   return (
     <div
       style={{ fontFamily: "Poppins, sans-serif" }}

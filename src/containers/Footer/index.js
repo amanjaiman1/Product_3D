@@ -38,7 +38,7 @@ export const footerLinks = [
       },
       {
         name: "FAQ",
-        link: "/",
+        link: "/faq",
       },
     ],
   },
