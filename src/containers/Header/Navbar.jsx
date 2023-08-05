@@ -50,7 +50,7 @@ const Navbar = () => {
             </a>
           </li>
           <li className="text-[#D8BFD8] hidden md:hidden lg:block">
-            <Button className="rounded-xl w-[100%] hover:bg-violet-600 md:w-auto px-4 py-2 text-center">
+            <Button className="rounded-xl w-[100%] hover:bg-violet-600 bg-blue-900 md:w-auto px-4 py-2 text-center">
               Try Now
             </Button>
           </li>

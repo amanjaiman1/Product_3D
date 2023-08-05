@@ -5,8 +5,8 @@ import styles from "../style";
 
 function HomeLayout({ children }) {
   return (
-    <div className="bg-[#110F0F] text-white">
-      <div className=" bg-[url(/frame.png)] bg-contain bg-no-repeat">
+    <div className="bghomelayout text-white ">
+      <div className="jesus">
         <Header />
         <main className="">
           <section className="">{children}</section>

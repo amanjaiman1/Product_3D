@@ -1,5 +1,4 @@
-import React from "react";
-import blogbar from "../../assets/image/blogbar.webp";
+import React, { useEffect, useState } from "react";
 import searchIcon from "../../assets/image/searchIcon.webp";
 import blogImage1 from "../../assets/image/blogImage1.webp";
 import ceo from "../../assets/image/ceo.webp";
@@ -7,7 +6,6 @@ import { anime1, anime2, anime3 } from "../../assets";
 import Card from "../../components/BlogCard/bcard";
 import NewsLetter from "../../containers/NewsLetter";
 import { Link } from "react-router-dom";
-import { useEffect, useState } from "react";
 import { collection, getDocs, query, where } from "firebase/firestore";
 import tips from "../../assets/image/tips.webp";
 import design from "../../assets/image/design.webp";
@@ -19,8 +17,6 @@ import {
   getDownloadURL,
 } from "firebase/storage";
 import { db } from "../../firebase/firebase";
-import { ToastContainer, toast } from "react-toastify";
-
 function Blog() {
   const [blogData, setBlogData] = useState([
     {
@@ -60,10 +56,12 @@ function Blog() {
 
   // Fetch blog data from Firestore
 
+  const [searchTerm, setSearchTerm] = useState("");
+
   useEffect(() => {
     const fetchBlogData = async () => {
       try {
-        const blogCollection = collection(db, "blogPost"); // Replace "blogspost" with your actual Firestore collection name
+        const blogCollection = collection(db, "blogPost");
         const q = query(blogCollection, where("isDelete", "==", false));
 
         const querySnapshot = await getDocs(q);
@@ -84,9 +82,16 @@ function Blog() {
     fetchBlogData();
   }, []);
 
-  const blogCard = blogData.map((item) => {
+  const filteredBlogData = blogData.filter(
+    (item) =>
+      item.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      item.tags.some((tag) => tag.toLowerCase().includes(searchTerm.toLowerCase()))
+  );
+
+  const blogCard = filteredBlogData.map((item) => {
     return <Card key={item.id} setBlog={setBlogData} data={item} />;
   });
+
   return (
     <div
       style={{ fontFamily: "Poppins, sans-serif" }}
