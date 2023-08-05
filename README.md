@@ -62,8 +62,6 @@ Contributions are welcome! If you have any ideas, suggestions, or bug fixes, ple
 
 <a href="https://github.com/amanjaiman1"><img src="https://imgur.com/av7nYpM.png" height="80px"/></a>
 
-<img src="https://imgur.com/4gVHX1q.png" height="70px"/>
-
 # Contributors <a name="contributors"></a>
 
 ### Thank you for contribution ✨
