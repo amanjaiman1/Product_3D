@@ -1,6 +1,6 @@
 import React from "react";
-import Character from "../../assets/about/first.png";
-import join from "../../assets/about/second.png";
+import Character from "../../assets/about/first.webp";
+import join from "../../assets/about/second.webp";
 
 const About = () => {
   return (
