@@ -20,7 +20,13 @@ import loginImgGif from "./image/loginImg.png";
 import googleImg from "./image/google-48.webp";
 import gssoc from "./../assets/image/gssoc.webp";
 import newLogo from "../assets/image/newLogo.png";
+import anime1 from "../assets/image/anime1.png";
+import anime2 from "../assets/image/anime2.jpeg";
+import anime3 from "../assets/image/anime3.png";
 export {
+  anime1,
+  anime2,
+  anime3,
   newLogo,
   hero,
   ai,
