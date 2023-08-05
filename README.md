@@ -58,6 +58,12 @@ Contributions are welcome! If you have any ideas, suggestions, or bug fixes, ple
   <img src="https://img.icons8.com/color/2x/discord--v2.png" height="50px"></img>
 </a>
 
+## 🤠 Project Admin 
+
+<a href="https://github.com/amanjaiman1"><img src="https://imgur.com/av7nYpM.png" height="80px"/></a>
+
+<img src="https://imgur.com/4gVHX1q.png" height="70px"/>
+
 # Contributors <a name="contributors"></a>
 
 ### Thank you for contribution ✨
@@ -72,15 +78,6 @@ We value the time and effort you put into contributing, and we look forward to r
 </a>
 
 <br/>
-
-## 🤠 Project Admin & Mentors
-
-<a href="https://github.com/amanjaiman1"><img src="https://imgur.com/av7nYpM.png" height="80px"/></a>
-
-<img src="https://imgur.com/4gVHX1q.png" height="70px"/>
-
-<a href="https://github.com/tarunsinghofficial/">Tarun Singh</a>
-<a href="https://github.com/SurajPratap10">Suraj Pratap</a>
 
 Thank you for using our 3D Product Customization Website!
 
