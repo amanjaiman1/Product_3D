@@ -13,7 +13,6 @@ function Home() {
       {/* Hero Section */}
       <Hero />
       <HightLights />
-      <Contributor />
       {/*
       <TeamPost />
       <NewsLetter /> */}
