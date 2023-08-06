@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { logo } from "../../assets";
+import { newLogo } from "../../assets";
+import Button from "../../components/Button";
 
 const Navbar = () => {
   const navigate = useNavigate();
@@ -14,204 +15,125 @@ const Navbar = () => {
     var navbar = document.querySelector("nav");
     navbar.classList.toggle("sticky", this.scrollY > 0);
   });
-
   return (
     <nav
-      className={` bg-[] text-white h-16 pt-[20px] pb-[60px] p-[8%] max-sm:px-0 max-sm:py-5 flex`}
+      // className={`flex justify-center items-center bg-gradient-to-r max-w-[97%] rounded-2xl from-violet-50 to-black  h-[90px] sticky top-3 z-10  mx-auto `}
+      className={`navbox flex justify-between items-center max-w-[95%] rounded-2xl h-[70px] sticky top-3 z-10  mx-auto border border-solid border-white border-opacity-25 rounded-20 bg-transparent backdrop-blur-md `}
     >
-      <div className="pl-5 ">
-        <Link to="/">
-          <div className="mt-9 lg:hidden align-center items-center">
-            <img
-              className="w-50 h-40 max-sm:ml-[-5px] max-sm:h-32 max-sm:mt-[-30px] "
-              src={logo}
-              alt="ProductLogo"
-            />
-          </div>
-        </Link>
+      <div className="flex justify-start ml-6">
+        <img src={newLogo} alt="Fashion Forge logo" className="w-24 h-24 mt-0.5" />
       </div>
-      <header class=" bg-[#12010166] navbar bg-opacity-50 w-[120%] h-[60px] max-lg:hidden shadow-lg rounded-xl flex justify-between items-center">
-        <div href="" class="flex-shrink-0 align-items items-center mt-1">
-          <img
-            class=""
-            src={logo}
-            alt=""
-            className="w-[120px] h-[120px] max-sm:ml-[-5px] max-sm:h-32 max-sm:mt-[-30px] mr-5"
-          />
-        </div>
-        <div class="font-medium lg:text-sm flex">
-          <ul class="flex justify-around items-center ml-auto space-x-10 pr-5">
-            <Link
-              to="/"
-              className={`link ${location.pathname === "/" ? "active" : ""}`}
-            >
+      <div>
+        <ul className="hidden sm:hidden md:flex lg:flex  space-x-12 font-normal text-[15px] justify-center items-center mr-10">
+          <li>
+            <a href="#" class="group text-[#D8BFD8] transition duration-100">
               Home
-            </Link>
-            <Link
-              to="/guidebook"
-              className={`link ${
-                location.pathname === "/guidebook" ? "active" : ""
-              }`}
-            >
-              Guide Book
-            </Link>
-            <Link
-              to="/contact"
-              className={`link ${location.pathname === "/contact" ? "active" : ""}`}
-            >
-              Contributors
-            </Link>
-            <Link
-              to="/faq"
-              className={`link ${location.pathname === "/faq" ? "active" : ""}`}
-            >
-              FAQ's
-            </Link>
-            <Link
-              to="/blog"
-              className={`link ${location.pathname === "/blog" ? "active" : ""}`}
-            >
+              <span class="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-violet-600"></span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="group text-[#D8BFD8] transition duration-100">
+              Contributor
+              <span class="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-violet-600"></span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="group text-[#D8BFD8] transition duration-100">
+              Guidebook
+              <span class="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-violet-600"></span>
+            </a>
+          </li>
+          <li>
+            <a href="#" class="group text-[#D8BFD8] transition duration-100">
               Blog
-            </Link>
-            <Link
-              to="https://discord.gg/YK3UYU7s"
-              className="inline-block rounded-full border p-2 hover:shadow-lg hover:border-opacity-0 duration-200 hover:bg-indigo-500"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                fill="currentColor"
-                class="bi bi-discord"
-                viewBox="0 0 16 16"
-              >
-                {" "}
-                <path d="M13.545 2.907a13.227 13.227 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.19 12.19 0 0 0-3.658 0 8.258 8.258 0 0 0-.412-.833.051.051 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.041.041 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032c.001.014.01.028.021.037a13.276 13.276 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019c.308-.42.582-.863.818-1.329a.05.05 0 0 0-.01-.059.051.051 0 0 0-.018-.011 8.875 8.875 0 0 1-1.248-.595.05.05 0 0 1-.02-.066.051.051 0 0 1 .015-.019c.084-.063.168-.129.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.052.052 0 0 1 .053.007c.08.066.164.132.248.195a.051.051 0 0 1-.004.085 8.254 8.254 0 0 1-1.249.594.05.05 0 0 0-.03.03.052.052 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.235 13.235 0 0 0 4.001-2.02.049.049 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.034.034 0 0 0-.02-.019Zm-8.198 7.307c-.789 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612Zm5.316 0c-.788 0-1.438-.724-1.438-1.612 0-.889.637-1.613 1.438-1.613.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612Z" />{" "}
-              </svg>
-            </Link>
-          </ul>
-          <div class="flex items-center px-4 lg:px-6 xl:px-8">
-            <button
-              className="tryfree-btn justify-center p-2 rounded-md h-10"
-              onClick={() => navigate("/signup")}
-            >
-              Try Free
-            </button>
-          </div>
-        </div>
-      </header>
-      {/* <div className="pl-5">
-        <Link to="/">
-          <div className="mt-9 align-center items-center">
-            <img
-              className="w-50 h-40 max-sm:ml-[-5px] max-sm:h-32 max-sm:mt-[-30px] "
-              src={logo}
-              alt="ProductLogo"
-            />
-          </div>
-        </Link>
+              <span class="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-violet-600"></span>
+            </a>
+          </li>
+          <li className="text-[#D8BFD8] hidden md:hidden lg:block">
+            <Button className="rounded-xl w-[100%] hover:bg-violet-600 bg-blue-900 md:w-auto px-4 py-2 text-center">
+              Try Now
+            </Button>
+          </li>
+        </ul>
       </div>
-      <div className="ml-auto max-lg:hidden space-x-10 pr-5">
-        <Link to="/" className={`link ${location.pathname === "/" ? "active" : ""}`}>
-          Home
-        </Link>
-        <Link
-          to="/guidebook"
-          className={`link ${location.pathname === "/guidebook" ? "active" : ""}`}
-        >
-          Guide Book
-        </Link>
-        <Link
-          to="/contact"
-          className={`link ${location.pathname === "/contact" ? "active" : ""}`}
-        >
-          Contributors
-        </Link>
-        <Link
-          to="/faq"
-          className={`link ${location.pathname === "/faq" ? "active" : ""}`}
-        >
-          {" "}
-          FAQ's
-        </Link>
 
-        <button className="tryfree-btn justify-center p-2 rounded-md h-10" onClick={()=>navigate("/signup")}>
-          Try Free
-        </button>
-      {/* </div> */}
-
-      <div className="ml-auto mr-5 mt-[-1rem] lg:hidden">
+      {isMobileMenuOpen ? (
         <button
-          className={`mobile-menu-toggle ${isMobileMenuOpen ? "open" : ""}`}
-          onClick={toggleMobileMenu}
+          data-collapse-toggle="navbar-dropup"
+          type="button"
+          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 mr-5"
+          onClick={() => setIsMobileMenuOpen((prev) => !prev)}
         >
-          <span className="bar"></span>
-          <span className="bar"></span>
-          <span className="bar"></span>
+          <svg
+            enable-background="new 0 0 32 32"
+            height="32px"
+            id="Layer_1"
+            version="1.1"
+            viewBox="0 0 32 32"
+            width="32px"
+            xml:space="preserve"
+            xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink"
+          >
+            <path
+              d="M18.221,7.206l9.585,9.585c0.879,0.879,0.879,2.317,0,3.195l-0.8,0.801c-0.877,0.878-2.316,0.878-3.194,0  l-7.315-7.315l-7.315,7.315c-0.878,0.878-2.317,0.878-3.194,0l-0.8-0.801c-0.879-0.878-0.879-2.316,0-3.195l9.587-9.585  c0.471-0.472,1.103-0.682,1.723-0.647C17.115,6.524,17.748,6.734,18.221,7.206z"
+              fill="#515151"
+            />
+          </svg>
         </button>
-      </div>
-      {isMobileMenuOpen && (
-        <div className="mobile-menu" style={{ width: "70%", textAlign: "right" }}>
-          <Link
-            to="/"
-            className={`link ${location.pathname === "/" ? "active" : ""}`}
-            onClick={toggleMobileMenu}
-            style={{ justifyContent: "flex-end" }}
+      ) : (
+        <button
+          data-collapse-toggle="navbar-dropdown"
+          type="button"
+          className="inline-flex items-center p-2 w-10 h-10 justify-center text-sm text-gray-500 rounded-lg md:hidden hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-200 dark:text-gray-400 dark:hover:bg-gray-700 dark:focus:ring-gray-600 mr-5"
+          onClick={() => setIsMobileMenuOpen((prev) => !prev)}
+        >
+          <svg
+            className="w-10 h-10"
+            aria-hidden="true"
+            xmlns="http://www.w3.org/2000/svg"
+            viewBox="0 0 20 20"
+            fill="currentColor"
           >
-            Home
-          </Link>
-          <Link
-            to="/guidebook"
-            className={`link ${location.pathname === "/guidebook" ? "active" : ""}`}
-            onClick={toggleMobileMenu}
-            style={{ justifyContent: "flex-end" }}
-          >
-            Guide Book
-          </Link>
-          <Link
-            to="/customize"
-            className={`link ${location.pathname === "/customize" ? "active" : ""}`}
-            onClick={toggleMobileMenu}
-            style={{ justifyContent: "flex-end" }}
-          >
-            Customize
-          </Link>
-          <Link
-            to="/contact"
-            className={`link ${location.pathname === "/contact" ? "active" : ""}`}
-            onClick={toggleMobileMenu}
-            style={{ justifyContent: "flex-end" }}
-          >
-            Contact Us
-          </Link>
-          <Link
-            to="/faq"
-            className={`link ${location.pathname === "/faq" ? "active" : ""}`}
-            onClick={toggleMobileMenu}
-            style={{ justifyContent: "flex-end" }}
-          >
-            {" "}
-            FAQ's
-          </Link>
-          <button
-            className="justify-center border-[1px] p-2 rounded-md"
-            style={{ justifyContent: "center" }}
-          >
-            Try Free
-          </button>
-        </div>
+            <path
+              fillRule="evenodd"
+              d="M3.646 5.646a.5.5 0 01.708 0L10 10.293l5.646-5.647a.5.5 0 01.708.708l-6 6a.5.5 0 01-.708 0l-6-6a.5.5 0 010-.708z"
+              clipRule="evenodd"
+            />
+          </svg>
+        </button>
       )}
 
-      {/* Dark Mode Feature - will add on customizer Page later  */}
-
-      {/* <div className="switch-container max-sm:hidden flex flex-row overflow-hidden mr-5">
-        <input className="darkmode-input" type="checkbox" id="switch" checked={isDarkMode} onChange={toggleDarkMode} />
-        <label htmlFor="switch">
-          <i className="fas fa-sun"></i>
-          <i className="fas fa-moon"></i>
-          <span className="ball"></span>
-        </label>
-      </div> */}
+      {isMobileMenuOpen && (
+        <div className="flex flex-col sm:flex-col md:hidden lg:hidden  align-items items-center bg-black rounded-xl absolute top-20 right-0 p-5 justify-center">
+          <ul className="font-normal text-[15px] justify-center items-center mr-10">
+            <li>
+              <a href="#" class="group text-[#D8BFD8] transition duration-100">
+                Home
+                <span class="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-violet-600 mb-2"></span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="group text-[#D8BFD8] transition duration-100">
+                Contributor
+                <span class="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-violet-600 mb-2"></span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="group text-[#D8BFD8] transition duration-100">
+                Guidebook
+                <span class="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-violet-600 mb-2"></span>
+              </a>
+            </li>
+            <li>
+              <a href="#" class="group text-[#D8BFD8] transition duration-100">
+                Blog
+                <span class="block max-w-0 group-hover:max-w-full transition-all duration-300 h-0.5 bg-violet-600"></span>
+              </a>
+            </li>
+          </ul>
+        </div>
+      )}
     </nav>
   );
 };

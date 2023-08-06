@@ -1,22 +1,44 @@
 export const footerLinks = [
   {
-    title: "Useful Links",
+    title: "Company",
     links: [
       {
-        name: "How it Works",
-        link: "/",
+        name: "About us",
+        link: "/about",
       },
       {
+        name: "Team",
+        link: "/contributors",
+      },
+    ],
+  },
+  {
+    title: "Services",
+    links: [
+      {
         name: "Create",
+        link: "/create",
+      },
+      {
+        name: "Branding",
         link: "/",
       },
       {
         name: "Explore",
-        link: "/",
+        link: "/explore",
+      },
+    ],
+  },
+  {
+    title: "Resources",
+    links: [
+      {
+        name: "Blog",
+        link: "/blog",
       },
       {
-        name: "Discord",
-        link: "https://discord.gg/3W7QFzQW",
+        name: "FAQ",
+        link: "/faq",
       },
     ],
   },
@@ -25,19 +47,15 @@ export const footerLinks = [
     links: [
       {
         name: "Help Center",
-        link: "/",
+        link: "/helpcenter",
       },
       {
         name: "Suggestions",
-        link: "/",
+        link: "/suggestions",
       },
       {
-        name: "Blog",
-        link: "/blog",
-      },
-      {
-        name: "Newsletters",
-        link: "/",
+        name: "Discord",
+        link: "https://discord.gg/3W7QFzQW",
       },
     ],
   },

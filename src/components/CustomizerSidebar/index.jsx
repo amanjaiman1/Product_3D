@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { useLocation, useNavigate, useParams } from "react-router-dom";
+import { useLocation, useNavigate, useParams, Link } from "react-router-dom";
 
 function CustomizerSidebar() {
   const { pathname } = useLocation();
@@ -28,6 +28,45 @@ function CustomizerSidebar() {
         }`}
       >
         Favourite
+      </div>
+
+      <div
+        onClick={() => {
+          navigate("/app/customizer/community");
+        }}
+        className={`cursor-pointer  mt-4 p-3 text-white  ${
+          "/app/customizer/community" === pathname
+            ? selectedvalue
+            : "hover:bg-blue-700"
+        }`}
+      >
+        Community
+      </div>
+
+      <div
+        onClick={() => {
+          navigate("/app/customizer/create-post");
+        }}
+        className={`cursor-pointer  mt-4 p-3 text-white  ${
+          "/app/customizer/create-post" === pathname
+            ? selectedvalue
+            : "hover:bg-blue-700"
+        }`}
+      >
+        Create Blog
+      </div>
+
+      <div
+        onClick={() => {
+          navigate("/app/customizer/settings");
+        }}
+        className={`cursor-pointer  mt-4 p-3 text-white  ${
+          "/app/customizer/settings" === pathname
+            ? selectedvalue
+            : "hover:bg-blue-700"
+        }`}
+      >
+        Settings
       </div>
     </div>
   );

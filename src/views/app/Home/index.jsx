@@ -11,12 +11,16 @@ function Home() {
   return (
     <HomeLayout>
       {/* Hero Section */}
-      <NewHero />
       <Hero />
       <HightLights />
+      {/*
+      <TeamPost />
+      <NewsLetter /> */}
+      {/* */}
       <Contributor />
       <TeamPost />
       <NewsLetter />
+      <br />
     </HomeLayout>
   );
 }

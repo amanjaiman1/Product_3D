@@ -33,7 +33,7 @@ function Footer() {
         key={footerLink.title}
         className="flex flex-col ss:my-0 my-4 min-w-[150px] w-full md:w-auto mb-4 md:mb-0 md:flex-1 md:mr-4"
       >
-        <h4 className="font-poppins font-medium text-[18px] leading-[27px] text-[#090F4E] text-center md:text-left">
+        <h4 className="font-mono font-medium text-[20px] leading-[27px] text-[#9400D3] text-center md:text-left">
           {footerLink.title}
         </h4>
 
@@ -41,11 +41,11 @@ function Footer() {
           {footerLink.links.map((link, index) => (
             <li
               key={link.name}
-              className={`font-poppins font-normal text-[16px] leading-[24px] text-[#63657E] hover:text-[#6058f2] cursor-pointer text-center md:text-left ${
+              className={`font-poppins font-normal text-[16px] leading-[24px] text-[#D8BFD8] hover:text-[#ffff] cursor-pointer text-center md:text-left ${
                 index !== footerLink.links.length - 1 ? "mb-4" : "mb-0"
               }`}
             >
-              <Link to={link.link} target="_blank">
+              <Link to={link.link} target="">
                 {link.name}
               </Link>
             </li>
@@ -73,7 +73,7 @@ function Footer() {
               opacity: 1,
             }}
             transition={{ duration: 0.84, delay: 0.1 }}
-            className="flex-1 flex flex-row justify-center md:justify-start mr-10 w-full md:w-auto mb-4 md:mb-0 md:mr-4"
+            className="flex-1 flex flex-row justify-center md:justify-start w-full md:w-auto mb-4 md:mb-0 md:mr-4"
             style={{
               paddingRight: "2rem",
               marginLeft: "auto",
@@ -83,27 +83,27 @@ function Footer() {
             <img
               src={objectFoot}
               alt="3D-Tee"
-              className="w-[465px] h-[250px] object-contain"
+              className="w-[500px] h-[250px] object-contain"
             />
           </motion.div>
 
           {/* foot links */}
-          <div className="flex-[1.5] w-full flex flex-row justify-between md:mt-0 mr-10 cursor-pointer">
+          <div className="flex-[1.5] w-full flex flex-row justify-between md:mt-0 mr-10 cursor-pointer bg-opacity-25">
             {renderFooterLinks()}
           </div>
 
-          <div
+          {/* <div
             className="flex-1 mt-10 md:mb-10 flex justify-center
            items-center w-full md:w-auto xl:ml-[-12rem] lg:ml-[-6rem] md:ml-[-4rem] sm:ml-[0rem] max-sm:ml-[0rem]"
           >
             <Button />
-          </div>
+          </div> */}
         </div>
       </div>
 
       {/* copyright */}
       <div className="w-full flex justify-between items-center md:flex-row flex-col pt-6 mb-[-35px]  border-t-[1px] border-t-[#BFC6F0]">
-        <p className="font-poppins font-normal text-center text-[12px] leading-[27px] text-[#63657E] mx-auto">
+        <p className="font-poppins font-normal text-center text-[12px] leading-[27px] text-[#D8BFD8] mx-auto">
           Opensource ©{new Date().getFullYear()} | Fashion Froze 3D | All Rights
           Reserved.
         </p>

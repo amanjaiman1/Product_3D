@@ -45,7 +45,7 @@ function Contributor() {
         transition={{ duration: 0.84, delay: 0.1 }}
         className="mt-5  bg-primary bg-opacity-10 font-semibold rounded-lg pl-5 pr-5 py-2"
       >
-        <h1 className="text-center text-primary">Contributors</h1>
+        <h1 className="text-center text-[#9400D3]">Contributors</h1>
       </motion.div>
       <div className="my-5">
         <motion.h2
@@ -64,14 +64,14 @@ function Contributor() {
           initial="hidden"
           transition={{ duration: 0.2, delay: 0.45 }}
           viewport={{ amount: 0.25, once: true }}
-          className="text-center text-secondary mt-5  text-lg lg:px-60"
+          className="text-center text-[#D8BFD8] mt-5  text-lg lg:px-60"
         >
           Our project's success is attributed to the dedicated contributors who
           brought expertise and creativity. Meet the amazing individuals behind our
           accomplishments.
         </motion.p>
       </div>
-      <div className="flex flex-wrap justify-center p-6 gap-8 max-w-screen-sm max-h-screen-md lg:max-w-full lg:max-h-full">
+      <div className="flex flex-wrap justify-center p-6 gap-8 max-w-screen-sm max-h-screen-md lg:max-w-full lg:max-h-full ">
         {loading ? (
           <p>Loading...</p>
         ) : (

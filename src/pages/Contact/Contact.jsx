@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import "./Contact.css";
 import { HashLoader } from "react-spinners";
+import { FaGithub } from "react-icons/fa";
 import verify from "../../assets/verification.png";
 
 function Contact() {
@@ -69,9 +70,9 @@ function Contact() {
   });
 
   return (
-    <div className="contact-container">
-      <div className="my-5">
-        <h2 className="text-3xl font-bold text-center justify-center">
+    <div className="contact-container mt-[65px]">
+      <div className="my-9">
+        <h2 className="text-3xl text-white font-bold text-center justify-center">
           Meet Our Talented Team
         </h2>
         <p className="text-center text-secondary mt-5  text-lg lg:px-60">
@@ -92,46 +93,85 @@ function Contact() {
 
       {loading ? (
         <div className="flex justify-center mt-10">
-          <HashLoader color="red" aria-label="grid-loading" visible={"true"} />
+          <HashLoader color="#484066" aria-label="grid-loading" visible={"true"} />
         </div>
       ) : (
         <div className="flex flex-wrap justify-center p-6 gap-4 rounded-xl sm:p-12 dark:text-gray-100 ml-2">
           {filteredUsers.map((contributor) => (
-            <div key={contributor.id} className="card">
-              <div className="contributor-content">
-                <div className="back">
+            <div key={contributor.id} className="card card1">
+              <div className="contributor-content card-flip side">
+                <div className="back back-background">
                   <div className="back-content">
                     <div className="front-content">
-                      <div
-                        className="text-black"
-                        style={{ cursor: "pointer" }}
-                        onClick={() =>
-                          window.open(`https://github.com/${contributor.login}`)
-                        }
-                      >
-                        <div className="title">
-                          <p className="title">
-                            <strong>{contributor.login}</strong>
-                          </p>
-                        </div>
-                        {contributor.bio === null ? (
-                          <p className="card-footer mx-10">Bio: Not Available</p>
-                        ) : (
-                          <p className="card-footer mx-10">Bio: {contributor.bio}</p>
-                        )}
+                      <div className="title mt-2">
+                        <p className="title">
+                          <strong>{contributor.login}</strong>
+                        </p>
+                      </div>
+                      {contributor.bio === null ? (
+                        <p className="card-footer mx-8 mb-3">
+                          <span className="text-[15px] font-bold text-white">
+                            BIO :
+                          </span>{" "}
+                          <span className="text-[12px] text-white text-justify">
+                            Not Available
+                          </span>
+                        </p>
+                      ) : (
+                        <p className="card-footer mx-8  mb-3">
+                          <span className=" text-[15px] font-bold text-white">
+                            BIO :
+                          </span>{" "}
+                          <span className="text-[12px] text-white text-justify">
+                            {contributor.bio}
+                          </span>
+                        </p>
+                      )}
 
-                        {contributor.location === null ? (
-                          <p className="card-footer">Location: Not Available</p>
-                        ) : (
-                          <p className="card-footer">
-                            Location: {contributor.location}
-                          </p>
-                        )}
+                      {contributor.location === null ? (
+                        <p className="card-footer">
+                          <span className="text-[15px] font-bold text-white">
+                            LOCATION :
+                          </span>{" "}
+                          <span className="text-[12px] text-white text-justify">
+                            Not Available
+                          </span>
+                        </p>
+                      ) : (
+                        <p className="card-footer">
+                          <span className=" text-[15px] font-bold text-white">
+                            LOCATION :
+                          </span>{" "}
+                          <span className="text-[12px] text-white text-justify">
+                            {contributor.location}
+                          </span>
+                        </p>
+                      )}
+                    </div>
+
+                    {/* Github icon */}
+                    <div
+                      className="text-white"
+                      style={{ cursor: "pointer" }}
+                      onClick={() =>
+                        window.open(`https://github.com/${contributor?.login}`)
+                      }
+                    >
+                      <div className="mx-5 xsm:mx-2">
+                        <a
+                          href={contributor.gitHub}
+                          target="_blank"
+                          rel="noreferrer"
+                          className="cursor-pointer inline-flex h-10 items-center rounded-lg  font-extrabold text-[1.5rem]"
+                          aria-label="Github"
+                        >
+                          <FaGithub />
+                        </a>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div className="front">
+                <div className="front front-img">
                   <div className="img">
                     <div className="circle"></div>
                     <div className="circle" id="right"></div>
@@ -139,16 +179,15 @@ function Contact() {
                   </div>
                   <img
                     src={contributor.avatar_url}
-                    className="rounded-full w-40 h-40 mx-auto "
+                    className="rounded-full w-40 h-40 mx-auto mb-3"
                     alt=""
                   />
-
-                  <strong className="text-black font-bold">
+                  <strong className="text-white font-bold">
                     <img src={verify} alt="" className="w-4 h-4 inline-block mr-1" />
                     {contributor.name ? contributor.name : contributor.login}
                   </strong>
 
-                  <div className="text-black text-xs">
+                  <div className="text-white text-xs mt-2">
                     <h4>{contributor.location}</h4>
                     <h4>Contributions : {contributor.contributions}</h4>
                   </div>
@@ -160,7 +199,7 @@ function Contact() {
         </div>
       )}
 
-      <div className="pagination">
+      <div className="pagination text-white">
         {contributors.length > 0 && (
           <ul className="flex justify-center space-x-4 mt--10 mb-9">
             {Array.from(

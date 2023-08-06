@@ -5,7 +5,8 @@ function Button({ className, children, ...rest }) {
   return (
     <button
       className={cn(
-        "bg-primary hover:bg-blue-700 outline-none p-3 rounded-lg text-white",
+        ` bg-[#110F0F] hover:text-black hover:bg-white
+          outline-none p-2 rounded-full px-5 border-2`,
         className
       )}
       {...rest}
