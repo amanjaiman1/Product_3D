@@ -17,7 +17,7 @@ const Ambassador = () => {
           </p>
         </div>
         <button className="border p-3 bg-pink-500 rounded-full w-[25%] mt-10 font-normal hover:bg-violet-800">
-          Learn more {" > "}
+          Learn more {"  "}
         </button>
       </div>
       <div className="w-1/2 h-full ml-20 ">
