@@ -11,9 +11,8 @@ function HomeLayout({ children }) {
         <main className="">
           <section className="">{children}</section>
         </main>
-      </div>
-      <div className={`${styles.paddingX} ${styles.flexStart}`}>
-        <div className={`${styles.boxWidth}`}>
+       </div>
+        <div className={`${styles.paddingX} ${styles.flexStart}`}>
           <Footer />
         </div>
       </div>
