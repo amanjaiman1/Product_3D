@@ -23,7 +23,16 @@ import newLogo from "../assets/image/newLogo.png";
 import anime1 from "../assets/image/anime1.png";
 import anime2 from "../assets/image/anime2.jpeg";
 import anime3 from "../assets/image/anime3.png";
+import ambassador from "../assets/image/ambassador.png";
+import news1 from "../assets/image/news1.png";
+import news2 from "../assets/image/news2.png";
+import news3 from "../assets/image/news3.png";
+import video1 from "../assets/image/video1.png";
+import video2 from "../assets/image/video2.png";
+import video3 from "../assets/image/video3.png";
+
 export {
+  ambassador,
   anime1,
   anime2,
   anime3,
@@ -37,6 +46,9 @@ export {
   stylishShirt,
   navTshirt,
   menuToggle,
+  news1,
+  news2,
+  news3,
   objectFoot,
   favicon,
   Card1,
@@ -49,4 +61,7 @@ export {
   loginImgGif,
   googleImg,
   gssoc,
+  video1,
+  video2,
+  video3,
 };

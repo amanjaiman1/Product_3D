@@ -2,8 +2,8 @@ import React from "react";
 
 const CommunityLanding = () => {
   return (
-    <div className="w-full h-screen">
-      <div className="bg-[url(/HeroSvg.png)] w-[100%] h-[30%] mt-10 mr-20">
+    <div className="w-full h-[100vh]">
+      <div className="bg-[url(/HeroSvg.png)] w-[100%] h-[25%] mt-10 mr-20">
         <div className="absolute top-40 left-80">
           <div className="flex flex-col text-center ml-40 ">
             <h1 className="font-semibold text-4xl border p-3 rounded-lg text-[#9400D3]">
@@ -17,10 +17,10 @@ const CommunityLanding = () => {
           </div>
         </div>
       </div>
-      <div className="flex  ml-20 w-[90%] h-[50%] mt-10 border p-3 rounded-lg">
+      <div className="flex ml-20 w-[90%] mt-20 p-3 rounded-lg">
         <div className="w-1/3 backdrop-blur-md p-5">
-          <div className="flex text-2xl">
-            <span className="text-green-800 font-bold"> | </span>
+          <div className="flex text-3xl">
+            <span className="text-pink-600 font-bold"> | </span>
             <h1 className="mr-3 ml-3">Community</h1>
             <span className="font-semibold">Platforms</span>
           </div>
