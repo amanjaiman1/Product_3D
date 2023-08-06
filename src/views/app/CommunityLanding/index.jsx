@@ -1,7 +1,7 @@
 import React from "react";
 import HomeLayout from "../../../layout/HomeLayout.jsx";
 import CommunityLanding from "../../../pages/CommunityLanding/index.jsx";
-import Ambassador from "../../../components/ambassador/index.jsx";
+import Ambassador from "../../../components/Ambassador/index.jsx";
 
 function Guide() {
   return (
