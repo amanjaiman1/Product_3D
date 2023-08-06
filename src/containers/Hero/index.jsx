@@ -22,7 +22,7 @@ function Hero() {
         <span className="text-[#D8BFD8] rounded-full border-2 w-28 font-semibold p-2 rounded max-[300px]:flex max-[600px]:justify-center">
           ✨ AI-Powered 3D T-Shirts
         </span>
-        <h1 className="mt-5 text-heading  font-semibold min-[600px]:text-5xl max-[600px]:text-4xl min-[600px]:leading-normal max-[600px]:leading-tight max-[600px]:text-center ">
+        <h1 className="mt-5 text-heading font-semibold min-[600px]:text-5xl max-[600px]:text-4xl min-[600px]:leading-normal max-[600px]:leading-tight max-[600px]:text-center ">
           <span className="font-semibold text-7xl ss:text-[72px] leading-[100px] text-transparent bg-clip-text text-[#D8BFD8] bg-gradient-to-r from-violet-600 to-pink-200">
             Elevate Your Style
           </span>{" "}
