@@ -35,6 +35,7 @@ import NewslettersPage from "./views/app/Newsletters";
 import SuggestionPage from "./views/app/Suggestions";
 import Settings from "./views/app/Settings";
 import Community from "./views/app/Community";
+import CommunityLanding from "./views/app/CommunityLanding";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -63,6 +64,7 @@ function App() {
           <Route Component={ErrorPage} path="/*" />
           <Route Component={Login} path="/login" />
           <Route Component={SignUp} path="/signup" />
+          <Route Component={CommunityLanding} path="/community" />
 
           <Route Component={ErrorPage} path="/*" />
 
