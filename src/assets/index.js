@@ -30,8 +30,25 @@ import news3 from "../assets/image/news3.png";
 import video1 from "../assets/image/video1.png";
 import video2 from "../assets/image/video2.png";
 import video3 from "../assets/image/video3.png";
-
+import blog from "../assets/image/blog.png";
+import query from "../assets/image/query.png";
+import support from "../assets/image/support.png";
+import tutorial from "../assets/image/tutorial.png";
+import bill from "../assets/image/bill.png";
+import creative from "../assets/image/creative.png";
+import troubleshooting from "../assets/image/troubleshooting.png";
+import started from "../assets/image/started.png";
+import setting from "../assets/image/setting.png";
 export {
+  tutorial,
+  bill,
+  creative,
+  troubleshooting,
+  started,
+  setting,
+  blog,
+  query,
+  support,
   ambassador,
   anime1,
   anime2,
