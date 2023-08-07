@@ -18,6 +18,10 @@
   background-repeat: no-repeat;
   animation: bg-spin 3s linear infinite;
 }
+.helpbox {
+  background-color: white;
+  box-shadow: 0px 0px 10px rgba(179, 0, 255, 0.5);
+}
 
 .header {
   background-image: conic-gradient(from var(--border-angle), #213, #112 50%, #213),
