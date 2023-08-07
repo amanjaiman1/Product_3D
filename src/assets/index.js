@@ -39,7 +39,9 @@ import creative from "../assets/image/creative.png";
 import troubleshooting from "../assets/image/troubleshooting.png";
 import started from "../assets/image/started.png";
 import setting from "../assets/image/setting.png";
+import email from "../assets/image/email.png";
 export {
+  email,
   tutorial,
   bill,
   creative,
