@@ -364,6 +364,7 @@ body {
   100% {
     transform: scaleX(1);
   }
+}
 /* Highlight Section Custom CSS  */
 
 .hr-text {
