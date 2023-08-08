@@ -3,6 +3,7 @@ import HomeLayout from "../../../layout/HomeLayout.jsx";
 import Explore from "../../../pages/Explore/Explore.jsx";
 import ExploreCommunity from "../../../components/ExploreCommunity/index.jsx";
 import ExploreCustomized from "../../../components/ExploreCustomized/index.jsx";
+import ExploreWork from "../../../components/ExploreWork/index.jsx";
 
 function ExplorePage() {
   return (
@@ -10,6 +11,7 @@ function ExplorePage() {
       <Explore />
       <ExploreCommunity />
       <ExploreCustomized />
+      <ExploreWork />
     </HomeLayout>
   );
 }
