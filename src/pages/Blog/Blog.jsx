@@ -149,7 +149,7 @@ function Blog() {
           </p>
         </div>
         <div className="mr-2">
-          <button className="border-2 rounded-3xl p-3 bg-gradient-to-r from-violet-600 to-purple-500 border-2 border-gray-400">
+          <button className="rounded-3xl p-3 bg-gradient-to-r from-violet-600 to-purple-500 border-2 border-gray-400">
             Subscribe now
           </button>
         </div>
@@ -157,9 +157,9 @@ function Blog() {
 
       <div className="flex justify-center mt-20 blogtitle">
         <div className="inline-flex bg-white shadow-md shadow-slate-600 rounded-xl w-[70%]">
-          <img src={searchIcon} alt="search icon" className="p-3 w-12 lg:w-16" />
+          <img src={searchIcon} alt="search icon" className="p-3 w-12 lg:w-16 " />
           <input
-            className="w-[40vw] lg:w-[40vw] lg:h-16 rounded-xl p-2 outline-none"
+            className="w-[40vw] lg:w-[40vw] lg:h-16 rounded-xl p-2 outline-none text-black"
             label="Search"
             placeholder="Search for articles"
             type="search"

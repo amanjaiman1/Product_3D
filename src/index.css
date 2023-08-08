@@ -260,6 +260,111 @@ body {
   padding-left: 2.25rem;
 }
 
+/* Text animation on hero section */
+
+.mobile-menu-toggle {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 100;
+  position: relative;
+  top: 30%;
+}
+
+.mobile-menu-toggle .bar {
+  width: 20px;
+  height: 2px;
+  background: linear-gradient(to left, #cd32cd, #8d56e1); /* Gradient background */
+
+  margin-bottom: 4px;
+  transition: transform 0.5s ease-in-out;
+}
+
+.mobile-menu-toggle.open .bar:nth-child(1) {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.mobile-menu-toggle.open .bar:nth-child(2) {
+  opacity: 0;
+}
+
+.mobile-menu-toggle.open .bar:nth-child(3) {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+.mobile-menu {
+  position: absolute;
+  top: 0;
+  left: 30%;
+  width: 100%;
+  height: 100vh;
+  padding-top: 7rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 91;
+  background-color: rgba(25, 4, 58, 0.7); /* Semi-transparent background */
+  backdrop-filter: blur(10px); /* Blur effect */
+  border: 1px solid white; /* White border */
+}
+
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 21px;
+  margin-bottom: 10px;
+  padding: 5px;
+}
+
+.mobile-menu button {
+  display: block;
+  margin-top: 10px;
+  padding: 8px 16px;
+  background-color: white;
+  color: black;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  -webkit-transition-property: all;
+  -webkit-transition-duration: 0.2s;
+  -webkit-transition-timing-function: ease-in;
+}
+.mobile-menu button:hover {
+  background-color: #7c3aed;
+  transform: scale(1.1);
+  cursor: pointer;
+}
+.mobile-menu > .link {
+  padding-left: 1rem;
+  padding-right: 1rem;
+  position: relative;
+}
+
+.mobile-menu > .link:hover::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 100%;
+  height: 2px;
+  background-color: #7c3aed;
+  animation: lineAnimation 0.5s ease-in-out;
+}
+
+@keyframes lineAnimation {
+  0% {
+    transform: scaleX(0);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
 /* Highlight Section Custom CSS  */
 
 .hr-text {
