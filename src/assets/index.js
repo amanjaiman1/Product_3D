@@ -40,7 +40,19 @@ import troubleshooting from "../assets/image/troubleshooting.png";
 import started from "../assets/image/started.png";
 import setting from "../assets/image/setting.png";
 import email from "../assets/image/email.png";
+import tshirt from "../assets/image/tshirt.gif";
+import explorecommunity from "../assets/image/explorecommunity.png";
+import minus from "../assets/image/minus.png";
+import art from "../assets/image/art.png";
+import ff3d from "../assets/image/ff3d.png";
+import designingart from "../assets/image/designingart.png";
 export {
+  designingart,
+  art,
+  ff3d,
+  minus,
+  explorecommunity,
+  tshirt,
   email,
   tutorial,
   bill,

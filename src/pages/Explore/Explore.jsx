@@ -1,123 +1,40 @@
 import React from "react";
+import { tshirt } from "../../assets";
 
 const Explore = () => {
-  const featuredDesigns = [
-    {
-      id: 1,
-      imageSrc: "designs/design1.jpg",
-      title: "Design 1",
-      description:
-        "Check out this amazing design with vibrant colors and eye-catching graphics.",
-    },
-    // Add more featured designs as needed...
-  ];
-
-  // Sample data for trending designs
-  const trendingDesigns = [
-    {
-      id: 1,
-      imageSrc: "designs/trending1.jpg",
-      title: "Trending Design 1",
-    },
-    // Add more trending designs as needed...
-  ];
-
-  // Sample data for user-submitted designs
-  const userDesigns = [
-    {
-      id: 1,
-      imageSrc: "designs/userdesign1.jpg",
-      title: "Design 1",
-      submittedBy: "JohnDoe",
-    },
-    // Add more user-submitted designs as needed...
-  ];
-
   return (
-    <div className="bg-black">
-      <section className="container mx-auto py-8">
-        {/* Section to showcase featured designs */}
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Featured Designs</h2>
-          {/* Display a grid of featured t-shirt designs */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {/* Map through the featured designs and display each design card */}
-            {featuredDesigns.map((design) => (
-              <div key={design.id} className="bg-white p-4 rounded shadow">
-                {/* Display the t-shirt design image */}
-                <img
-                  src={design.imageSrc}
-                  alt={design.title}
-                  className="w-full h-40 object-cover mb-2 rounded"
-                />
-                {/* Show the name or title of the design */}
-                <h3 className="text-lg font-semibold mb-1">{design.title}</h3>
-                {/* Provide a brief description of the design */}
-                <p className="text-sm text-gray-600">{design.description}</p>
-                {/* Add a link to view more details about the design */}
-                <a
-                  href={`/designs/${design.id}`}
-                  className="text-blue-500 hover:underline block mt-2"
-                >
-                  View Details
-                </a>
-              </div>
-            ))}
+    <div className="w-full h-[100vh]">
+      <div className="bg-[url(/explorebg.jpg)] w-[100%] h-[80%] mt-6">
+        <div className="flex">
+          <div className="ml-20 mt-10 w-1/2">
+            <h1 className="mt-5 text-heading font-semibold min-[600px]:text-5xl max-[600px]:text-4xl min-[600px]:leading-normal max-[600px]:leading-tight max-[600px]:text-center ">
+              <span className="font-semibold text-7xl ss:text-[72px] leading-[100px] text-transparent bg-clip-text text-[#D8BFD8] bg-gradient-to-r from-violet-600 to-pink-600">
+                Explore Our
+              </span>{" "}
+              <br className="sm:block hidden" />
+              <h1 className="font-semibold text-7xl ss:text-[72px] leading-[100px] ss:leading-[100.8px] text-indigo-500 mb-5 mt-5 ">
+                High Quality
+              </h1>
+              <span className="font-semibold text-7xl ss:text-[72px] leading-[75px] text-transparent bg-clip-text text-[#D8BFD8] bg-gradient-to-r from-violet-600 to-pink-600">
+                Collections
+              </span>
+            </h1>
+            <button className="rounded-full border-2 w-48 p-3 bg-gradient-to-r from-pink-500 to-violet-500 mt-10">
+              Explore {" > "}
+            </button>
+            <h1 className="mt-10 text-gray-400">Over 400+ members</h1>
+          </div>
+          <div className="w-1/2">
+            <div className="">
+              <img
+                src={tshirt}
+                alt=""
+                className="w-[60%] h-[80%] mt-5 border-2 border-skyblue-300  p-5"
+              />
+            </div>
           </div>
         </div>
-
-        {/* Section to display trending designs */}
-        <div className="mb-8">
-          <h2 className="text-2xl font-bold mb-4">Trending Designs</h2>
-          {/* Display a carousel or slideshow of trending t-shirt designs */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {/* Map through the trending designs and display each design slide */}
-            {trendingDesigns.map((design) => (
-              <div key={design.id} className="bg-white p-4 rounded shadow">
-                {/* Display the t-shirt design image */}
-                <img
-                  src={design.imageSrc}
-                  alt={design.title}
-                  className="w-full h-40 object-cover mb-2 rounded"
-                />
-                {/* Show the name or title of the design */}
-                <h3 className="text-lg font-semibold mb-1">{design.title}</h3>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Section for user-submitted designs */}
-        <div>
-          <h2 className="text-2xl font-bold mb-4">User-Submitted Designs</h2>
-          {/* Display a grid of user-submitted t-shirt designs */}
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {/* Map through the user-submitted designs and display each design card */}
-            {userDesigns.map((design) => (
-              <div key={design.id} className="bg-white p-4 rounded shadow">
-                {/* Display the t-shirt design image */}
-                <img
-                  src={design.imageSrc}
-                  alt={design.title}
-                  className="w-full h-40 object-cover mb-2 rounded"
-                />
-                {/* Show the name or title of the design and the name of the user who submitted it */}
-                <h3 className="text-lg font-semibold mb-1">{design.title}</h3>
-                <p className="text-sm text-gray-600">
-                  Submitted by: {design.submittedBy}
-                </p>
-                {/* Add a link to view more details about the design */}
-                <a
-                  href={`/designs/${design.id}`}
-                  className="text-blue-500 hover:underline block mt-2"
-                >
-                  View Details
-                </a>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      </div>
     </div>
   );
 };
