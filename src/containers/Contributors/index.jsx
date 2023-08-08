@@ -43,20 +43,22 @@ function Contributor() {
           opacity: 1,
         }}
         transition={{ duration: 0.84, delay: 0.1 }}
-        className="mt-5  bg-primary bg-opacity-10 font-semibold rounded-lg pl-5 pr-5 py-2"
+        className="mt-5 font-semibold rounded-lg pl-5 pr-5 py-2"
       >
-        <h1 className="text-center text-[#9400D3]">Contributors</h1>
+        <h1 className="text-center deepshadow ">Contributors</h1>
       </motion.div>
-      <div className="my-5">
+
+      <div className="my-5 wrappers">
+        <hr className="hr-text" />
         <motion.h2
           variants={fadeIn}
           initial="hidden"
           whileInView="visible"
           viewport={{ amount: 0.25, once: true }}
           transition={{ delay: 0.1, duration: 0.4 }}
-          className="text-3xl font-bold text-center justify-center"
+          className="text-[70px] text-white font-bold text-center justify-center"
         >
-          Meet Our Talented Team
+          <h1 data-heading="Meet Our Talented Team">Meet Our Talented Team</h1>
         </motion.h2>
         <motion.p
           variants={fadeIn}

@@ -7,14 +7,16 @@ import { services } from ".";
 
 const HightLights = ({ index, title, icon }) => {
   return (
-    <div>
+    <div className="pb-10">
       {/* <div>High Lights</div> */}
       <div>
         <div className="feature-header my-3">
-          <div className="flex items-center mb-10">
-            <h1 className="text-3xl font-semibold text-[#9400D3]  rounded-full border-2 w-[50%] items-center p-5 rounded max-[300px] mx-auto justify-center text-center">
+          <hr className="hr-text" />
+          <div className="items-center mb-10">
+            <h1 className="highlightHeading purples text-3xl font-semibold text-[#9400D3] w-[70%] items-center p-5  max-[300px] mx-auto justify-center text-center">
               ✨ Essential Product Highlights and Features
             </h1>
+            <hr className=" w-[20%] m-auto mt-10 border-[2px] border-[#7954ff] rounded-lg" />
           </div>
 
           <div className="text-[#D8BFD8] max-w-[900px] feature-desc text-center mx-auto px-4 leading-loose">

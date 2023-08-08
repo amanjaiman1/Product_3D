@@ -18,9 +18,9 @@ function Hero() {
   };
   return (
     <div className=" text-center justify-center items-center h-screen">
-      <hr className="w-[70%] m-auto border-[2px] border-[#7954ff] rounded-lg" />
+      <hr className="w-[70%] m-auto border-[1px] border-[#7954ff] rounded-lg" />
       <hr className="w-[60%] m-auto border-[2px] border-[#993fff] rounded-lg mt-[3px]" />
-      <hr className="w-[40%] m-auto border-[2px] border-[#9f4bff] rounded-lg mt-[3px]" />
+      <hr className="w-[40%] m-auto border-[3px] border-[#9f4bff] rounded-lg mt-[3px]" />
       <div className="space-y-10 flex-col justify-center p-10">
         <span className="text-[#D8BFD8] rounded-[10px] border-2 w-28 font-semibold p-2 max-[300px]:flex max-[600px]:justify-center">
           ✨ AI-Powered 3D T-Shirts
@@ -35,7 +35,7 @@ function Hero() {
           </h1>
         </h1>
         <div class="title-wrapper text-center">
-          <h1 class="sweet-title">
+          <h1 class="sweet-title mb-8">
             <span data-text="FASHION" className=" max-sm:text-[70px]">
               FASHION
             </span>
