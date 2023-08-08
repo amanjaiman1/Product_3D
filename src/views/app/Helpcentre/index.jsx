@@ -9,6 +9,7 @@ function HelpCentrePage() {
     <HomeLayout>
       <HelpCentre />
       <Needhelp />
+      <Helpfaq />
     </HomeLayout>
   );
 }
