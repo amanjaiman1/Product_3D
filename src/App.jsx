@@ -65,7 +65,6 @@ function App() {
           <Route Component={Login} path="/login" />
           <Route Component={SignUp} path="/signup" />
           <Route Component={CommunityLanding} path="/community" />
-
           <Route Component={ErrorPage} path="/*" />
 
           {/* Pages Routing  */}

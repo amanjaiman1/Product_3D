@@ -40,7 +40,9 @@ import troubleshooting from "../assets/image/troubleshooting.png";
 import started from "../assets/image/started.png";
 import setting from "../assets/image/setting.png";
 import email from "../assets/image/email.png";
+import tshirt from "../assets/image/tshirt.gif";
 export {
+  tshirt,
   email,
   tutorial,
   bill,
