@@ -7,8 +7,8 @@ import { paraAnim } from "../../animation/motion";
 import { buttonAnim } from "../../animation/motion";
 import { imgAnim } from "../../animation/motion";
 import male from "./../../assets/image/male.png";
-import { Canvas } from "@react-three/fiber";
-import { Experience } from "./Model/Experience";
+// import { Canvas } from "@react-three/fiber";
+// import { Experience } from "./Model/Experience";
 
 function Hero() {
   const navigate = useNavigate();
@@ -39,7 +39,7 @@ function Hero() {
         </button>
       </div>
       <div className="flex-1 flex-col justify-center h-screen object-contain">
-        <Canvas
+        {/* <Canvas
           camera={{
             position: [0, -8, 5],
             fov: 30,
@@ -50,7 +50,7 @@ function Hero() {
           style={{ height: "140vh", width: "100%", marginTop: "10%" }}
         >
           <Experience />
-        </Canvas>
+        </Canvas> */}
       </div>
     </div>
   );

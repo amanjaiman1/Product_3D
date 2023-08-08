@@ -10,13 +10,8 @@ import NewHero from "../../../containers/newHero/index.jsx";
 function Home() {
   return (
     <HomeLayout>
-      {/* Hero Section */}
       <Hero />
       <HightLights />
-      {/*
-      <TeamPost />
-      <NewsLetter /> */}
-      {/* */}
       <Contributor />
       <TeamPost />
       <NewsLetter />
