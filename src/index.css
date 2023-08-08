@@ -145,18 +145,11 @@ body {
 }
 
 .bghomelayout {
-  background: linear-gradient(135deg, #2e285e, #170f49, #000000);
+  background: linear-gradient(135deg, #0f0e13, #030304, #000000);
   margin: 0;
   justify-content: center;
   align-items: center;
   position: relative;
-}
-
-.jesus {
-  background: linear-gradient(135deg, #2a0069, #15052f, #18083cdf, #252200);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 0 20px rgba(106, 0, 255, 0.5), 0 0 40px rgba(106, 0, 255, 0.3),
-    0 0 80px rgba(106, 0, 255, 0.2);
 }
 
 .navLinks {
@@ -176,4 +169,24 @@ body {
 
 .about {
   background-image: url(./assets/about/EC.jpg);
+}
+
+.mobile-menu-open {
+  transform: translateY(0);
+  opacity: 1;
+  visibility: visible;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+  padding: 25px;
+  margin-right: 10px;
+  line-height: 40px;
+  background-color: transparent;
+  backdrop-filter: blur(20px);
+  border: solid 2px;
+}
+
+.mobile-menu-closed {
+  transform: translateY(-100%);
+  opacity: 0;
+  visibility: hidden;
+  transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
 }
