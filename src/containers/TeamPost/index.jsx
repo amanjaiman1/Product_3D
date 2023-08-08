@@ -17,10 +17,11 @@ function TeamPost() {
             opacity: 1,
           }}
           transition={{ duration: 0.84, delay: 0.1 }}
-          className="mt-5 mb-5 bg-[#7340E2] bg-opacity-10 font-semibold rounded-lg pl-5 pr-5 py-2"
+          className="mt-5 mb-5 text-center text-white"
           style={{ width: "max-content" }}
         >
-          <h1 className="text-center text-[#7340E2]">REVIEWS</h1>
+          <span className="teampostHeading">REVIEWS</span>
+          <hr className="hr-text" />
         </motion.div>
 
         <motion.h1
