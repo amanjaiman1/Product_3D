@@ -81,6 +81,9 @@ git checkout -b fix-issue-<ISSUE-NUMBER>
 - `git remote add upstream https://github.com/amanjaiman1/Product_3D`
 - `git push origin fix-issue-<ISSUE-NUMBER>`
 
+
+<hr>
+
 ### Commit Message Format
 
 - We follow the conventional commit message format to provide a clear and standardized history of our project's changes. Each commit message should consist of a type and a descriptive message.
@@ -96,6 +99,54 @@ git checkout -b fix-issue-<ISSUE-NUMBER>
   | revert | Revert | Revert Previous Commits | Reverting previous commits. |
   | style | Style | Code Formatting or Style | Changes related to code formatting or style. |
   | assets | Assets | Add or Update Assets (e.g., images, files) | Changes related to adding or updating assets, such as images or other files. |
+
+
+1. **Type**: The commit type must be one of the following:
+
+   - `feat`: A new feature or enhancement.
+   - `fix`: A bug fix.
+   - `docs`: Documentation changes.
+   - `style`: Code style changes (e.g., formatting, semicolons).
+   - `refactor`: Code refactorings with no feature changes or bug fixes.
+   - `test`: Adding or improving tests.
+   - `chore`: General maintenance tasks, build changes, etc.
+
+2. **Scope** (Optional): The scope provides context for the commit, indicating the specific part of the project being affected. Use a short description in lowercase (e.g., `auth`, `navbar`, `README`).
+
+3. **Description**: A brief and meaningful description of the changes made. Start with a capital letter and use the imperative mood (e.g., "Add new feature" instead of "Added new feature").
+
+4. **Issue reference** (Optional): Include the issue number associated with the commit (e.g., `#123`).
+
+### Examples:
+
+#### Valid Commit Messages:
+
+- `feat: Add user authentication feature`
+- `fix(auth): Resolve login page redirect issue`
+- `docs: Update installation instructions`
+- `style: Format code according to project guidelines`
+- `refactor(navbar): Improve responsiveness`
+- `test: Add unit tests for API endpoints`
+- `chore: Update dependencies to latest versions`
+- `fix: Handle edge case in data processing (#456)`
+
+#### Invalid Commit Messages:
+
+- `Added new stuff`
+- `Fixed a bug`
+- `Updated code`
+- `auth feature update`
+- `chore: fixed some stuff`
+
+### Commit Example with Commitlint:
+
+```bash
+git commit -m "feat(auth): Implement user signup process (#789)"
+```
+
+<hr>
+
+
 
 > Please adhere to this format when making commits. This will help us maintain a clean and organized commit history.
 
@@ -141,6 +192,7 @@ Effective communication is essential for maintaining a collaborative and inclusi
 - Provide constructive feedback and suggestions.
 - Clearly express your thoughts and ideas.
 - Be open to different perspectives and opinions.
+
 
 # How to Get Help
 
