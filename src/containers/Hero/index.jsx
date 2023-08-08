@@ -38,7 +38,7 @@ function Hero() {
           Design Now
         </button>
       </div>
-      <div className="flex-1 flex-col justify-center h-screen object-contain">
+      {/* <div className="flex-1 flex-col justify-center h-screen object-contain">
         <Canvas
           camera={{
             position: [0, -8, 5],
@@ -51,7 +51,7 @@ function Hero() {
         >
           <Experience />
         </Canvas>
-      </div>
+      </div> */}
     </div>
   );
 }
