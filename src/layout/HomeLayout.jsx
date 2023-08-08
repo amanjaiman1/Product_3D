@@ -5,7 +5,7 @@ import styles from "../style";
 
 function HomeLayout({ children }) {
   return (
-    <div className="bghomelayout text-white ">
+    <div className="bghomelayout ">
       <div className="jesus">
         <Header />
         <main className="">
