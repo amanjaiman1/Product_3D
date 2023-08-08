@@ -17,24 +17,31 @@ function Hero() {
     navigate("/app/customizer");
   };
   return (
-    <div className="flex justify-center items-center h-screen">
-      <div className="flex-1 space-y-10 flex-col justify-center p-10">
-        <span className="text-[#D8BFD8] rounded-full border-2 w-28 font-semibold p-2 rounded max-[300px]:flex max-[600px]:justify-center">
+    <div className=" text-center justify-center items-center h-screen">
+      <hr className="w-[70%] m-auto border-[2px] border-[#7954ff] rounded-lg" />
+      <hr className="w-[60%] m-auto border-[2px] border-[#993fff] rounded-lg mt-[3px]" />
+      <hr className="w-[40%] m-auto border-[2px] border-[#9f4bff] rounded-lg mt-[3px]" />
+      <div className="space-y-10 flex-col justify-center p-10">
+        <span className="text-[#D8BFD8] rounded-[10px] border-2 w-28 font-semibold p-2 max-[300px]:flex max-[600px]:justify-center">
           ✨ AI-Powered 3D T-Shirts
         </span>
         <h1 className="mt-5 text-heading font-semibold min-[600px]:text-5xl max-[600px]:text-4xl min-[600px]:leading-normal max-[600px]:leading-tight max-[600px]:text-center ">
-          <span className="font-semibold text-7xl ss:text-[72px] leading-[100px] text-transparent bg-clip-text text-[#D8BFD8] bg-gradient-to-r from-violet-600 to-pink-200">
+          <span className="font-semibold text-7xl max-sm:text-[50px] max-sm:leading-[60px] leading-[100px] text-transparent bg-clip-text text-[#ffceff] bg-gradient-to-r from-violet-600 to-pink-200">
             Elevate Your Style
           </span>{" "}
           <br className="sm:block hidden" />
-          <h1 className="font-semibold text-7xl ss:text-[72px] leading-[100px] ss:leading-[100.8px] text-[#D8BFD8] ">
+          <h1 className="mb-10  font-semibold text-4xl ss:text-[72px] max-sm:text-[25px] leading-[100px] ss:leading-[100.8px] text-[#ffffff] ">
             with Intelligent
           </h1>
-          <span className="font-semibold text-7xl ss:text-[72px] leading-[75px] text-transparent bg-clip-text text-[#D8BFD8] bg-gradient-to-r from-violet-600 to-pink-200">
-            Fashion
-          </span>
         </h1>
-        <button className="rounded-full border-2 w-48 p-3 bg-[#110F0F] hover:text-black hover:bg-white">
+        <div class="title-wrapper text-center">
+          <h1 class="sweet-title">
+            <span data-text="FASHION" className=" max-sm:text-[70px]">
+              FASHION
+            </span>
+          </h1>
+        </div>
+        <button className="rounded-[10px] w-44 p-3 bg-[#4907fd66] text-[#b4ffbe] border-transparent hover:text-white hover:bg-[#6e54ff]   transition duration-500 ease-in-out">
           Design Now
         </button>
       </div>
