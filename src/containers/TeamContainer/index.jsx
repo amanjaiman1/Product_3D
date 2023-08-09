@@ -1,7 +1,9 @@
 import React from "react";
 import Button from "../../components/Button";
+import { useNavigate } from "react-router-dom";
 
 function TeamContainer() {
+  const navigate = useNavigate();
   const teams = [
     {
       title: "Team A",
@@ -32,6 +34,7 @@ function TeamContainer() {
           Search
         </Button>
         <Button
+          onClick={() => navigate("/app/customizer/teams/create")}
           className={
             "bg-primary text-white hover:bg-blue-900 hover:text-white w-1/12 p-3"
           }
