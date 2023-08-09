@@ -5,6 +5,7 @@ import Ambassador from "../../../components/Ambassador/index.jsx";
 import CommmunityNews from "../../../components/CommunityNews/index.jsx";
 import CommunityVideos from "../../../components/CommunityVideos/index.jsx";
 import CommunityFunding from "../../../containers/CommunityFunding/index.jsx";
+import FundingPurpose from "../../../containers/FundingPurpose/index.jsx";
 
 function Guide() {
   return (
@@ -14,6 +15,7 @@ function Guide() {
       <CommmunityNews />
       <CommunityVideos />
       <CommunityFunding />
+      <FundingPurpose />
     </HomeLayout>
   );
 }
