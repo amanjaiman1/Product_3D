@@ -61,19 +61,19 @@ const Helpcentre = () => {
         <div className="border p-5 pb-20 pt-20 rounded-lg blogtitle helpbox">
           <div className="flex flex-col justify-center items-center">
             <img src={query} alt="" className="w-24 h-24" />
-            <p className="text-xl mt-5">Schedule a Call</p>
+            <p className="text-xl mt-5 text-[#D8BFD8]">Schedule a Call</p>
           </div>
         </div>
         <div className="border p-5 pb-20 pt-20 rounded-lg blogtitle helpbox">
           <div className="flex flex-col justify-center items-center">
             <img src={support} alt="" className="w-24 h-24" />
-            <p className="text-xl mt-5">Get our Support</p>
+            <p className="text-xl mt-5 text-[#D8BFD8]">Get our Support</p>
           </div>
         </div>
         <div className="border p-5 pb-20 pt-20 rounded-lg blogtitle helpbox">
           <div className="flex flex-col justify-center items-center">
             <img src={blog} alt="" className="w-24 h-24" />
-            <p className="text-xl mt-5">Read our blog</p>
+            <p className="text-xl mt-5 text-[#D8BFD8]">Read our blog</p>
           </div>
         </div>
       </div>

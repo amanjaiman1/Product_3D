@@ -19,11 +19,11 @@ const ExploreWork = () => {
         <div className="w-1/2">
           <div className="flex text-3xl">
             <span className="text-pink-600 font-bold"> | </span>
-            <h1 className="mr-3 ml-3 font-semibold">Showcase</h1>
-            <span className=""> of Customized T-Shirt Artistry</span>
+            <h1 className="mr-3 ml-3 font-semibold text-pink-600">Showcase</h1>
+            <span className="text-white"> of Customized T-Shirt Artistry</span>
           </div>
           <div className="description mt-5">
-            <p className="leading-loose text-lg">
+            <p className="leading-loose text-lg text-white">
               Experience the art of self-expression like never before. Our website
               empowers you to design, personalize, and order your own custom t-shirts
               effortlessly. Choose from a rich palette of colors, graphics, and fonts
@@ -33,8 +33,8 @@ const ExploreWork = () => {
               tailored exclusively for you.
             </p>
           </div>
-          <button className="border p-3 bg-pink-500 rounded-full w-[30%] mt-10 font-normal hover:bg-violet-800">
-            Join us{" "}
+          <button className="border p-3 bg-pink-500 rounded-full w-[30%] mt-10 font-normal hover:bg-violet-800 text-white">
+            Check out{" "}
           </button>
         </div>
       </div>

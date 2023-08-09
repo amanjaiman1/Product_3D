@@ -17,11 +17,11 @@ const CommunityVideos = () => {
       <div className="w-2/6 h-full p-5">
         <div className="flex text-3xl">
           <span className="text-pink-600 font-bold"> | </span>
-          <h1 className="mr-3 ml-3 font-semibold">Latest</h1>
-          <span className=" ">Videos</span>
+          <h1 className="mr-3 ml-3 font-semibold text-white">Latest</h1>
+          <span className=" text-white">Videos</span>
         </div>
         <div className="description mt-5">
-          <p className="leading-relaxed">
+          <p className="leading-relaxed text-[#D8BFD8]">
             Learn more about Fashion Froze 3D <br />
             Watch tutorials, catch up with <br />
             event recaps and more.

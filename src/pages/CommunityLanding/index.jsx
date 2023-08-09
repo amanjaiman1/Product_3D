@@ -21,11 +21,11 @@ const CommunityLanding = () => {
         <div className="w-1/3 backdrop-blur-md p-5">
           <div className="flex text-3xl">
             <span className="text-pink-600 font-bold"> | </span>
-            <h1 className="mr-3 ml-3">Community</h1>
-            <span className="font-semibold">Platforms</span>
+            <h1 className="mr-3 ml-3 text-white">Community</h1>
+            <span className="font-semibold text-white">Platforms</span>
           </div>
           <div className="description mt-5">
-            <p className="leading-relaxed">
+            <p className="leading-relaxed text-[#D8BFD8]">
               Here's where you can engage with the community <br className="" /> and
               get all the latest updates
             </p>
