@@ -5,7 +5,7 @@ import join from "../../assets/about/second.webp";
 const About = () => {
   return (
     <div className="flex justify-center text-justify lg:text-left">
-      <div className="p-4 m-4 faq border-2 border-purple-500 lg:w-[80%] w-[90%]">
+      <div className="p-4 m-4 faq border-2 border-purple-500 lg:w-[80%] md:w-[90%] w-[100%]">
         {/* ---------------About us -------------------- */}
         <div className=" grid lg:grid-flow-col items-center grid-flow-row">
           <div className="lg:ml-[10%]">
@@ -30,11 +30,11 @@ const About = () => {
         </div>
         {/*--------------- Our Mission ---------------*/}
         <div className="mt-[5%] text-center grid place-items-center">
-          <p className="lg:text-5xl md:text-4xl text-3xl p-4 m-4 font-medium text-purple-500 lg:w-[80%] w-[90%]">
+          <p className="lg:text-5xl md:text-4xl text-3xl p-4 m-4 font-medium text-purple-500 lg:w-[80%] md:w-[90%] w-[100%]">
             Our Mission
           </p>
           <div className="flex justify-center text-justify p-4">
-            <p className=" opacity-90 text-white text-sm md:text-base lg:text-lg lg:w-[80%] w-[90%]">
+            <p className=" opacity-90 text-white text-sm md:text-base lg:text-lg lg:w-[80%] md:w-[90%] w-[100%]">
               Our mission is to empower everyone to become a fashion designer and
               unlock their imagination through cutting-edge 3D T-shirt designing. We
               aim to revolutionize the way you create custom apparel by providing an
@@ -48,7 +48,7 @@ const About = () => {
           <p className="p-4 m-4 font-medium text-purple-500 lg:text-5xl md:text-4xl text-3xl mt-[5%] text-center lg:w-[80%] w-[90%]">
             What Sets Us Apart?
           </p>
-          <ul className=" lg:w-[70%] md:w-[80%] w-[90%]">
+          <ul className=" lg:w-[70%] md:w-[80%] w-[100%]">
             <li className="backdrop-blur-sm p-4 m-4 text-slate-200 border-2 border-purple-400 shadow-sm shadow-black rounded-lg text-sm md:text-base lg:text-lg">
               Seamless 3D Designing Experience: Unlike traditional design platforms,
               we take it a step further by offering a dynamic 3D interface that
@@ -79,10 +79,10 @@ const About = () => {
         </div>
         {/* -----------------Our Vision-------------- */}
         <div className=" grid place-items-center">
-          <p className="lg:text-5xl md:text-4xl text-3xl p-4 m-4 mt-[5%] font-medium text-purple-500 opacity-80 text-center lg:w-[80%] w-[90%]">
+          <p className="lg:text-5xl md:text-4xl text-3xl p-4 m-4 mt-[5%] font-medium text-purple-500 opacity-80 text-center lg:w-[80%] md:w-[90%] w-[100%]">
             Our Vision
           </p>
-          <p className="p-4 m-4 text-slate-100 text-sm md:text-base lg:text-lg lg:w-[80%] w-[90%]">
+          <p className="p-4 m-4 text-slate-100 text-sm md:text-base lg:text-lg lg:w-[80%] md:w-[90%] w-[100%]">
             As a team of passionate creatives, we envision a world where fashion
             knows no bounds. Through Fashion Forge 3D, we aspire to inspire a
             community of designers who embrace their uniqueness, celebrate diversity,
@@ -95,7 +95,7 @@ const About = () => {
         <div className="grid place-items-center">
           <div className="grid md:grid-flow-row lg:grid-flow-col place-items-center mt-[5%]">
             <img src={join} className="mt-[2%] p-8 lg:w-full" />
-            <div className="lg:w-[80%] w-[90%] mb-[10%] faq lg:mr-[20%]">
+            <div className="lg:w-[80%] md:w-[90%] w-[100%] mb-[10%] faq lg:mr-[20%]">
               <div>
                 <p className="p-4 m-4 mt-[5%] text-center font-medium text-purple-500 lg:text-5xl md:text-4xl text-3xl lg:w-[80%] w-[90%]">
                   Join Us Today
