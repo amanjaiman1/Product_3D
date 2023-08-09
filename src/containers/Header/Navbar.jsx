@@ -63,7 +63,7 @@ const Navbar = () => {
         ))}
         <li className="text-[#D8BFD8] lg:block">
           <Button className="rounded-[5px] w-[100%] hover:bg-violet-600 bg-transparent hover:transition-all md:w-auto px-4 py-2 text-center">
-            <Link to="/try-now">Try Now</Link> {/* Set the Try Now route */}
+            <Link to="/app/customizer">Try Now</Link> {/* Set the Try Now route */}
           </Button>
         </li>
       </ul>
