@@ -13,7 +13,7 @@ const HightLights = ({ index, title, icon }) => {
         <div className="feature-header my-3">
           <hr className="hr-text" />
           <div className="items-center mb-10">
-            <h1 className="highlightHeading purples text-3xl font-semibold text-[#9400D3] w-[70%] items-center p-5  max-[300px] mx-auto justify-center text-center">
+            <h1 className="highlightHeading purples text-3xl font-semibold text-[#9400D3] items-center p-5  max-[300px] mx-auto justify-center text-center">
               ✨ Essential Product Highlights and Features
             </h1>
             <hr className=" w-[20%] m-auto mt-10 border-[2px] border-[#7954ff] rounded-lg" />
@@ -26,7 +26,7 @@ const HightLights = ({ index, title, icon }) => {
             with intelligent fashion.
           </div>
         </div>
-        <div className="flex m-10">
+        <div className="flex m-10 justify-center items-center flex-wrap">
           {services.map((item) => {
             return (
               <FeatureCard
