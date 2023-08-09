@@ -421,3 +421,10 @@ h1.deepshadow {
   -webkit-text-stroke-color: rgb(134, 255, 182);
   text-shadow: 8px 8px #ff1f8f, 20px 20px #8f4aff;
 }
+
+@media only screen and (max-width: 500px) {
+  .teampostHeading {
+    font-size: 50px;
+    text-shadow: 8px 8px #ff1f8f, 20px 20px #8f4aff;
+  }
+}
