@@ -19,7 +19,7 @@ const HightLights = ({ index, title, icon }) => {
             <hr className=" w-[20%] m-auto mt-10 border-[2px] border-[#7954ff] rounded-lg" />
           </div>
 
-          <div className="text-[#D8BFD8] max-w-[900px] feature-desc text-center mx-auto px-4 leading-loose">
+          <div className="text-[#D8BFD8]  feature-desc text-center mx-auto px-4 leading-loose">
             Revolutionize your fashion experience with our 3D T-Shirts' key features.
             Discover unparalleled depth, vibrant colors, and dynamic designs that
             come to life, thanks to cutting-edge AI technology. Elevate your style
