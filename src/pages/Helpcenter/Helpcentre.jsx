@@ -4,9 +4,9 @@ import { blog, query, support } from "../../assets";
 
 const Helpcentre = () => {
   return (
-    <div className="w-full h-[100vh] relative">
+    <div className="w-full">
       <div className="bg-[url(/helpbg.jpg)] w-[100%] h-[40%]">
-        <div className="flex flex-col justify-center items-center">
+        <div className="grid grid-flow-row justify-center items-center">
           <div class="text-6xl mt-10 text-center font-normal bg-gradient-to-r from-blue-500 via-blue-300 to-blue-200 text-transparent bg-clip-text">
             Help Center
           </div>
@@ -14,7 +14,7 @@ const Helpcentre = () => {
             How can we help you today?
           </p>
         </div>
-        <div className="absolute top-60 left-1/2 transform -translate-x-1/2 -translate-y-1/2 flex justify-center w-full">
+        <div className="relative mt-[10%] md:[6%] lg:mt-[4%] ml-[50%] transform -translate-x-1/2 -translate-y-1/2 flex justify-center w-full">
           <form className="w-[50%]">
             <label
               for="default-search"
@@ -57,21 +57,21 @@ const Helpcentre = () => {
           </form>
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-20 ml-20 mr-20 mt-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 ml-20 mr-20 mt-20">
         <div className="border p-5 pb-20 pt-20 rounded-lg blogtitle helpbox">
-          <div className="flex flex-col justify-center items-center">
+          <div className="grid grid-flow-row place-items-center">
             <img src={query} alt="" className="w-24 h-24" />
             <p className="text-xl mt-5">Schedule a Call</p>
           </div>
         </div>
         <div className="border p-5 pb-20 pt-20 rounded-lg blogtitle helpbox">
-          <div className="flex flex-col justify-center items-center">
+          <div className="grid grid-flow-row place-items-center">
             <img src={support} alt="" className="w-24 h-24" />
             <p className="text-xl mt-5">Get our Support</p>
           </div>
         </div>
         <div className="border p-5 pb-20 pt-20 rounded-lg blogtitle helpbox">
-          <div className="flex flex-col justify-center items-center">
+          <div className="grid grid-flow-row place-items-center">
             <img src={blog} alt="" className="w-24 h-24" />
             <p className="text-xl mt-5">Read our blog</p>
           </div>

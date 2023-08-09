@@ -14,7 +14,7 @@ const Button = ({ styles }) => {
       className={`
         py-4 px-6 bg-gradient-to-r from-[#5867DD] to-[#b379ff] font-poppins font-medium
          text-[18px] text-white outline-none ${styles} rounded-[5px] w-full md:w-auto h-[49px]
-          md:ml-0 max-sm:w-auto max-sm:h-[67px]
+          md:ml-0 max-sm:w-auto max-sm:h-[67px] pt-[10%]
       `}
       style={{
         boxShadow: " rgb(38, 57, 77) 0px 20px 30px -10px ",
@@ -88,7 +88,7 @@ function Footer() {
           </motion.div>
 
           {/* foot links */}
-          <div className="flex-[1.5] w-full flex flex-row justify-between md:mt-0 mr-10 cursor-pointer bg-opacity-25">
+          <div className="flex-[1.5] w-full justify-between md:mt-0 mr-10 cursor-pointer bg-opacity-25 md:flex md:flex-row grid grid-cols-2">
             {renderFooterLinks()}
           </div>
 
@@ -103,7 +103,7 @@ function Footer() {
 
       {/* copyright */}
       <div className="w-full flex justify-between items-center md:flex-row flex-col pt-6 mb-[-35px]  border-t-[1px] border-t-[#BFC6F0]">
-        <p className="font-poppins font-normal text-center text-[12px] leading-[27px] text-[#D8BFD8] mx-auto">
+        <p className="font-poppins font-normal text-center text-[12px] leading-[27px] text-[#D8BFD8] mx-auto pb-4">
           Opensource ©{new Date().getFullYear()} | Fashion Froze 3D | All Rights
           Reserved.
         </p>
