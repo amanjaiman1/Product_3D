@@ -3,7 +3,7 @@ import "./style.css";
 
 function FeatureCard({ title, color, icon, desc }) {
   return (
-    <div className="flex-1 w-full">
+    <div className="">
       <div className="gap-y-10  m-5 p-6 flex flex-col justify-center align-items items-center box">
         <div className="rounded-lg w-20 h-20 mx-4">
           <img src={icon} alt="" className="" />
