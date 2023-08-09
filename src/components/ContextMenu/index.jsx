@@ -121,10 +121,18 @@ function ContextMenu({ x, y, data, onClose }) {
         <div className="flex flex-col justify-center items-center h-full">
           <div>Do you want remove the Design?</div>
           <div className="space-x-3 space-y-2">
-            <Button onClick={handleDelete} className="bg-red-700">
+            <Button
+              onClick={handleDelete}
+              className="bg-red-700  text-white  hover:bg-red-900 hover:text-white"
+            >
               Delete
             </Button>
-            <Button onClick={() => setvisible(false)}>Cancel</Button>
+            <Button
+              className={"bg-primary text-white hover:bg-blue-900 hover:text-white"}
+              onClick={() => setvisible(false)}
+            >
+              Cancel
+            </Button>
           </div>
         </div>
       </DialogBox>

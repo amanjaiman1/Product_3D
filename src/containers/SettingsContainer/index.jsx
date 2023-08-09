@@ -25,7 +25,7 @@ function SettingsContainer() {
           <option value="">Hindi</option>
         </select>
       </div>
-      <Button className={"hover:text-primary bg-primary text-white"}>
+      <Button className={"bg-primary text-white hover:bg-blue-900 hover:text-white"}>
         Save Changes
       </Button>
     </div>

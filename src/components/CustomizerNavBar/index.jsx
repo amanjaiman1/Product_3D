@@ -109,12 +109,17 @@ function CustomizerNavBar() {
         <div className="flex justify-center flex-col items-center h-full">
           <div>Do you want to save the design?</div>
           <div className="space-x-3 space-y-2">
-            <Button onClick={onHandleSave}>Save</Button>
+            <Button
+              className={"bg-primary text-white hover:bg-blue-900 hover:text-white "}
+              onClick={onHandleSave}
+            >
+              Save
+            </Button>
             <Button
               onClick={() => {
                 setshowDialog(false);
               }}
-              className={"bg-red-700"}
+              className={"bg-red-700  text-white  hover:bg-red-900 hover:text-white"}
             >
               Cancel
             </Button>
