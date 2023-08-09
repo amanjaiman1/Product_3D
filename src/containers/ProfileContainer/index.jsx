@@ -46,6 +46,7 @@ function ProfileContainer() {
       </div>
       <div className="mt-5">
         <Button
+          className={"bg-primary text-white hover:bg-blue-900 hover:text-white"}
           onClick={() => {
             setIsVisible(true);
           }}
