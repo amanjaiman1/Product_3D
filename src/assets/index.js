@@ -49,7 +49,13 @@ import designingart from "../assets/image/designingart.png";
 import event1 from "../assets/image/event1.png";
 import event2 from "../assets/image/event2.png";
 import event3 from "../assets/image/event3.png";
+import funding from "../assets/image/funding.png";
+import avail from "../assets/image/avail.png";
+import money from "../assets/image/money.png";
 export {
+  avail,
+  money,
+  funding,
   event1,
   event2,
   event3,
