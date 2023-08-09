@@ -4,6 +4,7 @@ import CommunityLanding from "../../../pages/CommunityLanding/index.jsx";
 import Ambassador from "../../../components/Ambassador/index.jsx";
 import CommmunityNews from "../../../components/CommunityNews/index.jsx";
 import CommunityVideos from "../../../components/CommunityVideos/index.jsx";
+import CommunityFunding from "../../../containers/CommunityFunding/index.jsx";
 
 function Guide() {
   return (
@@ -12,6 +13,7 @@ function Guide() {
       <Ambassador />
       <CommmunityNews />
       <CommunityVideos />
+      <CommunityFunding />
     </HomeLayout>
   );
 }
