@@ -66,7 +66,7 @@ function CustomizerTopbar() {
         </Button>
         <label
           htmlFor="importfile"
-          className="bg-pink-500 hover:bg-pink-400 p-3 cursor-pointer text-white rounded-full"
+          className="bg-pink-500 p-2 rounded-full px-5 hover:bg-pink-400 cursor-pointer text-white rounded-full"
         >
           Import
           <input
