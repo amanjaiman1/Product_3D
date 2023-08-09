@@ -37,6 +37,7 @@ import Settings from "./views/app/Settings";
 import Community from "./views/app/Community";
 import CommunityLanding from "./views/app/CommunityLanding";
 import Plugins from "./views/app/Plugins";
+import Teams from "./views/app/Teams";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -133,6 +134,14 @@ function App() {
               </PrivateRoute>
             }
             path="/app/customizer/plugins"
+          />
+          <Route
+            element={
+              <PrivateRoute>
+                <Teams />
+              </PrivateRoute>
+            }
+            path="/app/customizer/teams"
           />
           <Route
             element={

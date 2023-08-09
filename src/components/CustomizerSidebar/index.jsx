@@ -69,6 +69,16 @@ function CustomizerSidebar() {
       </div>
       <div
         onClick={() => {
+          navigate("/app/customizer/teams");
+        }}
+        className={`cursor-pointer  mt-4 p-3 text-white  ${
+          "/app/customizer/teams" === pathname ? selectedvalue : "hover:bg-blue-700"
+        }`}
+      >
+        Teams
+      </div>
+      <div
+        onClick={() => {
           navigate("/app/customizer/settings");
         }}
         className={`cursor-pointer  mt-4 p-3 text-white  ${
