@@ -3,10 +3,10 @@ import { blog, email, query, support } from "../../assets";
 
 const Helpfaq = () => {
   return (
-    <div className="w-full h-[200vh] relative">
-      <div className="flex flex-col justify-center items-center">
+    <div className="w-full relative mt-[5%]">
+      <div className="grid grid-flow-row place-items-center">
         <div class="text-6xl mt-10 text-center font-normal">FAQ</div>
-        <p class="mt-10 font-normal text-center font-semibold text-5xl text-blue-300">
+        <p class="mt-10 font-normal text-center text-5xl text-blue-300">
           Ask us Anything
         </p>
         <p class="mt-10 font-normal text-sm text-center text-white ">
@@ -32,7 +32,7 @@ const Helpfaq = () => {
           </div>
         </div>
       </div>
-      <div className="grid grid-cols-3 gap-20 ml-20 mr-20 mt-20">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 ml-20 mr-20 mt-20">
         <div className="border p-5  pt-10 rounded-lg blogtitle helpbox">
           <div className="flex flex-col ">
             <img src={email} alt="" className="w-12 h-12 mb-10" />

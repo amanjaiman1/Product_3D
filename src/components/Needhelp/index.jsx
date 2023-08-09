@@ -13,13 +13,13 @@ import {
 
 const Needhelp = () => {
   return (
-    <div className="w-full h-[150vh]">
-      <div className="flex flex-col justify-center items-center">
+    <div className="w-full mt-[5%]">
+      <div className="grid grid-flow-row place-items-center">
         <h1 className="text-4xl text-violet-400">Need help ?</h1>
         <p className="text-lg mt-5">Check out our serivces to get started</p>
       </div>
 
-      <div className="grid grid-cols-3 gap-20 ml-20 mr-20 mt-10">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-20 ml-20 mr-20 mt-10">
         <div className="border p-5 pb-20 pt-20 rounded-lg blogtitle helpbox">
           <div className="flex flex-col justify-center items-center">
             <img src={started} alt="" className="w-24 h-24" />
