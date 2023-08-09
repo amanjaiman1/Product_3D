@@ -7,11 +7,11 @@ const CommmunityNews = () => {
       <div className="w-2/6 h-full p-5">
         <div className="flex text-3xl">
           <span className="text-pink-600 font-bold"> | </span>
-          <h1 className="mr-3 ml-3">Latest</h1>
-          <span className=" font-semibold">News</span>
+          <h1 className="mr-3 ml-3 text-white">Latest</h1>
+          <span className=" font-semibold text-white">News</span>
         </div>
         <div className="description mt-5">
-          <p className="leading-relaxed">
+          <p className="leading-relaxed text-[#D8BFD8]">
             The Following are our most frequented and <br />
             updated communication channels. <br />
             You name it, we've got it.

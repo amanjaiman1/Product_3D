@@ -46,7 +46,13 @@ import minus from "../assets/image/minus.png";
 import art from "../assets/image/art.png";
 import ff3d from "../assets/image/ff3d.png";
 import designingart from "../assets/image/designingart.png";
+import event1 from "../assets/image/event1.png";
+import event2 from "../assets/image/event2.png";
+import event3 from "../assets/image/event3.png";
 export {
+  event1,
+  event2,
+  event3,
   designingart,
   art,
   ff3d,
