@@ -31,10 +31,17 @@ function TeamContainer() {
         >
           Search
         </Button>
+        <Button
+          className={
+            "bg-primary text-white hover:bg-blue-900 hover:text-white w-1/12 p-3"
+          }
+        >
+          Create
+        </Button>
       </div>
       <div className="container flex flex-wrap">
         {teams.map((item) => (
-          <div className="flex flex-col justify-center w-48 h-48 m-2 items-center border-2 border-blue-700">
+          <div className="flex flex-col justify-center w-48 h-48 m-2 items-center border-2 border-gray-600">
             {item.title}
             {item.isJoined && (
               <Button
