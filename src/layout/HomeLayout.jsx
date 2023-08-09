@@ -8,8 +8,8 @@ function HomeLayout({ children }) {
     <div className="bghomelayout ">
       <div className="jesus">
         <Header />
-        <main className="">
-          <section className="">{children}</section>
+        <main className="p-10">
+          <section>{children}</section>
         </main>
       </div>
       <div className={`${styles.paddingX} ${styles.flexStart}`}>

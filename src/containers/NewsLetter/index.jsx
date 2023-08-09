@@ -40,10 +40,7 @@ function NewsLetter() {
   };
 
   return (
-    <div
-      className="bg-cover bg-center m-10 p-10"
-      style={{ backgroundImage: `url(${background})`, borderRadius: "25px" }}
-    >
+    <div className="bg-cover bg-center m-10 border-2 rounded text-white py-20">
       <div className="rounded-2xl flex flex-col items-center  ">
         <motion.div
           variants={fadeIn}
@@ -108,7 +105,7 @@ function NewsLetter() {
             onClick={onClickHandler}
             type={"submit"}
             animation={true}
-            className="w-full hover:shadow-lg transition-shadow duration-300"
+            className="w-full hover:shadow-lg transition-shadow duration-300  "
           />
         </div>
       </div>

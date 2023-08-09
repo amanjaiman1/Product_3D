@@ -41,7 +41,10 @@ function Hero() {
             </span>
           </h1>
         </div>
-        <button className="rounded-[10px] w-44 p-3 bg-[#4907fd66] text-[#b4ffbe] border-transparent hover:text-white hover:bg-[#6e54ff]   transition duration-500 ease-in-out">
+        <button
+          onClick={navigateToCustomisation}
+          className="rounded-[10px] w-44 p-3 bg-[#4907fd66] text-[#b4ffbe] border-transparent hover:text-white hover:bg-[#6e54ff]   transition duration-500 ease-in-out"
+        >
           Design Now
         </button>
       </div>

@@ -59,9 +59,9 @@ function Footer() {
     <footer
       className={`${styles.flexCenter} ${styles.paddingY} flex-col pb-25 pt-0`}
     >
-      <div className="container mx-auto mb-5">
+      <div className="container mx-auto mb-5 flex ">
         <div
-          className={`${styles.flexStart} md:flex-row flex-col mb-2 w-full flex flex-wrap justify-center md:justify-between`}
+          className={`${styles.flexStart} flex md:flex-row flex-col justify-center items-center flex-wrap`}
         >
           {/* img */}
           <motion.div
@@ -88,9 +88,7 @@ function Footer() {
           </motion.div>
 
           {/* foot links */}
-          <div className="flex-[1.5] w-full flex flex-row justify-between md:mt-0 mr-10 cursor-pointer bg-opacity-25">
-            {renderFooterLinks()}
-          </div>
+          <div className="md:flex">{renderFooterLinks()}</div>
 
           {/* <div
             className="flex-1 mt-10 md:mb-10 flex justify-center
