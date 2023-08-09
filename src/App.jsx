@@ -36,6 +36,7 @@ import SuggestionPage from "./views/app/Suggestions";
 import Settings from "./views/app/Settings";
 import Community from "./views/app/Community";
 import CommunityLanding from "./views/app/CommunityLanding";
+import Plugins from "./views/app/Plugins";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -124,6 +125,14 @@ function App() {
               </PrivateRoute>
             }
             path="/app/customizer/favourite"
+          />
+          <Route
+            element={
+              <PrivateRoute>
+                <Plugins />
+              </PrivateRoute>
+            }
+            path="/app/customizer/plugins"
           />
           <Route
             element={

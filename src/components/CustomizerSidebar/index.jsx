@@ -55,7 +55,18 @@ function CustomizerSidebar() {
       >
         Create Blog
       </div>
-
+      <div
+        onClick={() => {
+          navigate("/app/customizer/plugins");
+        }}
+        className={`cursor-pointer  mt-4 p-3 text-white  ${
+          "/app/customizer/plugins" === pathname
+            ? selectedvalue
+            : "hover:bg-blue-700"
+        }`}
+      >
+        Plugins
+      </div>
       <div
         onClick={() => {
           navigate("/app/customizer/settings");
