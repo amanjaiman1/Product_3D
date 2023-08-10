@@ -89,6 +89,10 @@ function Blog() {
   const blogCard = filteredBlogData.map((item) => {
     return <Card key={item.id} setBlog={setBlogData} data={item} />;
   });
+  const handleSearchChange = (event) => {
+    const newSearchTerm = event.target.value;
+    setSearchTerm(newSearchTerm);
+  };
 
   return (
     <div
@@ -161,6 +165,7 @@ function Blog() {
             label="Search"
             placeholder="Search for articles"
             type="search"
+            onChange={handleSearchChange}
           />
         </div>
       </div>
@@ -185,7 +190,9 @@ function Blog() {
           Our Articles
         </p>
         <div className="flex justify-center">
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 w-9/12">{blogCard}</div>
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 w-9/12">
+            {blogCard}{" "}
+          </div>
         </div>
       </div>
       <NewsLetter />
