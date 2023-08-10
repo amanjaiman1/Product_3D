@@ -58,8 +58,10 @@ import application from "../assets/image/application.png";
 import gallery1 from "../assets/image/gallery1.jpg";
 import gallery2 from "../assets/image/gallery2.jpg";
 import gallery3 from "../assets/image/gallery3.png";
+import ambassadorbg from "../assets/image/ambassadorbg.png";
 
 export {
+  ambassadorbg,
   gallery1,
   gallery2,
   gallery3,
