@@ -136,6 +136,10 @@ function CreatePost({ placeholder }) {
       height: "420px",
       width: "100%",
       toolbar: true,
+      style: {
+        background: "#27272E",
+        color: "rgba(255,255,255,0.5)",
+      },
     }),
     []
   );
@@ -145,7 +149,7 @@ function CreatePost({ placeholder }) {
         <div className="bg-dark p-8 rounded-lg w-full h-screen">
           <div className="grid gap-y-2">
             <TextField
-              className="w-full p-3 rounded-md shadow-md"
+              className="w-full p-3 rounded-md shadow-md bg-black border-gray-600"
               type="text"
               placeholder="Title"
               value={title}
@@ -155,7 +159,7 @@ function CreatePost({ placeholder }) {
             <div className="flex flex-wrap gap-2">
               {tags.map((tag, index) => (
                 <div key={index} className="flex items-center">
-                  <span className="border border-blue-600 px-2 py-1 rounded-md shadow-2xl bg-blue-600 text-white">
+                  <span className="border border-violet-600 px-2 py-1 rounded-md shadow-2xl bg-violet-600 text-white">
                     {tag}
                   </span>
                   <button
@@ -169,7 +173,7 @@ function CreatePost({ placeholder }) {
               ))}
             </div>
             <TextField
-              className="w-full p-3 rounded-md shadow-md"
+              className="w-full p-3 rounded-md shadow-md  bg-black border-gray-600 text-white"
               type="text"
               placeholder="Tags (Press Enter to add a tag)"
               value={currentTag}
@@ -185,7 +189,7 @@ function CreatePost({ placeholder }) {
             />
 
             <JoditEditor
-              className="mt-2"
+              className="mt-2 bg-[#27272E]"
               ref={editor}
               value={postText}
               config={editorConfig}
@@ -193,7 +197,7 @@ function CreatePost({ placeholder }) {
             />
 
             <button
-              className="bg-blue-600 hover:bg-primary font-bold py-3 px-6 rounded-md w-1/5 text-white"
+              className="bg-violet-600 hover:bg-violet-800 font-bold py-3 px-6 rounded-md w-1/5 text-white"
               type="submit"
               onClick={handleFormSubmit}
             >

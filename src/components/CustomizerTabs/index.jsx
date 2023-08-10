@@ -38,9 +38,9 @@ function CustomizerTabs() {
               <ul
                 key={index}
                 onClick={() => setcurrentIndex(index)}
-                className={` cursor-pointer font-semibold text-black relative px-5 ${
+                className={` cursor-pointer font-semibold text-white relative px-5 ${
                   index == currentIndex &&
-                  "text-primary before:block before:absolute before:h-[2px] before:w-[25px] before:rounded-full before:top-[25px] before:bg-primary relative inline-block"
+                  "text-violet-500 before:block before:absolute before:h-[2px] before:w-[25px] before:rounded-full before:top-[25px] before:bg-violet-500 relative inline-block"
                 }`}
               >
                 {item?.tabName}
