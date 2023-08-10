@@ -52,7 +52,14 @@ import event3 from "../assets/image/event3.png";
 import funding from "../assets/image/funding.png";
 import avail from "../assets/image/avail.png";
 import money from "../assets/image/money.png";
+import supporters from "../assets/image/supporters.png";
+import request from "../assets/image/request.png";
+import application from "../assets/image/application.png";
+
 export {
+  supporters,
+  request,
+  application,
   avail,
   money,
   funding,
