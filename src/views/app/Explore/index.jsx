@@ -5,6 +5,7 @@ import ExploreCommunity from "../../../components/ExploreCommunity/index.jsx";
 import ExploreCustomized from "../../../components/ExploreCustomized/index.jsx";
 import ExploreWork from "../../../components/ExploreWork/index.jsx";
 import ExploreEvent from "../../../containers/ExploreEvent/index.jsx";
+import EventGallery from "../../../containers/EventGallery/index.jsx";
 
 function ExplorePage() {
   return (
@@ -14,6 +15,7 @@ function ExplorePage() {
       <ExploreCustomized />
       <ExploreWork />
       <ExploreEvent />
+      <EventGallery />
     </HomeLayout>
   );
 }

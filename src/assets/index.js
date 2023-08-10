@@ -55,8 +55,14 @@ import money from "../assets/image/money.png";
 import supporters from "../assets/image/supporters.png";
 import request from "../assets/image/request.png";
 import application from "../assets/image/application.png";
+import gallery1 from "../assets/image/gallery1.jpg";
+import gallery2 from "../assets/image/gallery2.jpg";
+import gallery3 from "../assets/image/gallery3.png";
 
 export {
+  gallery1,
+  gallery2,
+  gallery3,
   supporters,
   request,
   application,
