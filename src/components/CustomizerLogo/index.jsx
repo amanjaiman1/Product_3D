@@ -45,7 +45,7 @@ const CustomizerLogo = () => {
         setResultUrls([]);
         setCurrentIndex(0);
         state.isLogoTexture = false;
-        state.logoDecal = "./logo.webp";
+        state.logoDecal = "./react.png";
         setShowConfetti(false);
       }
     } catch (error) {
@@ -62,6 +62,15 @@ const CustomizerLogo = () => {
       setCurrentIndex(0);
     }
   };
+  const handlePrevImage = () => {
+    if (currentIndex < resultUrls.length - 1) {
+      state.logoDecal = resultUrls[currentIndex - 1].urls.full; // Update logoDecal first
+      setCurrentIndex(currentIndex - 1);
+    } else {
+      setPageNumber(pageNumber - 1);
+      setCurrentIndex(0);
+    }
+  };
 
   const handleFullTexture = () => {
     state.isFullTexture = !state.isFullTexture;
@@ -69,7 +78,7 @@ const CustomizerLogo = () => {
     if (state.isFullTexture && currentIndex < resultUrls.length) {
       state.fullDecal = resultUrls[currentIndex].urls.full;
     } else {
-      state.fullDecal = "./logo.webp";
+      state.fullDecal = "./react.png";
     }
   };
 
@@ -103,13 +112,13 @@ const CustomizerLogo = () => {
 
       <div className="flex mt-4 space-x-2">
         <Button
-          onClick={() => {}}
+          onClick={handlePrevImage}
           className={"w-20 rounded-full bg-primary text-white"}
         >
           &#8592;
         </Button>
         <Button
-          onClick={() => {}}
+          onClick={handleNextImage}
           className={"w-20 rounded-full bg-primary text-white"}
         >
           &#8594;
