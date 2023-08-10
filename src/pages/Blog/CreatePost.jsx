@@ -136,13 +136,11 @@ function CreatePost({ placeholder }) {
       height: "420px",
       width: "100%",
       toolbar: true,
-      style: {
-        background: "#27272E",
-        color: "rgba(255,255,255,0.5)",
-      },
+      theme: "dark", // Set a custom theme name
     }),
     []
   );
+
   return (
     <EditorHomeLayout>
       <div className="max-h-screen">
@@ -189,7 +187,7 @@ function CreatePost({ placeholder }) {
             />
 
             <JoditEditor
-              className="mt-2 bg-[#27272E]"
+              className="mt-2"
               ref={editor}
               value={postText}
               config={editorConfig}
