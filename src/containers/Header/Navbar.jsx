@@ -17,7 +17,9 @@ const Navbar = () => {
     navbar.classList.toggle("sticky", this.scrollY > 0);
   });
   return (
-    <nav className={`flex justify-between items-center h-[90px] mb-5 p-5 `}>
+    <nav
+      className={`flex justify-between items-center h-[90px] mb-5 p-5  top-0 sticky bg-black bg-opacity-40 z-20 backdrop-blur-md`}
+    >
       {/* ... Your existing code ... */}
       <div className="flex justify-start ml-6">
         <Link to="/">
