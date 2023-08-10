@@ -1,8 +1,11 @@
 import React from "react";
 import Button from "../../components/Button";
+import { useState } from "react";
+import { useEffect } from "react";
 
 function TeamContainer() {
-  const teams = [
+  const [searchTxt, setSearchTxt] = useState("");
+  const data = [
     {
       title: "Team A",
       isJoined: false,
@@ -16,15 +19,29 @@ function TeamContainer() {
       isJoined: true,
     },
   ];
+  const [teams, setTeams] = useState([]);
+  useEffect(() => {
+    if (searchTxt == "") {
+      setTeams(data);
+    }
+  }, [searchTxt]);
+  const handleSearch = () => {
+    var temp = teams.filter((item) => {
+      return item.title.includes(searchTxt);
+    });
+    setTeams((prev) => temp);
+  };
   return (
     <div className="p-5">
       <div className="w-full flex justify-between space-x-2">
         <input
+          onChange={(event) => setSearchTxt(event.target.value)}
           className="p-2 w-11/12 border-2 border-solid border-secondary rounded-full"
           type="text"
           placeholder="Search Teams"
         />
         <Button
+          onClick={handleSearch}
           className={
             "bg-primary text-white hover:bg-blue-900 hover:text-white w-1/12 p-3"
           }
