@@ -92,15 +92,15 @@ function CustomizerNavBar() {
     }
   };
   return (
-    <div className="bg-white p-2 px-5 shadow-lg rounded-full">
+    <div className="bg-[#09090C] text-white p-2 px-5 shadow-lg rounded-full">
       <div className="flex justify-center items-center space-x-2 sm:space-x-6">
-        <div onClick={onSave} className="cursor-pointer hover:text-blue-500">
+        <div onClick={onSave} className="cursor-pointer hover:text-violet-500">
           Save
         </div>
-        <div onClick={onShare} className="cursor-pointer hover:text-blue-500">
+        <div onClick={onShare} className="cursor-pointer hover:text-violet-500">
           Share
         </div>
-        <div onClick={onDownload} className="cursor-pointer hover:text-blue-500">
+        <div onClick={onDownload} className="cursor-pointer hover:text-violet-500">
           Export to PNG
         </div>
         <Avatar className={"w-10 h-10"} onClick={onProfile} />
@@ -110,7 +110,9 @@ function CustomizerNavBar() {
           <div>Do you want to save the design?</div>
           <div className="space-x-3 space-y-2">
             <Button
-              className={"bg-primary text-white hover:bg-blue-900 hover:text-white "}
+              className={
+                "bg-[#09090C] text-white hover:bg-blue-900 hover:text-white "
+              }
               onClick={onHandleSave}
             >
               Save

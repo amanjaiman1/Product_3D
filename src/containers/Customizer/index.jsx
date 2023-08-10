@@ -17,7 +17,7 @@ function CustomizerContainer() {
               navigate("/app/customizer");
             }}
             className={
-              "bg-white text-primary hover:bg-blue-600 hover:text-white rounded-full"
+              "bg-black  text-white hover:bg-violet-600 hover:text-white rounded-full"
             }
           >
             Go Back
@@ -29,7 +29,7 @@ function CustomizerContainer() {
         <CustomizerNavBar />
       </div>
       <div
-        className={`flex-[.8] bg-primary h-full flex items-center bg-fixed justify-center bg-no-repeat bg-[center_left_2rem] bg-hero-pattern`}
+        className={`flex-[.8] bg-gradient-to-t from-slate-800 to-[#09090C] h-full flex items-center bg-fixed justify-center bg-no-repeat bg-[center_left_2rem] `}
       >
         <CustomizerViewer />
       </div>

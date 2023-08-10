@@ -52,11 +52,11 @@ function CustomizerTopbar() {
   return userInfo?.data?.loading ? (
     <h1>Loading..</h1>
   ) : (
-    <div className="shadow m-3 p-3 flex justify-between  items-center sticky top-0 z-100 backdrop-filter backdrop-blur-lg">
+    <div className="shadow m-3 p-3 flex justify-between  items-center sticky top-0 z-100 backdrop-filter backdrop-blur-lg bg-[#09090C] text-white">
       <div>Recents</div>
       <div className="flex space-x-2 items-center">
         <Button
-          className={"bg-primary hover:bg-blue-600 text-white hover:text-white"}
+          className={"bg-[#09090C] hover:bg-gray-700 text-white hover:text-white"}
           onClick={() => {
             let uuid = generateUUID();
             navigate("/app/customizer/editor/" + uuid);
