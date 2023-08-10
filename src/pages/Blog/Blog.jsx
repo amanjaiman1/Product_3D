@@ -109,8 +109,8 @@ function Blog() {
         </p>
       </div>
 
-      <div className="flex justify-center lg:m-6 items-center p-2 align-items items-center gap-5">
-        <img src={blogImage1} alt="blogImage 1" className="md:m-2 m-3" />
+      <div className="flex justify-center flex-col min-[910px]:flex-row lg:m-6 items-center p-2 align-items gap-5">
+        <img src={blogImage1} alt="blogImage 1" className="md:m-2 m-3 " />
         <div className="flex flex-col rounded-md md:backdrop-blur-md text-white font-medium max-w-[760px]">
           <p className="text-sm lg:text-lg m-2 border-2 p-2 max-w-[200px] items-center text-center rounded-lg mt-5">
             Ecosystem
@@ -135,7 +135,7 @@ function Blog() {
       </div>
 
       {/* blog subsription */}
-      <div className="blog flex justify-between mt-10 mb-10 border align-items items-center p-5 ml-60 mr-60 rounded-2xl blogtitle">
+      <div className="blog flex justify-between flex-col min-[880px]:flex-row mt-10 mb-10 border min-w-[260px] max-w-[525px] align-items items-center p-5 ml-60 mr-60 rounded-2xl blogtitle">
         <div className="text ml-2">
           <h1 className="text-xl p-2 text-[#D8BFD8]">
             {" "}
