@@ -2,9 +2,11 @@ import React from "react";
 import Button from "../../components/Button";
 import { useState } from "react";
 import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 function TeamContainer() {
   const [searchTxt, setSearchTxt] = useState("");
+  const navigate = useNavigate();
   const data = [
     {
       title: "Team A",
@@ -49,6 +51,7 @@ function TeamContainer() {
           Search
         </Button>
         <Button
+          onClick={() => navigate("/app/customizer/teams/create")}
           className={
             "bg-primary text-white hover:bg-blue-900 hover:text-white w-1/12 p-3"
           }

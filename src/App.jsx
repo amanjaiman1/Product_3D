@@ -38,6 +38,7 @@ import Community from "./views/app/Community";
 import CommunityLanding from "./views/app/CommunityLanding";
 import Plugins from "./views/app/Plugins";
 import Teams from "./views/app/Teams";
+import CreateTeam from "./views/app/CreateTeam";
 import Ambassador from "./components/Ambassador";
 import AmbassadorLanding from "./views/app/AmbassadorLanding";
 
@@ -145,6 +146,14 @@ function App() {
               </PrivateRoute>
             }
             path="/app/customizer/teams"
+          />
+          <Route
+            element={
+              <PrivateRoute>
+                <CreateTeam />
+              </PrivateRoute>
+            }
+            path="/app/customizer/teams/create"
           />
           <Route
             element={
