@@ -61,7 +61,7 @@ function TeamContainer() {
       </div>
       <div className="container flex flex-wrap">
         {teams.map((item) => (
-          <div className="flex flex-col rounded justify-center w-48 h-48 m-3 items-center border-2 border-gray-600">
+          <div className="flex flex-col rounded justify-center w-48 h-48 m-3 items-center border-2 border-gray-600 text-white">
             {item.title}
             {item.isJoined && (
               <Button

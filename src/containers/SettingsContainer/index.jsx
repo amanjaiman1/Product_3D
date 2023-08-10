@@ -7,7 +7,7 @@ function SettingsContainer() {
   return (
     <div className="flex space-y-5 flex-wrap p-4 items-center border-2 border-gray-200 border-solid shadow-md m-10">
       <div className="flex w-full">
-        <label className="flex-[.2]" htmlFor="">
+        <label className="flex-[.2] text-white" htmlFor="">
           Theme
         </label>
         <select className="flex-[.1]" name="" id="">
@@ -15,7 +15,7 @@ function SettingsContainer() {
           <option value="">Light</option>
         </select>
       </div>
-      <div className="flex w-full">
+      <div className="flex w-full text-white">
         <label className="flex-[.2]" htmlFor="">
           Language
         </label>
