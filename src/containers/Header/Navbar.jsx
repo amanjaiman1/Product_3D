@@ -113,6 +113,14 @@ const Navbar = () => {
             Customize
           </Link>
           <Link
+            to="/blog"
+            className={`link ${location.pathname === "/blog" ? "active" : ""}`}
+            onClick={toggleMobileMenu}
+            style={{ justifyContent: "flex-end" }}
+          >
+            Blog
+          </Link>
+          <Link
             to="/contact"
             className={`link ${location.pathname === "/contact" ? "active" : ""}`}
             onClick={toggleMobileMenu}
