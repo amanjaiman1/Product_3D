@@ -71,9 +71,7 @@ function Blog() {
           id: doc.id,
         }));
         console.log("Fetched data:", blogDataList);
-        setBlogData((prevBlogData) => [...prevBlogData, ...blogDataList]);
-
-        // setBlogData (blogDataList.filter((item) => item.id != id));
+        setBlogData(blogDataList); // Replace the existing data with fetched data
       } catch (error) {
         console.error("Error fetching blog data:", error);
       }
@@ -91,11 +89,15 @@ function Blog() {
   const blogCard = filteredBlogData.map((item) => {
     return <Card key={item.id} setBlog={setBlogData} data={item} />;
   });
+  const handleSearchChange = (event) => {
+    const newSearchTerm = event.target.value;
+    setSearchTerm(newSearchTerm);
+  };
 
   return (
     <div
       style={{ fontFamily: "Poppins, sans-serif" }}
-      className="bg-black bg-[#110F0F] blogtitle"
+      className="bg-black blogtitle"
     >
       <div className="grid justify-center p-6 text-center pt-[2%] ">
         <p className="text-lg md:text-xl lg:text-3xl m-4 text-[#9400D3] font-bold">
@@ -163,6 +165,7 @@ function Blog() {
             label="Search"
             placeholder="Search for articles"
             type="search"
+            onChange={handleSearchChange}
           />
         </div>
       </div>
@@ -187,7 +190,9 @@ function Blog() {
           Our Articles
         </p>
         <div className="flex justify-center">
-          <div className="grid lg:grid-cols-3 md:grid-cols-2 w-9/12">{blogCard}</div>
+          <div className="grid lg:grid-cols-3 md:grid-cols-2 w-9/12">
+            {blogCard}{" "}
+          </div>
         </div>
       </div>
       <NewsLetter />
