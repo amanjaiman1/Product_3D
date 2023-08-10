@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useRef, useMemo } from "react";
 import JoditEditor from "jodit-react";
 import EditorHomeLayout from "../../layout/EditorHomeLayout";
 import TextField from "../../components/TextField";
@@ -15,7 +15,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { Link, useNavigate } from "react-router-dom";
 
-function CreatePost({ placeholder }) {
+function CreatePost() {
   const editor = useRef(null);
   const [postText, setPostText] = useState("");
   const [title, setTitle] = useState("");
@@ -23,6 +23,7 @@ function CreatePost({ placeholder }) {
   const [currentTag, setCurrentTag] = useState("");
   const [image, setImage] = useState(null);
   const [loading, setLoading] = useState(false);
+  const [submitting, setSubmitting] = useState(false); // New state for tracking submit process
 
   useEffect(() => {
     if (editor.current) {
@@ -32,10 +33,6 @@ function CreatePost({ placeholder }) {
       }, 0);
     }
   }, []);
-
-  useEffect(() => {
-    console.log("tags");
-  }, [tags]);
 
   const handleTitleChange = (e) => {
     setTitle(e.target.value);
@@ -50,6 +47,10 @@ function CreatePost({ placeholder }) {
       setTags([...tags, currentTag.trim()]);
       setCurrentTag("");
     }
+  };
+
+  const handleTagRemove = (tagToRemove) => {
+    setTags(tags.filter((tag) => tag !== tagToRemove));
   };
 
   const handleImageChange = (e) => {
@@ -86,28 +87,28 @@ function CreatePost({ placeholder }) {
   const handleFormSubmit = async (e) => {
     e.preventDefault();
 
-    if (loading) return;
+    if (submitting) return;
 
-    setLoading(true);
+    setSubmitting(true); // Start the submit process
 
     if (tags.length === 0) {
       toast.error("Please add at least one tag before submitting.");
-      setLoading(false);
+      setSubmitting(false); // End the submit process
       return;
     }
 
     const imageUrl = await handleImageUpload();
 
-    const postData = {
-      title: title,
-      content: postText,
-      tags: tags,
-      date: new Date().toLocaleDateString("en-GB"),
-      imageUrl: imageUrl,
-      isDelete: false,
-    };
+    if (imageUrl) {
+      const postData = {
+        title: title,
+        content: postText,
+        tags: tags,
+        date: new Date().toLocaleDateString("en-GB"),
+        imageUrl: imageUrl,
+        isDelete: false,
+      };
 
-    if (tags.length > 0) {
       try {
         await setDoc(doc(db, "blogPost", generateUUID()), postData);
         toast.success("Blog post created successfully!");
@@ -123,11 +124,9 @@ function CreatePost({ placeholder }) {
         console.error("Error saving post:", error);
         toast.error("Error saving post: Please try again.");
       }
-    } else {
-      console.error("Error saving post: Tags cannot be empty.");
     }
 
-    setLoading(false);
+    setSubmitting(false); // End the submit process
   };
 
   const editorConfig = useMemo(
@@ -147,7 +146,7 @@ function CreatePost({ placeholder }) {
         <div className="bg-dark p-8 rounded-lg w-full h-screen">
           <div className="grid gap-y-2">
             <TextField
-              className="w-full p-3 rounded-md shadow-md bg-black border-gray-600"
+              className="w-full p-3 rounded-md shadow-md bg-black border-gray-600 text-white"
               type="text"
               placeholder="Title"
               value={title}
@@ -163,7 +162,7 @@ function CreatePost({ placeholder }) {
                   <button
                     type="button"
                     onClick={() => handleTagRemove(tag)}
-                    className="ml-2"
+                    className="ml-2 text-white"
                   >
                     &#215; {/* Close (X) symbol */}
                   </button>
@@ -195,9 +194,12 @@ function CreatePost({ placeholder }) {
             />
 
             <button
-              className="bg-violet-600 hover:bg-violet-800 font-bold py-3 px-6 rounded-md w-1/5 text-white"
+              className={`bg-violet-600 hover:bg-violet-800 font-bold py-3 px-6 rounded-md w-1/5 text-white ${
+                submitting ? "opacity-50 cursor-not-allowed" : ""
+              }`}
               type="submit"
               onClick={handleFormSubmit}
+              disabled={submitting}
             >
               Create Post
             </button>

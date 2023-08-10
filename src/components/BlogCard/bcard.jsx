@@ -1,9 +1,11 @@
 import React, { useState } from "react";
 import { MdEdit, MdDelete } from "react-icons/md";
-import { collection, deleteDoc, updateDoc, doc, setDoc } from "firebase/firestore";
+import { updateDoc, doc } from "firebase/firestore";
 import { db } from "../../firebase/firebase";
 import EditPostForm from "../../pages/Blog/EditPost"; // Create a component for editing the post
 
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 export default function Card(props) {
   const [showFullContent, setShowFullContent] = useState(false);
   const [editMode, setEditMode] = useState(false); // State to control edit mode
@@ -13,6 +15,9 @@ export default function Card(props) {
     setShowFullContent(!showFullContent);
   };
 
+  const userFullName = localStorage.getItem("userInfo");
+  const isUserLoggedIn = !!userFullName; // Check if user information is present
+
   const handleDelete = async () => {
     try {
       console.log(props?.data?.id);
@@ -20,7 +25,7 @@ export default function Card(props) {
       await updateDoc(doc(db, "blogPost", props?.data?.id), { isDelete: true });
 
       props?.setBlog((prev) => {
-        return prev.filter((item) => item.id != props?.data?.id);
+        return prev.filter((item) => item.id !== props?.data?.id);
       });
       console.log("Post deleted successfully!");
     } catch (error) {
@@ -42,6 +47,13 @@ export default function Card(props) {
       setEditMode(false); // Exit edit mode after successful update
     } catch (error) {
       console.error("Error updating post:", error);
+    }
+  };
+  const handleReadMoreClick = () => {
+    if (!isUserLoggedIn) {
+      toast.warn("Please log in to access full content.", { autoClose: 3000 });
+    } else {
+      toggleContent();
     }
   };
 
@@ -68,14 +80,18 @@ export default function Card(props) {
               <div className="p-6">
                 <h2 className="tracking-widest text-xs title-font font-medium text-gray-600 mb-1">
                   <span className="mr-2">{props?.data?.date}</span>
-                  <MdEdit
-                    className="text-violet-600 inline-block mr-2 cursor-pointer ml-[50%] text-base"
-                    onClick={() => setEditMode(true)} // Enter edit mode when edit button is clicked
-                  />
-                  <MdDelete
-                    className="text-red-500 inline-block cursor-pointer text-base"
-                    onClick={handleDelete}
-                  />
+                  {isUserLoggedIn && (
+                    <React.Fragment>
+                      <MdEdit
+                        className="text-violet-600 inline-block mr-2 cursor-pointer ml-[50%] text-base"
+                        onClick={() => setEditMode(true)} // Enter edit mode when edit button is clicked
+                      />
+                      <MdDelete
+                        className="text-red-500 inline-block cursor-pointer text-base"
+                        onClick={handleDelete}
+                      />
+                    </React.Fragment>
+                  )}
                   <div className="flex flex-wrap mt-2">
                     {props?.data?.tags?.map((tag, index) => (
                       <div
@@ -94,13 +110,21 @@ export default function Card(props) {
                   {renderContent()}
                   {props?.data?.content.length > maxCharLimit && (
                     <button
-                      className=" mt-4 bg-gradient-to-r from-cyan-400 to-blue-400 hover:scale-105 drop-shadow-md shadow-cla-blue px-4 py-1 rounded-lg"
-                      onClick={toggleContent}
+                      className={`mt-4 bg-gradient-to-r from-cyan-400 to-blue-400 hover:scale-105 drop-shadow-md shadow-cla-blue px-4 py-1 rounded-lg ${
+                        !isUserLoggedIn ? "cursor-not-allowed" : ""
+                      }`}
+                      onClick={handleReadMoreClick}
+                      disabled={!isUserLoggedIn}
                     >
                       {showFullContent ? "Read Less" : "Read More"}
                     </button>
                   )}
                 </div>
+                {!isUserLoggedIn && (
+                  <p className="text-red-500 mt-2 text-sm">
+                    Please Logged in to access full functionality.
+                  </p>
+                )}
               </div>
             </div>
           </div>
