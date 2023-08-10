@@ -6,6 +6,7 @@ import CommmunityNews from "../../../components/CommunityNews/index.jsx";
 import CommunityVideos from "../../../components/CommunityVideos/index.jsx";
 import CommunityFunding from "../../../containers/CommunityFunding/index.jsx";
 import FundingPurpose from "../../../containers/FundingPurpose/index.jsx";
+import FundingApplication from "../../../containers/FundingApplication/index.jsx";
 
 function Guide() {
   return (
@@ -16,6 +17,7 @@ function Guide() {
       <CommunityVideos />
       <CommunityFunding />
       <FundingPurpose />
+      <FundingApplication />
     </HomeLayout>
   );
 }

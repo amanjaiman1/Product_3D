@@ -3,16 +3,16 @@ import { useLocation, useNavigate, useParams, Link } from "react-router-dom";
 
 function CustomizerSidebar() {
   const { pathname } = useLocation();
-  const selectedvalue = "bg-blue-700";
+  const selectedvalue = "bg-gray-600";
   const navigate = useNavigate();
   return (
-    <div className="p-4 shadow-lg bg-primary">
+    <div className="p-4 shadow-lg bg-[#09090C]">
       <div
         onClick={() => {
           navigate("/app/customizer");
         }}
         className={`cursor-pointer  mt-4 p-3 text-white  ${
-          "/app/customizer" === pathname ? selectedvalue : "hover:bg-blue-700"
+          "/app/customizer" === pathname ? selectedvalue : "hover:bg-gray-600"
         }`}
       >
         Recent Designs
@@ -24,7 +24,7 @@ function CustomizerSidebar() {
         className={`cursor-pointer  mt-4 p-3 text-white  ${
           "/app/customizer/favourite" === pathname
             ? selectedvalue
-            : "hover:bg-blue-700"
+            : "hover:bg-gray-600"
         }`}
       >
         Favourite
@@ -37,7 +37,7 @@ function CustomizerSidebar() {
         className={`cursor-pointer  mt-4 p-3 text-white  ${
           "/app/customizer/community" === pathname
             ? selectedvalue
-            : "hover:bg-blue-700"
+            : "hover:bg-gray-600"
         }`}
       >
         Community
@@ -50,7 +50,7 @@ function CustomizerSidebar() {
         className={`cursor-pointer  mt-4 p-3 text-white  ${
           "/app/customizer/create-post" === pathname
             ? selectedvalue
-            : "hover:bg-blue-700"
+            : "hover:bg-gray-600"
         }`}
       >
         Create Blog
@@ -62,7 +62,7 @@ function CustomizerSidebar() {
         className={`cursor-pointer  mt-4 p-3 text-white  ${
           "/app/customizer/plugins" === pathname
             ? selectedvalue
-            : "hover:bg-blue-700"
+            : "hover:bg-gray-600"
         }`}
       >
         Plugins
@@ -72,7 +72,7 @@ function CustomizerSidebar() {
           navigate("/app/customizer/teams");
         }}
         className={`cursor-pointer  mt-4 p-3 text-white  ${
-          "/app/customizer/teams" === pathname ? selectedvalue : "hover:bg-blue-700"
+          "/app/customizer/teams" === pathname ? selectedvalue : "hover:bg-gray-600"
         }`}
       >
         Teams
@@ -84,7 +84,7 @@ function CustomizerSidebar() {
         className={`cursor-pointer  mt-4 p-3 text-white  ${
           "/app/customizer/settings" === pathname
             ? selectedvalue
-            : "hover:bg-blue-700"
+            : "hover:bg-gray-600"
         }`}
       >
         Settings

@@ -39,6 +39,8 @@ import CommunityLanding from "./views/app/CommunityLanding";
 import Plugins from "./views/app/Plugins";
 import Teams from "./views/app/Teams";
 import CreateTeam from "./views/app/CreateTeam";
+import Ambassador from "./components/Ambassador";
+import AmbassadorLanding from "./views/app/AmbassadorLanding";
 
 function App() {
   const [loading, setLoading] = useState(false);
@@ -69,6 +71,7 @@ function App() {
           <Route Component={SignUp} path="/signup" />
           <Route Component={CommunityLanding} path="/community" />
           <Route Component={ErrorPage} path="/*" />
+          <Route Component={AmbassadorLanding} path="/ambassador" />
 
           {/* Pages Routing  */}
           <Route Component={AboutUs} path="/about" />
