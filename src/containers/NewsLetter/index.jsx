@@ -68,7 +68,7 @@ function NewsLetter() {
           every week
         </motion.div>
 
-        <div className="flex flex-col md:flex-row space-x-3 pt-3 md:pt-5 ml:w-full md:w-full lg:w-[600px]">
+        <div className="flex flex-col md:flex-row space-x-3 pt-3 md:pt-5 ml:w-full md:w-full lg:w-[600px] md:justify-center">
           <input
             value={email}
             onChange={(e) => setemail(e.target.value)}
@@ -105,7 +105,7 @@ function NewsLetter() {
             onClick={onClickHandler}
             type={"submit"}
             animation={true}
-            className="w-full hover:shadow-lg transition-shadow duration-300  "
+            className="w-full hover:shadow-lg mt-3 md:mt-0  transition-shadow duration-300  "
           />
         </div>
       </div>
