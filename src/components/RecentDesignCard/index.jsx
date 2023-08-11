@@ -27,8 +27,10 @@ function RecentDesignCard({ data, onContextMenu }) {
         {title.slice(0, 1).toUpperCase()}
       </div>
       <div className="p-2">
-        <p title={title && title}>{truncate(title && title, 20)}</p>
-        <p className="text-secondary text-sm">
+        <p className="text-white" title={title && title}>
+          {truncate(title && title, 20)}
+        </p>
+        <p className="text-white text-sm">
           Last Edit {lastUpdate && new Date(lastUpdate).toLocaleString()}
         </p>
       </div>

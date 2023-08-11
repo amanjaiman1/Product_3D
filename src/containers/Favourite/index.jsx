@@ -44,7 +44,7 @@ function Favourite() {
     getData();
   }, []);
   return (
-    <div className="flex space-x-1 flex-wrap p-4 items-center">
+    <div className="flex space-x-1 flex-wrap p-4 items-center text-white">
       {favDesign?.loading ? (
         <h1>Loading...</h1>
       ) : favDesign.data.length != 0 ? (

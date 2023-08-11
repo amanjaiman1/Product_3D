@@ -16,7 +16,7 @@ function PopupModel({ visible, setVisible, children }) {
       >
         X
       </div>
-      <div className="bg-white w-full h-full rounded-lg">{children}</div>
+      <div className=" w-full h-full rounded-lg">{children}</div>
     </div>
   );
 }

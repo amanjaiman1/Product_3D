@@ -81,7 +81,7 @@ function ProfileEditor() {
               />
               {errors.mobile && touched.mobile && errors.mobile}
             </FormGroup>
-            <Button className={"mt-10"}>Update</Button>
+            <Button className={"mt-10 text-white"}>Update</Button>
           </form>
         )}
       </Formik>
